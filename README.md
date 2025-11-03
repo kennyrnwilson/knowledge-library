@@ -6,6 +6,30 @@ A beautifully formatted, git-based personal knowledge management system using th
 
 This repo replaces my Notion PKM with a more portable, git-friendly system while improving and curating the content along the way. Every note is beautifully formatted markdown, interconnected, and version-controlled.
 
+## 🎯 System Purpose
+
+This system is designed to help **Capture, Organise, Connect, and Apply** knowledge efficiently using principles from **Zettelkasten** and the **PARA Method**. Its primary goal is to transform fleeting thoughts and consumed information into structured insights and actionable guidance.
+
+## 🔄 Knowledge Flow
+
+```mermaid
+graph TD
+    Sources[Sources: Books 📚, Articles 📰, Ideas 💡]
+    Sources -- Capture 📥 --> A1[Fleeting Notes 📥]
+    Sources -- Capture 📥 --> A2[Scratch Pad ✍️]
+    Sources -- Capture 📥 --> A3[Literature Notes 📖]
+    Human[Me 🧑] -- Creates --> A4[Guidance 📜]
+    Human -- Initiates --> P[Projects 📊]
+
+    A1 -- Organise --> B1[Permanent Notes 📂]
+    A2 -- Organise --> B1
+
+    A4[Guidance 📜] -- recorded --> B3[Progress 📈]
+    B1 -- Complete/Inactive --> Archive[Archive 🗄️]
+    A4 -- Outdated --> Archive
+    P -- Completed --> Archive
+```
+
 ## 📂 How It's Organized
 
 ### 📥 [Fleeting Notes](./01-fleeting-notes/index.md)
@@ -36,6 +60,29 @@ Goals, habit tracking, weekly reviews, and annual reflections. Measurement and a
 Deprecated content and outdated notes kept for historical reference.
 
 ---
+
+## 📌 Example Workflow
+
+### 📥 Capture
+- **From Ideas 💡** → Drop quick thoughts into **Fleeting Notes** or **Scratch Pad**
+- **From Books 📚 and Articles 📰** → Summarize key points into **Literature Notes**
+
+### 🔄 Process
+- Review captured notes periodically
+- If valuable: Refine and store as structured insights in **Permanent Notes**
+
+### 🛠️ Apply
+- Use **Guidance** notes as blueprints to drive decisions, plans, and routines
+- Log activities, milestones, and outcomes in **Progress**
+
+### 🗃️ Archive
+- Move completed or inactive information to **Archive** for long-term reference
+
+## ✅ Why This Structure Works
+
+- **Zettelkasten principles** ensure knowledge grows **organically** and **connects**
+- **PARA structure** keeps actions and resources separate but aligned
+- Focuses equally on **thinking** (Scratch Pad), **learning** (Literature Notes), **building knowledge** (Permanent Notes), and **applying knowledge** (Guidance and Progress)
 
 ## 🚀 Quick Start
 
