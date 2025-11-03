@@ -1,40 +1,39 @@
 # Leisure
 
-**Purpose:** Personal interests, entertainment, travel, books, and enjoyable pursuits.
+**Purpose:** Recreation, hobbies, entertainment, travel, and personal enjoyment.
 
 ## Contents
 
-### [Books & Reading](./books/index.md)
-Reading list, book summaries, and literary notes.
+### [Hobbies & Interests](./hobbies-interests/index.md)
 
-### [Travel](./travel/index.md)
-Travel guides, destinations, and travel planning.
+Skill development in personal interests, crafts, and maker knowledge.
 
-### [Entertainment](./entertainment/index.md)
-Movies, shows, games, and other media.
+### [Travel & Exploration](./travel-exploration/index.md)
 
-## Quick Links
+Travel planning, optimization, adventure, outdoor activities, and local exploration.
 
-- [Books & Reading](./books/index.md)
-- [Travel Destinations](./travel/index.md)
-- [Entertainment](./entertainment/index.md)
+### [Entertainment & Media](./entertainment-media/index.md)
+
+Books, film, television, and media consumption for informed entertainment choices.
 
 ## How This Fits In
 
-- **Part of:** Overall wellbeing and life enjoyment
-- **Supports:** Work-life balance
-- **Informs:** [Tracking](../../06-tracking/index.md) for life goals
+- **Part of:** [Permanent Notes](../index.md)
+- **Related to:** [Wellbeing](../wellbeing/index.md) - Recreation and relaxation
+- **Built from:** [Literature Notes](../../02-literature-notes/index.md) and experience
+
+## Key Areas
+
+- **Hobbies & Personal Interests** - Skill development and personal projects
+- **Travel & Adventure** - Exploration, outdoor activities, and travel planning
+- **Entertainment & Media** - Books, film, TV shows, and other leisure media
+- **Recreation** - Activities that bring joy and relaxation
 
 ## Next Steps
 
 - Migrate reading list from Notion
-- Document travel experiences
-- Track entertainment consumption
-
-## Related Areas
-
-- [Wellbeing](../personal-development/wellbeing/index.md) - Recreation and relaxation
-- [Tracking](../../06-tracking/index.md) - Hobby goals
+- Document outdoor adventures and locations
+- Track entertainment consumption and recommendations
 
 ---
 

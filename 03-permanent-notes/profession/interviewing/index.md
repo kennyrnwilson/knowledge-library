@@ -1,38 +1,43 @@
 # Interviewing
 
-**Purpose:** Interview preparation, interview technique, salary negotiation, and career advancement strategies.
+**Purpose:** Interview preparation, job search strategies, and hiring practices.
 
 ## Contents
 
-Topics to add:
-- [ ] Interview Preparation
-- [ ] Interview Technique & Soft Skills
-- [ ] Salary Negotiation
-- [ ] Career Advancement
-
-## Quick Reference
-
-| Topic | Status | Last Updated |
-|-------|--------|--------------|
-| TBD | | |
+To be populated with:
+- Interview preparation and technique
+- Job search strategies
+- Salary negotiation
+- Career advancement through interviews
 
 ## How This Fits In
 
 - **Part of:** [Profession](../index.md)
-- **Supports:** Career decisions and transitions
-- **Built from:** [Literature Notes](../../../02-literature-notes/index.md) and experience
+- **Supports:** Career transitions and advancement
+- **Related to:** [Technical Skills](../technical-skills/index.md) - technical interview preparation
+- **Related to:** [Workplace Dynamics](../workplace-dynamics/index.md) - relationship building
+
+## Key Areas
+
+- **Interview Preparation** - Research, storytelling, and readiness
+- **Interview Technique** - Behavioral, technical, and system design interviews
+- **Salary Negotiation** - Understanding market value and negotiating offers
+- **Job Search** - Finding opportunities and building networks
+- **Hiring** - Evaluating candidates and building teams
+
+## Quick Principles
+
+1. **Preparation is crucial** - Research deeply, practice extensively
+2. **Tell compelling stories** - Use STAR method for behavioral questions
+3. **Know your worth** - Understand market rates before negotiating
+4. **Ask thoughtful questions** - Interviewing is mutual evaluation
+5. **Negotiate professionally** - Money matters, but relationship matters more
 
 ## Next Steps
 
 - Migrate interview notes from Notion
 - Create interview preparation checklists
 - Document negotiation strategies
-
-## Related Areas
-
-- [Management](../management/index.md) - Career growth
-- [Technical Skills](../technical-skills/index.md) - Technical interview prep
-- [Guidance](../../../04-guidance/index.md) - Interview workflows
 
 ---
 

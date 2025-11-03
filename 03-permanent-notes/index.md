@@ -20,21 +20,48 @@
 ## Topic Areas
 
 ### 🏢 [Profession](./profession/index.md)
-Career, management, technical skills, and professional development.
+Career development, technical skills, management, workplace dynamics, and professional growth.
 
 **Includes:**
 - [Management](./profession/management/index.md) - Leadership and team dynamics
-- [Technical Skills](./profession/technical-skills/index.md) - Programming and engineering
-- [Interviewing](./profession/interviewing/index.md) - Interview prep and technique
+- [Technical Skills](./profession/technical-skills/index.md) - Technology and programming
+- [Workplace Dynamics](./profession/workplace-dynamics/index.md) - Soft skills and relationships
+- [Interviewing](./profession/interviewing/index.md) - Interview prep and negotiation
+- [Finance](./profession/finance/index.md) - Financial management and strategy
 
-### 🚀 [Personal Development](./personal-development/index.md)
-Learning, productivity, wellbeing, and personal growth.
+### 🌟 [Personal Development](./personal-development/index.md)
+Social and interpersonal skills for personal growth and relationships.
 
 **Includes:**
-- [Learning & Memory](./personal-development/learning/index.md) - How to learn effectively
-- [Productivity](./personal-development/productivity/index.md) - Time management and deep work
-- [Wellbeing](./personal-development/wellbeing/index.md) - Health, sleep, fitness, mindfulness
-- [Parenting](./personal-development/parenting/index.md) - Child development and behavior
+- [Social & Interpersonal Skills](./personal-development/social-interpersonal-skills/index.md) - Communication and relationships
+
+### 🏥 [Wellbeing](./wellbeing/index.md)
+Mental and physical health, fitness, sleep, mindfulness, and mental health.
+
+**Includes:**
+- [Sleep](./wellbeing/sleep/index.md) - Sleep optimization and circadian rhythms
+- [Fitness](./wellbeing/fitness/index.md) - Exercise and physical health
+- [Mindfulness](./wellbeing/mindfulness/index.md) - Meditation and nervous system regulation
+- [Mental Health](./wellbeing/mental-health/index.md) - Psychological well-being
+
+### 📚 [Productivity](./productivity/index.md)
+Time management, goal setting, deep work, and systems for effectiveness.
+
+**Includes:**
+- [Time Management](./productivity/time-management/index.md) - Slow productivity and deep life frameworks
+- [Goal Setting](./productivity/goal-setting/index.md) - Systems and dream management
+- [Focus & Deep Work](./productivity/focus-deep-work/index.md) - Concentration and meaningful work
+
+### 👶 [Parenting](./parenting/index.md)
+Child development, behavior management, emotional health, and parenting frameworks.
+
+### 🎭 [Leisure](./leisure/index.md)
+Recreation, hobbies, entertainment, travel, and personal enjoyment.
+
+**Includes:**
+- [Hobbies & Interests](./leisure/hobbies-interests/index.md) - Personal projects and skills
+- [Travel & Exploration](./leisure/travel-exploration/index.md) - Adventures and outdoor activities
+- [Entertainment & Media](./leisure/entertainment-media/index.md) - Books, film, and television
 
 ### 🎓 [AI Engineering](./ai-engineering/index.md)
 In-depth learning path covering modern AI systems and techniques.
@@ -46,14 +73,6 @@ In-depth learning path covering modern AI systems and techniques.
 - Model Evaluation
 - Infrastructure & MLOps
 
-### 🎭 [Leisure](./leisure/index.md)
-Books, travel, entertainment, and personal interests.
-
-**Includes:**
-- [Books & Reading](./leisure/books/index.md) - Your reading list and notes
-- [Travel](./leisure/travel/index.md) - Places and travel insights
-- [Entertainment](./leisure/entertainment/index.md) - Media and shows
-
 ## Navigation
 
 Start with any topic area that interests you, then follow the related notes to explore deeper.
@@ -61,18 +80,26 @@ Start with any topic area that interests you, then follow the related notes to e
 ## Quick Links by Interest
 
 **Professional Focus:**
-- [Python Programming](./profession/technical-skills/python/index.md)
 - [Management Skills](./profession/management/index.md)
 - [Interview Preparation](./profession/interviewing/index.md)
+- [Technical Skills](./profession/technical-skills/index.md)
 
-**Learning & Growth:**
-- [Spaced Repetition](./personal-development/learning/index.md)
-- [Productivity Systems](./personal-development/productivity/index.md)
-- [Wellbeing](./personal-development/wellbeing/index.md)
+**Productivity & Growth:**
+- [Slow Productivity & Deep Life](./productivity/time-management/slow-productivity-and-deep-life.md)
+- [Systems Over Goals](./productivity/goal-setting/favour-systems-over-goals.md)
+- [Self-Improvement Critique](./productivity/focus-deep-work/self-improvement-industry-critical-examination.md)
+
+**Health & Wellbeing:**
+- [Sleep Optimization](./wellbeing/sleep/index.md)
+- [Fitness](./wellbeing/fitness/index.md)
+- [Mindfulness](./wellbeing/mindfulness/index.md)
 
 **AI & Technical:**
 - [AI Engineering](./ai-engineering/index.md)
-- [Prompt Engineering](./ai-engineering/index.md)
+
+**Recreation:**
+- [Travel & Exploration](./leisure/travel-exploration/index.md)
+- [Entertainment & Media](./leisure/entertainment-media/index.md)
 
 ## Note Quality Standards
 

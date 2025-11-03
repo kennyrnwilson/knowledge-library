@@ -1,39 +1,42 @@
 # Profession
 
-**Purpose:** Professional knowledge covering management, technical skills, interviewing, and career development.
+**Purpose:** Career development, technical skills, management, workplace dynamics, and professional growth.
 
 ## Contents
 
 ### [Management](./management/index.md)
-Team leadership, team dynamics, delegation, and 1:1 skills.
+
+Leadership practices, team dynamics, delegation, and organizational effectiveness.
 
 ### [Technical Skills](./technical-skills/index.md)
-Programming languages, software engineering, and technical depth.
 
-**Includes:**
-- [Python Programming](./technical-skills/python/index.md)
-- Software Engineering
+Technology, programming, AI, and technical knowledge development.
+
+### [Workplace Dynamics](./workplace-dynamics/index.md)
+
+Soft skills, communication, relationships, and interpersonal effectiveness at work.
 
 ### [Interviewing](./interviewing/index.md)
-Interview preparation, interview technique, and negotiation strategies.
 
-## Quick Links
+Interview preparation, job search strategies, and hiring practices.
 
-- [Management Skills](./management/index.md)
-- [Python Fundamentals](./technical-skills/python/index.md)
-- [Interview Prep](./interviewing/index.md)
+### [Finance](./finance/index.md)
+
+Financial management, fund management, and money strategy.
 
 ## How This Fits In
 
-- **Supports:** Projects, career decisions
-- **Built from:** Literature notes and courses
-- **Informs:** [Guidance](../../04-guidance/index.md) for professional workflows
+- **Part of:** [Permanent Notes](../index.md)
+- **Related to:** [Personal Development](../personal-development/index.md) - professional relationships
+- **Built from:** [Literature Notes](../../02-literature-notes/index.md) and experience
 
-## Next Steps
+## Key Areas
 
-- Add management frameworks and 1:1 templates
-- Document your interviewing strategy
-- Build technical depth guides
+- **Leadership & Management** - Leading teams, decision-making, organizational dynamics
+- **Technical Excellence** - Deep technical knowledge and continuous skill development
+- **Professional Relationships** - Networking, collaboration, communication
+- **Career Strategy** - Long-term growth, interviewing, compensation
+- **Financial Acumen** - Money management and strategic financial thinking
 
 ---
 

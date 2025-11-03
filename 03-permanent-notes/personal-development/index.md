@@ -16,10 +16,11 @@ Development of communication, relationships, emotional intelligence, and social 
 
 ## Note
 
-Productivity, wellbeing, learning, and parenting are organized as separate top-level categories:
+Productivity, wellbeing, parenting, and leisure are organized as separate top-level categories:
 - [Productivity](../productivity/index.md)
 - [Wellbeing](../wellbeing/index.md)
-- [Leisure](../leisure/index.md) - contains books and entertainment
+- [Parenting](../parenting/index.md)
+- [Leisure](../leisure/index.md)
 
 ## Related Areas
 

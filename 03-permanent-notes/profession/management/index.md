@@ -1,39 +1,32 @@
 # Management
 
-**Purpose:** Leadership knowledge covering team dynamics, delegation, 1:1s, feedback, and team psychology.
+**Purpose:** Leadership practices, team dynamics, delegation, and organizational effectiveness.
 
 ## Contents
 
-Topics to add:
-- [ ] 1:1 Skills
-- [ ] Delegation
-- [ ] Team Psychology
-- [ ] Feedback & Coaching
-- [ ] Psychological Safety
-
-## Quick Reference
-
-| Topic | Status | Last Updated |
-|-------|--------|--------------|
-| TBD | | |
+- [Management Action Checklist](./management-action-checklist.md) - Daily and weekly management habits and best practices
 
 ## How This Fits In
 
 - **Part of:** [Profession](../index.md)
-- **Used in:** [Projects](../../../05-projects/index.md) for team management
-- **Supports:** [Guidance](../../../04-guidance/index.md) for leadership workflows
+- **Supports:** Team leadership, organizational effectiveness, career advancement
+- **Related to:** [Workplace Dynamics](../workplace-dynamics/index.md) - interpersonal skills
 
-## Next Steps
+## Key Areas
 
-- Migrate management notes from Notion
-- Create 1:1 templates and frameworks
-- Document team dynamics principles
+- **Team Leadership** - Building high-performing teams and clear expectations
+- **Delegation & Accountability** - Effective delegation and responsibility ownership
+- **1:1 Meetings** - Regular check-ins and career development conversations
+- **Decision-Making** - Clear decisions and transparent communication
+- **Conflict Resolution** - Addressing issues directly and constructively
 
-## Related Areas
+## Quick Principles
 
-- [Professional Development](../../personal-development/index.md) - Your own growth
-- [Guidance Workflows](../../../04-guidance/workflows/index.md) - Management procedures
-- [Interview Technique](../interviewing/index.md) - Related professional skill
+1. **Clear expectations** - Make goals, responsibilities, and success metrics explicit
+2. **Regular feedback** - Don't wait for annual reviews; provide ongoing guidance
+3. **Delegation as development** - Stretch assignments help team members grow
+4. **One-on-ones are sacred** - Consistent 1:1s build trust and alignment
+5. **Action over theory** - Management is done through daily habits and behaviors
 
 ---
 

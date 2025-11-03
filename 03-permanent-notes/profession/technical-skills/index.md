@@ -1,37 +1,31 @@
 # Technical Skills
 
-**Purpose:** Programming languages, software engineering practices, and technical depth building.
+**Purpose:** Technology, programming, AI, and technical knowledge development.
 
 ## Contents
 
-### [Python Programming](./python/index.md)
-Core Python knowledge from fundamentals to advanced patterns.
-
-### Software Engineering
-System design, architecture, testing, and professional development practices.
-
-## Quick Links
-
-- [Python Fundamentals](./python/index.md)
-- Software Engineering Fundamentals
+- **AI & Machine Learning** - AI concepts, machine learning, language models, and AI engineering
+- **Software Engineering** - Programming practices, system design, and technical excellence
 
 ## How This Fits In
 
 - **Part of:** [Profession](../index.md)
-- **Supports:** [Projects](../../../05-projects/index.md) and technical work
-- **Informs:** [Guidance](../../../04-guidance/index.md) for coding workflows
+- **Supports:** Technical growth and career development
+- **Related to:** [Workplace Dynamics](../workplace-dynamics/index.md) - technical communication
+
+## Key Areas
+
+- **AI Engineering** - Working with language models and AI systems
+- **Software Engineering** - System design, architecture, best practices
+- **Programming Languages** - Core language knowledge and techniques
+- **Technical Excellence** - Deep technical knowledge and continuous learning
+- **Problem-Solving** - Algorithmic thinking and technical decision-making
 
 ## Next Steps
 
-- Build Python learning path from Notion
-- Add software engineering frameworks
-- Create technical decision guides
-
-## Related Areas
-
-- [AI Engineering](../../ai-engineering/index.md) - Advanced technical topics
-- [Professional Development](../../personal-development/index.md) - Continuous learning
-- [Interview Technique](../interviewing/index.md) - Technical interviews
+- Add AI and machine learning frameworks from Notion
+- Create technical depth guides
+- Document software engineering principles
 
 ---
 
