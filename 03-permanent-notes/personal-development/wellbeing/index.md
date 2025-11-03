@@ -4,19 +4,21 @@
 
 ## Contents
 
-Topics to add:
-- [ ] Sleep & Recovery
-- [ ] Fitness & Exercise
-- [ ] Nutrition & Health
-- [ ] Mindfulness & Meditation
-- [ ] Stress Management
-- [ ] Mental Health
+### Core Topics
+
+- [Sleep & Recovery](./sleep/index.md) - Sleep science and optimization
+- [Fitness & Exercise](./fitness/index.md) - Training, mobility, and movement
+- [Mindfulness & Meditation](./mindfulness/index.md) - Mental training and awareness
+- [Mental Health](./mental-health/index.md) - Stress management and emotional regulation
 
 ## Quick Reference
 
 | Topic | Status | Last Updated |
 |-------|--------|--------------|
-| TBD | | |
+| Sleep | Active | 2025-11-03 |
+| Fitness | Active | 2025-11-03 |
+| Mindfulness | Active | 2025-11-03 |
+| Mental Health | Active | 2025-11-03 |
 
 ## How This Fits In
 

@@ -19,12 +19,7 @@
 
 ## Organization
 
-Notes are organized by month for easy browsing:
-
-| Period | Status |
-|--------|--------|
-| [2025-11](./2025-11) | Current |
-| [2025-10](./2025-10) | Recent |
+All notes are kept in a single folder and organized by filename date for easy browsing.
 
 ## Next Steps
 

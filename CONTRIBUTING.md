@@ -81,7 +81,7 @@ Include sources when citing ideas from external materials.
 ### Fleeting Notes (`01-fleeting-notes/`)
 
 - **Purpose:** Rapid capture of unprocessed thoughts
-- **Structure:** Organize by month (e.g., `2025-11/`)
+- **Structure:** Single folder (no date subfolders)
 - **Naming:** `YYYY-MM-DD-topic.md`
 - **Quality:** Raw and unpolished—that's okay
 - **Review:** Monthly review for promotion to permanent notes

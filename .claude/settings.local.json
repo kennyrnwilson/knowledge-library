@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "mcp__notion__notion-search",
-      "mcp__notion__notion-fetch"
+      "mcp__notion__notion-fetch",
+      "Bash(dir:*)",
+      "Bash(ls -la \"C:\\Users\\kenne\\projects\\knowledge-library\\03-permanent-notes\\personal-development\\wellbeing\"\" 2>/dev/null || echo \"Directory exists but might be empty \")"
     ]
   },
   "enableAllProjectMcpServers": true,
