@@ -2,7 +2,44 @@
 
 Optional but helpful: Linear algebra, probability, statistics, and calculus basics.
 
-**Time estimate:** 2-4 months (optional)
+---
+
+## 📚 What You'll Learn
+
+- **Linear Algebra Basics**: Vectors and matrices, matrix operations, eigenvalues and eigenvectors
+- **Probability & Statistics Basics**: Probability fundamentals, descriptive statistics, inferential statistics, causal thinking
+- **Calculus Basics (Very Optional)**: Derivatives and gradients, optimization
+
+**Note:** Not required for Stage 1, but helps with understanding AI models, ML algorithms, evaluating metrics properly, and optimization concepts. You can skip this and come back later.
+
+---
+
+## 🔗 Learning Resources
+
+### Free Online
+- **3Blue1Brown** (YouTube) - excellent visual explanations
+  - Essence of Linear Algebra
+  - Essence of Calculus
+- **Khan Academy** - comprehensive coverage
+  - Linear Algebra
+  - Probability and Statistics
+  - Calculus
+- **StatQuest with Josh Starmer** - statistics focused
+
+### Books
+- "Essence of Algebra" (3Blue1Brown)
+- "Introduction to Linear Algebra" (Strang)
+- "Statistical Rethinking" (McElreath)
+
+### Interactive
+- **GeoGebra** - visualize math concepts
+- **Desmos** - graphing calculator
+- **NumPy/SciPy** - compute in Python
+
+### Related Areas
+- [1.5 Command Line & DevOps Basics](../command-line-devops/index.md)
+- [1.7 Stage 1 Projects](../projects/index.md)
+- [Stage 1 Overview](../index.md)
 
 ---
 
@@ -130,34 +167,9 @@ Only if you want to understand optimization deeply.
 
 ---
 
-## Recommended Resources
+## ✅ Learning Checklist
 
-### Free Online
-
-- **3Blue1Brown** (YouTube) - excellent visual explanations
-  - Essence of Linear Algebra
-  - Essence of Calculus
-- **Khan Academy** - comprehensive coverage
-  - Linear Algebra
-  - Probability and Statistics
-  - Calculus
-- **StatQuest with Josh Starmer** - statistics focused
-
-### Books
-
-- "Essence of Algebra" (3Blue1Brown)
-- "Introduction to Linear Algebra" (Strang)
-- "Statistical Rethinking" (McElreath)
-
-### Interactive
-
-- **GeoGebra** - visualize math concepts
-- **Desmos** - graphing calculator
-- **NumPy/SciPy** - compute in Python
-
----
-
-## When to Study This
+### When to Study This
 
 **Timeline:**
 - **Stage 1**: Optional, focus on programming first

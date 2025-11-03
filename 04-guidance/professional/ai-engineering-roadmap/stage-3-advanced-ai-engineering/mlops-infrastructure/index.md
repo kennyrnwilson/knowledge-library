@@ -1,12 +1,48 @@
 # 🏗️ MLOps & Production Infrastructure
 
-**Estimated Time:** 4-6 months
-**Difficulty:** Advanced
-**Prerequisites:** Production AI experience from Stage 2
-
-## Overview
-
 MLOps is the practice of operating, monitoring, and maintaining machine learning systems in production. It's the "ops" in machine learning.
+
+---
+
+## 📚 What You'll Learn
+
+- Containerization with Docker: images, containers, Dockerfiles, multi-stage builds, and best practices
+- Cloud platforms (AWS, Google Cloud, Azure): compute, storage, managed ML services, and deployment options
+- CI/CD for AI systems: automated testing, model versioning, experiment tracking, and deployment pipelines
+- Monitoring and observability: logging, metrics, tracing, model monitoring, and drift detection
+- Infrastructure as Code: Terraform, CloudFormation, and reproducible deployments
+- Model serving strategies: batch vs real-time inference, serving frameworks, and deployment patterns
+- Production workflows: blue-green deployments, canary releases, A/B testing, and rollback procedures
+
+---
+
+## 🔗 Learning Resources
+
+**Prerequisites:**
+- [[Stage 2: Working with AI Tools]] - Must have deployed AI applications
+- Basic DevOps knowledge (Git, command line, APIs)
+- Understanding of cloud computing concepts
+
+**Related Areas:**
+- [[Deep Learning Internals & Architecture]] - Understanding what you're deploying
+- [[Inference Optimization & Scaling]] - Making deployments efficient
+- [[Advanced Evaluation & Testing]] - Production testing strategies
+
+**Key Resources:**
+- "Designing Machine Learning Systems" by Chip Huyen
+- "Machine Learning Engineering" by Andriy Burkov (free online)
+- Google's MLOps documentation
+- Cloud provider documentation (AWS SageMaker, Google Vertex AI, Azure ML)
+- Made With ML (free, comprehensive MLOps course)
+
+**Tools:**
+- Docker and Docker Compose
+- GitHub Actions or GitLab CI/CD
+- MLflow or Weights & Biases
+- Prometheus + Grafana
+- Terraform or CloudFormation
+
+---
 
 ## Core Domains
 
@@ -330,7 +366,9 @@ Alert on Anomalies
 Rollback if Needed
 ```
 
-## Learning Checklist
+---
+
+## ✅ Learning Checklist
 
 - [ ] Create Dockerfile for ML application
 - [ ] Build and push Docker image
@@ -347,63 +385,22 @@ Rollback if Needed
 - [ ] Implement model rollback
 - [ ] Test infrastructure changes
 
-## Production Checklist
+### Production Readiness Checklist
 
-- ✅ Containerized application
-- ✅ Automated CI/CD pipeline
-- ✅ Model versioning system
-- ✅ Experiment tracking
-- ✅ Comprehensive logging
-- ✅ Metrics and monitoring
-- ✅ Drift detection
-- ✅ Alerting and on-call
-- ✅ Disaster recovery plan
-- ✅ Infrastructure-as-code
-- ✅ Rollback procedures
-- ✅ Security (API keys, secrets)
-- ✅ Load testing
-- ✅ Documentation
-
-## Tools & Technologies
-
-**Containerization**
-- Docker
-- Docker Compose
-
-**Cloud Platforms**
-- AWS (SageMaker, ECS, Lambda)
-- Google Cloud (Vertex AI, Cloud Run)
-- Azure (ML Studio, Endpoints)
-
-**CI/CD**
-- GitHub Actions
-- GitLab CI/CD
-- Jenkins
-
-**Monitoring**
-- Prometheus + Grafana
-- DataDog
-- New Relic
-- CloudWatch (AWS)
-
-**Experiment Tracking**
-- MLflow
-- Weights & Biases
-- Neptune
-
-**Infrastructure**
-- Terraform
-- Ansible
-- Helm (Kubernetes)
-
-## Common Challenges
-
-1. **Reproducibility**: Dependencies, randomness
-2. **Monitoring gaps**: What to track?
-3. **Rollback complexity**: Version management
-4. **Cost creep**: Resource overprovisioning
-5. **Team coordination**: Multiple environments
-6. **Debugging**: Production issues harder to debug
+- [ ] Containerized application
+- [ ] Automated CI/CD pipeline
+- [ ] Model versioning system
+- [ ] Experiment tracking
+- [ ] Comprehensive logging
+- [ ] Metrics and monitoring
+- [ ] Drift detection
+- [ ] Alerting and on-call
+- [ ] Disaster recovery plan
+- [ ] Infrastructure-as-code
+- [ ] Rollback procedures
+- [ ] Security (API keys, secrets)
+- [ ] Load testing
+- [ ] Documentation
 
 ## Next Steps
 
@@ -415,21 +412,7 @@ Rollback if Needed
 6. Add drift detection
 7. Practice blue-green deployments
 8. Write runbooks for common issues
-
-## Resources
-
-**Courses**
-- Made With ML (free, comprehensive)
-- DataCamp MLOps courses
-
-**Documentation**
-- Docker: docs.docker.com
-- Terraform: terraform.io
-- Cloud provider docs
-
-**Books**
-- "Building Machine Learning Pipelines"
-- "Machine Learning Systems Design"
+9. Move to [[Inference Optimization & Scaling]]
 
 ---
 

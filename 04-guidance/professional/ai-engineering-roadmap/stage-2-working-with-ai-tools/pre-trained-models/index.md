@@ -1,17 +1,53 @@
-# 🧠 2.4 Pre-trained Models
+# 🧠 Pre-trained Models
 
 Navigate the ecosystem of pre-trained AI models and learn when to use open-source vs commercial models for your applications.
+
+---
+
+## 📚 What You'll Learn
+
+- Commercial vs open-source model tradeoffs (performance, cost, privacy, customization)
+- Top commercial models: GPT-4, Claude, Gemini, and their specific use cases
+- Open-source model landscape: LLaMA, Mistral, Mixtral, Phi, Gemma, Code LLaMA
+- Understanding model sizes and their performance implications (1B to 405B+ parameters)
+- Mixture of Experts (MoE) architecture and its benefits
+- Navigating the HuggingFace ecosystem and reading model cards
+- Using HuggingFace pipelines and transformers library
+- Task-specific models for classification, NER, translation, embedding, and code
+- Model selection framework based on budget, privacy, performance, and latency requirements
+- Running models locally with Ollama, LM Studio, vLLM, and HuggingFace
+- Quantization fundamentals: FP32, FP16, INT8, INT4 for memory optimization
+- Using quantized models with BitsAndBytes
+- When to choose fine-tuning vs prompt engineering vs model selection
+
+## 🔗 Learning Resources
+
+### Official Documentation
+- **[HuggingFace Hub](https://huggingface.co/models)** - Central repository for pre-trained models
+- **[Transformers Library](https://huggingface.co/docs/transformers/)** - Using models programmatically
+- **[Ollama](https://ollama.ai)** - Easiest way to run models locally
+- **[vLLM](https://github.com/vLLM-project/vLLM)** - High-performance model serving
+
+### Model Leaderboards
+- **[LMSYS Chatbot Arena](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)** - Community-driven model rankings
+- **[Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)** - Benchmark scores
+
+### Related Topics
+- **[AI APIs Integration](../ai-apis/index.md)** - Using commercial models via APIs
+- **[RAG Systems](../rag/index.md)** - Combining models with retrieval
+- **[Evaluation Metrics](../evaluation-metrics/index.md)** - Comparing model performance objectively
+- **[Projects](../projects/index.md)** - Build Project 4: Model Comparison
+
+### Articles & Guides
+- **Open Source LLM Guide** - Comprehensive overview of available models
+- **Running LLMs on Consumer Hardware** - Practical quantization guide
+- **Small Language Models Explained** - When smaller is better
 
 ---
 
 ## Overview
 
 You don't need to train models from scratch. Pre-trained models are production-ready and can be adapted to your use case through prompting or fine-tuning.
-
-**Time estimate:** 2-3 weeks
-**Difficulty:** Intermediate
-
----
 
 ## Commercial vs Open-Source Models
 
@@ -69,8 +105,6 @@ You don't need to train models from scratch. Pre-trained models are production-r
 | Gemma (Google) | 2B - 7B | Efficient, lightweight | Custom (permissive) |
 | Code LLaMA | 7B - 34B | Code generation and understanding | Custom (permissive) |
 
----
-
 ## Understanding Model Sizes & Performance
 
 **Model Size Categories:**
@@ -84,8 +118,6 @@ You don't need to train models from scratch. Pre-trained models are production-r
 - Some models use sparse experts (activate only relevant parameters)
 - Example: Mixtral 8x7B = 47B total, but only ~13B activated per request
 - Benefits: High quality with reasonable inference costs
-
----
 
 ## The HuggingFace Ecosystem
 
@@ -135,8 +167,6 @@ outputs = model.generate(**inputs, max_length=100)
 print(tokenizer.decode(outputs[0]))
 ```
 
----
-
 ## Task-Specific Models
 
 For specific tasks, specialized models often outperform general LLMs.
@@ -168,8 +198,6 @@ For specific tasks, specialized models often outperform general LLMs.
 - CodeGen
 - Specialized for programming
 
----
-
 ## Model Selection Framework
 
 **Decision Tree for Choosing Models:**
@@ -193,8 +221,6 @@ For specific tasks, specialized models often outperform general LLMs.
 5. **Do you need offline?**
    - Yes → Must use local model
    - No → Can use API
-
----
 
 ## Running Models Locally
 
@@ -243,8 +269,6 @@ inputs = tokenizer("Hello", return_tensors="pt")
 outputs = model.generate(**inputs)
 ```
 
----
-
 ## Quantization & Optimization
 
 Quantization reduces model size and speeds up inference.
@@ -280,9 +304,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 ```
 
----
-
-## Learning Checklist
+## ✅ Learning Checklist
 
 - [ ] Understand commercial vs open-source tradeoffs
 - [ ] Know top 3-4 models in each category
@@ -293,9 +315,7 @@ model = AutoModelForCausalLM.from_pretrained(
 - [ ] Choose right model for your use case
 - [ ] Compare cost/performance/latency tradeoffs
 
----
-
-## Project: Model Comparison Dashboard
+### Project: Model Comparison Dashboard
 
 Build a dashboard that:
 1. Runs same prompt through 3+ commercial + 2+ local models
@@ -308,22 +328,13 @@ This demonstrates deep understanding of model selection.
 
 ---
 
-## Resources
+## Next Steps
 
-**Official Documentation:**
-- [HuggingFace Hub](https://huggingface.co/models)
-- [Transformers Library](https://huggingface.co/docs/transformers/)
-- [Ollama](https://ollama.ai)
-- [vLLM](https://github.com/vLLM-project/vLLM)
-
-**Model Leaderboards:**
-- [LMSYS Chatbot Arena](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)
-- [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)
-
-**Articles:**
-- Open Source LLM Guide
-- Running LLMs on Consumer Hardware
-- Small Language Models Explained
+1. Explore HuggingFace Model Hub
+2. Run Ollama locally with Mistral
+3. Compare outputs from different models
+4. Build model comparison project
+5. Move to [Evaluation Metrics](../evaluation-metrics/index.md)
 
 ---
 

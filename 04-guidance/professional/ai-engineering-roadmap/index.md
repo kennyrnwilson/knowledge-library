@@ -4,31 +4,9 @@
 
 ## 🎯 Overview
 
-### What This Roadmap Covers
-
 This is a comprehensive, realistic roadmap for becoming an AI Engineer—a specialized software engineer who builds and deploys applications using foundation models (like GPT-4, Claude) through prompt engineering, RAG, and API integration. Unlike many resources that promise quick results, this roadmap is honest: reaching professional competence takes years of dedicated part-time work, not months.
 
 **The Key Insight**: An AI Engineer is NOT a data scientist who trains models from scratch. You're a specialized software engineer who builds and deploys applications using pre-trained foundation models through prompt engineering, RAG, fine-tuning, and MLOps practices.
-
-**Why This Roadmap Exists:**
-- To provide a realistic, actionable path from beginner to professional AI Engineer
-- To emphasize building real projects over consuming tutorials
-- To set honest expectations about time commitment (2-6 years part-time)
-- To focus on the skills that actually matter for AI Engineering jobs
-- To help you build a portfolio that demonstrates real competence
-
-**What You'll Be Able to Build:**
-By completing this roadmap, you'll build production-ready AI applications:
-- RAG systems that answer questions from your own documents
-- AI agents that can use tools and reason through complex tasks
-- Full-stack AI applications deployed to production
-- Custom fine-tuned models for specific use cases
-- Scalable AI infrastructure with monitoring and evaluation
-
-### Who This Is For
-- **Prerequisites**: Minimal coding experience (we start with Python basics)
-- **Difficulty**: Beginner to Advanced (3 progressive stages)
-- **Estimated Time**: 2-6 years for part-time study to reach senior level
 
 ## The Three Stages
 
@@ -38,35 +16,6 @@ By completing this roadmap, you'll build production-ready AI applications:
 | [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/index.md) | 12-18 months | Build AI applications, RAG systems | **Yes** | AI APIs, prompt engineering, RAG |
 | [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/index.md) | 2-4 years | Production infrastructure, MLOps | **Senior** | Deep learning, infrastructure, optimization |
 
-## Quick Navigation
-
-### 🎯 For Beginners
-Start with **[Stage 1: Foundational Skills](./stage-1-foundational-skills/index.md)** if you:
-- Are new to programming
-- Want to build a strong foundation
-- Haven't used Python or Git before
-- Prefer structured learning
-
-**Estimated time:** 6-12 months
-
-### 🚀 For Intermediate Developers
-Start with **[Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/index.md)** if you:
-- Already know Python and software engineering basics
-- Want to build AI applications immediately
-- Are interested in RAG, APIs, and prompt engineering
-- Want to be job-ready in 12-18 months
-
-**Estimated time:** 12-18 months
-
-### 🔬 For Advanced Engineers
-**[Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/index.md)** covers:
-- Deep learning internals and architecture
-- Production MLOps and infrastructure
-- Inference optimization and scaling
-- Security, safety, and compliance
-- Advanced systems and multi-agent systems
-
-**Estimated time:** 2-4 years to mastery
 
 ## 📊 Progress Tracker
 
@@ -84,42 +33,47 @@ Start with **[Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/in
 
 *Note: Detailed progress tracking is in each stage's hub page.*
 
-## ⏱️ Time & Prerequisites
+## 📚 What You'll Learn
 
-### Prerequisites
+- **What AI Engineering actually is** (building with pre-trained models, not training from scratch)
+- **A realistic, progressive path** from beginner to senior AI Engineer
+- **Foundation skills** covering Python, Git, databases, and APIs
+- **AI application development** including prompt engineering, RAG systems, and API integration
+- **Production systems** with MLOps, infrastructure, and optimization
+- **How to build a portfolio** that demonstrates real competence to employers
+- **Realistic timelines** and honest expectations (2-6 years part-time)
+
+### What You'll Be Able to Build
+- RAG systems that answer questions from your own documents
+- AI agents that can use tools and reason through complex tasks
+- Full-stack AI applications deployed to production
+- Custom fine-tuned models for specific use cases
+- Scalable AI infrastructure with monitoring and evaluation
+
+## 🔗 Learning Resources
+
+### Official Stages & Paths
+- [Stage 1: Foundational Skills](./stage-1-foundational-skills/index.md) - Python, APIs, databases, Git
+- [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/index.md) - RAG, prompt engineering, AI APIs
+- [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/index.md) - Deep learning, MLOps, infrastructure
+
+### Learning Support
+- [Teach to Learn](../teach-to-learn.md) - Effective learning techniques
+- [Professional - Permanent Notes](../../../03-permanent-notes/profession/index.md) - General professional development
+
+### Prerequisites & Expectations
 
 **Before starting this roadmap, you should:**
-- [ ] Have access to a computer (Mac, Windows, or Linux)
-- [ ] Be willing to commit 1-2 hours/day consistently
-- [ ] Have budget for API costs ($20-50/month for Stage 2+)
-- [ ] Be comfortable learning independently
+- Have access to a computer (Mac, Windows, or Linux)
+- Be willing to commit consistent time (see timelines below)
+- Be comfortable learning independently
+- Have budget for API costs ($20-50/month for Stage 2+)
 
 **You DON'T need:**
 - Advanced math background (we teach what you need)
 - Expensive hardware or GPUs (we use cloud APIs)
 - Computer science degree
 - Prior programming experience (we start from basics)
-
-### Time Estimates
-
-**To become job-ready (complete Stages 1 & 2):**
-- **Minimum** (if you're fast and focused): 12-18 months
-- **Typical** (part-time, 1-2 hours/day): 18-30 months
-- **With full dedication** (4+ hours/day): 6-12 months
-
-**To reach senior level (complete all 3 stages):**
-- **Part-time commitment**: 2-6 years
-- **Full-time bootcamp intensity**: 1-2 years
-
-**Daily commitment**:
-- Minimum: 30 minutes/day (slow but steady progress)
-- Recommended: 1-2 hours/day (balanced pace)
-- Intensive: 3-4 hours/day (career transition mode)
-
-**Monthly costs**:
-- Stage 1: $0-20 (mostly free)
-- Stage 2: $20-50 (API experimentation)
-- Stage 3: $50-200 (cloud compute, GPU time)
 
 ## Recommended Learning Sequence
 
@@ -145,22 +99,44 @@ Start with **[Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/in
    - Only after meeting completion criteria
    - Review and consolidate learning
 
-## Realistic Timeline Check
+## ✅ Learning Checklist
 
-### Part-Time (10-15 hours/week)
-- **Stage 1:** 6-12 months
-- **Stage 2:** 12-18 months
-- **Job-Ready:** 18-30 months total
+### Entry Point Assessment
+- [ ] Assess your current programming level (beginner, intermediate, advanced)
+- [ ] Determine which stage is right for you
+- [ ] Set realistic weekly time commitment
+- [ ] Calculate your personal timeline based on commitment level
 
-### Full-Time (40+ hours/week)
-- **Stage 1:** 2-3 months
-- **Stage 2:** 3-4 months
-- **Job-Ready:** 6-8 months total
+### Stage 1: Foundational Skills
+- [ ] Complete Python fundamentals (basics, control flow, functions)
+- [ ] Set up development environment (Git, IDE, virtual environments)
+- [ ] Learn software engineering practices (testing, code quality)
+- [ ] Master databases and SQL
+- [ ] Build REST APIs
+- [ ] Complete math foundations (linear algebra basics, statistics)
+- [ ] Complete 5 portfolio projects from Stage 1
 
-### Very Part-Time (5-10 hours/week)
-- **Stage 1:** 12-24 months
-- **Stage 2:** 18-24 months
-- **Job-Ready:** 30-48 months total
+### Stage 2: Working with AI Tools
+- [ ] Integrate with AI APIs (OpenAI, Anthropic, others)
+- [ ] Master prompt engineering techniques
+- [ ] Build and deploy RAG systems
+- [ ] Understand model selection and fine-tuning
+- [ ] Learn evaluation metrics and testing strategies
+- [ ] Complete 3+ AI applications with real users/feedback
+- [ ] Deploy to production
+
+### Stage 3: Advanced AI Engineering
+- [ ] Understand transformer architecture and deep learning internals
+- [ ] Build production MLOps pipelines
+- [ ] Optimize for cost and latency
+- [ ] Design complete AI systems
+- [ ] Contribute to open-source projects
+- [ ] Lead technical discussions and mentor others
+
+### Timeline Milestones
+- [ ] Stage 1 complete (foundational skills job-ready criteria met)
+- [ ] Stage 2 complete (AI application job-ready criteria met)
+- [ ] Stage 3 complete (senior engineer criteria met)
 
 ## Common Questions
 

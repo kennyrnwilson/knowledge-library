@@ -4,6 +4,24 @@ Learn HTTP, REST APIs, and building web applications.
 
 ---
 
+## 📚 What You'll Learn
+
+- **HTTP and REST Basics**: HTTP fundamentals, REST API principles, JSON format
+- **Making HTTP Requests in Python**: Basic requests, error handling, authentication, advanced requests
+- **FastAPI Fundamentals**: FastAPI basics, request handling, response handling, Pydantic models
+- **Advanced API Concepts**: Error handling, authentication & authorization, CORS, middleware, database integration
+
+---
+
+## 🔗 Learning Resources
+
+### Related Areas
+- [1.3 Data & Databases](../data-databases/index.md)
+- [1.5 Command Line & DevOps Basics](../command-line-devops/index.md)
+- [Stage 1 Overview](../index.md)
+
+---
+
 ## HTTP and REST Basics
 
 Understanding the web is essential for AI engineers.
@@ -188,7 +206,7 @@ Building production APIs requires more knowledge.
 
 ---
 
-## Completion Checklist
+## ✅ Learning Checklist
 
 - [ ] Understand HTTP and REST
 - [ ] Make API requests with requests library

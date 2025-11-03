@@ -4,13 +4,56 @@ Transition from learning Python to becoming an AI Builder. Master AI APIs, promp
 
 ---
 
+## 📚 What You'll Learn
+
+- Integrating commercial AI APIs (OpenAI, Anthropic, Cohere) and managing costs effectively
+- Function calling and streaming responses for production applications
+- Zero-shot, few-shot, and chain-of-thought prompting techniques
+- Advanced prompt patterns including ReAct and meta-prompting
+- Building RAG (Retrieval-Augmented Generation) systems from scratch
+- Embeddings, vector databases, and semantic search implementation
+- Document processing, chunking strategies, and citation systems
+- Pre-trained model selection and the HuggingFace ecosystem
+- When to use prompt engineering vs fine-tuning approaches
+- LLM-specific evaluation metrics and LLM-as-Judge techniques
+- Building comprehensive evaluation datasets and A/B testing frameworks
+- Cost and performance tracking for production AI systems
+- Creating portfolio projects: chatbots, RAG apps, AI agents, and full-stack applications
+
+## 🔗 Learning Resources
+
+### Child Pages
+**[2.1 AI APIs Integration](./ai-apis/index.md)** - Learn to integrate OpenAI, Anthropic, and other AI APIs; master function calling, streaming, cost optimization, and error handling.
+
+**[2.2 Prompt Engineering](./prompt-engineering/index.md)** - Master the art of prompt engineering with zero-shot, few-shot, chain-of-thought, and advanced patterns like ReAct and meta-prompting.
+
+**[2.3 RAG (Retrieval-Augmented Generation)](./rag/index.md)** - Build RAG systems from scratch: embeddings, vector databases, chunking strategies, and advanced techniques for production applications.
+
+**[2.4 Pre-trained Models](./pre-trained-models/index.md)** - Navigate the HuggingFace ecosystem, select appropriate models, and learn when fine-tuning is necessary vs prompt engineering.
+
+**[2.5 Evaluation Metrics](./evaluation-metrics/index.md)** - Build robust evaluation systems with LLM-as-judge, custom metrics, A/B testing, and systematic improvement frameworks.
+
+**[2.6 Projects to Build](./projects/index.md)** - Five comprehensive portfolio projects: chatbot, RAG app, AI agent, fine-tuned model, and full-stack AI application.
+
+### Recommended Learning Path
+1. **Start with 2.1 AI APIs Integration** - Foundation for everything else, learn how to call models
+2. **Then 2.2 Prompt Engineering** - Your primary tool for adapting models, master this early
+3. **Next 2.3 RAG** - The most important skill for production AI, connects models to your data
+4. **Continue with 2.4 Pre-trained Models** - Understand when to use which models and when fine-tuning makes sense
+5. **Add 2.5 Evaluation Metrics** - Critical for systematic improvement, build this early not as afterthought
+6. **Finish with 2.6 Projects** - Portfolio projects that demonstrate your skills to employers
+
+### Related Areas
+- Stage 1: Foundational Skills (prerequisites)
+- Stage 3: Advanced AI Engineering (next steps)
+
 ## 🎯 Overview
 
 ### What This Stage Covers
 
 Stage 2 is where you transition from learning Python to becoming an **AI Builder**. This stage focuses on building practical AI applications using existing models and APIs—the core skill that defines modern AI Engineering. You'll learn to integrate foundation models, master prompt engineering, build RAG (Retrieval-Augmented Generation) systems, and create a portfolio of real projects.
 
-This is the most important stage for breaking into AI Engineering. While Stage 1 taught you to code, Stage 2 teaches you to build AI applications that solve real problems. Most job-ready AI engineers spend 12-18 months mastering these skills.
+This is the most important stage for breaking into AI Engineering. While Stage 1 taught you to code, Stage 2 teaches you to build AI applications that solve real problems. Most job-ready AI engineers spend significant time mastering these skills.
 
 **Why This Matters for AI Engineering:**
 - 90% of production AI work involves integrating existing models, not training from scratch
@@ -28,7 +71,6 @@ This is the most important stage for breaking into AI Engineering. While Stage 1
 ### Who This Is For
 - **Prerequisites**: Completed Stage 1 (solid Python skills, git, APIs, basic ML concepts)
 - **Difficulty**: Intermediate
-- **Estimated Time**: 12-18 months for part-time study
 
 ---
 
@@ -110,17 +152,6 @@ If you have specific project goals, you can adapt the order:
 
 **If you're missing prerequisites**: Go back to Stage 1: Foundational Skills
 
-### Time Estimates
-
-- **Minimum** (if you're quick and focused): 6-9 months
-- **Typical** (part-time, 1-2 hours/day): 12-18 months
-- **With full dedication** (4+ hours/day): 4-6 months
-
-**Daily commitment**:
-- Minimum: 1 hour/day (mostly on weekends)
-- Recommended: 1-2 hours/day consistently
-- Intensive: 3-4 hours/day if career-switching
-
 **Budget Considerations**:
 - API costs: $20-50/month for experimentation
 - Courses: $0-100 (most resources are free)
@@ -128,7 +159,7 @@ If you have specific project goals, you can adapt the order:
 
 ---
 
-## ✅ Completion Criteria
+## ✅ Learning Checklist
 
 ### You're ready to move to Stage 3 when you can:
 
@@ -166,28 +197,6 @@ If you have specific project goals, you can adapt the order:
 If you're not confident in these areas, spend more time on projects. The difference between knowing concepts and building production applications is significant. Focus on shipping projects, not collecting certificates.
 
 ---
-
-## 🔗 Child Pages
-
-### All Pages in This Section
-
-**[2.1 AI APIs Integration](./ai-apis/index.md)**
-Learn to integrate OpenAI, Anthropic, and other AI APIs; master function calling, streaming, cost optimization, and error handling.
-
-**[2.2 Prompt Engineering](./prompt-engineering/index.md)**
-Master the art of prompt engineering with zero-shot, few-shot, chain-of-thought, and advanced patterns like ReAct and meta-prompting.
-
-**[2.3 RAG (Retrieval-Augmented Generation)](./rag/index.md)**
-Build RAG systems from scratch: embeddings, vector databases, chunking strategies, and advanced techniques for production applications.
-
-**[2.4 Pre-trained Models](./pre-trained-models/index.md)**
-Navigate the HuggingFace ecosystem, select appropriate models, and learn when fine-tuning is necessary vs prompt engineering.
-
-**[2.5 Evaluation Metrics](./evaluation-metrics/index.md)**
-Build robust evaluation systems with LLM-as-judge, custom metrics, A/B testing, and systematic improvement frameworks.
-
-**[2.6 Projects to Build](./projects/index.md)**
-Five comprehensive portfolio projects: chatbot, RAG app, AI agent, fine-tuned model, and full-stack AI application.
 
 ---
 

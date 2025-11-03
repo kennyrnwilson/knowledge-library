@@ -4,6 +4,38 @@ Build a portfolio of substantial AI projects that demonstrate your ability to cr
 
 ---
 
+## 📚 What You'll Learn
+
+- Building production-ready multi-modal chatbots with streaming and cost tracking
+- Implementing complete RAG systems with document processing and evaluation
+- Creating AI agents with tool use and multi-step reasoning capabilities
+- Fine-tuning models and comparing approaches (zero-shot, few-shot, fine-tuned)
+- Developing full-stack AI applications with authentication and deployment
+- Portfolio presentation best practices for GitHub and live deployments
+- Documentation standards for technical project communication
+- Production concerns including error handling, monitoring, and scalability
+
+---
+
+## 🔗 Learning Resources
+
+**Related Areas:**
+- [[Prompt Engineering]] - Essential for all projects
+- [[RAG Applications]] - Foundation for Project 2
+- [[AI Agents]] - Core of Project 3
+- [[Evaluation Metrics]] - Required for all projects
+- [[Production Deployment]] - Deployment skills needed
+
+**Essential Skills:**
+- Full-stack development (frontend + backend)
+- API integration with multiple AI providers
+- Database design and management
+- User authentication and authorization
+- Cost optimization and monitoring
+- Comprehensive documentation practices
+
+---
+
 ## Why Projects Matter
 
 Companies hire based on what you've built, not courses completed.
@@ -27,14 +59,11 @@ Companies hire based on what you've built, not courses completed.
 
 ## The 5 Essential Stage 2 Projects
 
-**Total Time:** 8-12 weeks across all projects
-
 ---
 
 ## Project 1: Advanced Multi-Modal Chatbot
 
 **Objective:** Production-ready chatbot beyond simple API wrappers
-**Duration:** 2-3 weeks
 
 ### Core Features
 
@@ -89,7 +118,6 @@ AI: OpenAI SDK + Anthropic SDK
 ## Project 2: Chat With Your Documents (RAG)
 
 **Objective:** Complete RAG application demonstrating deep understanding
-**Duration:** 2-3 weeks
 
 ### Core Features
 
@@ -165,7 +193,6 @@ Evaluation: RAGAS framework
 ## Project 3: AI Agent With Tool Use
 
 **Objective:** Autonomous agent using multiple tools for complex tasks
-**Duration:** 1-2 weeks
 
 ### Core Features
 
@@ -258,7 +285,6 @@ def run_agent(query):
 ## Project 4: Model Fine-Tuning Comparison
 
 **Objective:** Demonstrate when/how to fine-tune vs prompt engineering
-**Duration:** 2 weeks
 
 ### Project Scope
 
@@ -349,7 +375,6 @@ Create comparison table:
 ## Project 5: Full-Stack AI Application
 
 **Objective:** Complete production-ready application combining all skills
-**Duration:** 3-4 weeks
 
 ### Project Ideas
 
@@ -469,7 +494,9 @@ project/
 
 ---
 
-## Completion Criteria
+## ✅ Learning Checklist
+
+### Project Completion
 
 You've completed Stage 2 projects when you have:
 

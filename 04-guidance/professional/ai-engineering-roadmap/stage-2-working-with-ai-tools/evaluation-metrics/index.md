@@ -4,6 +4,36 @@ Learn to measure, evaluate, and systematically improve the quality of your AI ap
 
 ---
 
+## 📚 What You'll Learn
+
+- Classification and information retrieval metrics for traditional ML tasks
+- LLM-specific evaluation metrics (faithfulness, relevance, completeness, coherence)
+- LLM-as-Judge automated evaluation techniques and best practices
+- RAG-specific metrics for retrieval quality and answer faithfulness
+- Building and maintaining evaluation datasets for systematic testing
+- A/B testing methodology for comparing AI system variants
+- Cost and performance tracking for production optimization
+- Continuous improvement workflows for iterative system enhancement
+
+---
+
+## 🔗 Learning Resources
+
+**Related Areas:**
+- [[Prompt Engineering]] - Better prompts require proper evaluation
+- [[RAG Applications]] - RAG systems need specialized metrics
+- [[AI Agents]] - Agent evaluation requires multi-step assessment
+- [[Production Deployment]] - Metrics critical for production monitoring
+
+**Key Concepts:**
+- Traditional ML metrics (precision, recall, F1, NDCG)
+- LLM quality dimensions (faithfulness, relevance, completeness)
+- Automated evaluation with LLM-as-Judge
+- Test set creation and maintenance
+- Statistical significance in A/B testing
+
+---
+
 ## Why Evaluation is Critical
 
 **Key Principle:** "What gets measured gets improved."
@@ -427,7 +457,7 @@ class LatencyTracker:
 
 ---
 
-## Learning Checklist
+## ✅ Learning Checklist
 
 - [ ] Understand different metric types
 - [ ] Implement classification metrics

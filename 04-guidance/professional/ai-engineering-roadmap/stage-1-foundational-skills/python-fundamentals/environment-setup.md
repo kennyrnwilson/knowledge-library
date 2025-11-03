@@ -2,99 +2,77 @@
 
 Get Python installed and configured properly on your system.
 
-## Installation by Operating System
+## 📚 What You'll Learn
 
-### Windows
-- Download Python from python.org
-- **Important**: Check "Add Python to PATH" during installation
-- Verify: `python --version` in Command Prompt
-- Install pip: Usually included, verify with `pip --version`
+- Installing Python on Windows (with PATH configuration)
+- Installing Python using Windows Subsystem for Linux (WSL)
+- Installing Python on Mac using Homebrew
+- Installing Python on Linux (Ubuntu/Debian)
+- Verifying Python and pip installations
+- Creating and activating virtual environments using venv
+- Understanding why virtual environments are important
+- Using Poetry for dependency management (recommended)
+- Using Pipenv as an alternative to Poetry
+- Installing and configuring VS Code for Python development
+- Essential VS Code extensions for Python
+- Selecting Python interpreter in VS Code
+- Setting up pytest for testing
+- Verifying your Python environment setup
 
-### Windows with WSL (Recommended for Windows)
-- Install Windows Subsystem for Linux
-- Ubuntu 22.04 LTS recommended
-- `sudo apt update && sudo apt install python3 python3-pip`
-- More Unix-like environment for development
+## 🔗 Learning Resources
 
-### Mac
-- Install Homebrew first: `/bin/bash -c "$(curl...)"`
-- `brew install python@3.11`
-- Verify: `python3 --version`
+*Add relevant tutorials, documentation links, and other learning materials here.*
 
-### Linux (Ubuntu/Debian)
-- `sudo apt update`
-- `sudo apt install python3 python3-pip python3-venv`
-- Verify: `python3 --version`
-
-## Virtual Environments
-
-**Why**: Isolate project dependencies, avoid conflicts
-
-**Creating a Virtual Environment**:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Mac/Linux
-venv\Scripts\activate     # On Windows
-```
-
-**Verify activation**: Prompt should show (venv)
-
-**Deactivate**: `deactivate` command
-
-## Modern Python Tooling
-
-### Poetry (Recommended)
-- Install: `pip install poetry`
-- Initialize project: `poetry init`
-- Creates `pyproject.toml` and `poetry.lock`
-- Install deps: `poetry install`
-- Run commands: `poetry run python script.py`
-
-### Pipenv (Alternative)
-- Install: `pip install pipenv`
-- Initialize: `pipenv --python 3.11`
-- Install packages: `pipenv install requests`
-- Run: `pipenv run python script.py`
-
-## IDE Setup: VS Code
+## ✅ Learning Checklist
 
 ### Installation
-- Download VS Code from code.visualstudio.com
-- Install Python extension (Microsoft)
+- [ ] Install Python on your operating system
+- [ ] Verify Python installation with `python --version` or `python3 --version`
+- [ ] Verify pip installation with `pip --version`
+- [ ] (Windows users) Ensure Python is added to PATH
+- [ ] (Windows users) Consider installing WSL for Unix-like environment
 
-### Configuration
-- Select Python interpreter (Cmd+Shift+P → "Python: Select Interpreter")
-- Choose your virtual environment
-- Install pylint or flake8 for linting
+### Virtual Environments
+- [ ] Create a virtual environment using `python -m venv venv`
+- [ ] Activate the virtual environment
+- [ ] Verify activation (check for venv in prompt)
+- [ ] Practice deactivating the environment
+- [ ] Understand when and why to use virtual environments
 
-### Extensions to Install
-- Python (Microsoft)
-- Pylance (code intelligence)
-- Black Formatter (code formatting)
-- Pytest (testing)
+### Dependency Management
+- [ ] Choose between Poetry or Pipenv
+- [ ] Install Poetry: `pip install poetry`
+- [ ] Initialize a Poetry project: `poetry init`
+- [ ] Install dependencies with Poetry
+- [ ] Run Python scripts with Poetry: `poetry run python script.py`
+- [ ] (Alternative) Install and use Pipenv
 
-## Testing Setup
+### IDE Setup
+- [ ] Download and install VS Code
+- [ ] Install Python extension (Microsoft)
+- [ ] Install Pylance extension
+- [ ] Install Black Formatter extension
+- [ ] Install Pytest extension
+- [ ] Select Python interpreter (Cmd+Shift+P → "Python: Select Interpreter")
+- [ ] Configure linting (pylint or flake8)
 
-- Install pytest: `pip install pytest`
-- Create `tests/` directory
-- Run tests: `pytest`
+### Testing Setup
+- [ ] Install pytest: `pip install pytest`
+- [ ] Create a `tests/` directory
+- [ ] Run pytest to verify installation
 
-## Verification
-
-Create a test script `hello.py`:
+### Verification
+- [ ] Create a test script `hello.py`:
 ```python
 print("Hello, Python!")
 print(f"Python version: {__import__('sys').version}")
 ```
+- [ ] Run the test script: `python hello.py`
+- [ ] Verify output displays correctly
 
-Run: `python hello.py`
-
-## Next Steps
-
-- Choose Poetry or Pipenv
-- Set up VS Code
-- Create your first project
-- Move to [Core Python Concepts](./core-concepts/index.md)
+### Next Steps
+- [ ] Create your first Python project
+- [ ] Move to [Core Python Concepts](./core-concepts/index.md)
 
 ---
 

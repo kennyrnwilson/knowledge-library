@@ -1,12 +1,45 @@
 # 🧠 Deep Learning Internals & Architecture
 
-**Estimated Time:** 3-6 months
-**Difficulty:** Advanced
-**Prerequisites:** Complete Stage 2
-
-## Overview
-
 Understand how modern LLMs actually work under the hood. This knowledge enables optimization, debugging, and innovation.
+
+---
+
+## 📚 What You'll Learn
+
+- Transformer architecture components: attention mechanism, multi-head attention, positional encodings
+- Training dynamics: backpropagation, optimization algorithms, learning rate schedules, gradient clipping
+- Advanced architectures: Mixture of Experts (MoE), vision transformers, long-context models, state space models
+- Model training techniques: supervised fine-tuning (SFT), RLHF, DPO, Constitutional AI
+- Distributed training strategies: data and model parallelism, ZeRO optimization, mixed precision training
+- Scaling laws and emergent abilities of large models
+- Architecture variants: encoder-only (BERT), decoder-only (GPT), encoder-decoder (T5)
+
+---
+
+## 🔗 Learning Resources
+
+**Prerequisites:**
+- [[Stage 2: Working with AI Tools]] - Must understand basic AI concepts
+- Strong mathematical foundation (linear algebra, calculus)
+- Programming experience with PyTorch or TensorFlow
+
+**Related Areas:**
+- [[MLOps & Production Infrastructure]] - Applying this knowledge in production
+- [[Inference Optimization & Scaling]] - Optimizing trained models
+- [[Advanced Evaluation & Testing]] - Testing model behavior
+
+**Key Papers:**
+- "Attention is All You Need" (Vaswani et al., 2017) - Original transformer paper
+- "BERT: Pre-training of Deep Bidirectional Transformers" - Encoder architecture
+- "Language Models are Unsupervised Multitask Learners" (GPT-2) - Decoder architecture
+- "Efficient Transformers" survey - Modern optimizations
+
+**Courses:**
+- Stanford CS224N (NLP Deep Learning)
+- Fast.ai (Practical deep learning)
+- Andrej Karpathy's "Neural Networks: Zero to Hero"
+
+---
 
 ## Core Topics
 
@@ -184,26 +217,9 @@ Understand how modern LLMs actually work under the hood. This knowledge enables 
 - BF16: Brain float (stable, faster)
 - Common: Mix FP32 and FP16 strategically
 
-## Learning Path
+---
 
-| Week | Topic | Focus |
-|------|-------|-------|
-| 1-2 | Attention mechanism | Mathematical foundations |
-| 2-3 | Transformer architecture | Components and flow |
-| 3-4 | Training dynamics | How models learn |
-| 4-5 | Optimization & convergence | SGD, Adam, schedules |
-| 5-6 | Advanced architectures | MoE, vision, long-context |
-| 6 | Training techniques | RLHF, DPO, CAI |
-
-## Key Papers (Optional Reading)
-
-- "Attention is All You Need" (Vaswani et al., 2017)
-- "BERT: Pre-training of Deep Bidirectional Transformers"
-- "Language Models are Unsupervised Multitask Learners" (GPT-2)
-- "Mixtures of Experts" literature
-- "Efficient Transformers" survey
-
-## Learning Checklist
+## ✅ Learning Checklist
 
 - [ ] Understand attention mechanism mathematics
 - [ ] Trace forward pass through transformer
@@ -255,21 +271,7 @@ Understand how modern LLMs actually work under the hood. This knowledge enables 
 3. Study existing transformer code
 4. Understand modern variants (MoE, long-context)
 5. Learn about RLHF
-6. Move to [MLOps & Infrastructure](../mlops-infrastructure/index.md)
-
-## Resources
-
-**Papers**
-- ArXiv for latest research
-- Papers With Code for implementation details
-
-**Courses**
-- Stanford CS224N (NLP Deep Learning)
-- Fast.ai (Practical deep learning)
-
-**Videos**
-- Andrej Karpathy's "Neural Networks: Zero to Hero"
-- Various transformers explanations
+6. Move to [[MLOps & Infrastructure]]
 
 ---
 

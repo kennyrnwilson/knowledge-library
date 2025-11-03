@@ -4,12 +4,22 @@ Master Git, testing, code quality, and professional development practices that s
 
 ---
 
-## Overview
+## 📚 What You'll Learn
 
-Software engineering practices are what transform you from "someone who can write code" to "someone who can work on real teams." This section covers Git, testing, code quality tools, and project organization.
+- **Testing Basics**: Unit testing with pytest, test coverage, mocking and test isolation
+- **Documentation**: Docstrings and code comments, README and project documentation, API documentation
+- **Git & Version Control**: Git basics, GitHub workflow, branching strategies, .gitignore
+- **Code Quality Tools**: Code style (PEP 8), code formatters (Black), linters (pylint/flake8), type checking (mypy)
+- **Project Structure**: Python project layout, configuration management
 
-**Time estimate:** 2-3 months
-**Difficulty:** Beginner to Intermediate
+---
+
+## 🔗 Learning Resources
+
+### Related Areas
+- [1.1 Python Fundamentals](../python-fundamentals/index.md)
+- [1.3 Data & Databases](../data-databases/index.md)
+- [Stage 1 Overview](../index.md)
 
 ---
 
@@ -276,7 +286,7 @@ project/
 
 ---
 
-## Completion Checklist
+## ✅ Learning Checklist
 
 You've mastered software engineering basics when you can:
 
@@ -286,14 +296,6 @@ You've mastered software engineering basics when you can:
 - [ ] Set up and configure linting/formatting tools
 - [ ] Organize projects professionally
 - [ ] Review code quality systematically
-
----
-
-## Related Areas
-
-- [1.1 Python Fundamentals](../python-fundamentals/index.md)
-- [1.3 Data & Databases](../data-databases/index.md)
-- [Stage 1 Overview](../index.md)
 
 ---
 

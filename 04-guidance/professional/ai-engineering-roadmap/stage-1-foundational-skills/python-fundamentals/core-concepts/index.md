@@ -2,8 +2,18 @@
 
 Master the building blocks of Python programming.
 
-## Topics
+## 📚 What You'll Learn
 
+- **Basic syntax & data types** - Variables, integers, floats, strings, booleans, type conversion
+- **Control flow** - If/else statements, for loops, while loops, list comprehensions
+- **Data structures** - Lists, dictionaries, tuples, sets, and operations on each
+- **Functions & modular code** - Parameters, return values, scope, default arguments, *args, **kwargs
+- **Object-oriented programming** - Classes, inheritance, methods, design patterns
+- **Error handling & debugging** - Try/except blocks, custom exceptions, debugging with pdb
+
+## 🔗 Learning Resources
+
+### Topic Guides
 - **[Basic Syntax & Data Types](./basic-syntax.md)** - Variables, types, operators
 - **[Control Flow](./control-flow.md)** - if/else, loops, comprehensions
 - **[Data Structures](./data-structures.md)** - Lists, dicts, tuples, sets
@@ -11,27 +21,66 @@ Master the building blocks of Python programming.
 - **[Object-Oriented Programming](./oop.md)** - Classes, inheritance, design
 - **[Error Handling & Debugging](./error-handling.md)** - Exceptions, debugging tools
 
-## Learning Time
+### Related Learning Paths
+- [Python Fundamentals Overview](../index.md)
+- [Professional Python Skills](../professional-skills.md)
+- [Stage 1: Foundational Skills](../../index.md)
 
-Approximately 5-7 weeks to master all topics.
+## ✅ Learning Checklist
 
-## Key Skills by Topic
+### Basic Syntax
+- [ ] Understand variables and assignment
+- [ ] Know all basic data types (int, float, str, bool)
+- [ ] Work with operators (arithmetic, comparison, logical)
+- [ ] Understand type conversion
+- [ ] Write string formatting (f-strings)
+- [ ] Use multiple assignment
+- [ ] Understand None type
 
-| Topic | Skills | Importance |
-|-------|--------|-----------|
-| Basic Syntax | Variables, types, operations | Critical |
-| Control Flow | Loops, conditionals, comprehensions | Critical |
-| Data Structures | Collections, methods, operations | Critical |
-| Functions | Parameters, returns, scope | Critical |
-| OOP | Classes, methods, inheritance | Important |
-| Error Handling | Exceptions, debugging | Important |
+### Control Flow
+- [ ] Write if/elif/else statements
+- [ ] Use for loops with ranges and sequences
+- [ ] Use while loops
+- [ ] Break and continue statements
+- [ ] Nested loops and conditions
+- [ ] List comprehensions
 
-## Next Steps
+### Data Structures
+- [ ] Create and manipulate lists
+- [ ] Use list methods (append, pop, etc.)
+- [ ] Create and manipulate dictionaries
+- [ ] Understand dictionary methods
+- [ ] Use tuples and when to use them
+- [ ] Work with sets
+- [ ] Nested data structures
 
-- Complete each topic in sequence
-- Do practice problems
-- Build small scripts applying each concept
-- Move to Professional Python Skills
+### Functions
+- [ ] Write functions with parameters
+- [ ] Understand return values
+- [ ] Variable scope (local vs global)
+- [ ] Default parameters
+- [ ] *args and **kwargs
+- [ ] Type hints / annotations
+- [ ] Docstrings
+
+### Object-Oriented Programming
+- [ ] Define classes
+- [ ] Create and initialize objects
+- [ ] Understand self keyword
+- [ ] Write class methods
+- [ ] Understand inheritance
+- [ ] Use super()
+- [ ] Class vs instance variables
+- [ ] Magic methods (__str__, __repr__, etc.)
+
+### Error Handling & Debugging
+- [ ] Try/except blocks
+- [ ] Handling specific exceptions
+- [ ] Else and finally blocks
+- [ ] Raising custom exceptions
+- [ ] Understanding exception hierarchy
+- [ ] Debugging with print statements
+- [ ] Using pdb debugger
 
 ---
 

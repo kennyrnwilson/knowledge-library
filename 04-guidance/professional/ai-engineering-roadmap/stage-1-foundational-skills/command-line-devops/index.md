@@ -4,6 +4,24 @@ Master the terminal and basic deployment concepts.
 
 ---
 
+## 📚 What You'll Learn
+
+- **Terminal Basics**: File navigation, file viewing and editing, piping and redirection, permissions and ownership
+- **Shell Scripting Basics**: Script basics, variables and control flow, useful commands for scripts
+- **Understanding Servers**: Client-server architecture, ports and networking, SSH and remote connections, environment variables
+- **Deployment Basics**: Deployment platforms, deploying a simple application, environment configuration, logs and debugging, basic monitoring
+
+---
+
+## 🔗 Learning Resources
+
+### Related Areas
+- [1.4 Web Development & APIs](../web-development-apis/index.md)
+- [1.6 Math Foundations](../math-foundations/index.md)
+- [Stage 1 Overview](../index.md)
+
+---
+
 ## Terminal Basics
 
 The command line is your direct interface with your computer.
@@ -191,7 +209,7 @@ Getting code to production is a core skill.
 
 ---
 
-## Completion Checklist
+## ✅ Learning Checklist
 
 - [ ] Navigate filesystem with terminal
 - [ ] Write shell scripts

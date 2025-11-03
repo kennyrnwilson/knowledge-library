@@ -2,26 +2,39 @@
 
 Five portfolio projects that build real skills and demonstrate competence.
 
-**Total time:** 8-12 weeks across all projects
+---
+
+## 📚 What You'll Learn
+
+Projects are where learning becomes real. Through these five projects you'll:
+- **Command-Line Tool**: Python basics, CLI design, file I/O, testing with pytest
+- **Data Analysis Project**: Pandas, data cleaning, visualization, analysis, statistical thinking
+- **Web API**: FastAPI, databases, testing, authentication, deployment
+- **Web Scraper**: HTTP requests, HTML parsing, data storage, error handling, ethical scraping
+- **Full Application**: Full-stack development, API integration, user authentication, frontend/backend integration
+
+**Quality over quantity:** Build fewer projects really well.
 
 ---
 
-## Why Projects?
+## 🔗 Learning Resources
 
-Projects are where learning becomes real. You'll:
+### Project Guidelines
 - Build something you can show employers
 - Solve real problems (not tutorials)
 - Make mistakes and learn from them
 - Create GitHub portfolio
 - Deploy to the internet
 
-**Quality over quantity:** Build fewer projects really well.
+### Related Areas
+- [1.6 Math Foundations](../math-foundations/index.md)
+- [Stage 1 Overview](../index.md)
+- [Stage 2 Overview](../../stage-2-llm-fundamentals/index.md)
 
 ---
 
 ## Project 1: Command-Line Tool
 
-**Duration:** 1-2 weeks
 **Skills:** Python basics, CLI design, file I/O
 
 ### Description
@@ -70,7 +83,6 @@ Build a useful command-line tool that you'd actually use or others could use.
 
 ## Project 2: Data Analysis Project
 
-**Duration:** 2-3 weeks
 **Skills:** Pandas, data cleaning, visualization, analysis
 
 ### Description
@@ -120,7 +132,6 @@ Analyze a real dataset and create insights with pandas and matplotlib.
 
 ## Project 3: Web API
 
-**Duration:** 2-3 weeks
 **Skills:** FastAPI, databases, testing, deployment
 
 ### Description
@@ -172,7 +183,6 @@ Build a RESTful API with database backend and deploy to internet.
 
 ## Project 4: Web Scraper
 
-**Duration:** 1-2 weeks
 **Skills:** HTTP requests, HTML parsing, data storage
 
 ### Description
@@ -223,7 +233,6 @@ Build a web scraper that collects and stores data from websites.
 
 ## Project 5: Full Application
 
-**Duration:** 3-4 weeks
 **Skills:** Full stack - backend, database, frontend, deployment
 
 ### Description
@@ -318,7 +327,7 @@ Integrate everything: build full-stack application with API backend and web fron
 
 ---
 
-## Completion Criteria
+## ✅ Learning Checklist
 
 You've completed Stage 1 projects when you have:
 

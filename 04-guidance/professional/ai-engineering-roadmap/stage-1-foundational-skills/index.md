@@ -4,15 +4,18 @@ Master Python, Git, APIs, databases, and software engineering fundamentals—the
 
 ---
 
-## 🎯 Overview
+## 📚 What You'll Learn
 
-### What This Stage Covers
+- **Python fundamentals** - Variables, data types, control flow, functions, OOP, error handling
+- **Clean code practices** - PEP 8, testing with pytest, debugging, best practices
+- **Version control** - Git workflows, GitHub collaboration, branching strategies
+- **Databases** - SQL queries, data modeling, Python database integration, SQLAlchemy ORM
+- **Web APIs** - HTTP methods, REST principles, FastAPI framework, request/response handling
+- **Command-line skills** - Terminal navigation, shell scripting, SSH, environment configuration
+- **Data manipulation** - Pandas, data visualization, CSV/JSON handling
+- **DevOps basics** - Deployment, logging, monitoring, environment variables
 
-Stage 1 is your foundation for AI Engineering. You'll master the essential programming, data, and engineering skills that form the bedrock of AI work. This stage covers Python fundamentals, software engineering practices, data manipulation, web development basics, command-line tools, and optional math foundations.
-
-**Without these fundamentals, you'll struggle with AI tools.** This stage is NOT optional—it's the difference between hacking together demos and building production systems. Many beginners want to jump straight to AI. Resist this urge. The time you invest in fundamentals will 10x your ability to learn AI concepts later.
-
-You'll learn to:
+### Core Skills You'll Develop
 - Write clean, professional Python code with proper testing and documentation
 - Work with data using pandas, SQL, and databases
 - Build REST APIs and web applications
@@ -20,10 +23,43 @@ You'll learn to:
 - Navigate the command line and deploy applications
 - Think like an engineer, not just a coder
 
-### Who This Is For
-- **Prerequisites**: None required - we start from the basics
-- **Difficulty**: Beginner to Intermediate
-- **Estimated Time**: 6-12 months for part-time study (1-2 hours/day)
+## 🔗 Learning Resources
+
+### Official Stage Topics & Paths
+- [Python Fundamentals](./python-fundamentals/index.md) - Installation, virtual environments, core concepts
+- [Software Engineering Practices](./software-engineering/index.md) - Git, testing, code quality
+- [Data & Databases](./data-databases/index.md) - SQL, Pandas, data manipulation
+- [Web Development & APIs](./web-development-apis/index.md) - HTTP, REST, FastAPI
+- [Command Line & DevOps](./command-line-devops/index.md) - Terminal, deployment, monitoring
+- [Math Foundations (Optional)](./math-foundations/index.md) - Linear algebra, statistics, calculus
+- [Portfolio Projects](./projects/index.md) - 5 practical projects to build
+
+### Recommended Learning Resources
+**Python Learning**
+- Python.org official tutorial (free)
+- Real Python (tutorials and articles)
+- "Automate the Boring Stuff with Python" (free online book)
+- "Fluent Python" (comprehensive reference)
+
+**Web Development**
+- FastAPI documentation (excellent)
+- MDN Web Docs (HTTP, APIs, web concepts)
+- REST API best practices articles
+
+**SQL & Databases**
+- SQLAlchemy documentation
+- Mode SQL Tutorial (interactive)
+- Database design principles
+
+**DevOps & Deployment**
+- Railway or Render documentation
+- Docker tutorial (if interested)
+- Digital Ocean tutorials
+
+**Version Control**
+- Git official documentation
+- GitHub Learning Lab
+- Pro Git book (free online)
 
 ## Learning Path
 
@@ -245,40 +281,6 @@ You've completed Stage 1 when you can:
   - Proper structure
   - Deployed and working
 
-## Time Breakdown
-
-| Topic | Time | Notes |
-|-------|------|-------|
-| Python Fundamentals | 2-3 months | Most time-consuming but foundation |
-| Software Engineering | 1 month | Gradual, practiced with each project |
-| Databases | 1-1.5 months | SQL takes practice |
-| APIs & Web | 1-1.5 months | FastAPI is beginner-friendly |
-| DevOps | 0.5 month | Basic concepts, more detail in Stage 2 |
-| Projects | 2-3 months | Parallel with learning |
-| **Total** | **6-12 months** | Depends on starting point |
-
-## Resource Recommendations
-
-**Python Learning**
-- Python.org official tutorial (free)
-- Real Python (tutorials and articles)
-- "Automate the Boring Stuff with Python" (free online book)
-- "Fluent Python" (comprehensive reference)
-
-**Web Development**
-- FastAPI documentation (excellent)
-- MDN Web Docs (HTTP, APIs, web concepts)
-- REST API best practices articles
-
-**SQL & Databases**
-- SQLAlchemy documentation
-- Mode SQL Tutorial (interactive)
-- Database design principles
-
-**DevOps & Deployment**
-- Railway or Render documentation
-- Docker tutorial (if interested)
-- Digital Ocean tutorials
 
 ## Next Steps
 

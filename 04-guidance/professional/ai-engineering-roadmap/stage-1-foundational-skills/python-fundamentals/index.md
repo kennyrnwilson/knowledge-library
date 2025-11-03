@@ -2,13 +2,18 @@
 
 **Goal:** Master Python programming from basics to professional practices
 
-**Estimated Time:** 2-3 months part-time
+## 📚 What You'll Learn
 
-## Overview
+- **Basic Python syntax** - Variables, data types, operators, string formatting
+- **Control flow** - If/else statements, for loops, while loops, list comprehensions
+- **Data structures** - Lists, dictionaries, tuples, sets, and when to use each
+- **Functions** - Parameters, return values, scope, *args, **kwargs, type hints
+- **Object-oriented programming** - Classes, inheritance, magic methods, super()
+- **Error handling** - Try/except blocks, custom exceptions, debugging
+- **Professional code practices** - PEP 8, code formatting with Black, type checking with mypy
+- **Modern Python tooling** - Virtual environments, Poetry, pyproject.toml, VS Code setup
 
-This section takes you from zero to professional Python developer. You'll master the language fundamentals, modern tooling, and best practices needed for production code.
-
-## Learning Path
+## 🔗 Learning Resources
 
 ### Setup & Environment
 - **[Environment Setup by Operating System](./environment-setup.md)**
@@ -55,21 +60,7 @@ This section takes you from zero to professional Python developer. You'll master
   - Type checking (mypy)
   - Testing practices
 
-## Key Concepts by Topic
-
-| Topic | Time | Importance | Notes |
-|-------|------|-----------|-------|
-| Environment Setup | 1 week | Critical | Get this right first |
-| Basic Syntax | 2 weeks | Critical | Foundation of everything |
-| Control Flow | 1 week | Critical | if/else, loops essential |
-| Data Structures | 2 weeks | Critical | Lists, dicts, sets core |
-| Functions | 2 weeks | Critical | Modular code is essential |
-| OOP | 2-3 weeks | Important | Classes, inheritance, etc. |
-| Error Handling | 1 week | Important | Try/except patterns |
-| Standard Library | 2 weeks | Important | Know what's available |
-| Code Quality | 2 weeks | Important | PEP 8, testing, debugging |
-
-## Learning Checklist
+## ✅ Learning Checklist
 
 ### Environment & Setup
 - [ ] Install Python 3.11 or later
@@ -177,7 +168,7 @@ You've mastered Python Fundamentals when you can:
   - Committed to Git
   - Well-documented
 
-## Resources
+### Recommended Learning Resources
 
 **Free Online**
 - Python.org official tutorial
@@ -191,6 +182,13 @@ You've mastered Python Fundamentals when you can:
 **Video**
 - Python for Everybody (YouTube)
 - Real Python videos
+
+**Development Tools**
+- [VS Code](https://code.visualstudio.com/) - Code editor
+- [Poetry](https://python-poetry.org/) - Dependency management
+- [Black](https://black.readthedocs.io/) - Code formatter
+- [mypy](http://mypy-lang.org/) - Type checker
+- [pytest](https://pytest.org/) - Testing framework
 
 ## Next Steps
 

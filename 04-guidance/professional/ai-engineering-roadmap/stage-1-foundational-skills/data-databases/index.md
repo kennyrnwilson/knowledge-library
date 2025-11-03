@@ -4,6 +4,25 @@ Master working with data: CSV files, pandas, SQL, databases, and NumPy.
 
 ---
 
+## 📚 What You'll Learn
+
+- **CSV and Tabular Data**: CSV basics, pandas fundamentals, data manipulation, data cleaning
+- **Data Visualization Basics**: Matplotlib basics, pandas plotting
+- **SQL Fundamentals**: Database concepts, SQL queries (CRUD), filtering and sorting, advanced SQL (JOINs, GROUP BY)
+- **Python + SQL**: sqlite3 (built-in SQL), SQLAlchemy ORM, connection management
+- **NumPy Basics**: NumPy arrays, array operations
+
+---
+
+## 🔗 Learning Resources
+
+### Related Areas
+- [1.2 Software Engineering Practices](../software-engineering/index.md)
+- [1.4 Web Development & APIs](../web-development-apis/index.md)
+- [Stage 1 Overview](../index.md)
+
+---
+
 ## CSV and Tabular Data
 
 Working with data files is a core skill.
@@ -182,7 +201,7 @@ Numerical computing foundation.
 
 ---
 
-## Completion Checklist
+## ✅ Learning Checklist
 
 - [ ] Read/write CSV files
 - [ ] Manipulate data with pandas

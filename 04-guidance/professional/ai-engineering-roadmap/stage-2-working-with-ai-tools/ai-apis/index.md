@@ -1,8 +1,46 @@
 # 🔗 AI APIs Integration
 
-**Estimated Time:** 2-3 weeks
-**Difficulty:** Beginner-Friendly
-**Impact:** Immediate - Build AI apps right away
+Master integrating foundation model APIs from major providers. This is your entry into AI application development.
+
+---
+
+## 📚 What You'll Learn
+
+- Comparing commercial AI providers: OpenAI, Anthropic, Google Gemini, and Meta Llama
+- Setting up API keys and installing SDKs for multiple providers
+- Understanding request structure: messages, roles, temperature, and token parameters
+- Token counting and cost estimation for production budgets
+- Implementing streaming responses for better user experience
+- Handling API errors with retry logic and exponential backoff
+- Function calling and tool use for enabling agent behavior
+- Multi-provider implementation for flexibility and redundancy
+- Cost optimization strategies including caching and batching
+- Production-ready error handling, logging, and monitoring
+
+## 🔗 Learning Resources
+
+### AI Provider Documentation
+- **OpenAI API Documentation** - Industry standard, most mature ecosystem
+- **Anthropic Claude Documentation** - Safety-focused, excellent for reasoning and long context
+- **Google Gemini Documentation** - Multimodal capabilities and Google Cloud integration
+- **Replicate API Documentation** - Access to Llama and other open-source models
+
+### Related Topics
+- **[Prompt Engineering](../prompt-engineering/index.md)** - Master how to write effective prompts once you can call APIs
+- **[Cost Optimization](../evaluation-metrics/index.md)** - Track and optimize API costs systematically
+- **[Projects](../projects/index.md)** - Build Project 1: Chatbot using these API skills
+
+### Provider Selection Guide
+
+| Need | Best Choice |
+|------|-------------|
+| Best quality, broad use | GPT-4 (OpenAI) |
+| Safe, reasoning, long context | Claude 3 (Anthropic) |
+| Cost-sensitive | Llama 3 or GPT-3.5 |
+| Multimodal (images) | GPT-4V or Gemini |
+| Google Cloud integration | Gemini via Vertex AI |
+
+---
 
 ## Overview
 
@@ -35,16 +73,6 @@ Master integrating foundation model APIs from major providers. This is your entr
 - Best for: Open-source alternative, good performance
 - Cost: Lower via providers like Replicate
 - Availability: Growing
-
-### Choosing a Provider
-
-| Need | Best Choice |
-|------|-------------|
-| Best quality, broad use | GPT-4 (OpenAI) |
-| Safe, reasoning, long context | Claude 3 (Anthropic) |
-| Cost-sensitive | Llama 3 or GPT-3.5 |
-| Multimodal (images) | GPT-4V or Gemini |
-| Google Cloud integration | Gemini via Vertex AI |
 
 ## API Fundamentals
 
@@ -230,7 +258,16 @@ class AIClient:
 
 Benefit: Switch providers without rewriting code
 
-## Learning Checklist
+## Common Pitfalls
+
+1. **Not handling rate limits** - APIs have limits
+2. **Storing API keys in code** - Use environment variables
+3. **Not counting tokens** - Costs accumulate fast
+4. **Ignoring error handling** - APIs fail sometimes
+5. **No logging** - Can't debug issues later
+6. **Inconsistent formatting** - Different providers need different formats
+
+## ✅ Learning Checklist
 
 - [ ] Get API keys for at least 2 providers
 - [ ] Make successful API calls
@@ -244,39 +281,20 @@ Benefit: Switch providers without rewriting code
 - [ ] Build wrapper class for APIs
 - [ ] Implement multi-provider support
 
-## Common Pitfalls
+### Production Checklist
 
-1. **Not handling rate limits** - APIs have limits
-2. **Storing API keys in code** - Use environment variables
-3. **Not counting tokens** - Costs accumulate fast
-4. **Ignoring error handling** - APIs fail sometimes
-5. **No logging** - Can't debug issues later
-6. **Inconsistent formatting** - Different providers need different formats
+- [ ] Secure API key management
+- [ ] Error handling and retries
+- [ ] Cost monitoring and limits
+- [ ] Logging and monitoring
+- [ ] Request validation
+- [ ] Response parsing
+- [ ] Timeout handling
+- [ ] Rate limiting
+- [ ] Multi-provider support
+- [ ] Testing with mocks
 
-## Production Checklist
-
-- ✅ Secure API key management
-- ✅ Error handling and retries
-- ✅ Cost monitoring and limits
-- ✅ Logging and monitoring
-- ✅ Request validation
-- ✅ Response parsing
-- ✅ Timeout handling
-- ✅ Rate limiting
-- ✅ Multi-provider support
-- ✅ Testing with mocks
-
-## Resources
-
-**Official SDKs**
-- OpenAI Python SDK
-- Anthropic Python SDK
-- Google Generative AI SDK
-
-**Documentation**
-- OpenAI API docs
-- Anthropic Claude docs
-- Google Gemini docs
+---
 
 ## Next Steps
 
@@ -285,8 +303,8 @@ Benefit: Switch providers without rewriting code
 3. Compare costs and quality
 4. Understand token counting
 5. Implement proper error handling
-6. Move to [Prompt Engineering](../prompt-engineering.md)
-7. Build [Project 1: Chatbot](../projects/project-1-multimodal-chatbot.md)
+6. Move to [Prompt Engineering](../prompt-engineering/index.md)
+7. Build [Project 1: Chatbot](../projects/index.md)
 
 ---
 

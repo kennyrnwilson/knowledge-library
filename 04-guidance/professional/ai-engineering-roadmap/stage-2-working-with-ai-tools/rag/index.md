@@ -1,7 +1,48 @@
 # 🧾 RAG (Retrieval-Augmented Generation)
 
-**Estimated Time:** 4-6 weeks
-**Importance:** ⭐⭐⭐⭐⭐ MOST CRITICAL STAGE 2 SKILL
+The single most important skill for production AI engineering. RAG solves hallucination, enables use of proprietary data, and keeps information current.
+
+---
+
+## 📚 What You'll Learn
+
+- Understanding the complete RAG pipeline: indexing, retrieval, and generation phases
+- Embeddings fundamentals and selecting embedding models (OpenAI, open-source alternatives)
+- Vector databases: managed (Pinecone, Weaviate, Qdrant) vs self-hosted (ChromaDB, FAISS, Milvus)
+- Document processing and loading from multiple formats
+- Chunking strategies: fixed-size, semantic, and recursive approaches
+- Optimal chunk size selection and overlap strategies
+- Semantic similarity search implementation
+- Hybrid search combining dense and sparse retrieval
+- Query transformation and rewriting for better retrieval
+- Reranking retrieved results for improved relevance
+- Hypothetical Document Embeddings (HyDE) technique
+- RAG evaluation metrics: precision@K, recall@K, MRR, NDCG
+- Faithfulness, relevance, and completeness evaluation
+- LLM-as-Judge for automated RAG quality assessment
+
+## 🔗 Learning Resources
+
+### Related Topics
+- **[AI APIs Integration](../ai-apis/index.md)** - Using APIs for embeddings and generation
+- **[Pre-trained Models](../pre-trained-models/index.md)** - Local embedding models for cost savings
+- **[Evaluation Metrics](../evaluation-metrics/index.md)** - RAG-specific evaluation frameworks
+- **[Projects](../projects/index.md)** - Build Project 2: RAG System with real documents
+
+### Official Documentation
+- **LangChain RAG documentation** - Comprehensive RAG framework
+- **LlamaIndex** (formerly GPT Index) - Alternative RAG framework with strong retrieval focus
+- **Vector database documentation** - Provider-specific guides
+
+### Courses
+- **DeepLearning.AI Short Course** (free) - Building RAG applications
+- **LangChain documentation tutorials** - Hands-on RAG implementation
+
+### Papers (Optional, Advanced)
+- **"Retrieval-Augmented Generation for Large Language Models"** - Original RAG paper
+- **RAG evaluation papers** - Latest evaluation methodologies
+
+---
 
 ## Why RAG Matters
 
@@ -116,7 +157,7 @@ RAG consists of 3 phases:
 - Cheaper than human evaluation
 - Useful for iteration and testing
 
-### 6. Complete Implementation Checklist
+## ✅ Learning Checklist
 
 - [ ] Understand RAG pipeline (indexing → retrieval → generation)
 - [ ] Know major vector database options
@@ -134,7 +175,7 @@ RAG consists of 3 phases:
 - [ ] Test with real documents
 - [ ] Measure cost and latency
 
-### 7. Common Patterns
+### Common Patterns
 
 **Simple RAG**
 ```
@@ -153,40 +194,7 @@ Query → Dense + Sparse Search → Combine Results
   → LLM Generation
 ```
 
-## Resources & Learning
-
-**Official Docs**
-- LangChain RAG documentation
-- LlamaIndex (formerly GPT Index)
-- Vector database documentation
-
-**Courses**
-- DeepLearning.AI Short Course (free)
-- LangChain documentation tutorials
-
-**Papers** (Optional, advanced)
-- "Retrieval-Augmented Generation for Large Language Models"
-- RAG evaluation papers
-
-## Learning Timeline
-
-| Week | Topic | Focus |
-|------|-------|-------|
-| 1 | RAG fundamentals | Understand the 3-phase pipeline |
-| 1 | Embeddings & vectors | Why embeddings work |
-| 2 | Document processing | Chunking strategies |
-| 2 | Vector databases | Try ChromaDB, Pinecone |
-| 3 | Implementation | Build basic RAG system |
-| 3-4 | Advanced techniques | Reranking, HyDE, hybrid |
-| 4-5 | Evaluation | Measure quality |
-| 5-6 | Optimization | Chunk size, embedding choice |
-| 6 | Project | Build production RAG |
-
-## Related Learning
-
-- [AI APIs Integration](../index.md#21-ai-apis-integration) - Using APIs for embeddings
-- [Pre-trained Models](../index.md#24-pre-trained-models) - Local embedding models
-- [Evaluation Metrics](../index.md#25-evaluation-metrics) - RAG-specific metrics
+---
 
 ## Next Steps
 
@@ -196,11 +204,11 @@ Query → Dense + Sparse Search → Combine Results
 4. Add document preprocessing
 5. Implement evaluation
 6. Try advanced techniques
-7. Build [Project 2: RAG System](../projects/project-2-rag-system.md)
+7. Build [Project 2: RAG System](../projects/index.md)
 
 ## Key Takeaways
 
-- RAG is the most important Stage 2 skill ⭐⭐⭐⭐⭐
+- RAG is the most important Stage 2 skill
 - 3-phase pipeline: Index → Retrieve → Generate
 - Chunking and embedding quality matter most
 - Always evaluate your RAG system
