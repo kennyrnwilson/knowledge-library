@@ -1,45 +1,31 @@
 # Personal Development
 
-**Purpose:** Self-improvement covering learning, productivity, wellbeing, and parenting.
+**Purpose:** Social and interpersonal skills for personal growth and relationships.
 
 ## Contents
 
-### [Learning & Memory](./learning/index.md)
-How to learn effectively, memory science, note-taking, and knowledge retention.
+### [Social & Interpersonal Skills](./social-interpersonal-skills/index.md)
 
-### [Productivity](./productivity/index.md)
-Time management, deep work, task management, and systems.
-
-### [Wellbeing](./wellbeing/index.md)
-Health, sleep, fitness, mindfulness, stress management, and mental health.
-
-### [Parenting](./parenting/index.md)
-Child development, behavior management, and parenting frameworks.
-
-## Quick Links
-
-- [Learning & Memory](./learning/index.md)
-- [Productivity Systems](./productivity/index.md)
-- [Wellbeing](./wellbeing/index.md)
-- [Parenting](./parenting/index.md)
+Development of communication, relationships, emotional intelligence, and social effectiveness.
 
 ## How This Fits In
 
-- **Supports:** [Projects](../../05-projects/index.md) and personal goals
-- **Informs:** [Guidance](../../04-guidance/index.md) for personal workflows
+- **Part of:** [Permanent Notes](../index.md)
+- **Related to:** [Profession](../profession/index.md) - workplace relationships
 - **Built from:** [Literature Notes](../../02-literature-notes/index.md) and experience
 
-## Next Steps
+## Note
 
-- Migrate personal development notes from Notion
-- Organize by topic area
-- Create practical frameworks
+Productivity, wellbeing, learning, and parenting are organized as separate top-level categories:
+- [Productivity](../productivity/index.md)
+- [Wellbeing](../wellbeing/index.md)
+- [Leisure](../leisure/index.md) - contains books and entertainment
 
 ## Related Areas
 
-- [Profession](../profession/index.md) - Career growth
-- [Tracking](../../06-tracking/index.md) - Measure progress
-- [Guidance](../../04-guidance/index.md) - Apply knowledge
+- [Profession](../profession/index.md) - Career and professional development
+- [Wellbeing](../wellbeing/index.md) - Mental and physical health
+- [Productivity](../productivity/index.md) - Time management and systems
 
 ---
 
