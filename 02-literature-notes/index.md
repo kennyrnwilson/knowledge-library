@@ -24,6 +24,8 @@
 | [Books](./books/index.md) | Active | Completed and in-progress reads |
 | [Articles](./articles/index.md) | Active | Research articles and long-form content |
 | [Courses](./courses/index.md) | Active | Online courses and structured learning |
+| [Great Outdoors](./great-outdoors/index.md) | Active | Outdoor adventures, travel guides, and location reviews |
+| [Professional](./professional/index.md) | Active | Career development, technical skills, and business resources |
 
 ## How This Fits In
 
