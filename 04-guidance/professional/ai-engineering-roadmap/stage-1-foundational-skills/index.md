@@ -1,20 +1,29 @@
-# Stage 1: Foundational Skills
+# 📚 Stage 1: Foundational Skills
 
-**Goal:** Master Python, Git, APIs, databases, and software engineering fundamentals
+Master Python, Git, APIs, databases, and software engineering fundamentals—the essential skills you need before working with AI tools.
 
-**Estimated Time:** 6-12 months part-time (10-15 hours/week)
+---
 
-**Entry Requirements:**
-- Basic computer literacy
-- Able to follow technical documentation
-- Access to a computer with admin rights
-- Willingness to practice consistently
+## 🎯 Overview
 
-## Overview
+### What This Stage Covers
 
-This stage focuses on building a strong foundation in software engineering. You'll learn Python programming, version control, databases, and web basics - the skills needed before diving into AI.
+Stage 1 is your foundation for AI Engineering. You'll master the essential programming, data, and engineering skills that form the bedrock of AI work. This stage covers Python fundamentals, software engineering practices, data manipulation, web development basics, command-line tools, and optional math foundations.
 
-**Key Insight:** Don't skip this stage unless you're already a strong software engineer. These fundamentals are what separates weekend hobbyists from professional engineers.
+**Without these fundamentals, you'll struggle with AI tools.** This stage is NOT optional—it's the difference between hacking together demos and building production systems. Many beginners want to jump straight to AI. Resist this urge. The time you invest in fundamentals will 10x your ability to learn AI concepts later.
+
+You'll learn to:
+- Write clean, professional Python code with proper testing and documentation
+- Work with data using pandas, SQL, and databases
+- Build REST APIs and web applications
+- Use Git for version control and collaborate on code
+- Navigate the command line and deploy applications
+- Think like an engineer, not just a coder
+
+### Who This Is For
+- **Prerequisites**: None required - we start from the basics
+- **Difficulty**: Beginner to Intermediate
+- **Estimated Time**: 6-12 months for part-time study (1-2 hours/day)
 
 ## Learning Path
 
@@ -44,124 +53,49 @@ This stage focuses on building a strong foundation in software engineering. You'
 
 ### 1.2 Software Engineering Practices (2-3 months)
 
-**Git & Version Control**
-- Git basics (init, add, commit, push)
-- GitHub workflow
-- Branching strategies
-- Collaborative coding
-- `.gitignore` and project structure
-
-**Testing & Code Quality**
-- Unit testing with pytest
-- Test coverage
-- Code style (Black, pylint, mypy)
-- Documentation and docstrings
-- Code review practices
-
-**Project Structure**
-- Proper file organization
-- `src/` layout
-- Configuration management
-- README best practices
+**[Software Engineering Practices](./software-engineering/index.md)**
+- Git & Version Control (init, add, commit, push, branches)
+- Testing Basics (unit testing with pytest)
+- Code Quality (style, linting, type checking)
+- Documentation (docstrings, README, API docs)
+- Project Structure (src-layout, organization)
 
 ### 1.3 Data & Databases (2-3 months)
 
-**Data Handling**
-- CSV files and tabular data
-- Pandas basics (reading, filtering, grouping)
-- Data visualization (matplotlib, pandas plotting)
-- Common data formats (JSON, parquet)
-
-**SQL Fundamentals**
-- Database concepts (tables, keys, relationships)
-- SQL queries (SELECT, INSERT, UPDATE, DELETE)
-- WHERE, ORDER BY, LIMIT
-- JOINs and GROUP BY
-- Indexing and performance
-
-**Python + Databases**
-- sqlite3 (built-in SQL)
-- SQLAlchemy ORM
-- Parameterized queries (prevent SQL injection)
-- Connection pooling
-- Migration tools
+**[Data & Databases](./data-databases/index.md)**
+- CSV and Tabular Data (pandas fundamentals)
+- Data Visualization (matplotlib, plots)
+- SQL Fundamentals (queries, databases)
+- Advanced SQL (JOINs, aggregations)
+- Python + Databases (sqlite3, SQLAlchemy)
+- NumPy Basics (numerical computing)
 
 ### 1.4 Web Development & APIs (2-3 months)
 
-**HTTP & Web Basics**
-- How the web works (client-server)
-- HTTP methods (GET, POST, PUT, DELETE)
-- Status codes (200, 404, 500, etc.)
-- Headers and requests
-- JSON format
-
-**APIs in Python**
-- requests library
-- Making GET/POST requests
-- Handling responses and errors
-- API authentication
-- Rate limiting
-
-**Building APIs**
-- FastAPI fundamentals
-- Routing and endpoints
-- Request parameters and body
-- Response handling
-- Error handling
-- CORS and middleware
-
-**Advanced API Topics**
-- Authentication (API keys, JWT)
-- File uploads
-- Streaming responses
-- Background tasks
-- Async/await basics
+**[Web Development & APIs](./web-development-apis/index.md)**
+- HTTP and REST Basics (methods, status codes, principles)
+- Making HTTP Requests (requests library, error handling)
+- FastAPI Fundamentals (endpoints, models, responses)
+- Advanced API Concepts (authentication, CORS, middleware)
+- Database Integration (with FastAPI)
 
 ### 1.5 Command Line & DevOps (1-2 months)
 
-**Terminal Basics**
-- File navigation (cd, ls, pwd)
-- File operations (cp, mv, rm, mkdir)
-- Text processing (grep, sed, awk)
-- Piping and redirection
-- Shell scripting basics
-
-**Server Concepts**
-- Client-server architecture
-- localhost and ports
-- SSH and remote connections
-- Environment variables
-- Process management
-
-**Deployment Basics**
-- Hosting options (Heroku, Railway, Render)
-- Deploying a simple application
-- Environment configuration
-- Logs and debugging
-- Basic monitoring
+**[Command Line & DevOps](./command-line-devops/index.md)**
+- Terminal Basics (navigation, file operations, permissions)
+- Shell Scripting (scripts, variables, control flow)
+- Understanding Servers (client-server, ports, SSH)
+- Deployment Basics (platforms, logging, monitoring)
+- Environment Configuration (variables, secrets)
 
 ### 1.6 Math Foundations (Optional)
 
-**For those interested in deeper ML understanding:**
-
-**Linear Algebra Basics**
-- Vectors and matrices
-- Matrix operations
-- Eigenvalues and eigenvectors
-- Useful for: understanding embeddings, transformations
-
-**Probability & Statistics**
-- Probability distributions
-- Mean, median, standard deviation
-- Hypothesis testing basics
-- Correlation and causation
-- Useful for: evaluation metrics, data analysis
-
-**Calculus Basics**
-- Derivatives and gradients
-- Chain rule
-- Optimization
-- Useful for: understanding backpropagation (Stage 3)
+**[Math Foundations (Optional)](./math-foundations/index.md)**
+- Linear Algebra Basics (vectors, matrices, operations)
+- Probability & Statistics (distributions, hypothesis testing)
+- Calculus Basics (derivatives, optimization)
+- Why math matters for AI
+- Resources and learning path
 
 ### 1.7 Projects (5 portfolio projects)
 

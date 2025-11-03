@@ -1,403 +1,199 @@
-# Stage 2: Working with AI Tools
-
-**Goal:** Become an AI Builder - master AI APIs, prompt engineering, RAG, and build production AI applications
-
-**Estimated Time:** 12-18 months part-time (10-15 hours/week)
-
-**Entry Requirements:**
-- Complete Stage 1 or equivalent software engineering knowledge
-- Comfortable with Python, APIs, and databases
-- Access to API keys (OpenAI, Anthropic, etc.)
-
-## Overview
-
-This is where you become job-ready. You'll learn how 90% of production AI work actually happens: integrating existing models into applications, not training new models.
-
-**Key Insight:** Most AI engineers spend their time building applications with existing models, not training models from scratch. This stage reflects that reality.
-
-## Why This Stage Matters
-
-- **Job-Ready Timeline:** Complete this stage and you can get hired as an AI/ML engineer
-- **Most Practical:** Focuses on skills that directly apply to real jobs
-- **Fast Value:** Build working AI applications within weeks
-- **Deep Understanding:** Learn why things work, not just how to use them
-
-## Learning Path
-
-### 2.1 AI APIs Integration (1-2 months)
-
-**Foundation Model APIs**
-- OpenAI (ChatGPT, GPT-4)
-- Anthropic (Claude)
-- Google (Gemini, PaLM)
-- Cohere and others
-- When to use which provider
-
-**API Fundamentals**
-- Authentication and API keys
-- Request structure and parameters
-- Streaming responses
-- Token counting and cost estimation
-- Error handling and retries
-- Rate limiting
-
-**Cost Optimization**
-- Understanding pricing models
-- Cost tracking and monitoring
-- Choosing right model (speed vs quality)
-- Caching strategies
-- When to use cheaper models
-
-**Production Patterns**
-- Managing API keys securely
-- Async requests for scalability
-- Fallback strategies
-- Monitoring and alerting
-- Budget constraints
-
-### 2.2 Prompt Engineering (2-3 months)
-
-**Fundamental Techniques**
-- Zero-shot prompting (asking without examples)
-- Few-shot prompting (providing examples)
-- Chain-of-Thought (making reasoning explicit)
-- Role prompting (setting context)
-
-**Advanced Patterns**
-- ReAct (Reasoning + Acting)
-- Self-Consistency (multiple reasoning paths)
-- Tree of Thoughts (exploring solution space)
-- Prompt Chaining (breaking complex tasks into steps)
-
-**Output Formatting**
-- Structured output (JSON, XML)
-- Using delimiters
-- Negative prompting (what NOT to do)
-- Token budgeting
-
-**Optimization & Testing**
-- Systematic prompt testing
-- A/B testing prompts
-- Measuring quality
-- Parameter tuning (temperature, top_p, max_tokens)
-- Understanding model behavior
-
-**System Prompts**
-- Setting up system context
-- Defining persona and tone
-- Providing instructions
-- Constraints and safety guidelines
-
-### 2.3 RAG: Retrieval-Augmented Generation (3-4 months)
-
-**The Complete RAG Pipeline**
-
-1. **Indexing Phase**
-   - Document processing
-   - Chunking strategies (fixed, semantic, recursive)
-   - Embedding models and selection
-   - Vector database storage
-
-2. **Retrieval Phase**
-   - Vector similarity search
-   - Metadata filtering
-   - Reranking retrieved results
-   - Query transformation
-
-3. **Generation Phase**
-   - Combining retrieved context with query
-   - System prompts for grounded responses
-   - Handling hallucinations
-   - Source attribution
-
-**Core Concepts**
-- Embeddings: what they are and why they work
-- Vector databases (Pinecone, Weaviate, ChromaDB, FAISS)
-- Semantic vs keyword search
-- Hybrid search (combining dense + sparse)
-- Chunk size and overlap importance
-
-**Advanced Techniques**
-- Hypothetical Document Embeddings (HyDE)
-- Query rewriting and expansion
-- Multi-hop retrieval
-- Graph-based retrieval
-- Time-aware retrieval
-
-**Evaluation**
-- Retrieval metrics (precision, recall, NDCG)
-- Generation metrics (faithfulness, relevance)
-- LLM-as-judge evaluation
-- Building evaluation datasets
-
-**Why RAG Matters**
-- Solves hallucination problem
-- Provides context and grounding
-- Enables use of proprietary data
-- More cost-effective than fine-tuning
-- Easier to keep current
-
-### 2.4 Pre-trained Models (1-2 months)
-
-**Model Landscape**
-- Commercial models (GPT-4, Claude, Gemini)
-- Open-source models (LLaMA, Mistral, Phi)
-- Specialized models (task-specific, code, embeddings)
-- Model selection framework
-
-**Model Characteristics**
-- Performance vs latency tradeoffs
-- Context window size
-- Instruction-following ability
-- Cost considerations
-- Availability
-
-**Running Models Locally**
-- Ollama (simple local models)
-- LM Studio (model browser and interface)
-- vLLM (optimized inference)
-- Quantization (4-bit, 8-bit compression)
-
-**Embedding Models**
-- What embeddings are
-- Popular models (OpenAI, open-source)
-- Choosing embeddings for your use case
-- Dimensionality and cost tradeoffs
-
-**Multimodal Models**
-- Vision capabilities (GPT-4V, Claude 3)
-- Speech to text and text to speech
-- When to use multimodal
-
-### 2.5 Evaluation & Metrics (2 months)
-
-**Types of Metrics**
-- Quality metrics (how good is the output)
-- Performance metrics (speed and cost)
-- Reliability metrics (consistency and stability)
-- User metrics (do humans prefer it)
-
-**Traditional ML Metrics**
-- Classification (accuracy, precision, recall, F1)
-- Ranking (Precision@K, Recall@K, MRR, NDCG)
-- Regression (MAE, RMSE, R²)
-
-**LLM-Specific Evaluation**
-- Faithfulness (staying grounded in facts)
-- Relevance (answering the question)
-- Completeness (covering all aspects)
-- Coherence (logical flow)
-- Consistency (not contradicting itself)
-
-**Evaluation Methods**
-- LLM-as-Judge (using Claude/GPT to evaluate)
-- Human evaluation (gold standard)
-- Automated metrics (BLEU, ROUGE, etc.)
-- A/B testing with real users
-
-**RAG-Specific Evaluation**
-- Retrieval quality (right chunks retrieved?)
-- Context relevance (context actually useful?)
-- Answer faithfulness (answer grounded in context?)
-- Complete evaluation pipeline
-
-**Testing & Regression**
-- Regression test suites
-- Preventing quality degradation
-- Monitoring in production
-- Cost and performance tracking
-
-### 2.6 Projects to Build (5 projects, 3-6 months each)
-
-**[Project 1: Multi-Provider Chatbot](./projects/project-1-multimodal-chatbot.md)**
-- Multi-turn conversations with memory
-- Streaming responses
-- Support multiple AI providers
-- Cost tracking
-- Web interface
-- Time: 3-4 weeks
-
-**[Project 2: RAG System](./projects/project-2-rag-system.md)**
-- Document upload (PDF, DOCX, TXT, Markdown)
-- Vector database integration
-- Semantic search with citations
-- Show retrieval sources
-- Web interface
-- Time: 4-5 weeks
-
-**[Project 3: AI Agent](./projects/project-3-ai-agent.md)**
-- Tool use / function calling
-- Multiple tools (search, calculator, weather, Wikipedia)
-- ReAct pattern
-- Error recovery
-- Execution trace
-- Time: 3-4 weeks
-
-**[Project 4: Model Comparison Study](./projects/project-4-model-comparison.md)**
-- Zero-shot vs few-shot vs fine-tuned
-- Comprehensive comparison
-- Cost analysis
-- Quality evaluation
-- Written analysis
-- Time: 2-3 weeks
-
-**[Project 5: Full-Stack AI Application](./projects/project-5-full-stack-app.md)**
-- Production-ready application
-- Examples: Research Assistant, Code Generator, Support Bot
-- Multiple AI features (RAG, agents, or both)
-- Full authentication
-- Deployed publicly
-- Time: 5-6 weeks
-
-## Learning Checklist
-
-### AI APIs
-- [ ] Get API keys from OpenAI, Anthropic, Google
-- [ ] Make successful API calls in Python
-- [ ] Handle API errors gracefully
-- [ ] Stream responses
-- [ ] Count tokens for cost estimation
-- [ ] Implement retry logic
-- [ ] Understand rate limiting
-- [ ] Track API costs
-
-### Prompt Engineering
-- [ ] Write zero-shot prompts
-- [ ] Use few-shot examples effectively
-- [ ] Apply chain-of-thought technique
-- [ ] Structure output with delimiters
-- [ ] Get JSON responses reliably
-- [ ] Use system prompts effectively
-- [ ] Test and compare prompts
-- [ ] Understand temperature and top_p
-
-### RAG (Most Important!)
-- [ ] Load documents into vector database
-- [ ] Create embeddings from text
-- [ ] Implement vector similarity search
-- [ ] Filter by metadata
-- [ ] Rerank retrieved results
-- [ ] Build question-answering from documents
-- [ ] Evaluate retrieval quality
-- [ ] Handle multi-hop queries
-- [ ] Cite sources in responses
-- [ ] Evaluate answer quality
-
-### Pre-trained Models
-- [ ] Browse HuggingFace Hub
-- [ ] Load and use open-source models
-- [ ] Understand model cards
-- [ ] Run models locally (Ollama)
-- [ ] Choose right model for task
-- [ ] Use different embedding models
-- [ ] Understand quantization
-- [ ] Compare model characteristics
-
-### Evaluation
-- [ ] Build test sets for your app
-- [ ] Evaluate with LLM-as-Judge
-- [ ] Implement A/B testing
-- [ ] Track metrics over time
-- [ ] Cost analysis
-- [ ] Latency monitoring
-- [ ] Human evaluation
-- [ ] Regression test suite
-
-## Completion Criteria
-
-You've completed Stage 2 (and are job-ready) when you can:
-
-- ✅ **Build RAG application from scratch**
-  - Upload documents
-  - Retrieve relevant context
-  - Generate grounded answers
-  - No tutorials needed
-
-- ✅ **Optimize prompts systematically**
-  - Test and compare variants
-  - Measure quality improvements
-  - Understand why changes work
-
-- ✅ **Integrate multiple AI APIs**
-  - Handle failures gracefully
-  - Optimize costs
-  - Switch providers if needed
-
-- ✅ **Make architectural decisions**
-  - API vs local models
-  - Fine-tune vs prompt optimization
-  - RAG vs retrieval chains
-  - Explain your choices
-
-- ✅ **Debug AI applications**
-  - Trace through retrieval
-  - Analyze prompt responses
-  - Identify quality issues
-  - Fix systematically
-
-- ✅ **Estimate costs and latency**
-  - Calculate token usage
-  - Compare provider pricing
-  - Plan for scale
-
-- ✅ **Have 3+ substantial AI applications**
-  - Deployed and public
-  - Preferably with real users
-  - Well-documented code
-  - Evaluation metrics
-
-## Time Breakdown
-
-| Topic | Time | Notes |
-|-------|------|-------|
-| AI APIs | 4-6 weeks | Fast to learn, use immediately |
-| Prompt Engineering | 6-8 weeks | Requires practice and experimentation |
-| RAG (most critical) | 8-12 weeks | Most important - spend time here |
-| Evaluation | 6-8 weeks | Essential for production apps |
-| Projects | 12-18 weeks | Parallel with learning |
-| **Total** | **12-18 months** | Depends on starting point |
-
-## Resource Recommendations
-
-**Courses**
-- DeepLearning.AI short courses (free, excellent)
-- LangChain documentation and tutorials
-- HuggingFace courses (free)
-
-**Documentation**
-- OpenAI API docs
-- Anthropic Claude documentation
-- LangChain/LlamaIndex guides
-- Vector database docs
-
-**Books & Articles**
-- "Building LLM-Powered Applications" (O'Reilly)
-- LLM blog posts and tutorials
-- ArXiv papers on RAG evaluation
-
-## After Stage 2
-
-Congratulations! You're now **job-ready as an AI Engineer**. You can:
-- Interview for AI/ML engineer positions
-- Build production AI applications
-- Understand the AI landscape
-- Make informed technology choices
-
-## Optional: Move to Stage 3
-
-Want to go deeper? **[Stage 3: Advanced AI Engineering](../stage-3-advanced-ai-engineering/index.md)** covers:
-- Deep learning internals
-- Production MLOps
-- Model optimization
-- Large-scale systems
-- Takes 2-4 more years to master
-
-## Related Areas
-
-- [AI Engineering Roadmap Overview](../index.md)
-- [Stage 1: Foundational Skills](../stage-1-foundational-skills/index.md)
-- [Stage 3: Advanced AI Engineering](../stage-3-advanced-ai-engineering/index.md)
-- [Teach to Learn](../../teach-to-learn.md)
+# 📚 Stage 2: Working with AI Tools
+
+Transition from learning Python to becoming an AI Builder. Master AI APIs, prompt engineering, RAG systems, and build a portfolio of production-ready AI applications.
+
+---
+
+## 🎯 Overview
+
+### What This Stage Covers
+
+Stage 2 is where you transition from learning Python to becoming an **AI Builder**. This stage focuses on building practical AI applications using existing models and APIs—the core skill that defines modern AI Engineering. You'll learn to integrate foundation models, master prompt engineering, build RAG (Retrieval-Augmented Generation) systems, and create a portfolio of real projects.
+
+This is the most important stage for breaking into AI Engineering. While Stage 1 taught you to code, Stage 2 teaches you to build AI applications that solve real problems. Most job-ready AI engineers spend 12-18 months mastering these skills.
+
+**Why This Matters for AI Engineering:**
+- 90% of production AI work involves integrating existing models, not training from scratch
+- Prompt engineering and RAG are the primary tools for adapting models to specific tasks
+- Building a strong portfolio here is what gets you your first AI Engineering role
+- These skills are immediately applicable to freelance projects and startups
+
+**What You'll Be Able to Build:**
+- Production-ready chatbots with memory and streaming
+- RAG applications that answer questions from your own documents
+- AI agents that can use tools and reason through multi-step tasks
+- Full-stack AI applications deployed to production
+- Custom fine-tuned models when needed
+
+### Who This Is For
+- **Prerequisites**: Completed Stage 1 (solid Python skills, git, APIs, basic ML concepts)
+- **Difficulty**: Intermediate
+- **Estimated Time**: 12-18 months for part-time study
+
+---
+
+## 📊 Progress Tracker
+
+**Overall Progress**: ___% Complete
+**Current Focus**:
+**Started**: **/**/
+**Target Completion**: **/**/
+
+### Section Progress
+- [ ] 2.1 AI APIs Integration (0/15 items)
+- [ ] 2.2 Prompt Engineering (0/20 items)
+- [ ] 2.3 RAG (Retrieval-Augmented Generation) (0/25 items)
+- [ ] 2.4 Pre-trained Models (0/12 items)
+- [ ] 2.5 Evaluation Metrics (0/18 items)
+- [ ] 2.6 Projects to Build (0/5 projects)
+
+*Note: These are overview checkboxes. Detailed checklists are in each section's dedicated page.*
+
+---
+
+## 🗺️ Learning Path
+
+### Recommended Sequence
+
+Work through these sections in this order:
+
+**1. 2.1 AI APIs Integration**
+- What it covers: OpenAI, Anthropic, Cohere APIs; function calling; cost optimization
+- Why start here: Foundation for everything else—you need to know how to call models
+- Time estimate: 2-3 weeks
+
+**2. 2.2 Prompt Engineering**
+- What it covers: Zero-shot, few-shot, chain-of-thought, advanced prompting patterns
+- Why this next: Your primary tool for adapting models—master this before anything else
+- Time estimate: 3-4 weeks
+
+**3. 2.3 RAG (Retrieval-Augmented Generation)**
+- What it covers: Embeddings, vector databases, chunking strategies, building RAG systems
+- Why this next: THE most important skill for production AI—connects models to your data
+- Time estimate: 4-6 weeks
+
+**4. 2.4 Pre-trained Models**
+- What it covers: HuggingFace ecosystem, model selection, fine-tuning basics
+- Why this next: Understand when to use which models and when fine-tuning makes sense
+- Time estimate: 2-3 weeks
+
+**5. 2.5 Evaluation Metrics**
+- What it covers: Building eval systems, metrics, A/B testing, LLM-as-judge
+- Why this next: Critical for systematic improvement—build this early, not as afterthought
+- Time estimate: 2-3 weeks
+
+**6. 2.6 Projects to Build**
+- What it covers: 5 portfolio projects from chatbots to full-stack AI apps
+- Why finish here: Portfolio projects that demonstrate your skills to employers
+- Time estimate: 8-12 weeks (ongoing throughout stage)
+
+### Alternative Paths
+
+If you have specific project goals, you can adapt the order:
+- **Building a chatbot first?** Do 2.1 → 2.2 → 2.6 (Project 1), then come back to 2.3
+- **Working with documents?** Do 2.1 → 2.3 → 2.2 → 2.6 (Project 2)
+- **Research-focused?** Add more time to 2.4 and 2.5 for deeper model understanding
+
+---
+
+## ⏱️ Time & Prerequisites
+
+### Prerequisites
+
+**Before starting this stage, you should:**
+- [ ] Solid Python programming skills (functions, classes, error handling)
+- [ ] Git and GitHub basics (clone, commit, push, pull)
+- [ ] Understanding of APIs and HTTP requests
+- [ ] Basic command line/terminal proficiency
+- [ ] Familiarity with web development concepts (helpful but not required)
+- [ ] Conceptual understanding of ML (from Stage 1)
+
+**If you're missing prerequisites**: Go back to Stage 1: Foundational Skills
+
+### Time Estimates
+
+- **Minimum** (if you're quick and focused): 6-9 months
+- **Typical** (part-time, 1-2 hours/day): 12-18 months
+- **With full dedication** (4+ hours/day): 4-6 months
+
+**Daily commitment**:
+- Minimum: 1 hour/day (mostly on weekends)
+- Recommended: 1-2 hours/day consistently
+- Intensive: 3-4 hours/day if career-switching
+
+**Budget Considerations**:
+- API costs: $20-50/month for experimentation
+- Courses: $0-100 (most resources are free)
+- Vector DB hosting: $0-20/month (free tiers available)
+
+---
+
+## ✅ Completion Criteria
+
+### You're ready to move to Stage 3 when you can:
+
+**Core Skills**
+- [ ] Build a RAG application from scratch without following tutorials
+- [ ] Optimize prompts systematically using evaluation frameworks
+- [ ] Integrate multiple AI APIs (OpenAI, Anthropic, etc.) into applications
+- [ ] Explain architectural decisions for AI applications
+- [ ] Debug AI application issues (model behavior, not just code bugs)
+- [ ] Estimate costs and latency for AI features accurately
+
+**Projects Completed**
+- [ ] Built and deployed at least 3 substantial AI applications
+- [ ] Created a RAG system that works with real documents
+- [ ] Implemented an AI agent that uses multiple tools
+- [ ] Portfolio on GitHub with clear documentation
+- [ ] At least one project has real users (even if just friends/colleagues)
+
+**Professional Practices**
+- [ ] Set up evaluation systems for AI applications
+- [ ] Track costs and optimize API usage
+- [ ] Write documentation for AI features
+- [ ] Handle errors and edge cases gracefully
+- [ ] Deploy applications to production (Vercel, Railway, etc.)
+
+**Self-Assessment**
+- [ ] Can explain prompt engineering to someone else
+- [ ] Comfortable choosing between RAG vs fine-tuning for a given problem
+- [ ] Built applications without relying on frameworks like LangChain
+- [ ] Contributed to open-source AI projects or written technical blog posts
+- [ ] Ready to interview for junior-mid level AI Engineer roles
+
+### When You're Not Ready Yet
+
+If you're not confident in these areas, spend more time on projects. The difference between knowing concepts and building production applications is significant. Focus on shipping projects, not collecting certificates.
+
+---
+
+## 🔗 Child Pages
+
+### All Pages in This Section
+
+**[2.1 AI APIs Integration](./ai-apis/index.md)**
+Learn to integrate OpenAI, Anthropic, and other AI APIs; master function calling, streaming, cost optimization, and error handling.
+
+**[2.2 Prompt Engineering](./prompt-engineering/index.md)**
+Master the art of prompt engineering with zero-shot, few-shot, chain-of-thought, and advanced patterns like ReAct and meta-prompting.
+
+**[2.3 RAG (Retrieval-Augmented Generation)](./rag/index.md)**
+Build RAG systems from scratch: embeddings, vector databases, chunking strategies, and advanced techniques for production applications.
+
+**[2.4 Pre-trained Models](./pre-trained-models/index.md)**
+Navigate the HuggingFace ecosystem, select appropriate models, and learn when fine-tuning is necessary vs prompt engineering.
+
+**[2.5 Evaluation Metrics](./evaluation-metrics/index.md)**
+Build robust evaluation systems with LLM-as-judge, custom metrics, A/B testing, and systematic improvement frameworks.
+
+**[2.6 Projects to Build](./projects/index.md)**
+Five comprehensive portfolio projects: chatbot, RAG app, AI agent, fine-tuned model, and full-stack AI application.
+
+---
+
+**Next Steps**: Start with 2.1 AI APIs Integration
+**Need Help?** Check the FAQ & Common Questions or join AI engineering communities on Discord.
+**Parent Page**: 🚀 AI Engineering: Your Realistic Roadmap
 
 ---
 

@@ -1,21 +1,34 @@
 # 🚀 AI Engineering: Your Realistic Roadmap
 
-**Purpose:** A comprehensive, progressive learning path to become an AI Engineer - a software engineer who builds with foundation models and AI systems.
+**Purpose:** A comprehensive, realistic roadmap for becoming an AI Engineer—a specialized software engineer who builds and deploys applications using foundation models through prompt engineering, RAG, and API integration.
 
-**Time to Job-Ready:** 18-24 months of consistent learning
-**Time to Senior Level:** 2-6 years part-time
+## 🎯 Overview
 
-## What This Roadmap Covers
+### What This Roadmap Covers
 
-This is a realistic, project-based learning path that takes you from complete beginner to senior-level AI Engineer. It's designed around what's actually needed in production, not theory.
+This is a comprehensive, realistic roadmap for becoming an AI Engineer—a specialized software engineer who builds and deploys applications using foundation models (like GPT-4, Claude) through prompt engineering, RAG, and API integration. Unlike many resources that promise quick results, this roadmap is honest: reaching professional competence takes years of dedicated part-time work, not months.
 
-### Key Principles
+**The Key Insight**: An AI Engineer is NOT a data scientist who trains models from scratch. You're a specialized software engineer who builds and deploys applications using pre-trained foundation models through prompt engineering, RAG, fine-tuning, and MLOps practices.
 
-- **Learn by Building:** Hands-on projects at every stage
-- **Production-Focused:** Emphasis on real-world deployment challenges
-- **Progressive Difficulty:** Clear stages with defined completion criteria
-- **Current (2025):** Covers modern tools and practices
-- **Practical Timeline:** Realistic time estimates for part-time learners
+**Why This Roadmap Exists:**
+- To provide a realistic, actionable path from beginner to professional AI Engineer
+- To emphasize building real projects over consuming tutorials
+- To set honest expectations about time commitment (2-6 years part-time)
+- To focus on the skills that actually matter for AI Engineering jobs
+- To help you build a portfolio that demonstrates real competence
+
+**What You'll Be Able to Build:**
+By completing this roadmap, you'll build production-ready AI applications:
+- RAG systems that answer questions from your own documents
+- AI agents that can use tools and reason through complex tasks
+- Full-stack AI applications deployed to production
+- Custom fine-tuned models for specific use cases
+- Scalable AI infrastructure with monitoring and evaluation
+
+### Who This Is For
+- **Prerequisites**: Minimal coding experience (we start with Python basics)
+- **Difficulty**: Beginner to Advanced (3 progressive stages)
+- **Estimated Time**: 2-6 years for part-time study to reach senior level
 
 ## The Three Stages
 
@@ -55,23 +68,58 @@ Start with **[Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/in
 
 **Estimated time:** 2-4 years to mastery
 
-## Learning Progression
+## 📊 Progress Tracker
 
-```
-Beginner
-   ↓
-Stage 1: Python & Software Engineering (6-12 months)
-   ↓
-Intermediate Developer
-   ↓
-Stage 2: AI Applications & RAG (12-18 months)
-   ↓
-Job-Ready AI Engineer (18-24 months total)
-   ↓
-Stage 3: Advanced Systems & MLOps (2-4 additional years)
-   ↓
-Senior AI Engineer
-```
+**Overall Progress**: ___% Complete
+**Current Stage**: ___ (1, 2, or 3)
+**Started Journey**: **/**/
+**Target Completion**: **/**/
+
+### Stage Progress
+- [ ] Stage 1: Foundational Skills (0/100 items)
+- [ ] Stage 2: Working with AI Tools (0/95 items)
+- [ ] Stage 3: Advanced AI Engineering (0/150 items)
+
+**Total Progress**: 0/345 items across all stages
+
+*Note: Detailed progress tracking is in each stage's hub page.*
+
+## ⏱️ Time & Prerequisites
+
+### Prerequisites
+
+**Before starting this roadmap, you should:**
+- [ ] Have access to a computer (Mac, Windows, or Linux)
+- [ ] Be willing to commit 1-2 hours/day consistently
+- [ ] Have budget for API costs ($20-50/month for Stage 2+)
+- [ ] Be comfortable learning independently
+
+**You DON'T need:**
+- Advanced math background (we teach what you need)
+- Expensive hardware or GPUs (we use cloud APIs)
+- Computer science degree
+- Prior programming experience (we start from basics)
+
+### Time Estimates
+
+**To become job-ready (complete Stages 1 & 2):**
+- **Minimum** (if you're fast and focused): 12-18 months
+- **Typical** (part-time, 1-2 hours/day): 18-30 months
+- **With full dedication** (4+ hours/day): 6-12 months
+
+**To reach senior level (complete all 3 stages):**
+- **Part-time commitment**: 2-6 years
+- **Full-time bootcamp intensity**: 1-2 years
+
+**Daily commitment**:
+- Minimum: 30 minutes/day (slow but steady progress)
+- Recommended: 1-2 hours/day (balanced pace)
+- Intensive: 3-4 hours/day (career transition mode)
+
+**Monthly costs**:
+- Stage 1: $0-20 (mostly free)
+- Stage 2: $20-50 (API experimentation)
+- Stage 3: $50-200 (cloud compute, GPU time)
 
 ## Recommended Learning Sequence
 
