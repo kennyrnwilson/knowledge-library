@@ -22,21 +22,15 @@
 
 ## How This Fits In
 
-- **Part of:** [Personal Development](../index.md)
+- **Part of:** [Permanent Notes](../index.md)
 - **Foundation for:** Productivity and performance
-- **Built from:** [Literature Notes](../../../02-literature-notes/index.md)
-
-## Next Steps
-
-- Migrate wellbeing notes from Notion
-- Create health and fitness guides
-- Document stress management techniques
+- **Built from:** [Literature Notes](../../02-literature-notes/index.md)
 
 ## Related Areas
 
 - [Productivity](../productivity/index.md) - Energy management
-- [Learning](../learning/index.md) - Cognitive performance
-- [Tracking](../../../06-tracking/index.md) - Health metrics
+- [Personal Development](../personal-development/index.md) - Learning and growth
+- [Tracking](../../05-tracking/index.md) - Health metrics
 
 ---
 
