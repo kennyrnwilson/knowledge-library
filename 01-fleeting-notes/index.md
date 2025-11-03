@@ -19,13 +19,22 @@
 
 ## Organization
 
-All notes are kept in a single folder and organized by filename date for easy browsing.
+All notes are kept in a single folder with descriptive filenames for easy browsing. Use the metadata (Created date) within each note to track when it was captured.
+
+## Current Fleeting Notes
+
+- [optimising-day-ultradian-rhythms.md](./optimising-day-ultradian-rhythms.md) - 90-minute focus cycles and peak performance
+- [overcoming-procrastination-anxiety.md](./overcoming-procrastination-anxiety.md) - Motivation strategies, exposure therapy, Stoic philosophy
+- [mastering-memory-learning.md](./mastering-memory-learning.md) - Active learning, spaced repetition, conceptual memory
+- [escaping-information-overload.md](./escaping-information-overload.md) - Capture-distill-integrate loop, action-oriented learning
+- [ai-engineering-resources-2025.md](./ai-engineering-resources-2025.md) - Curated AI tools and resources for software engineering
 
 ## Next Steps
 
-- Review fleeting notes monthly for promotion
+- Review fleeting notes monthly for promotion to permanent notes
 - Link promising ideas to related permanent notes
 - Archive notes older than 3 months that won't be developed
+- Continue capturing new ideas and observations
 
 ## Related Areas
 
