@@ -50,6 +50,13 @@ My knowledge library organized by topic. Well-formed, structured insights ready 
 ### 🧭 [Guidance](./04-guidance/index.md)
 Blueprints and operating procedures for how you run your life. Cheat sheets, workflows, frameworks, and decision guides.
 
+**Guidance Sections:**
+- [Cheat Sheets](./04-guidance/cheat-sheets/index.md) - Quick reference guides and summaries
+- [Wellbeing](./04-guidance/wellbeing/index.md) - Health and fitness guidance
+- [Productivity](./04-guidance/productivity/index.md) - Learning and work optimization
+- [Professional](./04-guidance/professional/index.md) - Career and technical guidance
+- [Note-Taking](./04-guidance/note-taking/index.md) - Knowledge management systems
+
 ### 🎯 [Projects](./05-projects/index.md)
 Active and past projects with progress tracking, milestones, and key learnings.
 
@@ -140,10 +147,10 @@ All new content should follow the templates in [`.templates/`](./.templates/):
 - [Interview Preparation](./03-permanent-notes/profession/interviewing/index.md)
 
 **Personal Growth:**
-- [Learning & Memory](./03-permanent-notes/personal-development/learning/index.md)
-- [Productivity Systems](./03-permanent-notes/personal-development/productivity/index.md)
-- [Wellbeing & Health](./03-permanent-notes/personal-development/wellbeing/index.md)
-- [Parenting](./03-permanent-notes/personal-development/parenting/index.md)
+- [Wellbeing & Health](./03-permanent-notes/wellbeing/index.md)
+- [Productivity Systems](./03-permanent-notes/productivity/index.md)
+- [Personal Development](./03-permanent-notes/personal-development/index.md)
+- [Parenting](./03-permanent-notes/parenting/index.md)
 
 **Technical Learning:**
 - [AI Engineering](./03-permanent-notes/ai-engineering/index.md)

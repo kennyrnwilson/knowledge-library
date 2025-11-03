@@ -21,7 +21,9 @@
 
 | Topic | Focus | Status |
 |-------|-------|--------|
-| TBD | | |
+| [Longevity Exercise Cheat Sheet](./longevity-exercise-cheat-sheet.md) | 9 core functional movements | Active |
+| [Training Volume Landmarks](./training-volume-landmarks.md) | Mike Israetel's training volume system | Active |
+| [Rules of Life](./rules-of-life.md) | Personal operating principles | Active |
 
 ## Next Steps
 

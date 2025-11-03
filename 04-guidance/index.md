@@ -24,7 +24,11 @@
 
 | Area | Purpose | Status |
 |------|---------|--------|
-| [Cheat Sheets](./cheat-sheets/index.md) | Quick reference guides | Active |
+| [Cheat Sheets](./cheat-sheets/index.md) | Quick reference guides and summaries | Active |
+| [Wellbeing](./wellbeing/index.md) | Health, fitness, and wellness guidance | Active |
+| [Productivity](./productivity/index.md) | Learning and work optimization | Active |
+| [Professional](./professional/index.md) | Career development and technical guidance | Active |
+| [Note-Taking](./note-taking/index.md) | Knowledge management systems and procedures | Active |
 | [Workflows](./workflows/index.md) | Standard operating procedures | Active |
 | [Frameworks](./frameworks/index.md) | Decision-making and thinking frameworks | Active |
 
