@@ -17,9 +17,9 @@ Master working with data: CSV files, pandas, SQL, databases, and NumPy.
 ## 🔗 Learning Resources
 
 ### Related Areas
-- [1.2 Software Engineering Practices](../software-engineering/index.md)
-- [1.4 Web Development & APIs](../web-development-apis/index.md)
-- [Stage 1 Overview](../index.md)
+- [1.2 Software Engineering Practices](../software-engineering/README.md)
+- [1.4 Web Development & APIs](../web-development-apis/README.md)
+- [Stage 1 Overview](../README.md)
 
 ---
 

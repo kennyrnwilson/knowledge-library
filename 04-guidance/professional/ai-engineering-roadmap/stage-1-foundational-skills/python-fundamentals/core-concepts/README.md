@@ -22,9 +22,9 @@ Master the building blocks of Python programming.
 - **[Error Handling & Debugging](./error-handling.md)** - Exceptions, debugging tools
 
 ### Related Learning Paths
-- [Python Fundamentals Overview](../index.md)
+- [Python Fundamentals Overview](../README.md)
 - [Professional Python Skills](../professional-skills.md)
-- [Stage 1: Foundational Skills](../../index.md)
+- [Stage 1: Foundational Skills](../../README.md)
 
 ## ✅ Learning Checklist
 

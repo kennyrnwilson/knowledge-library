@@ -52,9 +52,9 @@ Get Python installed and configured properly on your system. Choose the guide th
 
 ### Related Topics
 
-- [Python Fundamentals Overview](./index.md)
-- [Core Python Concepts](./core-concepts/index.md)
-- [Stage 1: Foundational Skills](../index.md)
+- [Python Fundamentals Overview](./README.md)
+- [Core Python Concepts](./core-concepts/README.md)
+- [Stage 1: Foundational Skills](../README.md)
 
 ---
 
@@ -114,7 +114,7 @@ Get Python installed and configured properly on your system. Choose the guide th
 - [🪟 Windows Installation](./windows-installation.md)
 - [🐧 WSL Installation](./wsl-installation.md)
 
-Or move to [Core Python Concepts](./core-concepts/index.md) once you've completed your setup.
+Or move to [Core Python Concepts](./core-concepts/README.md) once you've completed your setup.
 
 ---
 

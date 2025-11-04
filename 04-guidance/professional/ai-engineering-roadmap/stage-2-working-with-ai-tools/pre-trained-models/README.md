@@ -33,10 +33,10 @@ Navigate the ecosystem of pre-trained AI models and learn when to use open-sourc
 - **[Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)** - Benchmark scores
 
 ### Related Topics
-- **[AI APIs Integration](../ai-apis/index.md)** - Using commercial models via APIs
-- **[RAG Systems](../rag/index.md)** - Combining models with retrieval
-- **[Evaluation Metrics](../evaluation-metrics/index.md)** - Comparing model performance objectively
-- **[Projects](../projects/index.md)** - Build Project 4: Model Comparison
+- **[AI APIs Integration](../ai-apis/README.md)** - Using commercial models via APIs
+- **[RAG Systems](../rag/README.md)** - Combining models with retrieval
+- **[Evaluation Metrics](../evaluation-metrics/README.md)** - Comparing model performance objectively
+- **[Projects](../projects/README.md)** - Build Project 4: Model Comparison
 
 ### Articles & Guides
 - **Open Source LLM Guide** - Comprehensive overview of available models
@@ -334,7 +334,7 @@ This demonstrates deep understanding of model selection.
 2. Run Ollama locally with Mistral
 3. Compare outputs from different models
 4. Build model comparison project
-5. Move to [Evaluation Metrics](../evaluation-metrics/index.md)
+5. Move to [Evaluation Metrics](../evaluation-metrics/README.md)
 
 ---
 

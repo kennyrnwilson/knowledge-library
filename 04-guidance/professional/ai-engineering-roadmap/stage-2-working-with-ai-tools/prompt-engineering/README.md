@@ -24,10 +24,10 @@ Master the art and science of writing instructions to get the best outputs from 
 ## 🔗 Learning Resources
 
 ### Related Topics
-- **[AI APIs Integration](../ai-apis/index.md)** - Learn to call APIs before optimizing prompts
-- **[RAG Systems](../rag/index.md)** - Combine prompting with retrieval for grounded answers
-- **[Evaluation Metrics](../evaluation-metrics/index.md)** - Measure prompt quality systematically
-- **[Projects](../projects/index.md)** - Apply prompting skills in Project 1: Chatbot
+- **[AI APIs Integration](../ai-apis/README.md)** - Learn to call APIs before optimizing prompts
+- **[RAG Systems](../rag/README.md)** - Combine prompting with retrieval for grounded answers
+- **[Evaluation Metrics](../evaluation-metrics/README.md)** - Measure prompt quality systematically
+- **[Projects](../projects/README.md)** - Apply prompting skills in Project 1: Chatbot
 
 ### Tools for Prompt Development
 - **Playground from API providers** - OpenAI, Anthropic, and Google provide interactive playgrounds
@@ -371,8 +371,8 @@ Dates and Events:
 2. Learn chain-of-thought
 3. Practice optimization iteration
 4. Build evaluation datasets
-5. Move to [RAG](../rag/index.md) for grounded answers
-6. Build [Project 1: Chatbot](../projects/index.md)
+5. Move to [RAG](../rag/README.md) for grounded answers
+6. Build [Project 1: Chatbot](../projects/README.md)
 
 ---
 

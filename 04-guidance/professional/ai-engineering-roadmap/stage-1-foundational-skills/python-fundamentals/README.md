@@ -44,7 +44,7 @@
   - IntelliSense configuration
 
 ### Core Concepts
-- **[Core Python Fundamentals](./core-concepts/index.md)**
+- **[Core Python Fundamentals](./core-concepts/README.md)**
   - Basic Syntax & Data Types
   - Control Flow (if/else, loops)
   - Data Structures (lists, dicts, tuples, sets)
@@ -197,12 +197,12 @@ Once you've mastered Python Fundamentals, move to:
 1. **Software Engineering Practices** - Git, testing, code quality
 2. **Databases** - SQL and data handling
 3. **Web Development** - APIs and HTTP
-4. **[Stage 1 Projects](../projects/index.md)** - Build portfolio projects
+4. **[Stage 1 Projects](../projects/README.md)** - Build portfolio projects
 
 ## Related Areas
 
-- [Stage 1: Foundational Skills](../index.md)
-- [AI Engineering Roadmap](../../index.md)
+- [Stage 1: Foundational Skills](../README.md)
+- [AI Engineering Roadmap](../../README.md)
 
 ---
 

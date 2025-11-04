@@ -16,9 +16,9 @@ Master the terminal and basic deployment concepts.
 ## 🔗 Learning Resources
 
 ### Related Areas
-- [1.4 Web Development & APIs](../web-development-apis/index.md)
-- [1.6 Math Foundations](../math-foundations/index.md)
-- [Stage 1 Overview](../index.md)
+- [1.4 Web Development & APIs](../web-development-apis/README.md)
+- [1.6 Math Foundations](../math-foundations/README.md)
+- [Stage 1 Overview](../README.md)
 
 ---
 

@@ -24,10 +24,10 @@ The single most important skill for production AI engineering. RAG solves halluc
 ## 🔗 Learning Resources
 
 ### Related Topics
-- **[AI APIs Integration](../ai-apis/index.md)** - Using APIs for embeddings and generation
-- **[Pre-trained Models](../pre-trained-models/index.md)** - Local embedding models for cost savings
-- **[Evaluation Metrics](../evaluation-metrics/index.md)** - RAG-specific evaluation frameworks
-- **[Projects](../projects/index.md)** - Build Project 2: RAG System with real documents
+- **[AI APIs Integration](../ai-apis/README.md)** - Using APIs for embeddings and generation
+- **[Pre-trained Models](../pre-trained-models/README.md)** - Local embedding models for cost savings
+- **[Evaluation Metrics](../evaluation-metrics/README.md)** - RAG-specific evaluation frameworks
+- **[Projects](../projects/README.md)** - Build Project 2: RAG System with real documents
 
 ### Official Documentation
 - **LangChain RAG documentation** - Comprehensive RAG framework
@@ -204,7 +204,7 @@ Query → Dense + Sparse Search → Combine Results
 4. Add document preprocessing
 5. Implement evaluation
 6. Try advanced techniques
-7. Build [Project 2: RAG System](../projects/index.md)
+7. Build [Project 2: RAG System](../projects/README.md)
 
 ## Key Takeaways
 

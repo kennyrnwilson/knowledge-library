@@ -17,9 +17,9 @@ Master Git, testing, code quality, and professional development practices that s
 ## 🔗 Learning Resources
 
 ### Related Areas
-- [1.1 Python Fundamentals](../python-fundamentals/index.md)
-- [1.3 Data & Databases](../data-databases/index.md)
-- [Stage 1 Overview](../index.md)
+- [1.1 Python Fundamentals](../python-fundamentals/README.md)
+- [1.3 Data & Databases](../data-databases/README.md)
+- [Stage 1 Overview](../README.md)
 
 ---
 

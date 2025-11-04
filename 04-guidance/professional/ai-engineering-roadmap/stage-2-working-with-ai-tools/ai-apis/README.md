@@ -26,9 +26,9 @@ Master integrating foundation model APIs from major providers. This is your entr
 - **Replicate API Documentation** - Access to Llama and other open-source models
 
 ### Related Topics
-- **[Prompt Engineering](../prompt-engineering/index.md)** - Master how to write effective prompts once you can call APIs
-- **[Cost Optimization](../evaluation-metrics/index.md)** - Track and optimize API costs systematically
-- **[Projects](../projects/index.md)** - Build Project 1: Chatbot using these API skills
+- **[Prompt Engineering](../prompt-engineering/README.md)** - Master how to write effective prompts once you can call APIs
+- **[Cost Optimization](../evaluation-metrics/README.md)** - Track and optimize API costs systematically
+- **[Projects](../projects/README.md)** - Build Project 1: Chatbot using these API skills
 
 ### Provider Selection Guide
 
@@ -303,8 +303,8 @@ Benefit: Switch providers without rewriting code
 3. Compare costs and quality
 4. Understand token counting
 5. Implement proper error handling
-6. Move to [Prompt Engineering](../prompt-engineering/index.md)
-7. Build [Project 1: Chatbot](../projects/index.md)
+6. Move to [Prompt Engineering](../prompt-engineering/README.md)
+7. Build [Project 1: Chatbot](../projects/README.md)
 
 ---
 

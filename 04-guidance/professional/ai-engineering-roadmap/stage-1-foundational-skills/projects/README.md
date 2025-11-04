@@ -27,9 +27,9 @@ Projects are where learning becomes real. Through these five projects you'll:
 - Deploy to the internet
 
 ### Related Areas
-- [1.6 Math Foundations](../math-foundations/index.md)
-- [Stage 1 Overview](../index.md)
-- [Stage 2 Overview](../../stage-2-llm-fundamentals/index.md)
+- [1.6 Math Foundations](../math-foundations/README.md)
+- [Stage 1 Overview](../README.md)
+- [Stage 2 Overview](../../stage-2-llm-fundamentals/README.md)
 
 ---
 

@@ -23,17 +23,17 @@ Transition from learning Python to becoming an AI Builder. Master AI APIs, promp
 ## 🔗 Learning Resources
 
 ### Child Pages
-**[2.1 AI APIs Integration](./ai-apis/index.md)** - Learn to integrate OpenAI, Anthropic, and other AI APIs; master function calling, streaming, cost optimization, and error handling.
+**[2.1 AI APIs Integration](./ai-apis/README.md)** - Learn to integrate OpenAI, Anthropic, and other AI APIs; master function calling, streaming, cost optimization, and error handling.
 
-**[2.2 Prompt Engineering](./prompt-engineering/index.md)** - Master the art of prompt engineering with zero-shot, few-shot, chain-of-thought, and advanced patterns like ReAct and meta-prompting.
+**[2.2 Prompt Engineering](./prompt-engineering/README.md)** - Master the art of prompt engineering with zero-shot, few-shot, chain-of-thought, and advanced patterns like ReAct and meta-prompting.
 
-**[2.3 RAG (Retrieval-Augmented Generation)](./rag/index.md)** - Build RAG systems from scratch: embeddings, vector databases, chunking strategies, and advanced techniques for production applications.
+**[2.3 RAG (Retrieval-Augmented Generation)](./rag/README.md)** - Build RAG systems from scratch: embeddings, vector databases, chunking strategies, and advanced techniques for production applications.
 
-**[2.4 Pre-trained Models](./pre-trained-models/index.md)** - Navigate the HuggingFace ecosystem, select appropriate models, and learn when fine-tuning is necessary vs prompt engineering.
+**[2.4 Pre-trained Models](./pre-trained-models/README.md)** - Navigate the HuggingFace ecosystem, select appropriate models, and learn when fine-tuning is necessary vs prompt engineering.
 
-**[2.5 Evaluation Metrics](./evaluation-metrics/index.md)** - Build robust evaluation systems with LLM-as-judge, custom metrics, A/B testing, and systematic improvement frameworks.
+**[2.5 Evaluation Metrics](./evaluation-metrics/README.md)** - Build robust evaluation systems with LLM-as-judge, custom metrics, A/B testing, and systematic improvement frameworks.
 
-**[2.6 Projects to Build](./projects/index.md)** - Five comprehensive portfolio projects: chatbot, RAG app, AI agent, fine-tuned model, and full-stack AI application.
+**[2.6 Projects to Build](./projects/README.md)** - Five comprehensive portfolio projects: chatbot, RAG app, AI agent, fine-tuned model, and full-stack AI application.
 
 ### Recommended Learning Path
 1. **Start with 2.1 AI APIs Integration** - Foundation for everything else, learn how to call models

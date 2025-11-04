@@ -37,9 +37,9 @@ Optional but helpful: Linear algebra, probability, statistics, and calculus basi
 - **NumPy/SciPy** - compute in Python
 
 ### Related Areas
-- [1.5 Command Line & DevOps Basics](../command-line-devops/index.md)
-- [1.7 Stage 1 Projects](../projects/index.md)
-- [Stage 1 Overview](../index.md)
+- [1.5 Command Line & DevOps Basics](../command-line-devops/README.md)
+- [1.7 Stage 1 Projects](../projects/README.md)
+- [Stage 1 Overview](../README.md)
 
 ---
 

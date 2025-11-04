@@ -16,9 +16,9 @@ Learn HTTP, REST APIs, and building web applications.
 ## 🔗 Learning Resources
 
 ### Related Areas
-- [1.3 Data & Databases](../data-databases/index.md)
-- [1.5 Command Line & DevOps Basics](../command-line-devops/index.md)
-- [Stage 1 Overview](../index.md)
+- [1.3 Data & Databases](../data-databases/README.md)
+- [1.5 Command Line & DevOps Basics](../command-line-devops/README.md)
+- [Stage 1 Overview](../README.md)
 
 ---
 

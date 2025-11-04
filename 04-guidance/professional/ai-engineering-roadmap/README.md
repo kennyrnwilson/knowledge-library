@@ -12,9 +12,9 @@ This is a comprehensive, realistic roadmap for becoming an AI Engineer—a speci
 
 | Stage | Duration | Goal | Job-Ready | Key Skills |
 |-------|----------|------|-----------|-----------|
-| [Stage 1: Foundational Skills](./stage-1-foundational-skills/index.md) | 6-12 months | Master Python, APIs, databases, Git | No | Software engineering fundamentals |
-| [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/index.md) | 12-18 months | Build AI applications, RAG systems | **Yes** | AI APIs, prompt engineering, RAG |
-| [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/index.md) | 2-4 years | Production infrastructure, MLOps | **Senior** | Deep learning, infrastructure, optimization |
+| [Stage 1: Foundational Skills](./stage-1-foundational-skills/README.md) | 6-12 months | Master Python, APIs, databases, Git | No | Software engineering fundamentals |
+| [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md) | 12-18 months | Build AI applications, RAG systems | **Yes** | AI APIs, prompt engineering, RAG |
+| [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md) | 2-4 years | Production infrastructure, MLOps | **Senior** | Deep learning, infrastructure, optimization |
 
 
 ## 📊 Progress Tracker
@@ -53,13 +53,13 @@ This is a comprehensive, realistic roadmap for becoming an AI Engineer—a speci
 ## 🔗 Learning Resources
 
 ### Official Stages & Paths
-- [Stage 1: Foundational Skills](./stage-1-foundational-skills/index.md) - Python, APIs, databases, Git
-- [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/index.md) - RAG, prompt engineering, AI APIs
-- [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/index.md) - Deep learning, MLOps, infrastructure
+- [Stage 1: Foundational Skills](./stage-1-foundational-skills/README.md) - Python, APIs, databases, Git
+- [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md) - RAG, prompt engineering, AI APIs
+- [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md) - Deep learning, MLOps, infrastructure
 
 ### Learning Support
 - [Teach to Learn](../teach-to-learn.md) - Effective learning techniques
-- [Professional - Permanent Notes](../../../03-permanent-notes/profession/index.md) - General professional development
+- [Professional - Permanent Notes](../../../03-permanent-notes/profession/README.md) - General professional development
 
 ### Prerequisites & Expectations
 
@@ -184,7 +184,7 @@ No! This is a **learning path guide** with links to real courses, documentation,
 ## FAQ & Common Questions
 
 ### Q: "I want to use ChatGPT in my app - where do I start?"
-→ Jump to [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/index.md)
+→ Jump to [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md)
 
 ### Q: "What's the difference between learning ML vs AI Engineering?"
 → ML focuses on training models from data. AI Engineering focuses on building with **existing** models. This is AI Engineering.
@@ -230,10 +230,10 @@ No! This is a **learning path guide** with links to real courses, documentation,
 
 ## Related Areas
 
-- [Stage 1: Foundational Skills](./stage-1-foundational-skills/index.md)
-- [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/index.md)
-- [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/index.md)
-- [Professional - Permanent Notes](../../../03-permanent-notes/profession/index.md)
+- [Stage 1: Foundational Skills](./stage-1-foundational-skills/README.md)
+- [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md)
+- [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md)
+- [Professional - Permanent Notes](../../../03-permanent-notes/profession/README.md)
 - [Teach to Learn](../teach-to-learn.md) - Learning techniques
 
 ---

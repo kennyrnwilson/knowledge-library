@@ -26,13 +26,13 @@ Master Python, Git, APIs, databases, and software engineering fundamentals—the
 ## 🔗 Learning Resources
 
 ### Official Stage Topics & Paths
-- [Python Fundamentals](./python-fundamentals/index.md) - Installation, virtual environments, core concepts
-- [Software Engineering Practices](./software-engineering/index.md) - Git, testing, code quality
-- [Data & Databases](./data-databases/index.md) - SQL, Pandas, data manipulation
-- [Web Development & APIs](./web-development-apis/index.md) - HTTP, REST, FastAPI
-- [Command Line & DevOps](./command-line-devops/index.md) - Terminal, deployment, monitoring
-- [Math Foundations (Optional)](./math-foundations/index.md) - Linear algebra, statistics, calculus
-- [Portfolio Projects](./projects/index.md) - 5 practical projects to build
+- [Python Fundamentals](./python-fundamentals/README.md) - Installation, virtual environments, core concepts
+- [Software Engineering Practices](./software-engineering/README.md) - Git, testing, code quality
+- [Data & Databases](./data-databases/README.md) - SQL, Pandas, data manipulation
+- [Web Development & APIs](./web-development-apis/README.md) - HTTP, REST, FastAPI
+- [Command Line & DevOps](./command-line-devops/README.md) - Terminal, deployment, monitoring
+- [Math Foundations (Optional)](./math-foundations/README.md) - Linear algebra, statistics, calculus
+- [Portfolio Projects](./projects/README.md) - 5 practical projects to build
 
 ### Recommended Learning Resources
 **Python Learning**
@@ -65,7 +65,7 @@ Master Python, Git, APIs, databases, and software engineering fundamentals—the
 
 ### 1.1 Python Fundamentals (3-6 months)
 
-**[Python Setup & Environment](./python-fundamentals/index.md)**
+**[Python Setup & Environment](./python-fundamentals/README.md)**
 - Installation (Windows, Mac, Linux)
 - Virtual environments
 - Modern tooling (Poetry, pyproject.toml)
@@ -89,7 +89,7 @@ Master Python, Git, APIs, databases, and software engineering fundamentals—the
 
 ### 1.2 Software Engineering Practices (2-3 months)
 
-**[Software Engineering Practices](./software-engineering/index.md)**
+**[Software Engineering Practices](./software-engineering/README.md)**
 - Git & Version Control (init, add, commit, push, branches)
 - Testing Basics (unit testing with pytest)
 - Code Quality (style, linting, type checking)
@@ -98,7 +98,7 @@ Master Python, Git, APIs, databases, and software engineering fundamentals—the
 
 ### 1.3 Data & Databases (2-3 months)
 
-**[Data & Databases](./data-databases/index.md)**
+**[Data & Databases](./data-databases/README.md)**
 - CSV and Tabular Data (pandas fundamentals)
 - Data Visualization (matplotlib, plots)
 - SQL Fundamentals (queries, databases)
@@ -108,7 +108,7 @@ Master Python, Git, APIs, databases, and software engineering fundamentals—the
 
 ### 1.4 Web Development & APIs (2-3 months)
 
-**[Web Development & APIs](./web-development-apis/index.md)**
+**[Web Development & APIs](./web-development-apis/README.md)**
 - HTTP and REST Basics (methods, status codes, principles)
 - Making HTTP Requests (requests library, error handling)
 - FastAPI Fundamentals (endpoints, models, responses)
@@ -117,7 +117,7 @@ Master Python, Git, APIs, databases, and software engineering fundamentals—the
 
 ### 1.5 Command Line & DevOps (1-2 months)
 
-**[Command Line & DevOps](./command-line-devops/index.md)**
+**[Command Line & DevOps](./command-line-devops/README.md)**
 - Terminal Basics (navigation, file operations, permissions)
 - Shell Scripting (scripts, variables, control flow)
 - Understanding Servers (client-server, ports, SSH)
@@ -126,7 +126,7 @@ Master Python, Git, APIs, databases, and software engineering fundamentals—the
 
 ### 1.6 Math Foundations (Optional)
 
-**[Math Foundations (Optional)](./math-foundations/index.md)**
+**[Math Foundations (Optional)](./math-foundations/README.md)**
 - Linear Algebra Basics (vectors, matrices, operations)
 - Probability & Statistics (distributions, hypothesis testing)
 - Calculus Basics (derivatives, optimization)
@@ -284,7 +284,7 @@ You've completed Stage 1 when you can:
 
 ## Next Steps
 
-When you're ready, move to **[Stage 2: Working with AI Tools](../stage-2-working-with-ai-tools/index.md)** where you'll:
+When you're ready, move to **[Stage 2: Working with AI Tools](../stage-2-working-with-ai-tools/README.md)** where you'll:
 - Integrate AI APIs (OpenAI, Anthropic, etc.)
 - Learn prompt engineering
 - Build RAG systems
@@ -293,10 +293,10 @@ When you're ready, move to **[Stage 2: Working with AI Tools](../stage-2-working
 
 ## Related Areas
 
-- [AI Engineering Roadmap Overview](../index.md)
-- [Stage 2: Working with AI Tools](../stage-2-working-with-ai-tools/index.md)
-- [Stage 3: Advanced AI Engineering](../stage-3-advanced-ai-engineering/index.md)
-- [Professional - Permanent Notes](../../../../03-permanent-notes/profession/index.md)
+- [AI Engineering Roadmap Overview](../README.md)
+- [Stage 2: Working with AI Tools](../stage-2-working-with-ai-tools/README.md)
+- [Stage 3: Advanced AI Engineering](../stage-3-advanced-ai-engineering/README.md)
+- [Professional - Permanent Notes](../../../../03-permanent-notes/profession/README.md)
 
 ---
 
