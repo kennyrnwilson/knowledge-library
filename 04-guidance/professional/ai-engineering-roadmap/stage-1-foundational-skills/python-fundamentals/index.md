@@ -16,11 +16,11 @@
 ## 🔗 Learning Resources
 
 ### Setup & Environment
-- **[Environment Setup by Operating System](./environment-setup.md)**
-  - Windows Installation
-  - WSL Installation (Windows Subsystem for Linux)
-  - Mac and Linux setup
-  - Virtual environments
+- **[Environment Setup by Operating System](./environment-setup.md)** - Platform selection and overview
+  - **[🪟 Windows Installation](./windows-installation.md)** - Official installer, PATH, PowerShell
+  - **[🐧 WSL Installation](./wsl-installation.md)** - Linux on Windows, file system performance
+  - Mac: Use Homebrew (`brew install python@3.12`)
+  - Linux: Use apt (`sudo apt install python3 python3-venv`)
 
 ### Modern Tooling (2025)
 - **[Modern Python Project Setup](./modern-project-setup.md)**
