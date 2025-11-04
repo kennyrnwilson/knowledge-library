@@ -118,8 +118,8 @@ Learn → Feynman Explain → Identify Gaps → Revisit Source → Teach Others 
 ## Related Areas
 
 - [Mastering Memory and Learning](../../02-literature-notes/fleeting-notes/mastering-memory-learning.md) - Learning techniques and memory systems
-- [Productivity](../../../03-permanent-notes/productivity/index.md) - Broader productivity systems
-- [Focus & Deep Work](../../../03-permanent-notes/productivity/focus-deep-work/index.md) - Deep learning practices
+- [Productivity](../../../03-permanent-notes/productivity/README.md) - Broader productivity systems
+- [Focus & Deep Work](../../../03-permanent-notes/productivity/focus-deep-work/README.md) - Deep learning practices
 
 ---
 

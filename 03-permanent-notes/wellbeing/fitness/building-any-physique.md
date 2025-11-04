@@ -189,7 +189,7 @@ Bodybuilding-style training is the most direct route to physique goals, but it's
 
 - [Fitness for Busy People](./fitness-for-busy-people.md) - Practical strategies for time-constrained schedules
 - [Longevity Exercise](./longevity-exercise-cheat-sheet.md) - Functional movements for lifelong strength
-- [Sleep & Recovery](../sleep/index.md) - Sleep's crucial role in recovery
+- [Sleep & Recovery](../sleep/README.md) - Sleep's crucial role in recovery
 - [Willpower & Self-Control](../mental-health/willpower-and-self-control.md) - Discipline and consistency
 
 ---

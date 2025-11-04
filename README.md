@@ -32,13 +32,13 @@ graph TD
 
 ## 📂 How It's Organized
 
-### 📥 [Fleeting Notes](./01-fleeting-notes/index.md)
+### 📥 [Fleeting Notes](./01-fleeting-notes/README.md)
 Quick capture inbox for thoughts, ideas, and temporary snippets. Reviewed regularly for archival and development into permanent notes.
 
-### 📚 [Literature Notes](./02-literature-notes/index.md)
+### 📚 [Literature Notes](./02-literature-notes/README.md)
 Curated summaries of books, articles, courses, and other resources. Starting points for deeper research and sources for permanent notes.
 
-### 🧠 [Permanent Notes](./03-permanent-notes/index.md)
+### 🧠 [Permanent Notes](./03-permanent-notes/README.md)
 My knowledge library organized by topic. Well-formed, structured insights ready for reference and application.
 
 **Topics Include:**
@@ -47,23 +47,23 @@ My knowledge library organized by topic. Well-formed, structured insights ready 
 - **Leisure** - Books, travel, entertainment
 - **AI Engineering** - In-depth learning path covering modern AI systems
 
-### 🧭 [Guidance](./04-guidance/index.md)
+### 🧭 [Guidance](./04-guidance/README.md)
 Blueprints and operating procedures for how you run your life. Cheat sheets, workflows, frameworks, and decision guides.
 
 **Guidance Sections:**
-- [Cheat Sheets](./04-guidance/cheat-sheets/index.md) - Quick reference guides and summaries
-- [Wellbeing](./04-guidance/wellbeing/index.md) - Health and fitness guidance
-- [Productivity](./04-guidance/productivity/index.md) - Learning and work optimization
-- [Professional](./04-guidance/professional/index.md) - Career and technical guidance
-- [Note-Taking](./04-guidance/note-taking/index.md) - Knowledge management systems
+- [Cheat Sheets](./04-guidance/cheat-sheets/README.md) - Quick reference guides and summaries
+- [Wellbeing](./04-guidance/wellbeing/README.md) - Health and fitness guidance
+- [Productivity](./04-guidance/productivity/README.md) - Learning and work optimization
+- [Professional](./04-guidance/professional/README.md) - Career and technical guidance
+- [Note-Taking](./04-guidance/note-taking/README.md) - Knowledge management systems
 
-### 🎯 [Projects](./05-projects/index.md)
+### 🎯 [Projects](./05-projects/README.md)
 Active and past projects with progress tracking, milestones, and key learnings.
 
-### 📊 [Tracking & Reviews](./06-tracking/index.md)
+### 📊 [Tracking & Reviews](./06-tracking/README.md)
 Goals, habit tracking, weekly reviews, and annual reflections. Measurement and accountability space.
 
-### 📦 [Archive](./07-archive/index.md)
+### 📦 [Archive](./07-archive/README.md)
 Deprecated content and outdated notes kept for historical reference.
 
 ---
@@ -141,25 +141,25 @@ All new content should follow the templates in [`.templates/`](./.templates/):
 ## 🗂️ Navigation by Topic
 
 **Professional Development:**
-- [Profession Overview](./03-permanent-notes/profession/index.md)
-- [Management Skills](./03-permanent-notes/profession/management/index.md)
-- [Technical Skills](./03-permanent-notes/profession/technical-skills/index.md)
-- [Interview Preparation](./03-permanent-notes/profession/interviewing/index.md)
+- [Profession Overview](./03-permanent-notes/profession/README.md)
+- [Management Skills](./03-permanent-notes/profession/management/README.md)
+- [Technical Skills](./03-permanent-notes/profession/technical-skills/README.md)
+- [Interview Preparation](./03-permanent-notes/profession/interviewing/README.md)
 
 **Personal Growth:**
-- [Wellbeing & Health](./03-permanent-notes/wellbeing/index.md)
-- [Productivity Systems](./03-permanent-notes/productivity/index.md)
-- [Personal Development](./03-permanent-notes/personal-development/index.md)
-- [Parenting](./03-permanent-notes/parenting/index.md)
+- [Wellbeing & Health](./03-permanent-notes/wellbeing/README.md)
+- [Productivity Systems](./03-permanent-notes/productivity/README.md)
+- [Personal Development](./03-permanent-notes/personal-development/README.md)
+- [Parenting](./03-permanent-notes/parenting/README.md)
 
 **Technical Learning:**
-- [AI Engineering](./03-permanent-notes/ai-engineering/index.md)
-- [Python Programming](./03-permanent-notes/profession/technical-skills/python/index.md)
+- [AI Engineering](./03-permanent-notes/ai-engineering/README.md)
+- [Python Programming](./03-permanent-notes/profession/technical-skills/python/README.md)
 
 **Leisure & Personal:**
-- [Books & Reading](./03-permanent-notes/leisure/books/index.md)
-- [Travel](./03-permanent-notes/leisure/travel/index.md)
-- [Entertainment](./03-permanent-notes/leisure/entertainment/index.md)
+- [Books & Reading](./03-permanent-notes/leisure/books/README.md)
+- [Travel](./03-permanent-notes/leisure/travel/README.md)
+- [Entertainment](./03-permanent-notes/leisure/entertainment/README.md)
 
 ---
 
@@ -174,27 +174,27 @@ All new content should follow the templates in [`.templates/`](./.templates/):
 ## 🤝 How to Use This System
 
 ### For Daily Capture
-1. Capture quick thoughts in [Fleeting Notes](./01-fleeting-notes/index.md)
+1. Capture quick thoughts in [Fleeting Notes](./01-fleeting-notes/README.md)
 2. Periodically review and develop promising ideas into permanent notes
 3. Link new notes to existing knowledge
 
 ### For Learning
-1. Create [Literature Notes](./02-literature-notes/index.md) for resources you read
-2. Extract key concepts into [Permanent Notes](./03-permanent-notes/index.md)
+1. Create [Literature Notes](./02-literature-notes/README.md) for resources you read
+2. Extract key concepts into [Permanent Notes](./03-permanent-notes/README.md)
 3. Connect to existing knowledge through relationships
 
 ### For Guidance
-1. Reference [Guidance](./04-guidance/index.md) for procedures and frameworks
+1. Reference [Guidance](./04-guidance/README.md) for procedures and frameworks
 2. Create cheat sheets for frequently needed info
 3. Document your workflows and decision-making
 
 ### For Projects
-1. Start with a [Project](./05-projects/index.md) template
+1. Start with a [Project](./05-projects/README.md) template
 2. Track progress and milestones
 3. Capture learnings as you go
 
 ### For Review
-1. Regular [Weekly Reviews](./06-tracking/weekly-reviews/index.md)
+1. Regular [Weekly Reviews](./06-tracking/weekly-reviews/README.md)
 2. Monthly and annual reflections
 3. Track goals and habit streaks
 

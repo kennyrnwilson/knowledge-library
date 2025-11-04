@@ -171,7 +171,7 @@ How it connects to other wellbeing practices
 
 ## Related Areas
 
-**Sleep optimization** (energy for willpower) - [Sleep & Recovery](../sleep/index.md)
+**Sleep optimization** (energy for willpower) - [Sleep & Recovery](../sleep/README.md)
 
 **Stress management** (willpower preservation) - [Paced Breathing](../mindfulness/paced-breathing.md)
 

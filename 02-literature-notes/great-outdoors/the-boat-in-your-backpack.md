@@ -36,8 +36,8 @@ A Financial Times feature about lightweight backpacking rafts and outdoor advent
 
 ## Related Areas
 
-- [Travel & Exploration](../../03-permanent-notes/leisure/travel-exploration/index.md)
-- [Great Outdoors](../../03-permanent-notes/leisure/travel-exploration/index.md) - Outdoor activities and adventures
+- [Travel & Exploration](../../03-permanent-notes/leisure/travel-exploration/README.md)
+- [Great Outdoors](../../03-permanent-notes/leisure/travel-exploration/README.md) - Outdoor activities and adventures
 
 ---
 

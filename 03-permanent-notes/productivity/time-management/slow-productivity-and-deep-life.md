@@ -380,8 +380,8 @@ Many self-help concepts are:
 ## Related Notes
 
 - [Optimizing Your Day with Ultradian Rhythms](./ultradian-rhythms.md) - Biological time optimization
-- [Goal Setting & Achievement](../goal-setting/index.md) - Dream management systems
-- [Focus & Deep Work](../focus-deep-work/index.md) - Concentration and meaningful work
+- [Goal Setting & Achievement](../goal-setting/README.md) - Dream management systems
+- [Focus & Deep Work](../focus-deep-work/README.md) - Concentration and meaningful work
 - [Willpower & Self-Control](../../wellbeing/mental-health/willpower-and-self-control.md) - Discipline and follow-through
 
 ---

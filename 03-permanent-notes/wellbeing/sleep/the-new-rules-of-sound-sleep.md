@@ -123,8 +123,8 @@ Sleep beats expensive recovery tools every time. Focus on these evidence-based p
 
 ## Related Notes
 
-- [Fitness & Exercise](../fitness/index.md) - Exercise boosts sleep quality
-- [Mental Health](../mental-health/index.md) - Sleep impacts stress and anxiety
+- [Fitness & Exercise](../fitness/README.md) - Exercise boosts sleep quality
+- [Mental Health](../mental-health/README.md) - Sleep impacts stress and anxiety
 - [Willpower & Self-Control](../mental-health/willpower-and-self-control.md) - Sleep affects willpower capacity
 
 ---

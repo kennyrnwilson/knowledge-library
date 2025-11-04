@@ -146,7 +146,7 @@ Include these movements in a broader training program:
 
 - [Building Any Physique](./building-any-physique.md) - Complete training framework
 - [Fitness for Busy People](./fitness-for-busy-people.md) - Time-efficient strategies
-- [Sleep & Recovery](../sleep/index.md) - Recovery's role in strength building
+- [Sleep & Recovery](../sleep/README.md) - Recovery's role in strength building
 
 ---
 

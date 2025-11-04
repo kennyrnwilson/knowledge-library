@@ -36,8 +36,8 @@
 
 ## Related Areas
 
-- [Frameworks](../frameworks/index.md) - Decision-making frameworks
-- [Permanent Notes](../../03-permanent-notes/index.md) - Deeper principles and values
+- [Frameworks](../frameworks/README.md) - Decision-making frameworks
+- [Permanent Notes](../../03-permanent-notes/README.md) - Deeper principles and values
 
 ---
 

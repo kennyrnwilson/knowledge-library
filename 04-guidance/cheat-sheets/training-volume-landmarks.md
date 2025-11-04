@@ -92,7 +92,7 @@ Advanced → Train MAV-MRV with planned deloads
 ## Related Areas
 
 - [Longevity Exercise Cheat Sheet](./longevity-exercise-cheat-sheet.md) - Core movements
-- [Wellbeing - Physical Health](../wellbeing/physical-health/index.md) - Overall health
+- [Wellbeing - Physical Health](../wellbeing/physical-health/README.md) - Overall health
 
 ---
 

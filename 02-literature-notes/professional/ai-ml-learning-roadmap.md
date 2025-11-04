@@ -121,9 +121,9 @@ A comprehensive, structured roadmap of effective courses and books for learning 
 
 ## Related Areas
 
-- [AI Engineering](../../03-permanent-notes/ai-engineering/index.md) - Detailed AI engineering learning path
-- [Technical Skills](../../03-permanent-notes/profession/technical-skills/index.md) - Technical skill development
-- [Productivity](../../03-permanent-notes/productivity/index.md) - Learning strategies and systems
+- [AI Engineering](../../03-permanent-notes/ai-engineering/README.md) - Detailed AI engineering learning path
+- [Technical Skills](../../03-permanent-notes/profession/technical-skills/README.md) - Technical skill development
+- [Productivity](../../03-permanent-notes/productivity/README.md) - Learning strategies and systems
 
 ---
 

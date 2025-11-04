@@ -123,8 +123,8 @@ Paced breathing isn't just about calming down—it's about tuning in. Each breat
 
 ## Related Notes
 
-- [Sleep & Recovery](../sleep/index.md) - Breathing for sleep quality
-- [Mental Health](../mental-health/index.md) - Stress management practices
+- [Sleep & Recovery](../sleep/README.md) - Breathing for sleep quality
+- [Mental Health](../mental-health/README.md) - Stress management practices
 - [Willpower & Self-Control](../mental-health/willpower-and-self-control.md) - Self-control under pressure
 
 ---

@@ -55,8 +55,8 @@ This document describes how to maintain consistency and quality across the Knowl
 **Format:** Use relative paths from file location
 ```markdown
 [Link text](../personal-development/learning/spaced-repetition.md)
-[Management Skills](./management/index.md)
-[Archive](../../06-archive/index.md)
+[Management Skills](./management/README.md)
+[Archive](../../06-archive/README.md)
 ```
 
 **Guidelines:**

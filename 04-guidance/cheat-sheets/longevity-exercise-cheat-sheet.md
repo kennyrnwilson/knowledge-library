@@ -82,7 +82,7 @@
 ## Related Areas
 
 - [Training Volume Landmarks](./training-volume-landmarks.md) - Volume classification system
-- [Wellbeing - Physical Health](../wellbeing/physical-health/index.md) - Health and nutrition guidance
+- [Wellbeing - Physical Health](../wellbeing/physical-health/README.md) - Health and nutrition guidance
 
 ---
 

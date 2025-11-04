@@ -213,8 +213,8 @@ If you need additional focus time:
 ## Related Notes
 
 - [Slow Productivity & The Deep Life](./slow-productivity-and-deep-life.md) - Comprehensive time management framework
-- [Sleep & Recovery](../../wellbeing/sleep/index.md) - Sleep's critical role in learning
-- [Focus & Deep Work](../focus-deep-work/index.md) - Concentration and flow states
+- [Sleep & Recovery](../../wellbeing/sleep/README.md) - Sleep's critical role in learning
+- [Focus & Deep Work](../focus-deep-work/README.md) - Concentration and flow states
 
 ---
 

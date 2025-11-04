@@ -177,8 +177,8 @@ Don't create a perfect system. Start with these habits and iterate.
 
 ## Related Notes
 
-- [Management](./index.md) - Main management section
-- [Workplace Dynamics](../workplace-dynamics/index.md) - Interpersonal skills and relationships
+- [Management](./README.md) - Main management section
+- [Workplace Dynamics](../workplace-dynamics/README.md) - Interpersonal skills and relationships
 
 ---
 

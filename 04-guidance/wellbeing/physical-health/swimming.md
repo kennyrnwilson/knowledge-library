@@ -48,9 +48,9 @@ Swimming is an excellent full-body, low-impact activity for fitness, recreation,
 
 ## Related Areas
 
-- [Physical Health](./index.md) - Overall physical wellness guidance
+- [Physical Health](./README.md) - Overall physical wellness guidance
 - [Longevity Exercise Cheat Sheet](../../cheat-sheets/longevity-exercise-cheat-sheet.md) - Core movements
-- [Wellbeing](../../../03-permanent-notes/wellbeing/index.md) - Permanent notes on wellbeing
+- [Wellbeing](../../../03-permanent-notes/wellbeing/README.md) - Permanent notes on wellbeing
 
 ---
 

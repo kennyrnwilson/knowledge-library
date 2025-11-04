@@ -109,7 +109,7 @@ Turn off screens an hour before bed. Dim lights, read, stretch, or listen to mus
 
 - [Building Any Physique](./building-any-physique.md) - Complete training and nutrition guide
 - [Longevity Exercise](./longevity-exercise-cheat-sheet.md) - Functional strength movements
-- [Sleep & Recovery](../sleep/index.md) - Sleep's critical role in recovery
+- [Sleep & Recovery](../sleep/README.md) - Sleep's critical role in recovery
 
 ---
 
