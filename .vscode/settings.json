@@ -1,8 +1,5 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "material-icon-theme.files.associations": {
-    "special.config.json": "../../icons/temp"
-  },
   "material-icon-theme.folders.associations": {
     "01-fleeting-notes": "../../../../icons/fleeting-notes",
     "02-literature-notes": "../../../../icons/literature-notes",
