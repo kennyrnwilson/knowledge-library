@@ -10,11 +10,11 @@ This is a comprehensive, realistic roadmap for becoming an AI Engineer—a speci
 
 ## The Three Stages
 
-| Stage | Duration | Goal | Job-Ready | Key Skills |
-|-------|----------|------|-----------|-----------|
-| [Stage 1: Foundational Skills](./stage-1-foundational-skills/README.md) | 6-12 months | Master Python, APIs, databases, Git | No | Software engineering fundamentals |
-| [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md) | 12-18 months | Build AI applications, RAG systems | **Yes** | AI APIs, prompt engineering, RAG |
-| [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md) | 2-4 years | Production infrastructure, MLOps | **Senior** | Deep learning, infrastructure, optimization |
+| Stage | Goal | Job-Ready | Key Skills |
+|-------|------|-----------|-----------|
+| [Stage 1: Foundational Skills](./stage-1-foundational-skills/README.md) | Master Python, APIs, databases, Git | No | Software engineering fundamentals |
+| [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md) | Build AI applications, RAG systems | **Yes** | AI APIs, prompt engineering, RAG |
+| [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md) | Production infrastructure, MLOps | **Senior** | Deep learning, infrastructure, optimization |
 
 
 ## 📊 Progress Tracker
@@ -59,53 +59,9 @@ This is a comprehensive, realistic roadmap for becoming an AI Engineer—a speci
 
 ### Learning Support
 - [Teach to Learn](../teach-to-learn.md) - Effective learning techniques
-- [Professional - Permanent Notes](../../../03-permanent-not../professional/README.md) - General professional development
-
-### Prerequisites & Expectations
-
-**Before starting this roadmap, you should:**
-- Have access to a computer (Mac, Windows, or Linux)
-- Be willing to commit consistent time (see timelines below)
-- Be comfortable learning independently
-- Have budget for API costs ($20-50/month for Stage 2+)
-
-**You DON'T need:**
-- Advanced math background (we teach what you need)
-- Expensive hardware or GPUs (we use cloud APIs)
-- Computer science degree
-- Prior programming experience (we start from basics)
-
-## Recommended Learning Sequence
-
-1. **Pick Your Entry Point**
-   - No programming experience? → Start with Stage 1
-   - Know Python? → Start with Stage 2
-   - Senior engineer? → Focus on Stage 3 gaps
-
-2. **Complete Each Stage**
-   - Read and understand core concepts
-   - Complete learning checklist
-   - Build the recommended projects
-   - Meet completion criteria
-
-3. **Build Portfolio**
-   - Every stage includes 5 projects
-   - Deploy real applications
-   - Get user feedback
-   - Document and share
-
-4. **Move to Next Stage**
-   - Only after completing projects
-   - Only after meeting completion criteria
-   - Review and consolidate learning
+- [Professional - Permanent Notes](../../../03-permanent-notes/professional/README.md) - General professional development
 
 ## ✅ Learning Checklist
-
-### Entry Point Assessment
-- [ ] Assess your current programming level (beginner, intermediate, advanced)
-- [ ] Determine which stage is right for you
-- [ ] Set realistic weekly time commitment
-- [ ] Calculate your personal timeline based on commitment level
 
 ### Stage 1: Foundational Skills
 - [ ] Complete Python fundamentals (basics, control flow, functions)
@@ -138,23 +94,6 @@ This is a comprehensive, realistic roadmap for becoming an AI Engineer—a speci
 - [ ] Stage 2 complete (AI application job-ready criteria met)
 - [ ] Stage 3 complete (senior engineer criteria met)
 
-## Common Questions
-
-### "Do I need to do all of Stage 1?"
-Not necessarily. If you already know Python, APIs, and databases, you can skip sections. See Stage 1 for self-assessment.
-
-### "Can I jump to Stage 2 without Stage 1?"
-If you're already a strong software engineer (5+ years), yes. Otherwise, Stage 1 fundamentals are important.
-
-### "How is this different from ML bootcamps?"
-This focuses on **AI application engineering** (building with existing models) rather than ML research. It's more practical and job-focused.
-
-### "What if I want to do research or training models?"
-You'll need additional math and research papers. See Stage 3 recommendations. This roadmap is for AI **engineers**, not researchers.
-
-### "Is this course/content?"
-No! This is a **learning path guide** with links to real courses, documentation, and resources. You'll learn by building real projects.
-
 ## Completion Criteria Summary
 
 ### After Stage 1
@@ -181,59 +120,12 @@ No! This is a **learning path guide** with links to real courses, documentation,
 - ✅ Contribute to open-source
 - ✅ Lead technical discussions
 
-## FAQ & Common Questions
-
-### Q: "I want to use ChatGPT in my app - where do I start?"
-→ Jump to [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md)
-
-### Q: "What's the difference between learning ML vs AI Engineering?"
-→ ML focuses on training models from data. AI Engineering focuses on building with **existing** models. This is AI Engineering.
-
-### Q: "Can I do this while working a full-time job?"
-→ Yes! 10-15 hours/week means 18-24 months to job-ready. See realistic timeline above.
-
-### Q: "What programming language should I use?"
-→ Python. It's the standard for AI and is beginner-friendly.
-
-### Q: "Do I need GPU to learn?"
-→ Not immediately. Stage 1 and early Stage 2 can run on CPU. GPU helpful for Stage 2 onwards, but not required.
-
-### Q: "Should I focus on open-source or commercial models?"
-→ Start with commercial (OpenAI, Anthropic). They're easier and more reliable. Learn open-source models in Stage 2/3.
-
-## Getting Started
-
-1. **Assess your current level**
-   - Complete beginner? → Stage 1
-   - Know Python? → Stage 2
-   - 5+ years as engineer? → Stage 2 or Stage 3
-
-2. **Set time commitment**
-   - How many hours per week can you dedicate?
-   - Be realistic - consistency matters more than intensity
-
-3. **Pick first project**
-   - Each stage has project specifications
-   - Start with the first one in your stage
-   - Build something you care about
-
-4. **Track progress**
-   - Use the completion checklists
-   - Document your projects
-   - Share progress with community
-
-5. **Build portfolio**
-   - Deploy every project
-   - Write documentation
-   - Get real users or feedback
-   - Blog about what you learned
-
 ## Related Areas
 
 - [Stage 1: Foundational Skills](./stage-1-foundational-skills/README.md)
 - [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md)
 - [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md)
-- [Professional - Permanent Notes](../../../03-permanent-not../professional/README.md)
+- [Professional - Permanent Notes](../../../03-permanent-notes/professional/README.md)
 - [Teach to Learn](../teach-to-learn.md) - Learning techniques
 
 ---
