@@ -44,8 +44,9 @@ Transition from learning Python to becoming an AI Builder. Master AI APIs, promp
 6. **Finish with 2.6 Projects** - Portfolio projects that demonstrate your skills to employers
 
 ### Related Areas
-- Stage 1: Foundational Skills (prerequisites)
-- Stage 3: Advanced AI Engineering (next steps)
+- 📚 [Stage 1: Foundational Skills](../stage-1-foundational-skills/README.md) (prerequisites)
+- 🔬 [Stage 3: Advanced AI Engineering](../stage-3-advanced-ai-engineering/README.md) (next steps)
+- 🎯 [AI Engineering Roadmap Overview](../README.md) (main roadmap)
 
 ## 🎯 Overview
 
@@ -200,9 +201,9 @@ If you're not confident in these areas, spend more time on projects. The differe
 
 ---
 
-**Next Steps**: Start with 2.1 AI APIs Integration
-**Need Help?** Check the FAQ & Common Questions or join AI engineering communities on Discord.
-**Parent Page**: 🚀 AI Engineering: Your Realistic Roadmap
+**Next Steps**: Start with [2.1 AI APIs Integration](./ai-apis/README.md)
+**Back**: [Stage 1: Foundational Skills](../stage-1-foundational-skills/README.md) | [Main Roadmap](../README.md)
+**Next**: [Stage 3: Advanced AI Engineering](../stage-3-advanced-ai-engineering/README.md)
 
 ---
 

@@ -29,7 +29,7 @@ Projects are where learning becomes real. Through these five projects you'll:
 ### Related Areas
 - [1.6 Math Foundations](../math-foundations/README.md)
 - [Stage 1 Overview](../README.md)
-- [Stage 2 Overview](../../stage-2-llm-fundamentals/README.md)
+- [Stage 2 Overview](../../stage-2-working-with-ai-tools/README.md)
 
 ---
 

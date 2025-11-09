@@ -58,7 +58,7 @@ This is a comprehensive, realistic roadmap for becoming an AI Engineer—a speci
 - [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md) - Deep learning, MLOps, infrastructure
 
 ### Learning Support
-- [Teach to Learn](../teach-to-learn.md) - Effective learning techniques
+- [Teach to Learn](../productivity/teach-to-learn.md) - Effective learning techniques
 - [Professional - Permanent Notes](../../../03-permanent-notes/professional/README.md) - General professional development
 
 ## ✅ Learning Checklist
@@ -126,7 +126,7 @@ This is a comprehensive, realistic roadmap for becoming an AI Engineer—a speci
 - [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md)
 - [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md)
 - [Professional - Permanent Notes](../../../03-permanent-notes/professional/README.md)
-- [Teach to Learn](../teach-to-learn.md) - Learning techniques
+- [Teach to Learn](../../productivity/teach-to-learn.md) - Learning techniques
 
 ---
 

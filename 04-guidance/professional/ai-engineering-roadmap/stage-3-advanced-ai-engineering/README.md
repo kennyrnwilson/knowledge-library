@@ -19,8 +19,8 @@ Master deep learning internals, MLOps, production infrastructure, and advanced A
 ## 🔗 Learning Resources
 
 **Prerequisites:**
-- [[Stage 1: Foundations]] - Programming and AI basics required
-- [[Stage 2: Working with AI Tools]] - Must have built multiple AI applications
+- 📚 [Stage 1: Foundational Skills](../stage-1-foundational-skills/README.md) - Programming and AI basics required
+- 🤖 [Stage 2: Working with AI Tools](../stage-2-working-with-ai-tools/README.md) - Must have built multiple AI applications
 - 1-2 years software engineering experience
 
 **Related Areas:**
@@ -416,9 +416,9 @@ If you've made it through this entire roadmap, you're now a professional AI Engi
 
 ---
 
-**Next Steps**: Begin with 3.1 Deep Learning Internals & Architecture
-**Need Help?** Join AI engineering communities, read papers, and learn from open-source projects.
-**Parent Page**: [[AI Engineering: Your Realistic Roadmap]]
+**Back**: [Stage 2: Working with AI Tools](../stage-2-working-with-ai-tools/README.md) | [Main Roadmap](../README.md)
+**Begin**: [3.1 Deep Learning Internals & Architecture](./deep-learning-internals/README.md)
+**Communities**: Join AI engineering communities, read papers, and learn from open-source projects
 
 ---
 
