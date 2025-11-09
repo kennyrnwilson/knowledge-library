@@ -2,6 +2,8 @@
 
 Transition from learning Python to becoming an AI Builder. Master AI APIs, prompt engineering, RAG systems, and build a portfolio of production-ready AI applications.
 
+**← Back to**: [AI Engineering Roadmap](../README.md) | **← From**: [Stage 1: Foundational Skills](../stage-1-foundational-skills/README.md)
+
 ---
 
 ## 📚 What You'll Learn

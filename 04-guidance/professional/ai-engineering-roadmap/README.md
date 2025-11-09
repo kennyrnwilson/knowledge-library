@@ -2,6 +2,10 @@
 
 **Purpose:** A comprehensive, realistic roadmap for becoming an AI Engineer—a specialized software engineer who builds and deploys applications using foundation models through prompt engineering, RAG, and API integration.
 
+---
+
+**← Back to**: [Professional - Permanent Notes](../../../03-permanent-notes/professional/README.md) | [Guidance Hub](../README.md)
+
 ## 🎯 Overview
 
 This is a comprehensive, realistic roadmap for becoming an AI Engineer—a specialized software engineer who builds and deploys applications using foundation models (like GPT-4, Claude) through prompt engineering, RAG, and API integration. Unlike many resources that promise quick results, this roadmap is honest: reaching professional competence takes years of dedicated part-time work, not months.

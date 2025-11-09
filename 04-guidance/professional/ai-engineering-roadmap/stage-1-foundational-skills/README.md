@@ -2,6 +2,8 @@
 
 Master Python, Git, APIs, databases, and software engineering fundamentals—the essential skills you need before working with AI tools.
 
+**← Back to**: [AI Engineering Roadmap](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

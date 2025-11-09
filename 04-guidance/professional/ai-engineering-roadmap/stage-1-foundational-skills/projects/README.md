@@ -2,6 +2,8 @@
 
 Five portfolio projects that build real skills and demonstrate competence.
 
+**← Back to**: [Stage 1: Foundational Skills](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

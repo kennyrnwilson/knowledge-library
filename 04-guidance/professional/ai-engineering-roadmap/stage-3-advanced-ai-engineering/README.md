@@ -2,6 +2,8 @@
 
 Master deep learning internals, MLOps, production infrastructure, and advanced AI systems—the skills that transform you from AI application builder to senior AI Engineer.
 
+**← Back to**: [AI Engineering Roadmap](../README.md) | **← From**: [Stage 2: Working with AI Tools](../stage-2-working-with-ai-tools/README.md)
+
 ---
 
 ## 📚 What You'll Learn
