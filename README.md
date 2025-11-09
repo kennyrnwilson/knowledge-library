@@ -38,6 +38,27 @@ graph TD
     P -- Completed --> Archive
 ```
 
+### 📥 Capture
+
+* **From Ideas 💡** → Drop quick thoughts into **Fleeting Notes** or **Scratch Pad**
+* **From Books 📚 and Articles 📰** → Summarize key points into **Literature Notes**
+
+### 📋 Organise
+
+* Review captured notes periodically
+* If valuable: Refine and store as structured insights in **Permanent Notes**
+
+### 🛠️ Apply
+
+* Use **Guidance** notes as blueprints to drive decisions, plans, and routines
+* Log activities, milestones, and outcomes in **Progress**
+
+### 💃 Archive
+
+* Move completed or inactive information to **Archive** for long-term reference
+
+---
+
 ## 📂 How It's Organized
 
 ### 📥 [Fleeting Notes](./01-fleeting-notes/README.md)
@@ -54,21 +75,29 @@ My knowledge library organized by topic. Well-formed, structured insights ready 
 
 **Topics Include:**
 
-* **Profession** - Management, technical skills, interviewing
-* **Personal Development** - Learning, productivity, wellbeing, parenting
-* **Leisure** - Books, travel, entertainment
+* 🏢 **Professional** - Career, management, technical skills, workplace dynamics, finance
+* 🌟 **Personal Development** - Social skills, interpersonal growth, self-awareness
+* 🏥 **Wellbeing** - Sleep, fitness, mindfulness, mental health
+* 📚 **Productivity** - Time management, goal setting, deep work, focus
+* 👶 **Parenting** - Child development, behavior, emotional health
+* 🎭 **Leisure** - Hobbies, travel, entertainment, books, media
 
 ### 🧑‍🗾 [Guidance](./04-guidance/README.md)
 
-Blueprints and operating procedures for how you run your life. Cheat sheets, workflows, frameworks, and decision guides.
+Your personal **operations manual** — blueprints and procedures for living intentionally. SOPs, workflows, frameworks, and decision guides **mirroring the same topics as Permanent Notes**.
 
-**Guidance Sections:**
+**Guidance Topics (Parallel to Permanent Notes):**
 
-* [Cheat Sheets](./04-guidance/cheat-sheets/README.md) - Quick reference guides and summaries
-* [Wellbeing](./04-guidance/wellbeing/README.md) - Health and fitness guidance
-* [Productivity](./04-guidance/productivity/README.md) - Learning and work optimization
-* [Professional](./04-guidance/professional/README.md) - Career and technical guidance
-* [Note-Taking](./04-guidance/note-taking/README.md) - Knowledge management systems
+* 🏢 [Professional](./04-guidance/professional/README.md) - Career workflows & SOPs
+* 🌟 [Personal Development](./04-guidance/personal-development/README.md) - Growth routines & guides
+* 🏥 [Wellbeing](./04-guidance/wellbeing/README.md) - Health & fitness procedures
+* 📚 [Productivity](./04-guidance/productivity/README.md) - Work systems & routines
+* 👶 [Parenting](./04-guidance/parenting/README.md) - Parenting procedures & frameworks
+* 🎭 [Leisure](./04-guidance/leisure/README.md) - Hobby & travel routines
+
+**Plus:**
+
+* 📚 [Cheat Sheets](./04-guidance/cheat-sheets/README.md) - Quick reference guides
 
 ### 🎯 [Projects](./05-projects/README.md)
 
@@ -84,39 +113,11 @@ Deprecated content and outdated notes kept for historical reference.
 
 ---
 
-## 📌 Example Workflow
-
-### 📥 Capture
-
-* **From Ideas 💡** → Drop quick thoughts into **Fleeting Notes** or **Scratch Pad**
-* **From Books 📚 and Articles 📰** → Summarize key points into **Literature Notes**
-
-### 🔄 Process
-
-* Review captured notes periodically
-* If valuable: Refine and store as structured insights in **Permanent Notes**
-
-### 🛠️ Apply
-
-* Use **Guidance** notes as blueprints to drive decisions, plans, and routines
-* Log activities, milestones, and outcomes in **Progress**
-
-### 💃 Archive
-
-* Move completed or inactive information to **Archive** for long-term reference
-
 ## ✅ Why This Structure Works
 
 * **Zettelkasten principles** ensure knowledge grows **organically** and **connects**
 * **PARA structure** keeps actions and resources separate but aligned
 * Focuses equally on **thinking** (Scratch Pad), **learning** (Literature Notes), **building knowledge** (Permanent Notes), and **applying knowledge** (Guidance and Progress)
-
-## 🚀 Quick Start
-
-1. **Explore by topic:** Browse any folder and start with its `README.md` for an overview
-2. **Follow connections:** Look for "Related Notes" sections to jump between topics
-3. **Search:** Use Ctrl+F or GitHub's search to find specific topics
-4. **Contribute:** See [CONTRIBUTING.md](./CONTRIBUTING.md) for style guidelines
 
 ---
 
@@ -158,88 +159,46 @@ All new content should follow the templates in [`.templates/`](./.templates/):
 
 ---
 
-## 🗂️ Navigation by Topic
-
-**Professional Development:**
-
-* [Profession Overview](./03-permanent-not../professional/README.md)
-* [Management Skills](./03-permanent-not../professional/management/README.md)
-* [Technical Skills](./03-permanent-not../professional/technical-skills/README.md)
-* [Interview Preparation](./03-permanent-not../professional/interviewing/README.md)
-
-**Personal Growth:**
-
-* [Wellbeing & Health](./03-permanent-notes/wellbeing/README.md)
-* [Productivity Systems](./03-permanent-notes/productivity/README.md)
-* [Personal Development](./03-permanent-notes/personal-development/README.md)
-* [Parenting](./03-permanent-notes/parenting/README.md)
-
-**Technical Learning:**
-
-* [Professional - AI Engineering](./03-permanent-not../professional/ai-engineering/README.md)
-* [Python Programming](./03-permanent-not../professional/technical-skills/python/README.md)
-
-**Leisure & Personal:**
-
-* [Books & Reading](./03-permanent-notes/leisure/books/README.md)
-* [Travel](./03-permanent-notes/leisure/travel/README.md)
-* [Entertainment](./03-permanent-notes/leisure/entertainment/README.md)
-
----
-
-## 📊 Stats
-
-* **Total Sections:** 7 main categories
-* **Sub-categories:** 20+
-* **Status:** Actively growing and evolving
-
----
-
 ## 🤝 How to Use This System
 
-### For Daily Capture
+Pick your use case and dive in:
 
-1. Capture quick thoughts in [Fleeting Notes](./01-fleeting-notes/README.md)
-2. Periodically review and develop promising ideas into permanent notes
-3. Link new notes to existing knowledge
+### 📥 **Daily Capture** — Quick idea collection
 
-### For Learning
+1. 💡 Capture quick thoughts in [Fleeting Notes](./01-fleeting-notes/README.md)
+2. 🔄 Periodically review and develop promising ideas
+3. 🔗 Link new insights to existing knowledge
 
-1. Create [Literature Notes](./02-literature-notes/README.md) for resources you read
-2. Extract key concepts into [Permanent Notes](./03-permanent-notes/README.md)
-3. Connect to existing knowledge through relationships
+### 📚 **Learning** — From sources to structured knowledge
 
-### For Guidance
+1. 📖 Create [Literature Notes](./02-literature-notes/README.md) for books & articles
+2. 🧠 Extract key concepts into [Permanent Notes](./03-permanent-notes/README.md)
+3. 🔗 Connect to existing knowledge through relationships
 
-1. Reference [Guidance](./04-guidance/README.md) for procedures and frameworks
-2. Create cheat sheets for frequently needed info
-3. Document your workflows and decision-making
+### 🛠️ **Guidance** — Theory into practice
 
-### For Projects
+1. ⚙️ Reference [Guidance](./04-guidance/README.md) for procedures & frameworks
+2. 📝 Create cheat sheets for frequently needed info
+3. 🔄 Document your workflows and decision-making
 
-1. Start with a [Project](./05-projects/README.md) template
-2. Track progress and milestones
-3. Capture learnings as you go
+### 📊 **Projects** — Building things
 
-### For Review
+1. 🚀 Start with a [Project](./05-projects/README.md) template
+2. 📈 Track progress and milestones
+3. 💎 Capture learnings as you go
 
-1. Regular [Weekly Reviews](./06-tracking/weekly-reviews/README.md)
-2. Monthly and annual reflections
-3. Track goals and habit streaks
+### 📈 **Review** — Reflect and iterate
+
+1. 📅 Regular [Weekly Reviews](./06-tracking/weekly-reviews/README.md)
+2. 🗓️ Monthly and annual reflections
+3. 🎯 Track goals and habit streaks
 
 ---
 
 ## 🖖️ See Also
 
-* [PLAN.md](./PLAN.md) - Implementation plan and progress
 * [CONTRIBUTING.md](./CONTRIBUTING.md) - Style guide and guidelines
 * [.templates/](./.templates/) - All markdown templates
-
----
-
-## ⚡ Get Started
-
-Pick a topic that interests you and start reading. Each folder's `README.md` file provides context and links to related content.
 
 ---
 
