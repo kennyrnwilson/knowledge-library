@@ -11,10 +11,14 @@
             "id": "cd100c1509cbcfd5",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -167,10 +171,11 @@
   },
   "active": "cd100c1509cbcfd5",
   "lastOpenFiles": [
+    "04-guidance/frameworks/README.md",
+    "01-fleeting-notes/ai-engineering-resources-2025.md",
     "04-guidance/professional/ai-engineering-roadmap/index.md",
     "04-guidance/professional/index.md",
     "04-guidance/index.md",
-    "01-fleeting-notes/ai-engineering-resources-2025.md",
     "03-permanent-notes/personal-development/index.md",
     "03-permanent-notes/personal-development/wellbeing/fitness/fitness-for-busy-people.md",
     "03-permanent-notes/personal-development/wellbeing/fitness/building-any-physique.md",

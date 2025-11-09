@@ -9,9 +9,9 @@
 ## How This Fits In
 
 - **Part of:** [Literature Notes](../README.md)
-- **Related to:** [Profession](../../03-permanent-notes/profession/README.md) - Professional development
-- **Related to:** [Technical Skills](../../03-permanent-notes/profession/technical-skills/README.md) - Technical skill development
-- **Related to:** [AI Engineering](../../03-permanent-notes/ai-engineering/README.md) - Advanced AI learning paths
+- **Related to:** [Professional](../../03-permanent-not../professional/README.md) - Professional development
+- **Related to:** [Technical Skills](../../03-permanent-not../professional/technical-skills/README.md) - Technical skill development
+- **Related to:** [Professional - AI Engineering](../../03-permanent-not../professional/ai-engineering/README.md) - Advanced AI learning paths
 
 ## Topics Covered
 

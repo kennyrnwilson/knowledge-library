@@ -13,7 +13,7 @@ To be populated with:
 
 ## How This Fits In
 
-- **Part of:** [Profession](../README.md)
+- **Part of:** [Professional](../README.md)
 - **Related to:** [Personal Development](../../personal-development/social-interpersonal-skills/README.md) - social and interpersonal skills
 - **Related to:** [Management](../management/README.md) - team relationships
 - **Built from:** [Literature Notes](../../02-literature-notes/README.md) and experience

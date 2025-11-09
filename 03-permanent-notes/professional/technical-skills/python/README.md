@@ -32,7 +32,7 @@ Topics to build:
 ## How This Fits In
 
 - **Part of:** [Technical Skills](../README.md)
-- **Supports:** [AI Engineering](../../ai-engineering/README.md) and all technical projects
+- **Supports:** [Professional - AI Engineering](.././profession../professional/ai-engineering/README.md) and all technical projects
 - **Resources:** [Literature Notes](../../../02-literature-notes/README.md)
 
 ## Next Steps
@@ -43,7 +43,7 @@ Topics to build:
 
 ## Related Areas
 
-- [AI Engineering](../../ai-engineering/README.md) - Applied Python
+- [Professional - AI Engineering](.././profession../professional/ai-engineering/README.md) - Applied Python
 - [Software Engineering](../software-engineering.md) - Broader practices
 - [Projects](../../../05-projects/README.md) - Apply knowledge
 

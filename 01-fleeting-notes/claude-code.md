@@ -1,4 +1,4 @@
-# Claude Code
+# ✨ Claude Code
 
 **Status:** Fleeting Note
 **Created:** 2025-11-04
@@ -25,7 +25,10 @@ Claude Code is Anthropic's official CLI tool for software engineering that integ
 
 ### Advanced Features
 - **Multi-Step Task Planning:** Break complex tasks into actionable todos with progress tracking
-- **Specialized Agents:** Route tasks to expert agents (Explore for codebases, Plan for architecture, general-purpose for complex work)
+- **Specialized Subagents:** Route tasks via Task tool to expert subagents:
+  - **Explore:** Fast codebase exploration and file discovery
+  - **Plan:** Architecture planning and implementation strategy
+  - **general-purpose:** Complex multi-step tasks requiring full capabilities
 - **Context Management:** Intelligent context reduction to fit token budgets
 - **Code Analysis:** Search patterns, find function definitions, understand structure
 
@@ -34,7 +37,8 @@ Claude Code is Anthropic's official CLI tool for software engineering that integ
 ### Code Discovery
 - Use **Glob** for fast file pattern matching
 - Use **Grep** for content searching across files
-- Use **Task(Explore)** agent for open-ended codebase questions
+- Use **Task tool with Explore subagent** for open-ended codebase understanding
+- Use **Task tool with Plan subagent** for architecture and implementation planning
 
 ### Editing Efficiency
 - **Read** before editing (required by Edit tool)
@@ -42,10 +46,17 @@ Claude Code is Anthropic's official CLI tool for software engineering that integ
 - Create files only when absolutely necessary (prefer editing existing)
 
 ### Task Management
-- Use **TodoWrite** to plan multi-step tasks
-- Update todos as in_progress before starting work
-- Mark todos completed immediately after finishing
-- Only ONE task should be in_progress at a time
+- Use **TodoWrite tool** to plan multi-step tasks and track progress
+- Update todos as `in_progress` before starting work
+- Mark todos `completed` immediately after finishing
+- Only ONE task should be `in_progress` at a time
+
+### Subagent Routing
+- Use **Task tool** to invoke specialized subagents
+- **Explore:** When searching/understanding codebases (faster than general-purpose)
+- **Plan:** When designing architecture or planning implementation
+- **general-purpose:** When needing full capabilities for complex work
+- Combine subagents in parallel for independent operations
 
 ### Git Workflow
 - Verify status before committing: `git status`
@@ -56,10 +67,11 @@ Claude Code is Anthropic's official CLI tool for software engineering that integ
 ## Best Practices Learned
 
 ### Do's ✅
-- **Plan first:** Use TodoWrite for complex tasks
+- **Plan first:** Use TodoWrite for complex tasks (3+ steps)
 - **Parallel execution:** Call multiple independent tools in one request
 - **Specialized tools:** Use Glob, Grep, Read, Edit instead of Bash for file work
-- **Large tasks:** Use Task tool with specialized agents (Explore, Plan, general-purpose)
+- **Large tasks:** Use Task tool with appropriate subagent (Explore for understanding, Plan for architecture, general-purpose for complex work)
+- **Subagent routing:** Choose right subagent to save token budget and time
 - **Commit early:** Make focused commits with clear intent
 
 ### Don'ts ❌
@@ -120,13 +132,14 @@ Challenges:
 - **GUI tool integration** (must use CLI alternatives)
 - **Very large files** (context limitations on files >2000 lines)
 
-## Tools I Use Most Frequently
+## Tools & Subagents I Use Most Frequently
 
-1. **TodoWrite** - Essential for all multi-step work
-2. **Task(Explore)** - Fast codebase understanding
-3. **Bash** - For git, commands, and terminal operations
-4. **Read/Edit** - Precise file operations
-5. **Glob/Grep** - Fast searching
+1. **TodoWrite** - Essential for planning and tracking all multi-step work
+2. **Task with Explore subagent** - Fast codebase understanding and pattern discovery
+3. **Task with general-purpose subagent** - Complex multi-step tasks
+4. **Bash** - For git, commands, and terminal operations
+5. **Read/Edit** - Precise, targeted file operations
+6. **Glob/Grep** - Fast file and content searching
 
 ## Integration with Knowledge Library
 

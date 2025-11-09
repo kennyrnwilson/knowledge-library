@@ -27,7 +27,7 @@ All notes are kept in a single folder with descriptive filenames for easy browsi
 - [overcoming-procrastination-anxiety.md](./overcoming-procrastination-anxiety.md) - Motivation strategies, exposure therapy, Stoic philosophy
 - [mastering-memory-learning.md](./mastering-memory-learning.md) - Active learning, spaced repetition, conceptual memory
 - [escaping-information-overload.md](./escaping-information-overload.md) - Capture-distill-integrate loop, action-oriented learning
-- [ai-engineering-resources-2025.md](./ai-engineering-resources-2025.md) - Curated AI tools and resources for software engineering
+- [ai-engineering-resources-2025.md](ai-engineering-resources-2025.md) - Curated AI tools and resources for software engineering
 
 ## Next Steps
 

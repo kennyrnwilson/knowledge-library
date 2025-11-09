@@ -12,7 +12,7 @@ To be populated with:
 
 ## How This Fits In
 
-- **Part of:** [Profession](../README.md)
+- **Part of:** [Professional](../README.md)
 - **Related to:** [Wellbeing](../../wellbeing/README.md) - financial security supports wellbeing
 - **Built from:** [Literature Notes](../../02-literature-notes/README.md) and experience
 

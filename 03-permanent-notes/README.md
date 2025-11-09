@@ -19,15 +19,15 @@
 
 ## Topic Areas
 
-### 🏢 [Profession](./profession/README.md)
+### 🏢 [Professional]../professional/README.md)
 Career development, technical skills, management, workplace dynamics, and professional growth.
 
 **Includes:**
-- [Management](./profession/management/README.md) - Leadership and team dynamics
-- [Technical Skills](./profession/technical-skills/README.md) - Technology and programming
-- [Workplace Dynamics](./profession/workplace-dynamics/README.md) - Soft skills and relationships
-- [Interviewing](./profession/interviewing/README.md) - Interview prep and negotiation
-- [Finance](./profession/finance/README.md) - Financial management and strategy
+- [Management]../professional/management/README.md) - Leadership and team dynamics
+- [Technical Skills]../professional/technical-skills/README.md) - Technology and programming
+- [Workplace Dynamics]../professional/workplace-dynamics/README.md) - Soft skills and relationships
+- [Interviewing]../professional/interviewing/README.md) - Interview prep and negotiation
+- [Finance]../professional/finance/README.md) - Financial management and strategy
 
 ### 🌟 [Personal Development](./personal-development/README.md)
 Social and interpersonal skills for personal growth and relationships.
@@ -63,7 +63,7 @@ Recreation, hobbies, entertainment, travel, and personal enjoyment.
 - [Travel & Exploration](./leisure/travel-exploration/README.md) - Adventures and outdoor activities
 - [Entertainment & Media](./leisure/entertainment-media/README.md) - Books, film, and television
 
-### 🎓 [AI Engineering](./ai-engineering/README.md)
+### 🎓 [Professional - AI Engineering]../professional/ai-engineering/README.md)
 In-depth learning path covering modern AI systems and techniques.
 
 **Includes:**
@@ -80,9 +80,9 @@ Start with any topic area that interests you, then follow the related notes to e
 ## Quick Links by Interest
 
 **Professional Focus:**
-- [Management Skills](./profession/management/README.md)
-- [Interview Preparation](./profession/interviewing/README.md)
-- [Technical Skills](./profession/technical-skills/README.md)
+- [Management Skills]../professional/management/README.md)
+- [Interview Preparation]../professional/interviewing/README.md)
+- [Technical Skills]../professional/technical-skills/README.md)
 
 **Productivity & Growth:**
 - [Slow Productivity & Deep Life](./productivity/time-management/slow-productivity-and-deep-life.md)
@@ -95,7 +95,7 @@ Start with any topic area that interests you, then follow the related notes to e
 - [Mindfulness](./wellbeing/mindfulness/README.md)
 
 **AI & Technical:**
-- [AI Engineering](./ai-engineering/README.md)
+- [Professional - AI Engineering]../professional/ai-engineering/README.md)
 
 **Recreation:**
 - [Travel & Exploration](./leisure/travel-exploration/README.md)

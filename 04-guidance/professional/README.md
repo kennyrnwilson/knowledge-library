@@ -11,7 +11,7 @@
 ## How This Fits In
 
 - **Part of:** [Guidance](../README.md)
-- **Related to:** [Profession - Permanent Notes](../../03-permanent-notes/profession/README.md)
+- **Related to:** [Profession - Permanent Notes](../../03-permanent-not../professional/README.md)
 - **Purpose:** Actionable procedures for professional work
 
 ## Topics Covered

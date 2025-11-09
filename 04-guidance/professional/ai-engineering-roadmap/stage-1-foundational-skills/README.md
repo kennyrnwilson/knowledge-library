@@ -296,7 +296,7 @@ When you're ready, move to **[Stage 2: Working with AI Tools](../stage-2-working
 - [AI Engineering Roadmap Overview](../README.md)
 - [Stage 2: Working with AI Tools](../stage-2-working-with-ai-tools/README.md)
 - [Stage 3: Advanced AI Engineering](../stage-3-advanced-ai-engineering/README.md)
-- [Professional - Permanent Notes](../../../../03-permanent-notes/profession/README.md)
+- [Professional - Permanent Notes](../../../../03-permanent-not../professional/README.md)
 
 ---
 

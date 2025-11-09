@@ -59,7 +59,7 @@ This is a comprehensive, realistic roadmap for becoming an AI Engineer—a speci
 
 ### Learning Support
 - [Teach to Learn](../teach-to-learn.md) - Effective learning techniques
-- [Professional - Permanent Notes](../../../03-permanent-notes/profession/README.md) - General professional development
+- [Professional - Permanent Notes](../../../03-permanent-not../professional/README.md) - General professional development
 
 ### Prerequisites & Expectations
 
@@ -233,7 +233,7 @@ No! This is a **learning path guide** with links to real courses, documentation,
 - [Stage 1: Foundational Skills](./stage-1-foundational-skills/README.md)
 - [Stage 2: Working with AI Tools](./stage-2-working-with-ai-tools/README.md)
 - [Stage 3: Advanced AI Engineering](./stage-3-advanced-ai-engineering/README.md)
-- [Professional - Permanent Notes](../../../03-permanent-notes/profession/README.md)
+- [Professional - Permanent Notes](../../../03-permanent-not../professional/README.md)
 - [Teach to Learn](../teach-to-learn.md) - Learning techniques
 
 ---

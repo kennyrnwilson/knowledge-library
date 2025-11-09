@@ -9,7 +9,7 @@
 
 ## How This Fits In
 
-- **Part of:** [Profession](../README.md)
+- **Part of:** [Professional](../README.md)
 - **Supports:** Technical growth and career development
 - **Related to:** [Workplace Dynamics](../workplace-dynamics/README.md) - technical communication
 

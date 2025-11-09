@@ -11,7 +11,7 @@ Development of communication, relationships, emotional intelligence, and social 
 ## How This Fits In
 
 - **Part of:** [Permanent Notes](../README.md)
-- **Related to:** [Profession](../profession/README.md) - workplace relationships
+- **Related to:** [Professional](../professional/README.md) - workplace relationships
 - **Built from:** [Literature Notes](../../02-literature-notes/README.md) and experience
 
 ## Note
@@ -24,7 +24,7 @@ Productivity, wellbeing, parenting, and leisure are organized as separate top-le
 
 ## Related Areas
 
-- [Profession](../profession/README.md) - Career and professional development
+- [Professional](../professional/README.md) - Career and professional development
 - [Wellbeing](../wellbeing/README.md) - Mental and physical health
 - [Productivity](../productivity/README.md) - Time management and systems
 

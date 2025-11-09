@@ -8,7 +8,7 @@
 
 ## How This Fits In
 
-- **Part of:** [Profession](../README.md)
+- **Part of:** [Professional](../README.md)
 - **Supports:** Team leadership, organizational effectiveness, career advancement
 - **Related to:** [Workplace Dynamics](../workplace-dynamics/README.md) - interpersonal skills
 

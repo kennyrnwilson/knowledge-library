@@ -93,8 +93,8 @@ my_project/
 ## Related Areas
 
 - [AI/ML Learning Roadmap](../../02-literature-notes/professional/ai-ml-learning-roadmap.md) - Comprehensive ML learning guide
-- [Technical Skills](../../03-permanent-notes/profession/technical-skills/README.md) - Technical skill development
-- [Profession](../../03-permanent-notes/profession/README.md) - Professional development
+- [Technical Skills](../../03-permanent-not../professional/technical-skills/README.md) - Technical skill development
+- [Professional](../../03-permanent-not../professional/README.md) - Professional development
 
 ---
 

@@ -7,7 +7,8 @@
       "Bash(find . -name \"index.md\" -type f -exec sh -c 'mv \"\"$1\"\" \"\"${1%/*}/README.md\"\"' _ {} ;)",
       "Bash(find:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

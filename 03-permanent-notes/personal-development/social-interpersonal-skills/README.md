@@ -15,7 +15,7 @@ To be populated with:
 
 - **Part of:** [Personal Development](../README.md)
 - **Supports:** Professional relationships, personal growth, community building
-- **Related to:** [Profession](../../profession/README.md) - workplace dynamics
+- **Related to:** [Professional](../../professional/README.md) - workplace dynamics
 
 ## Next Steps
 

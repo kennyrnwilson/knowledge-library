@@ -12,7 +12,7 @@ To be populated with:
 
 ## How This Fits In
 
-- **Part of:** [Profession](../README.md)
+- **Part of:** [Professional](../README.md)
 - **Supports:** Career transitions and advancement
 - **Related to:** [Technical Skills](../technical-skills/README.md) - technical interview preparation
 - **Related to:** [Workplace Dynamics](../workplace-dynamics/README.md) - relationship building

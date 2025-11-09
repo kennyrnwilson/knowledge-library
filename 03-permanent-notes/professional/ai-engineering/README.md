@@ -27,7 +27,7 @@ Topics to add:
 
 ## How This Fits In
 
-- **Part of:** [Profession - Technical Skills](../profession/technical-skills/README.md)
+- **Part of:** [Profession - Technical Skills](../professional/technical-skills/README.md)
 - **Supports:** [Projects](../../05-projects/README.md) and AI work
 - **Resources:** [Literature Notes](../../02-literature-notes/README.md)
 
@@ -39,14 +39,14 @@ Topics to add:
 
 ## Quick Links
 
-- [Python for AI](../profession/technical-skills/python/README.md)
+- [Python for AI](../professional/technical-skills/python/README.md)
 - [AI Projects](../../05-projects/README.md)
 - [AI Learning Resources](../../02-literature-notes/README.md)
 
 ## Related Areas
 
-- [Python Programming](../profession/technical-skills/python/README.md) - Foundation
-- [Technical Skills](../profession/technical-skills/README.md) - Broader context
+- [Python Programming](../professional/technical-skills/python/README.md) - Foundation
+- [Technical Skills](../professional/technical-skills/README.md) - Broader context
 - [Projects](../../05-projects/README.md) - Apply knowledge
 
 ---
