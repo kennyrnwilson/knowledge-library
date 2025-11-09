@@ -2,6 +2,8 @@
 
 MLOps is the practice of operating, monitoring, and maintaining machine learning systems in production. It's the "ops" in machine learning.
 
+**← Back to**: [Stage 3: Advanced AI Engineering](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

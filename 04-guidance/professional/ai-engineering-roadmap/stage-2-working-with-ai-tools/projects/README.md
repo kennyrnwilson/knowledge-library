@@ -2,6 +2,8 @@
 
 Build a portfolio of substantial AI projects that demonstrate your ability to create production-ready applications and land your first AI engineering role.
 
+**← Back to**: [Stage 2: Working with AI Tools](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

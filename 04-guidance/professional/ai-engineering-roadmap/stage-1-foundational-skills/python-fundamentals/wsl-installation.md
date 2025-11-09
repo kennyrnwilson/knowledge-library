@@ -2,6 +2,8 @@
 
 WSL (Windows Subsystem for Linux) provides a Linux environment on Windows, offering the best of both worlds for Python development. This guide covers WSL setup, Python installation, and professional development workflows.
 
+**← Back to**: [Environment Setup](./environment-setup.md) | [Python Fundamentals](./README.md)
+
 ---
 
 ## 📚 What You'll Learn

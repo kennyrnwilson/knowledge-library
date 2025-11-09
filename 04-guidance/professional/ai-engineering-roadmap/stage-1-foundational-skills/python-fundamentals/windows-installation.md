@@ -2,6 +2,8 @@
 
 Setting up Python on Windows requires understanding Windows-specific paths, environment variables, and best practices. This guide covers everything from installation to professional development workflows on Windows.
 
+**← Back to**: [Environment Setup](./environment-setup.md) | [Python Fundamentals](./README.md)
+
 ---
 
 ## 📚 What You'll Learn

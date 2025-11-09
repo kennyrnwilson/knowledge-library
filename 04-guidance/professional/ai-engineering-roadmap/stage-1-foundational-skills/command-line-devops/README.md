@@ -2,6 +2,8 @@
 
 Master the terminal and basic deployment concepts.
 
+**← Back to**: [Stage 1: Foundational Skills](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

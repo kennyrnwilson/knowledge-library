@@ -2,6 +2,8 @@
 
 Understand how modern LLMs actually work under the hood. This knowledge enables optimization, debugging, and innovation.
 
+**← Back to**: [Stage 3: Advanced AI Engineering](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

@@ -2,6 +2,8 @@
 
 Master working with data: CSV files, pandas, SQL, databases, and NumPy.
 
+**← Back to**: [Stage 1: Foundational Skills](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

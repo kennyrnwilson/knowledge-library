@@ -2,6 +2,8 @@
 
 Optional but helpful: Linear algebra, probability, statistics, and calculus basics.
 
+**← Back to**: [Stage 1: Foundational Skills](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

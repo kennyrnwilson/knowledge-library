@@ -2,6 +2,8 @@
 
 VS Code has become the most popular Python IDE in 2025, offering powerful features for development, testing, and debugging. This guide covers setup, essential extensions, workflows, and professional practices.
 
+**← Back to**: [Environment Setup](./environment-setup.md) | [Python Fundamentals](./README.md)
+
 ---
 
 ## 📚 What You'll Learn

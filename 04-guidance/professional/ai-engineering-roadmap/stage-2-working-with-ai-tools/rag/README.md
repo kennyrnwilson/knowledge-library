@@ -2,6 +2,8 @@
 
 The single most important skill for production AI engineering. RAG solves hallucination, enables use of proprietary data, and keeps information current.
 
+**← Back to**: [Stage 2: Working with AI Tools](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

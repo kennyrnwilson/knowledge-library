@@ -2,6 +2,8 @@
 
 Get Python installed and configured properly on your system. Choose the guide that matches your operating system.
 
+**← Back to**: [Python Fundamentals](./README.md)
+
 ---
 
 ## 📚 What You'll Learn

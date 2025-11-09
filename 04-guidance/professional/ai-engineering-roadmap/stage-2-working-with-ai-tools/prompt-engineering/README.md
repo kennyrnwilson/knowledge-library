@@ -2,6 +2,8 @@
 
 Master the art and science of writing instructions to get the best outputs from LLMs. Small changes in prompts can dramatically improve results.
 
+**← Back to**: [Stage 2: Working with AI Tools](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

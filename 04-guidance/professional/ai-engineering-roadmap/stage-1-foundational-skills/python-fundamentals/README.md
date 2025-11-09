@@ -2,6 +2,10 @@
 
 **Goal:** Master Python programming from basics to professional practices
 
+**← Back to**: [Stage 1: Foundational Skills](../README.md)
+
+---
+
 ## 📚 What You'll Learn
 
 - **Basic Python syntax** - Variables, data types, operators, string formatting

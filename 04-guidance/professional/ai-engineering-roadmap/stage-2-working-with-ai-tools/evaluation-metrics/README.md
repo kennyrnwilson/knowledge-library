@@ -2,6 +2,8 @@
 
 Learn to measure, evaluate, and systematically improve the quality of your AI applications with proper metrics and testing frameworks.
 
+**← Back to**: [Stage 2: Working with AI Tools](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

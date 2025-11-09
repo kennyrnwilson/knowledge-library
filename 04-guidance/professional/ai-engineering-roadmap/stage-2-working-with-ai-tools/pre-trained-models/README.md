@@ -2,6 +2,8 @@
 
 Navigate the ecosystem of pre-trained AI models and learn when to use open-source vs commercial models for your applications.
 
+**← Back to**: [Stage 2: Working with AI Tools](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

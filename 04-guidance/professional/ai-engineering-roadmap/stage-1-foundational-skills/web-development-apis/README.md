@@ -2,6 +2,8 @@
 
 Learn HTTP, REST APIs, and building web applications.
 
+**← Back to**: [Stage 1: Foundational Skills](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

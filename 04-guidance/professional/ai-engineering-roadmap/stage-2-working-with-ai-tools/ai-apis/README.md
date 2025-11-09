@@ -2,6 +2,8 @@
 
 Master integrating foundation model APIs from major providers. This is your entry into AI application development.
 
+**← Back to**: [Stage 2: Working with AI Tools](../README.md)
+
 ---
 
 ## 📚 What You'll Learn

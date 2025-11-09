@@ -2,6 +2,8 @@
 
 Master Git, testing, code quality, and professional development practices that separate junior developers from professionals.
 
+**← Back to**: [Stage 1: Foundational Skills](../README.md)
+
 ---
 
 ## 📚 What You'll Learn
