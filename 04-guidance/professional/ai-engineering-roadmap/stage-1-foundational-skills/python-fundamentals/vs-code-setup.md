@@ -134,6 +134,8 @@ result = add(2, 3)  # IntelliSense knows result is int
 
 ### Linting and Formatting
 
+**🔍 For a comprehensive guide on linters, see: [Python Linters: Code Quality Analysis](./linters.md)**
+
 **Ruff - Modern All-in-One Tool (Recommended 2025):**
 
 Ruff combines linting and formatting in a single, blazingly fast tool.
@@ -506,6 +508,23 @@ Review PRs directly in VS Code:
 - Comment on code
 - Approve or request changes
 - Merge PRs
+
+---
+
+### Complete Tutorial: Building a Calculator
+
+**📋 For a hands-on, complete tutorial covering the entire development workflow, see: [Complete Calculator Tutorial: End-to-End VS Code Setup](./complete-calculator-tutorial.md)**
+
+This comprehensive tutorial walks you through:
+- Full VS Code project setup from scratch
+- Virtual environment configuration
+- Building a complete command-line calculator application
+- Writing comprehensive test suites
+- Running tests with coverage
+- Debugging with breakpoints
+- Using your code in Jupyter notebooks
+
+Perfect for practicing the entire workflow in one cohesive project!
 
 ---
 
