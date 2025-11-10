@@ -94,21 +94,23 @@ pip3 --version
 python3 -m venv --help
 ```
 
-**Install Additional Python Versions:**
+**Installing Additional Python Versions: deadsnakes vs pyenv**
 
-```bash
-# Using deadsnakes PPA (Ubuntu)
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt update
+You have two main options for managing Python versions on WSL. Here's how they compare:
 
-# Install Python 3.13
-sudo apt install python3.13 python3.13-venv python3.13-dev -y
+| Feature | deadsnakes PPA | pyenv |
+|---------|---|---|
+| **Setup Speed** | Fast (pre-compiled) | Slower (compiles from source) |
+| **Multiple Versions** | Tedious to manage | Easy side-by-side management |
+| **Version Availability** | Limited selection | Any Python version |
+| **Disk Space** | Minimal | More (~150MB per version) |
+| **Switching Versions** | Manual in shell | `pyenv local` per project |
+| **Recommended For** | Single version, quick setup | AI/ML, multiple projects |
+| **Cross-Platform** | Ubuntu/Debian only | macOS, Linux, Windows (WSL) |
 
-# Verify
-python3.13 --version
-```
+**For AI/ML Development (Recommended): Using pyenv**
 
-**Alternative: Using pyenv (Recommended for Multiple Versions):**
+pyenv is the industry standard for Python version management and essential when working with AI/ML projects that may require specific Python versions. For a comprehensive guide to how pyenv works, see [pyenv Guide](./pyenv-guide.md).
 
 ```bash
 # Install dependencies
@@ -125,9 +127,32 @@ echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 
-# Install Python version
+# Install Python versions
 pyenv install 3.13.0
-pyenv local 3.13.0
+pyenv install 3.12.0
+
+# Set global default
+pyenv global 3.13.0
+
+# Or set per-project
+cd ~/projects/myproject
+pyenv local 3.12.0  # This project uses 3.12
+```
+
+**Quick Alternative: Using deadsnakes PPA (Simple, Single Version)**
+
+If you only need one specific Python version and want the fastest setup:
+
+```bash
+# Add deadsnakes PPA
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update
+
+# Install Python 3.13
+sudo apt install python3.13 python3.13-venv python3.13-dev -y
+
+# Verify
+python3.13 --version
 ```
 
 ### WSL File System
@@ -367,6 +392,7 @@ source ~/.bashrc
 
 ### Python Version Management
 
+- [pyenv Guide](./pyenv-guide.md) - Comprehensive pyenv documentation (in this guide)
 - [pyenv GitHub](https://github.com/pyenv/pyenv) - Python version manager
 - [deadsnakes PPA](https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa) - Ubuntu Python versions
 - [Python Build Dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) - Required packages
@@ -405,9 +431,11 @@ source ~/.bashrc
 - [ ] Check system Python: `python3 --version`
 - [ ] Install pip and venv: `sudo apt install python3-pip python3-venv -y`
 - [ ] Verify pip: `pip3 --version`
-- [ ] (Optional) Install pyenv for multiple Python versions
-- [ ] (Optional) Install Python 3.13: `sudo apt install python3.13 python3.13-venv -y`
-- [ ] Understand difference between apt Python and pyenv Python
+- [ ] **Choose your version manager:**
+  - [ ] For AI/ML projects: Install pyenv (recommended) - follow the pyenv installation steps
+  - [ ] For single version: Use deadsnakes PPA - quick and simple
+- [ ] Verify your chosen Python version works: `python3.13 --version` or `pyenv versions`
+- [ ] Understand difference between system Python, deadsnakes Python, and pyenv Python
 
 ### File System Understanding
 

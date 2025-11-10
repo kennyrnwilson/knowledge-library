@@ -27,18 +27,18 @@
   - Linux: Use apt (`sudo apt install python3 python3-venv`)
 
 ### Modern Tooling (2025)
-- **[Modern Python Project Setup](./modern-project-setup.md)**
+- **[Modern Python Project Setup](./modern-project-setup.md)** - Complete guide to professional Python projects
   - Project structure (src-layout)
-  - pyproject.toml configuration
-  - Testing setup
-  - Linting and formatting
-  - CI/CD basics
+  - pyproject.toml configuration (PEP 621)
+  - Code quality tools (ruff, mypy, pytest)
+  - Pre-commit hooks and CI/CD
+  - Building and publishing packages
 
-- **[Modern Python Dependency Management: Poetry vs Pipenv](./dependency-management.md)**
-  - Poetry (recommended)
-  - Pipenv (alternative)
-  - When to use each
-  - Migrating between tools
+- **[Modern Python Dependency Management: Poetry vs Pipenv](./dependency-management.md)** - Comprehensive comparison of modern tools
+  - pip, pip-tools, uv, Poetry, PDM, Pipenv comparison
+  - When to use each tool (decision matrix)
+  - Lockfiles and reproducibility
+  - Migration strategies
 
 - **[Coding Python in VS Code (2025)](./vs-code-setup.md)**
   - IDE setup
