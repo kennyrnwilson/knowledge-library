@@ -1468,7 +1468,6 @@ repos:
     rev: v1.7.1
     hooks:
       - id: mypy
-        additional_dependencies: ["types-all"]
         args: [--strict]
         exclude: ^tests/
 
@@ -1628,16 +1627,20 @@ Ruff will remove the unused import automatically before the commit.
   rev: v1.7.1
   hooks:
     - id: mypy
-      additional_dependencies: ["types-all"]
       args: [--strict]
       exclude: ^tests/
 ```
 
 **What it does:**
 - **`- id: mypy`** - Runs MyPy type checker to find type-related bugs
-- **`additional_dependencies: ["types-all"]`** - Installs type hints for common libraries
 - **`args: [--strict]`** - Enables strict mode (most strict type checking)
 - **`exclude: ^tests/`** - Don't check test files (regex pattern: `^tests/` means "files starting with tests/")
+
+**Note:** We removed `additional_dependencies: ["types-all"]` because:
+- ❌ `types-all` includes type stubs for hundreds of packages you don't use
+- ❌ It's currently broken (trying to install removed package `types-pkg-resources`)
+- ✅ Your simple calculator project doesn't need it
+- ✅ MyPy works fine without it for standard Python types
 
 **Why it's useful:**
 - ✅ Catches type errors before runtime (e.g., passing a string where an int is expected)
