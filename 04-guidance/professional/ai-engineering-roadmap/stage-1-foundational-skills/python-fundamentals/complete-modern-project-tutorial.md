@@ -1852,6 +1852,27 @@ If you encounter issues during development, check:
 
 ## Part 6: GitHub CI/CD Setup
 
+GitHub Actions is GitHub's built-in continuous integration/continuous deployment (CI/CD) system. It automatically runs tests, linting, and type checking every time you push code to GitHub.
+
+### Understanding GitHub Actions
+
+**What it does:**
+1. When you push code to GitHub → GitHub Actions automatically runs
+2. Sets up a clean Linux machine (ubuntu-latest)
+3. Installs Python and your dependencies
+4. Runs your tests, linting, type checking
+5. Reports success/failure in your GitHub repo
+6. Optionally uploads coverage data
+
+**Why it's useful:**
+- ✅ Catch bugs before merging code
+- ✅ Ensure code quality standards
+- ✅ Test across multiple Python versions automatically
+- ✅ Get a green checkmark ✓ on your commits if tests pass
+- ✅ Prevent merging broken code to main branch
+
+---
+
 ### Step 6.1: Create GitHub Actions Workflow
 
 Create `.github/workflows/tests.yml`:
@@ -1902,6 +1923,200 @@ jobs:
           flags: unittests
           name: codecov-umbrella
 ```
+
+---
+
+### Understanding the Workflow File (Line by Line)
+
+#### **`name: Tests`**
+- The name displayed in GitHub Actions UI
+- Shows as "Tests" in your GitHub repo's "Actions" tab
+
+#### **`on:` Section (When to Run)**
+```yaml
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+```
+- **`push:` on branches** - Runs workflow when you push code to `main` or `develop`
+- **`pull_request:` on branches** - Runs workflow when you create a pull request to `main` or `develop`
+- This means tests run automatically before code gets merged
+
+**Workflow triggered when:**
+```
+You make a commit → git push → GitHub Actions starts
+                               ↓
+                     Runs all steps in workflow
+                               ↓
+                     Shows ✓ (pass) or ✗ (fail)
+```
+
+#### **`jobs:` Section (What to Do)**
+```yaml
+jobs:
+  test:    # Job name - can have multiple jobs
+    runs-on: ubuntu-latest
+```
+- **`jobs:`** - List of tasks to run (you could have `test`, `lint`, `deploy`, etc.)
+- **`test:`** - This job's name (what you call it)
+- **`runs-on: ubuntu-latest`** - Run on Ubuntu Linux (free GitHub-hosted runner)
+
+#### **`strategy: matrix:` Section (Test Multiple Versions)**
+```yaml
+strategy:
+  matrix:
+    python-version: ["3.11", "3.12", "3.13"]
+```
+
+**This creates 3 parallel jobs, one for each Python version:**
+
+```
+Workflow "Tests" starts
+    ↓
+Creates 3 identical jobs:
+  Job 1: Test on Python 3.11
+  Job 2: Test on Python 3.12
+  Job 3: Test on Python 3.13
+    ↓
+All run in parallel (faster than sequentially)
+    ↓
+Workflow passes if ALL 3 pass
+```
+
+**Why test multiple versions?**
+- ✅ Ensures code works on Python 3.11, 3.12, AND 3.13
+- ✅ Catches version-specific bugs early
+- ✅ Guarantees compatibility
+
+#### **`steps:` Section (Individual Tasks)**
+
+Each step runs sequentially. Here's what each does:
+
+**Step 1: Checkout Code**
+```yaml
+- uses: actions/checkout@v4
+```
+- Downloads your repository code onto the GitHub Actions machine
+- `v4` is the version of this pre-built action
+
+**Step 2: Set Up Python**
+```yaml
+- name: Set up Python ${{ matrix.python-version }}
+  uses: actions/setup-python@v4
+  with:
+    python-version: ${{ matrix.python-version }}
+```
+- Installs Python (version from matrix: 3.11, 3.12, or 3.13)
+- `${{ matrix.python-version }}` is a variable - gets replaced with actual version
+- Example: `${{ matrix.python-version }}` → `3.11` in first job, `3.12` in second, etc.
+
+**Step 3: Upgrade pip**
+```yaml
+- name: Upgrade pip
+  run: python -m pip install --upgrade pip
+```
+- Upgrades pip to latest version
+- `run:` means execute a shell command
+
+**Step 4: Install Dependencies**
+```yaml
+- name: Install dependencies
+  run: pip install -e ".[dev]"
+```
+- Installs your package in editable mode with dev dependencies
+- Same as you did locally: `pip install -e ".[dev]"`
+- Downloads: pytest, ruff, mypy, and your package code
+
+**Step 5: Lint with Ruff**
+```yaml
+- name: Lint with Ruff
+  run: ruff check .
+```
+- Runs ruff to check for style issues
+- Fails job if style issues found
+- Forces consistent code quality
+
+**Step 6: Type Check with mypy**
+```yaml
+- name: Type check with mypy
+  run: mypy .
+```
+- Runs mypy to check for type errors
+- Fails job if type errors found
+- Ensures type safety
+
+**Step 7: Run Tests**
+```yaml
+- name: Run tests with pytest
+  run: pytest --cov --cov-report=xml
+```
+- Runs all your tests with coverage reporting
+- `--cov` - measure code coverage
+- `--cov-report=xml` - output coverage as XML (for Codecov)
+- Fails job if any test fails
+
+**Step 8: Upload Coverage (Optional)**
+```yaml
+- name: Upload coverage to Codecov
+  uses: codecov/codecov-action@v3
+  with:
+    file: ./coverage.xml
+```
+- Sends coverage report to Codecov.io
+- Shows coverage badge and trends
+- Requires signing up at codecov.io (optional step)
+
+---
+
+### What Happens When You Push Code
+
+```
+You run:
+  git push origin main
+       ↓
+GitHub receives code
+       ↓
+Detects .github/workflows/tests.yml
+       ↓
+Creates 3 jobs (Python 3.11, 3.12, 3.13)
+       ↓
+Each job:
+  1. Checks out code
+  2. Sets up Python
+  3. Installs dependencies
+  4. Runs ruff (linting)
+  5. Runs mypy (type checking)
+  6. Runs pytest (tests)
+  7. Uploads coverage
+       ↓
+If all steps pass → ✓ Green checkmark on commit
+If any step fails → ✗ Red X on commit
+       ↓
+Commit in GitHub shows:
+  "All checks passed" or "Some checks failed"
+```
+
+---
+
+### Seeing Results in GitHub
+
+After pushing with this workflow:
+
+1. Go to your GitHub repo
+2. Click "Actions" tab
+3. See your workflow run:
+   ```
+   Tests #1 ✓
+   - test (3.11) ✓
+   - test (3.12) ✓
+   - test (3.13) ✓
+   Duration: 45 seconds
+   ```
+
+4. Click on a failed job to see error details
+5. Each commit on main shows the status
 
 ### Step 6.2: Push to GitHub
 
