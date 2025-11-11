@@ -774,7 +774,31 @@ __all__ = ["Calculator", "__version__"]
 
 Before writing tests, let's verify everything works! You should be able to run the calculator from the command line.
 
-### Test the Calculator Works
+### Step 1: Install the Package in Editable Mode
+
+First, install the package with dev dependencies:
+
+```bash
+# Make sure you're in the project root
+cd ~/simple-calculator
+
+# Make sure venv is activated
+source venv/bin/activate
+
+# Install in editable mode with dev dependencies
+pip install -e ".[dev]"
+
+# Verify all tools installed
+pytest --version
+ruff --version
+mypy --version
+pre-commit --version
+twine --version
+```
+
+You should see version numbers for all tools. If this fails, fix it before proceeding.
+
+### Step 2: Test the Calculator Works
 
 ```bash
 # Verify you're in the right directory
@@ -799,7 +823,7 @@ calc Subtract 10 3
 # Expected output: 10.0 subtract 10.0 = 7.0
 ```
 
-### Test Error Handling
+### Step 3: Test Error Handling
 
 ```bash
 # Missing arguments
@@ -819,17 +843,19 @@ calc Divide 10 0
 # Expected: Cannot divide by zero error
 ```
 
-### If Everything Works ✅
+### Step 4: If Everything Works ✅
 
 Great! You've successfully:
 - Created a Python package with proper structure
 - Configured it with pyproject.toml
 - Written working code (core.py, cli.py, __init__.py)
-- Installed dev dependencies
+- Installed dev dependencies with `pip install -e ".[dev]"`
 - Built the package
 - **Can run it from the command line!**
 
-### If Something Doesn't Work ❌
+You're ready to move to Part 4: Write Comprehensive Tests.
+
+### Step 5: If Something Doesn't Work ❌
 
 **Issue: "Command 'calc' not found"**
 - Verify venv is activated: `source venv/bin/activate`
