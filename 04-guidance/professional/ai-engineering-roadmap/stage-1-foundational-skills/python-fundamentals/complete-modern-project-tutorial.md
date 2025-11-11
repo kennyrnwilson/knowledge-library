@@ -1139,6 +1139,183 @@ Excellent! You've successfully:
 - ✅ Tested CLI input/output validation
 - ✅ Tests pass consistently
 
+**You're ready for Part 4.5: Initialize Git Repository and Push to GitHub!**
+
+---
+
+## Part 4.5: Initialize Git Repository and Push to GitHub
+
+Now that you have working code and tests, it's time to put your project under version control and push it to GitHub. This is essential before setting up pre-commit hooks and CI/CD.
+
+### Step 4.5.1: Initialize Local Git Repository
+
+First, initialize Git in your project directory:
+
+```bash
+# Make sure you're in the project root
+cd ~/simple-calculator
+
+# Initialize git
+git init
+
+# Add all files
+git add .
+
+# Create initial commit
+git commit -m "Initial project setup with calculator implementation and tests"
+```
+
+You should see output like:
+```
+create mode 100644 .gitignore
+create mode 100644 README.md
+create mode 100644 pyproject.toml
+create mode 100644 src/simple_calculator/__init__.py
+create mode 100644 src/simple_calculator/_version.py
+create mode 100644 src/simple_calculator/cli.py
+create mode 100644 src/simple_calculator/core.py
+create mode 100644 tests/__init__.py
+create mode 100644 tests/test_cli.py
+create mode 100644 tests/test_core.py
+```
+
+### Step 4.5.2: Create GitHub Repository
+
+1. Go to [https://github.com/new](https://github.com/new)
+2. **Repository name:** `simple-calculator` (or your preferred name)
+3. **Description:** `A professional command-line calculator package`
+4. **Public** or **Private:** Choose based on preference
+5. **Initialize repository:** Leave unchecked (we already have local commits)
+6. Click **Create repository**
+
+GitHub will show you commands to push an existing repository. Copy the commands they show.
+
+### Step 4.5.3: Connect Local Repo to GitHub
+
+After creating the GitHub repo, you'll see something like this. Run these commands:
+
+```bash
+# Add the remote repository
+git remote add origin https://github.com/YOUR_USERNAME/simple-calculator.git
+
+# Rename branch to main (if not already)
+git branch -M main
+
+# Push to GitHub
+git push -u origin main
+```
+
+**Replace `YOUR_USERNAME`** with your actual GitHub username.
+
+**What `-u` does:** Sets the upstream tracking, so future `git push` and `git pull` commands know which remote branch to use.
+
+### Step 4.5.4: Verify on GitHub
+
+1. Go to your GitHub repository URL: `https://github.com/YOUR_USERNAME/simple-calculator`
+2. You should see:
+   - All your project files
+   - Your commit history
+   - The README.md file displayed on the main page
+   - A green checkmark next to your initial commit (if CI/CD is working)
+
+### Step 4.5.5: Update .gitignore (If Needed)
+
+Make sure your `.gitignore` file has these common Python project entries:
+
+```gitignore
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PyPI
+.pypirc
+```
+
+### If Something Goes Wrong ❌
+
+**Error: "fatal: not a git repository"**
+```bash
+# Make sure you're in the project root
+cd ~/simple-calculator
+# Check if .git directory exists
+ls -la | grep .git
+```
+
+**Error: "fatal: remote origin already exists"**
+```bash
+# Remove the old remote
+git remote remove origin
+# Then add the correct one
+git remote add origin https://github.com/YOUR_USERNAME/simple-calculator.git
+```
+
+**Error: "failed to push some refs to origin"**
+```bash
+# Pull any changes from GitHub first
+git pull origin main --allow-unrelated-histories
+# Then push
+git push -u origin main
+```
+
+**Error: "Please make sure you have the correct access rights"**
+- Check that you're logged in to GitHub
+- Verify your username is correct in the URL
+- Consider using SSH keys instead of HTTPS (see GitHub docs)
+
+### If Setup Works ✅
+
+Excellent! You've successfully:
+- ✅ Initialized a local Git repository
+- ✅ Made your first commit with all project files
+- ✅ Connected to GitHub
+- ✅ Pushed your code to the remote repository
+- ✅ Set up version control for your project
+
 **You're ready for Part 5: Code Quality Tools Setup!**
 
 ---
