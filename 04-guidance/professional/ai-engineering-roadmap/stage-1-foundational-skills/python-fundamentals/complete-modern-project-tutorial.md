@@ -67,6 +67,129 @@ simple-calculator/
 
 ---
 
+## Understanding Packages vs Modules
+
+Before building the project, it's crucial to understand two fundamental concepts you'll encounter throughout this tutorial: **packages** and **modules**. These terms are often used in Python, and understanding the distinction is key to organizing professional Python projects.
+
+### What is a Module?
+
+A **module** is a single `.py` file that contains Python code. Any Python file can be imported and used in other code.
+
+**Examples of modules:**
+- `simple_calculator/core.py` - a module containing the Calculator class
+- `simple_calculator/cli.py` - a module containing the command-line interface
+- `simple_calculator/_version.py` - a module containing version information
+
+When you import a module, you use:
+```python
+from simple_calculator import core        # Import the core module
+from simple_calculator.core import Calculator  # Import a class from core module
+import simple_calculator.cli              # Import the cli module
+```
+
+### What is a Package?
+
+A **package** is a directory that contains Python modules AND a special `__init__.py` file. The `__init__.py` file tells Python: "This directory is a package that can be imported."
+
+**Characteristics of a package:**
+- Must contain an `__init__.py` file (even if empty)
+- Can contain multiple modules (.py files)
+- Can contain sub-packages (directories with their own `__init__.py`)
+- Can be imported as a single unit
+
+**Example package structure:**
+```
+simple_calculator/          ← This is a PACKAGE (directory with __init__.py)
+├── __init__.py            ← Makes this a package
+├── _version.py            ← A module (single .py file)
+├── core.py                ← A module (single .py file)
+└── cli.py                 ← A module (single .py file)
+```
+
+### Packages vs Modules in This Tutorial
+
+In this calculator project:
+
+| Name | Type | What It Is |
+|------|------|-----------|
+| `simple_calculator` | **Package** | Directory with `__init__.py` that contains all calculator code |
+| `simple_calculator.core` | **Module** | Single file `core.py` inside the package with the Calculator class |
+| `simple_calculator.cli` | **Module** | Single file `cli.py` inside the package with command-line interface |
+| `simple_calculator._version` | **Module** | Single file `_version.py` inside the package with version info |
+| `tests` | **Package** | Directory with `__init__.py` containing test files |
+| `tests.test_core` | **Module** | Single file `test_core.py` inside the tests package |
+
+### How Imports Work
+
+When Python encounters an import statement, it looks for packages (directories with `__init__.py`) and modules (`.py` files):
+
+```python
+# Importing a module from a package
+from simple_calculator.core import Calculator
+# Reads: From the simple_calculator PACKAGE, import the Calculator from the core MODULE
+
+# Importing the entire module
+import simple_calculator.cli
+# Reads: Import the cli MODULE from the simple_calculator PACKAGE
+
+# Importing from __init__.py
+from simple_calculator import Calculator
+# Works because __init__.py imports Calculator (from simple_calculator.core import Calculator)
+```
+
+### The __init__.py File
+
+The `__init__.py` file is the magic that transforms a directory into a package. It can be:
+
+1. **Empty** - The directory is still a valid package
+2. **With code** - Runs when the package is imported (great for initialization)
+3. **With imports** - Re-exports classes/functions for convenience
+
+In this project, `simple_calculator/__init__.py` does:
+```python
+from simple_calculator._version import __version__
+from simple_calculator.core import Calculator
+
+__all__ = ["Calculator", "__version__"]
+```
+
+This allows users to write cleaner code:
+```python
+# Instead of:
+from simple_calculator.core import Calculator
+from simple_calculator._version import __version__
+
+# Users can write:
+from simple_calculator import Calculator, __version__
+```
+
+### Why This Matters for This Project
+
+Throughout this tutorial, you'll see references to:
+- **`simple_calculator`** - This is the package (directory) you're building
+- **`simple_calculator.core`** - This is a module inside the package
+- **`simple_calculator.cli`** - This is another module inside the package
+- **`simple_calculator._version`** - This is another module inside the package
+
+In `pyproject.toml`, you'll see:
+```toml
+[tool.hatchling.packages]
+include = ["simple_calculator"]    # The PACKAGE to include
+from = ["src"]                     # Look in src/ directory
+```
+
+This tells the build system: "Find the `simple_calculator` PACKAGE in the `src/` directory and include it in the distribution."
+
+And you'll see import statements like:
+```python
+from simple_calculator.core import Calculator  # Import from the core MODULE in the package
+from simple_calculator import Calculator       # Convenience import via __init__.py
+```
+
+Understanding this distinction helps you write cleaner, more maintainable code and understand how Python's import system works.
+
+---
+
 ## Part 1: Project Initialization
 
 ### Step 1.1: Create Project Directory and Initialize Git
