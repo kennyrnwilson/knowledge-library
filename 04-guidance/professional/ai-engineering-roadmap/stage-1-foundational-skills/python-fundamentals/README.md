@@ -47,6 +47,14 @@
   - Essential extensions
   - IntelliSense configuration
 
+### Hands-On Tutorials
+- **[Complete Modern Python Project Tutorial](./complete-modern-project-tutorial.md)** - End-to-end walkthrough
+  - Project setup with modern structure
+  - Building, testing, and packaging
+  - CI/CD with GitHub Actions
+  - Publishing to PyPI
+  - Installing and using packages
+
 ### Core Concepts
 - **[Core Python Fundamentals](./core-concepts/README.md)**
   - Basic Syntax & Data Types

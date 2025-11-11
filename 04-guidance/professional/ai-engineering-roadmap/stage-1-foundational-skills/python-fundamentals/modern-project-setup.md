@@ -155,6 +155,216 @@ line-length = 100
 | **Setuptools** | Legacy compatibility | Widespread, mature | Verbose config |
 | **Flit** | Simple packages | Minimal, fast | Limited features |
 
+**What Does a Build Backend Do?**
+
+A Python build backend is a tool that converts your project source code into distributable packages (wheels and source distributions). When you run `pip install -e .` or `python -m build`, the build backend handles all the packaging work behind the scenes.
+
+**Core Functions:**
+
+1. **Reads Project Metadata** - Parses `pyproject.toml` to understand your project structure, dependencies, and version
+2. **Locates Source Code** - Finds files in `src/` layout and validates the package structure
+3. **Builds Distributions**:
+   - **Wheel** (.whl) - Binary, installable package
+   - **Source distribution** (.tar.gz) - Raw source with metadata
+4. **Handles Dependencies** - Includes dependency information so pip knows what to install alongside your package
+5. **Configures Entry Points** - Sets up CLI commands and other executable entry points
+
+**How It Works:**
+
+```
+Your Project (src/your_package/)
+        ↓
+pyproject.toml specifies:
+build-backend = "hatchling.build"
+        ↓
+Hatchling reads config, locates source code
+        ↓
+Creates two files:
+- dist/your_package-0.1.0-py3-none-any.whl
+- dist/your_package-0.1.0.tar.gz
+        ↓
+Ready for: pip install, PyPI upload, etc.
+```
+
+**You Don't Call It Directly** - The backend runs automatically:
+
+```bash
+python -m build              # Automatically uses your configured backend
+pip install -e .             # Uses backend to create editable install
+poetry build                 # Poetry calls its backend internally
+```
+
+---
+
+### Understanding Wheels
+
+A **wheel** is a pre-built Python package format that contains everything needed to install your package. Think of it like a compiled binary, but for Python.
+
+**What is a Wheel?**
+
+A wheel (`.whl` file) is a ZIP archive containing:
+- Your compiled Python code (or source code)
+- Metadata about the package (name, version, dependencies)
+- Installation scripts
+- Configuration files
+
+**Wheel vs Source Distribution:**
+
+| Aspect | Wheel (.whl) | Source Distribution (.tar.gz) |
+|--------|------|------------|
+| **Speed** | Fast to install (no compilation) | Slower (may need compilation) |
+| **Content** | Pre-built, ready to use | Raw source code |
+| **Compatibility** | Specific to Python version/OS | Works on any platform |
+| **Use Case** | End users installing packages | Distribution, archival |
+| **Size** | Smaller (no build files) | Larger (includes all source) |
+
+**Inside a Wheel File:**
+
+```
+your_package-0.1.0-py3-none-any.whl
+├── your_package/
+│   ├── __init__.py
+│   ├── core.py
+│   ├── utils.py
+│   └── api/
+│       ├── __init__.py
+│       └── routes.py
+├── your_package-0.1.0.dist-info/
+│   ├── METADATA              # Package metadata
+│   ├── WHEEL                 # Wheel format version
+│   ├── RECORD                # List of all files
+│   ├── entry_points.txt      # CLI commands (if any)
+│   └── top_level.txt         # Top-level package name
+└── (other Python 3 files)
+```
+
+**Wheel Naming Convention:**
+
+```
+your_package-0.1.0-py3-none-any.whl
+     ↓         ↓  ↓  ↓   ↓
+  package    version │  │   └─ Platform (any = all)
+           Python tag │  └───── ABI tag (none = pure Python)
+                      └──────── Implementation tag (py3)
+```
+
+**Example Names:**
+
+```
+# Pure Python, works on all platforms
+requests-2.31.0-py3-none-any.whl
+
+# Specific Python version
+numpy-1.26.4-cp312-cp312-macosx_13_x86_64.whl
+
+# Windows specific
+pillow-10.0.0-cp311-cp311-win_amd64.whl
+```
+
+**Why Wheels?**
+
+- ✅ **Fast Installation** - No compilation needed, pip just extracts files
+- ✅ **Reproducibility** - Same package works identically across machines
+- ✅ **Smaller Size** - Pre-built, no extraneous files
+- ✅ **Offline Installation** - Download once, install many times
+- ✅ **Better Security** - Pre-compiled, less attack surface than raw source
+
+**Build Process (Visual):**
+
+```mermaid
+graph LR
+    A["Source Code<br/>src/your_package/"] --> B["pyproject.toml<br/>Metadata & Config"]
+    B --> C["Build Backend<br/>hatchling/setuptools"]
+    C --> D["Wheel Builder"]
+    D --> E["your_package-0.1.0<br/>-py3-none-any.whl"]
+    C --> F["Source Builder"]
+    F --> G["your_package-0.1.0<br/>.tar.gz"]
+
+    E -->|pip install| H["Installed Package<br/>site-packages/"]
+    G -->|pip install| I["Build needed<br/>then install"]
+```
+
+**Build Inputs and Outputs:**
+
+```mermaid
+graph TD
+    subgraph INPUTS["🔧 Build Inputs"]
+        A["Source Code<br/>src/your_package/"]
+        B["Configuration<br/>pyproject.toml"]
+        C["Build Backend<br/>hatchling"]
+        D["License File<br/>LICENSE"]
+        E["README<br/>README.md"]
+    end
+
+    subgraph PROCESS["⚙️ Build Process"]
+        F["Read Config"]
+        G["Validate Package"]
+        H["Create Metadata"]
+        I["Package Files"]
+    end
+
+    subgraph OUTPUTS["📦 Build Outputs"]
+        J["Wheel<br/>.whl file"]
+        K["Source Distribution<br/>.tar.gz file"]
+        L["METADATA file<br/>for PyPI"]
+    end
+
+    A --> F
+    B --> F
+    C --> F
+    D --> H
+    E --> H
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    I --> K
+    I --> L
+
+    style INPUTS fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#000
+    style PROCESS fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#000
+    style OUTPUTS fill:#d1ecf1,stroke:#17a2b8,stroke-width:2px,color:#000
+```
+
+**Creating Wheels:**
+
+```bash
+# Install build tools
+pip install build
+
+# Build both wheel and source distribution
+python -m build
+
+# Contents of dist/ directory
+ls dist/
+# Output:
+# your_package-0.1.0-py3-none-any.whl
+# your_package-0.1.0.tar.gz
+```
+
+**Installing from Wheel:**
+
+```bash
+# From wheel (fast, no compilation)
+pip install dist/your_package-0.1.0-py3-none-any.whl
+
+# From source distribution (slower, may compile)
+pip install dist/your_package-0.1.0.tar.gz
+
+# From PyPI (pip finds wheels automatically)
+pip install your_package
+```
+
+**Inspecting a Wheel:**
+
+```bash
+# Wheels are just ZIP files
+unzip -l your_package-0.1.0-py3-none-any.whl
+
+# Or use zipfile module
+python -m zipfile -l your_package-0.1.0-py3-none-any.whl
+```
+
 ---
 
 ### Package Organization
@@ -196,6 +406,176 @@ from ..core import config  # Parent level
 - Keep relative imports within the same package
 - Avoid importing from outside your package using relative imports
 - Use `__all__` to define public API
+
+---
+
+### Version Management: `__init__.py` vs `pyproject.toml`
+
+**The Problem: Two Places for Version?**
+
+You'll see version numbers in two places:
+
+```python
+# src/your_package/__init__.py
+__version__ = "0.1.0"
+```
+
+```toml
+# pyproject.toml
+[project]
+version = "0.1.0"
+```
+
+This looks like duplication, but they serve different purposes:
+
+**`pyproject.toml` version** (Primary Source of Truth)
+- **Used by**: Build tools, package managers, PyPI
+- **When it's read**: When building and publishing
+- **What it does**: Tells pip/PyPI what version you're distributing
+- **Required**: Yes, absolutely required
+
+```toml
+[project]
+name = "your-package"
+version = "0.1.0"  # This is what PyPI publishes as
+```
+
+**`__init__.py` version** (User-Facing)
+- **Used by**: Your users, your code, runtime checks
+- **When it's read**: When someone imports your package
+- **What it does**: Users can check what version they installed
+- **Required**: Optional but highly recommended
+
+```python
+import your_package
+print(your_package.__version__)  # Users see "0.1.0"
+```
+
+**The Relationship:**
+
+| Aspect | pyproject.toml | __init__.py |
+|--------|---|---|
+| **Purpose** | Package distribution metadata | Runtime version info |
+| **Read by** | Build tools, pip, PyPI | Users, documentation |
+| **When used** | At build/publish time | At runtime |
+| **Can be missing?** | NO - required | YES - optional but recommended |
+| **Example use** | `pip install your-package==0.1.0` | `import your_package; your_package.__version__` |
+
+**Best Practice: Keep Them In Sync**
+
+```
+Update version in pyproject.toml
+        ↓
+Update version in __init__.py
+        ↓
+Build and publish
+```
+
+**Approach 1: Manual (Simple Projects)**
+
+Update both files:
+```bash
+# 1. Update pyproject.toml
+vim pyproject.toml
+# Change: version = "0.1.0" → version = "0.2.0"
+
+# 2. Update __init__.py
+vim src/your_package/__init__.py
+# Change: __version__ = "0.1.0" → __version__ = "0.2.0"
+
+# 3. Commit and tag
+git add .
+git commit -m "Bump version to 0.2.0"
+git tag v0.2.0
+```
+
+**Approach 2: Dynamic (Recommended for Professional Projects)**
+
+Read version from `__init__.py` in `pyproject.toml`:
+
+```toml
+# pyproject.toml - single source of truth
+[project]
+name = "your-package"
+version = {attr = "your_package.__version__"}  # Read from __init__.py
+description = "My package"
+```
+
+```python
+# src/your_package/__init__.py
+__version__ = "0.2.0"  # Single place to update!
+```
+
+Now update only `__init__.py`, and `pyproject.toml` automatically reads it.
+
+**Approach 3: Using a Version File (Large Projects)**
+
+Some projects keep version in a separate file:
+
+```python
+# src/your_package/_version.py
+__version__ = "0.2.0"
+```
+
+```python
+# src/your_package/__init__.py
+from your_package._version import __version__
+```
+
+```toml
+# pyproject.toml
+[project]
+version = {attr = "your_package._version.__version__"}
+```
+
+**Why Keep Both?**
+
+Without `__version__` in `__init__.py`:
+```python
+import requests
+print(requests.__version__)  # AttributeError - not available!
+```
+
+With `__version__` in `__init__.py`:
+```python
+import requests
+print(requests.__version__)  # "2.31.0" ✓
+```
+
+**Practical Example: Version Release Workflow**
+
+```bash
+# Current state
+# pyproject.toml: version = {attr = "your_package.__version__"}
+# __init__.py: __version__ = "0.1.0"
+
+# Step 1: Update version once
+sed -i 's/__version__ = "0.1.0"/__version__ = "0.2.0"/' src/your_package/__init__.py
+
+# Step 2: Build (pyproject.toml automatically picks up new version)
+python -m build
+
+# Step 3: Check what will be published
+ls dist/
+# Output:
+# your_package-0.2.0-py3-none-any.whl
+# your_package-0.2.0.tar.gz
+
+# Step 4: Publish
+twine upload dist/*
+
+# Users can verify version:
+# pip install your-package==0.2.0
+# python -c "import your_package; print(your_package.__version__)"
+# Output: 0.2.0 ✓
+```
+
+**Quick Decision Guide:**
+
+- **Single source of truth**: Use `{attr = "your_package.__version__"}` in `pyproject.toml`
+- **Simple projects**: Manual updates to both files (just be careful)
+- **Complex projects**: Use a dedicated `_version.py` file
+- **Never use**: Different versions in the two files - causes confusion and bugs!
 
 ---
 
@@ -847,4 +1227,19 @@ MIT License - see [LICENSE](LICENSE) file.
 
 ---
 
-*Last updated: 2025-11-10*
+## 📖 Complete Tutorial
+
+Want to see all of this in action? Check out the **[Complete Modern Python Project Tutorial](./complete-modern-project-tutorial.md)**, which walks through building a professional Python package from scratch, including:
+
+- Modern project setup with src-layout
+- Writing comprehensive tests
+- Setting up code quality tools
+- Configuring CI/CD with GitHub Actions
+- Publishing to PyPI
+- Installing and using your package
+
+This hands-on tutorial demonstrates the complete development workflow without requiring VS Code or any IDE.
+
+---
+
+*Last updated: 2025-11-11*
