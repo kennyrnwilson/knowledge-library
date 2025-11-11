@@ -675,7 +675,6 @@ Create `src/simple_calculator/cli.py`:
 """Command-line interface for the calculator."""
 
 import sys
-from typing import NoReturn
 
 from simple_calculator.core import Calculator
 
@@ -683,67 +682,27 @@ from simple_calculator.core import Calculator
 def main() -> None:
     """Run the calculator CLI.
 
-    Supports both interactive and command-line modes.
     Usage:
-        calc Add 2 6        # Command-line mode
+        calc Add 2 6
         calc Multiply 3 4
-        calc               # Interactive mode
+        calc Divide 20 5
     """
-    if len(sys.argv) > 1:
-        # Command-line mode: process arguments (Operation num1 num2)
-        _process_command(sys.argv[1:])
-    else:
-        # Interactive mode
-        _interactive_mode()
+    if len(sys.argv) != 4:
+        print("Usage: calc Operation num1 num2")
+        print("Example: calc Add 2 6")
+        print("Operations: Add, Subtract, Multiply, Divide")
+        sys.exit(1)
 
-
-def _interactive_mode() -> NoReturn:
-    """Run in interactive mode."""
-    print("Simple Calculator")
-    print("=" * 50)
-    print("Operations: Add, Subtract, Multiply, Divide")
-    print("Usage: Add 5 3, Subtract 10 2, Multiply 4 5, Divide 20 4")
-    print("Type 'quit' or 'exit' to exit\n")
-
-    while True:
-        try:
-            user_input = input("calc > ").strip()
-
-            if user_input.lower() in ("quit", "exit", "q"):
-                print("Goodbye!")
-                sys.exit(0)
-
-            if user_input:
-                _process_command(user_input.split())
-        except KeyboardInterrupt:
-            print("\n\nGoodbye!")
-            sys.exit(0)
-        except Exception as e:
-            print(f"Error: {e}")
-
-
-def _process_command(args: list[str]) -> None:
-    """Process a calculator command.
-
-    Args:
-        args: Command arguments (Operation, num1, num2)
-              Example: ["Add", "5", "3"]
-
-    Raises:
-        ValueError: If arguments are invalid
-    """
-    if len(args) != 3:
-        raise ValueError(
-            "Usage: Operation num1 num2 (e.g., Add 2 6, Divide 10 4)"
-        )
-
-    operation, num1_str, num2_str = args
+    operation = sys.argv[1]
+    num1_str = sys.argv[2]
+    num2_str = sys.argv[3]
 
     try:
         num1 = float(num1_str)
         num2 = float(num2_str)
     except ValueError:
-        raise ValueError(f"Numbers must be valid numbers, got '{num1_str}' and '{num2_str}'")
+        print(f"Error: Numbers must be valid numbers, got '{num1_str}' and '{num2_str}'")
+        sys.exit(1)
 
     operation_lower = operation.lower()
 
@@ -757,14 +716,14 @@ def _process_command(args: list[str]) -> None:
         elif operation_lower == "divide":
             result = Calculator.divide(num1, num2)
         else:
-            raise ValueError(
-                f"Unknown operation: {operation}. Use: Add, Subtract, Multiply, Divide"
-            )
+            print(f"Error: Unknown operation: {operation}")
+            print("Operations: Add, Subtract, Multiply, Divide")
+            sys.exit(1)
 
         print(f"{num1} {operation.lower()} {num2} = {result}")
     except ValueError as e:
         print(f"Error: {e}")
-        raise
+        sys.exit(1)
 
 
 if __name__ == "__main__":
@@ -844,61 +803,98 @@ Create `tests/test_cli.py`:
 ```python
 """Tests for CLI functionality."""
 
+import subprocess
+
 import pytest
 
-from simple_calculator.cli import _process_command
+
+def run_calc(operation: str, num1: str, num2: str) -> str:
+    """Run calc command and return output.
+
+    Args:
+        operation: Calculator operation (Add, Subtract, etc.)
+        num1: First number
+        num2: Second number
+
+    Returns:
+        Output from calc command
+    """
+    result = subprocess.run(
+        ["python", "-m", "simple_calculator.cli", operation, num1, num2],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr)
+    return result.stdout
 
 
-def test_add_command(capsys: object) -> None:
+def test_add_command() -> None:
     """Test Add command."""
-    _process_command(["Add", "5", "3"])
-    captured = capsys.readouterr()  # type: ignore
-    assert "5.0 add 3.0 = 8.0" in captured.out
+    output = run_calc("Add", "5", "3")
+    assert "5.0 add 3.0 = 8.0" in output
 
 
-def test_subtract_command(capsys: object) -> None:
+def test_subtract_command() -> None:
     """Test Subtract command."""
-    _process_command(["Subtract", "10", "3"])
-    captured = capsys.readouterr()  # type: ignore
-    assert "10.0 subtract 3.0 = 7.0" in captured.out
+    output = run_calc("Subtract", "10", "3")
+    assert "10.0 subtract 3.0 = 7.0" in output
 
 
-def test_multiply_command(capsys: object) -> None:
+def test_multiply_command() -> None:
     """Test Multiply command."""
-    _process_command(["Multiply", "5", "4"])
-    captured = capsys.readouterr()  # type: ignore
-    assert "5.0 multiply 4.0 = 20.0" in captured.out
+    output = run_calc("Multiply", "5", "4")
+    assert "5.0 multiply 4.0 = 20.0" in output
 
 
-def test_divide_command(capsys: object) -> None:
+def test_divide_command() -> None:
     """Test Divide command."""
-    _process_command(["Divide", "10", "2"])
-    captured = capsys.readouterr()  # type: ignore
-    assert "10.0 divide 2.0 = 5.0" in captured.out
+    output = run_calc("Divide", "10", "2")
+    assert "10.0 divide 2.0 = 5.0" in output
 
 
-def test_divide_by_zero_command() -> None:
-    """Test Divide by zero raises error."""
-    with pytest.raises(ValueError, match="Cannot divide by zero"):
-        _process_command(["Divide", "10", "0"])
+def test_divide_by_zero_error() -> None:
+    """Test Divide by zero error."""
+    result = subprocess.run(
+        ["python", "-m", "simple_calculator.cli", "Divide", "10", "0"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode != 0
+    assert "Cannot divide by zero" in result.stderr
 
 
-def test_invalid_operation() -> None:
-    """Test invalid operation raises error."""
-    with pytest.raises(ValueError, match="Unknown operation"):
-        _process_command(["Power", "2", "3"])
+def test_invalid_operation_error() -> None:
+    """Test invalid operation error."""
+    result = subprocess.run(
+        ["python", "-m", "simple_calculator.cli", "Power", "2", "3"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode != 0
+    assert "Unknown operation" in result.stderr
 
 
-def test_invalid_arguments() -> None:
-    """Test invalid number of arguments raises error."""
-    with pytest.raises(ValueError, match="Usage"):
-        _process_command(["Add", "5"])
+def test_missing_arguments_error() -> None:
+    """Test missing arguments error."""
+    result = subprocess.run(
+        ["python", "-m", "simple_calculator.cli", "Add", "5"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode != 0
+    assert "Usage" in result.stderr
 
 
-def test_invalid_numbers() -> None:
-    """Test invalid numbers raise error."""
-    with pytest.raises(ValueError, match="Numbers must be valid"):
-        _process_command(["Add", "abc", "5"])
+def test_invalid_number_error() -> None:
+    """Test invalid number error."""
+    result = subprocess.run(
+        ["python", "-m", "simple_calculator.cli", "Add", "abc", "5"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode != 0
+    assert "Numbers must be valid" in result.stderr
 ```
 
 ### Step 4.3: Create Empty Test __init__.py
@@ -1598,16 +1594,6 @@ calc Divide 10.5 2
 # Negative numbers
 calc Add -10 5
 calc Multiply -3 -4
-
-# Interactive mode (no arguments)
-calc
-# Then enter commands at the prompt:
-# calc > Add 5 3
-# 5.0 add 3.0 = 8.0
-# calc > Divide 10 2
-# 10.0 divide 2.0 = 5.0
-# calc > quit
-# Goodbye!
 ```
 
 ### Python Code Usage
