@@ -279,7 +279,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "simple-calculator"
-version = {attr = "simple_calculator._version.__version__"}
+dynamic = ["version"]
 description = "A simple but professional command-line calculator package"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -321,6 +321,9 @@ Issues = "https://github.com/yourusername/simple-calculator/issues"
 [tool.hatchling.packages]
 include = ["simple_calculator"]
 from = ["src"]
+
+[tool.hatchling.version]
+path = "src/simple_calculator/_version.py"
 
 # Ruff linting configuration
 [tool.ruff]
@@ -374,7 +377,7 @@ exclude_lines = [
 **`[project]` Section** - Core metadata about your package (PEP 621 standard)
 
 - `name = "simple-calculator"` - The package name on PyPI (lowercase, dashes instead of underscores for display)
-- `version = {attr = "simple_calculator._version.__version__"}` - **Dynamic versioning**: reads version from `_version.py` instead of hardcoding it here. This is the recommended approach because you only update the version in one place
+- `dynamic = ["version"]` - **Dynamic versioning**: tells Hatchling the version will be read from `_version.py` instead of hardcoding it here. This is the recommended approach because you only update the version in one place
 - `description = "..."` - Short one-line description shown on PyPI
 - `readme = "README.md"` - Points to your README file. pip will display this as the long description on PyPI
 - `requires-python = ">=3.11"` - Specifies minimum Python version. pip will prevent installation on older Python versions
@@ -414,6 +417,10 @@ exclude_lines = [
 
 - `include = ["simple_calculator"]` - Which packages to include (the folder name in src/)
 - `from = ["src"]` - Look in the `src/` directory (src-layout). Hatchling will find `src/simple_calculator/` and include it
+
+**`[tool.hatchling.version]` Section** - Tells Hatchling where to find the version
+
+- `path = "src/simple_calculator/_version.py"` - Read the version from this file. Hatchling looks for `__version__ = "0.1.0"` in this file and uses that as the package version
 
 **`[tool.ruff]` Section** - Configuration for Ruff linter/formatter
 
