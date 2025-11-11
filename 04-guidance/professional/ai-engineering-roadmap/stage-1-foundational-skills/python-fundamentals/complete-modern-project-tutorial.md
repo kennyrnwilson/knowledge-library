@@ -1494,6 +1494,94 @@ This file configures automatic checks that run before each commit. Here's what e
 
 ---
 
+#### **What Does `repo:` URL Do? (Important!)**
+
+The `repo:` URL is a **GitHub repository that contains pre-commit hook definitions**. Here's what happens:
+
+**Yes, the pre-commit framework downloads code from these repositories:**
+
+1. **When you run `pre-commit install`:**
+   ```bash
+   pre-commit install
+   # Downloads all repos listed in .pre-commit-config.yaml
+   # Stores them in: ~/.cache/pre-commit/
+   ```
+
+2. **What gets downloaded:**
+   - The entire GitHub repository
+   - Specifically, the version you specified with `rev:`
+   - These repos contain shell scripts that define how to run each hook
+
+3. **Example: `https://github.com/astral-sh/ruff-pre-commit`**
+   - This is a public GitHub repo
+   - It contains a `.pre-commit-hooks.yaml` file (hook definitions)
+   - Also contains bash/Python scripts that run ruff
+   - Pre-commit downloads this and caches it locally
+
+4. **Why a separate repository?**
+   - Decouples the tool (ruff) from its pre-commit wrapper
+   - Allows updates to hooks without updating the tool itself
+   - Communities maintain these wrapper repos
+
+---
+
+#### **The Three Types of Repos You'll See:**
+
+```yaml
+# Type 1: Language-specific tool with pre-commit support
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # astral-sh maintains this; it wraps their ruff tool
+
+# Type 2: Official pre-commit hooks repository
+- repo: https://github.com/pre-commit/mirrors-mypy
+  # Community-maintained mirror of mypy with pre-commit hooks
+
+# Type 3: Generic pre-commit hooks collection
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  # Utilities like trailing-whitespace, end-of-file-fixer, etc.
+```
+
+---
+
+#### **How Pre-commit Uses These Repos:**
+
+```
+Your .pre-commit-config.yaml says:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.8
+         ↓
+Pre-commit framework:
+  1. Clones that GitHub repo
+  2. Checks out the specific version (rev: v0.1.8)
+  3. Finds .pre-commit-hooks.yaml in that repo
+  4. Reads hook definitions (what commands to run)
+  5. Caches everything in ~/.cache/pre-commit/
+  6. When you commit, runs those commands on your code
+```
+
+---
+
+#### **Cached Repos Location:**
+
+```bash
+# All downloaded repos are stored here
+~/.cache/pre-commit/
+
+# Example structure:
+~/.cache/pre-commit/
+  astral-sh_ruff-pre-commit_v0.1.8/
+  pre-commit_mirrors-mypy_v1.7.1/
+  pre-commit_pre-commit-hooks_v4.5.0/
+```
+
+**Tip:** You can update all cached repos:
+```bash
+pre-commit autoupdate
+# Downloads latest versions of all repos
+```
+
+---
+
 #### **Section 1: Ruff (Code Formatting & Linting)**
 
 ```yaml
@@ -1506,8 +1594,12 @@ This file configures automatic checks that run before each commit. Here's what e
 ```
 
 **What it does:**
-- **`repo:`** - The URL where this tool's pre-commit hooks are hosted
-- **`rev: v0.1.8`** - The version of the tool to use (v0.1.8 in this case)
+- **`repo:`** - The URL of the GitHub repository containing pre-commit hook definitions for ruff
+  - This repository will be downloaded and cached when you run `pre-commit install`
+  - It contains instructions on how to run ruff
+- **`rev: v0.1.8`** - The specific version (tag) of that repository to download and use
+  - Pre-commit clones the repo and checks out this exact tag
+  - Ensures everyone on your team uses the same version
 - **`- id: ruff`** - First hook: Checks for style issues and fixes them automatically
   - `args: ["--fix"]` - Automatically fix problems it finds (imports, unused variables, etc.)
 - **`- id: ruff-format`** - Second hook: Formats code consistently (spacing, indentation, etc.)
