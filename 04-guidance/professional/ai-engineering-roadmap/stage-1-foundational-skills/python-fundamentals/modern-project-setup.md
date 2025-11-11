@@ -1058,7 +1058,6 @@ See [docs/](./docs/) for detailed documentation.
 ## License
 
 MIT License - see [LICENSE](LICENSE) file.
-```
 
 ---
 
