@@ -349,7 +349,7 @@ check_untyped_defs = true
 # Pytest configuration
 [tool.pytest.ini_options]
 minversion = "7.0"
-addopts = "-ra -q --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"
+addopts = "-ra --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"
 testpaths = ["tests"]
 pythonpath = ["src"]
 
@@ -453,9 +453,8 @@ exclude_lines = [
 **`[tool.pytest.ini_options]` Section** - Configuration for Pytest testing framework
 
 - `minversion = "7.0"` - Require at least Pytest 7.0
-- `addopts = "-ra -q --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"` - Default options when running `pytest`:
-  - `-ra` - Show all test results summary
-  - `-q` - Quiet output (less verbose)
+- `addopts = "-ra --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"` - Default options when running `pytest`:
+  - `-ra` - Show all test results summary (passed, failed, skipped, etc.)
   - `--strict-markers` - Require declared markers (catch typos in `@pytest.mark.xxx`)
   - `--cov=src/simple_calculator` - Measure code coverage for your package
   - `--cov-report=term-missing` - Show coverage in terminal with missing lines
