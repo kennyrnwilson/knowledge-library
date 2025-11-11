@@ -503,91 +503,6 @@ A professional command-line calculator package demonstrating modern Python devel
 pip install simple-calculator
 ```
 
-## Usage
-
-### Command Line
-
-```bash
-# Use as CLI tool
-calc "10 + 5"
-calc "20 * 3"
-calc "100 / 4"
-
-# Interactive mode
-calc
-```
-
-### In Python Code
-
-```python
-from simple_calculator.core import Calculator
-
-calc = Calculator()
-result = calc.add(10, 5)
-print(result)  # Output: 15
-```
-
-## Development
-
-### Setup
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/simple-calculator.git
-cd simple-calculator
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate
-
-# Install with dev dependencies
-pip install -e ".[dev]"
-```
-
-### Running Tests
-
-```bash
-pytest
-pytest --cov
-pytest -v
-```
-
-### Code Quality
-
-```bash
-# Lint code
-ruff check .
-ruff check . --fix
-
-# Type checking
-mypy .
-
-# Full check
-ruff check . && mypy . && pytest
-```
-
-### Pre-commit Hooks
-
-```bash
-pre-commit install
-pre-commit run --all-files
-```
-
-## Publishing
-
-```bash
-# Build package
-python -m build
-
-# Upload to PyPI (requires credentials)
-twine upload dist/*
-```
-
-## License
-
-MIT - See LICENSE file for details
-```
-
 ### Step 2.4: Create .gitignore
 
 Create `.gitignore`:
@@ -645,7 +560,7 @@ Thumbs.db
 .mypy_cache/
 .dmypy.json
 dmypy.json
-```
+
 
 ### Step 2.5: Create License
 
@@ -1703,6 +1618,95 @@ python -m venv clean_test
 source clean_test/bin/activate
 pip install simple-calculator
 python -c "from simple_calculator import Calculator; print(Calculator.add(1, 2))"
+```
+
+---
+
+## Usage
+
+Now that you've built, tested, and deployed your calculator package, here's how to use it:
+
+### Command Line Usage
+
+After installing the package (either locally or from PyPI), use the `calc` command:
+
+```bash
+# Basic arithmetic
+calc "10 + 5"
+calc "20 * 3"
+calc "100 / 4"
+calc "15 - 7"
+
+# Decimal numbers
+calc "3.5 + 2.5"
+calc "10.5 / 2"
+
+# Negative numbers
+calc "-10 + 5"
+calc "-20 * -3"
+
+# Interactive mode (no arguments)
+calc
+# Then enter expressions at the prompt:
+# > 5 + 3
+# 8.0
+# > quit
+```
+
+### Python Code Usage
+
+Import the Calculator class in your own Python code:
+
+```python
+from simple_calculator import Calculator
+
+# Use static methods
+result = Calculator.add(10, 5)
+print(result)  # Output: 15
+
+result = Calculator.subtract(20, 8)
+print(result)  # Output: 12
+
+result = Calculator.multiply(4, 3)
+print(result)  # Output: 12
+
+result = Calculator.divide(20, 4)
+print(result)  # Output: 5.0
+
+# Parse expressions
+first, operator, second = Calculator.parse_expression("10 + 5")
+print(f"{first} {operator} {second}")  # Output: 10.0 + 5.0
+
+# Error handling
+try:
+    Calculator.divide(10, 0)
+except ValueError as e:
+    print(f"Error: {e}")  # Output: Error: Cannot divide by zero
+```
+
+### Installation
+
+If you're using your locally developed version:
+
+```bash
+# Development installation (with editable mode)
+pip install -e ".[dev]"
+
+# Then use the calc command
+calc "5 + 3"
+```
+
+If you published to PyPI and want to install from there:
+
+```bash
+# Install from PyPI
+pip install simple-calculator
+
+# Use the calc command
+calc "5 + 3"
+
+# Check version
+python -c "import simple_calculator; print(simple_calculator.__version__)"
 ```
 
 ---
