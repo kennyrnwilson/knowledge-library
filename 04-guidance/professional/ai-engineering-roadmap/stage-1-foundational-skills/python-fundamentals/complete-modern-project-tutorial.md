@@ -1050,43 +1050,46 @@ pytest
 ### Expected Output
 
 ```
-========================= test session starts =========================
+======================================================= test session starts =======================================================
+platform linux -- Python 3.13.0, pytest-9.0.0, pluggy-1.6.0
+rootdir: /path/to/simple-calculator
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-7.0.0
 collected 13 items
 
-tests/test_core.py::TestCalculatorBasicOperations::test_add PASSED
-tests/test_core.py::TestCalculatorBasicOperations::test_subtract PASSED
-tests/test_core.py::TestCalculatorBasicOperations::test_multiply PASSED
-tests/test_core.py::TestCalculatorBasicOperations::test_divide PASSED
-tests/test_core.py::TestCalculatorBasicOperations::test_divide_by_zero PASSED
-tests/test_cli.py::test_add_command PASSED
-tests/test_cli.py::test_subtract_command PASSED
-tests/test_cli.py::test_multiply_command PASSED
-tests/test_cli.py::test_divide_by_zero_error PASSED
-tests/test_cli.py::test_invalid_operation_error PASSED
-tests/test_cli.py::test_missing_arguments_error PASSED
-tests/test_cli.py::test_invalid_number_error PASSED
+tests/test_cli.py ........                                                                                                  [ 61%]
+tests/test_core.py .....                                                                                                    [100%]
 
-======================== 13 passed in 0.27s =========================
-```
+========================================================= tests coverage ==========================================================
+_________________________________________ coverage: platform linux, python 3.13.0-final-0 _________________________________________
 
-### Test Coverage
-
-Look for the coverage report:
-
-```
-Name                                Stmts   Miss  Cover
----------------------------------------------------------
+Name                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------
 src/simple_calculator/__init__.py       3      0   100%
 src/simple_calculator/_version.py       1      0   100%
-src/simple_calculator/cli.py           34     34     0%
+src/simple_calculator/cli.py           34     34     0%   3-52
 src/simple_calculator/core.py          16      0   100%
----------------------------------------------------------
+-----------------------------------------------------------------
 TOTAL                                  54     34     37%
+
+======================================================= 13 passed in 0.31s ========================================================
 ```
 
-**Note:** The cli.py shows 0% coverage because it's tested via subprocess calls (which is correct for testing a CLI), while core.py has 100% coverage from direct unit tests.
+**What you'll see:**
+- 8 dots (`.`) for the 8 CLI tests (61%)
+- 5 dots (`.`) for the 5 core tests (100%)
+- Full coverage report showing core.py at 100% and cli.py at 0% (subprocess testing)
+- Summary: **13 passed in ~0.31s**
 
-**Goal:** Aim for >80% coverage on testable code (core.py shows 100%!)
+### Test Coverage Explained
+
+The coverage report shows:
+- **src/simple_calculator/core.py:** 100% coverage (fully tested with unit tests)
+- **src/simple_calculator/cli.py:** 0% coverage (tested via subprocess calls, which is the correct way to test CLI)
+- **Overall:** 37% (but that's only because the coverage tool can't measure subprocess calls)
+
+**Goal:** Aim for >80% coverage on direct unit test coverage (core.py shows 100%!)
 
 ### If Tests Fail ❌
 
