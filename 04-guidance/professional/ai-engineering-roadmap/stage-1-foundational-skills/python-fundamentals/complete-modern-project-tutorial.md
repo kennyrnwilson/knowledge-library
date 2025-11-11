@@ -322,7 +322,7 @@ Issues = "https://github.com/yourusername/simple-calculator/issues"
 include = ["simple_calculator"]
 from = ["src"]
 
-[tool.hatchling.version]
+[tool.hatch.version]
 path = "src/simple_calculator/_version.py"
 
 # Ruff linting configuration
@@ -418,7 +418,7 @@ exclude_lines = [
 - `include = ["simple_calculator"]` - Which packages to include (the folder name in src/)
 - `from = ["src"]` - Look in the `src/` directory (src-layout). Hatchling will find `src/simple_calculator/` and include it
 
-**`[tool.hatchling.version]` Section** - Tells Hatchling where to find the version
+**`[tool.hatch.version]` Section** - Tells Hatchling where to find the version
 
 - `path = "src/simple_calculator/_version.py"` - Read the version from this file. Hatchling looks for `__version__ = "0.1.0"` in this file and uses that as the package version
 
