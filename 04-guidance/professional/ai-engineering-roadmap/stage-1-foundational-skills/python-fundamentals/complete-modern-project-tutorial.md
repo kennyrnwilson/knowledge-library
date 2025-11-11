@@ -349,7 +349,7 @@ check_untyped_defs = true
 # Pytest configuration
 [tool.pytest.ini_options]
 minversion = "7.0"
-addopts = "-ra --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"
+addopts = "-v -ra --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"
 testpaths = ["tests"]
 pythonpath = ["src"]
 
@@ -453,7 +453,8 @@ exclude_lines = [
 **`[tool.pytest.ini_options]` Section** - Configuration for Pytest testing framework
 
 - `minversion = "7.0"` - Require at least Pytest 7.0
-- `addopts = "-ra --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"` - Default options when running `pytest`:
+- `addopts = "-v -ra --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"` - Default options when running `pytest`:
+  - `-v` - Verbose output (show individual test names)
   - `-ra` - Show all test results summary (passed, failed, skipped, etc.)
   - `--strict-markers` - Require declared markers (catch typos in `@pytest.mark.xxx`)
   - `--cov=src/simple_calculator` - Measure code coverage for your package
@@ -1058,8 +1059,19 @@ testpaths: tests
 plugins: cov-7.0.0
 collected 13 items
 
-tests/test_cli.py ........                                                                                                  [ 61%]
-tests/test_core.py .....                                                                                                    [100%]
+tests/test_cli.py::test_add_command PASSED                                                                                [ 7%]
+tests/test_cli.py::test_subtract_command PASSED                                                                           [ 15%]
+tests/test_cli.py::test_multiply_command PASSED                                                                           [ 23%]
+tests/test_cli.py::test_divide_command PASSED                                                                             [ 30%]
+tests/test_cli.py::test_divide_by_zero_error PASSED                                                                       [ 38%]
+tests/test_cli.py::test_invalid_operation_error PASSED                                                                    [ 46%]
+tests/test_cli.py::test_missing_arguments_error PASSED                                                                    [ 53%]
+tests/test_cli.py::test_invalid_number_error PASSED                                                                       [ 61%]
+tests/test_core.py::TestCalculatorBasicOperations::test_add PASSED                                                        [ 69%]
+tests/test_core.py::TestCalculatorBasicOperations::test_subtract PASSED                                                   [ 76%]
+tests/test_core.py::TestCalculatorBasicOperations::test_multiply PASSED                                                   [ 84%]
+tests/test_core.py::TestCalculatorBasicOperations::test_divide PASSED                                                     [ 92%]
+tests/test_core.py::TestCalculatorBasicOperations::test_divide_by_zero PASSED                                             [100%]
 
 ========================================================= tests coverage ==========================================================
 _________________________________________ coverage: platform linux, python 3.13.0-final-0 _________________________________________
@@ -1077,8 +1089,10 @@ TOTAL                                  54     34     37%
 ```
 
 **What you'll see:**
-- 8 dots (`.`) for the 8 CLI tests (61%)
-- 5 dots (`.`) for the 5 core tests (100%)
+- All 13 individual test names listed with `PASSED` status
+- 8 CLI tests shown first
+- 5 core operation tests shown next
+- Progress percentage for each test (7%, 15%, 23%, etc.)
 - Full coverage report showing core.py at 100% and cli.py at 0% (subprocess testing)
 - Summary: **13 passed in ~0.31s**
 
