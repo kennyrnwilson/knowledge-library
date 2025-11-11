@@ -1324,7 +1324,7 @@ Excellent! You've successfully:
 
 ### Step 5.1: Create Pre-commit Configuration
 
-Create `.pre-commit-config.yaml`:
+Pre-commit hooks are scripts that run automatically before you commit code. They catch issues early before they reach your repository. Create `.pre-commit-config.yaml`:
 
 ```yaml
 repos:
@@ -1355,6 +1355,160 @@ repos:
       - id: check-added-large-files
         args: ["--maxkb=1000"]
       - id: debug-statements
+```
+
+### Understanding .pre-commit-config.yaml
+
+This file configures automatic checks that run before each commit. Here's what each part does:
+
+#### Overall Structure: `repos:`
+- **`repos:`** - A list of repositories containing pre-commit hooks
+- Each repository has its own hooks that perform different checks
+
+---
+
+#### **Section 1: Ruff (Code Formatting & Linting)**
+
+```yaml
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.1.8
+  hooks:
+    - id: ruff
+      args: ["--fix"]
+    - id: ruff-format
+```
+
+**What it does:**
+- **`repo:`** - The URL where this tool's pre-commit hooks are hosted
+- **`rev: v0.1.8`** - The version of the tool to use (v0.1.8 in this case)
+- **`- id: ruff`** - First hook: Checks for style issues and fixes them automatically
+  - `args: ["--fix"]` - Automatically fix problems it finds (imports, unused variables, etc.)
+- **`- id: ruff-format`** - Second hook: Formats code consistently (spacing, indentation, etc.)
+
+**Why it's useful:**
+- ✅ Enforces consistent code style across your project
+- ✅ Catches unused imports
+- ✅ Finds obvious bugs (undefined variables, unreachable code)
+- ✅ Automatically fixes many issues
+
+**Example:** If you accidentally import something you don't use:
+```python
+import os  # Not used
+from simple_calculator import Calculator
+
+result = Calculator.add(5, 3)
+```
+Ruff will remove the unused import automatically before the commit.
+
+---
+
+#### **Section 2: MyPy (Type Checking)**
+
+```yaml
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.7.1
+  hooks:
+    - id: mypy
+      additional_dependencies: ["types-all"]
+      args: [--strict]
+      exclude: ^tests/
+```
+
+**What it does:**
+- **`- id: mypy`** - Runs MyPy type checker to find type-related bugs
+- **`additional_dependencies: ["types-all"]`** - Installs type hints for common libraries
+- **`args: [--strict]`** - Enables strict mode (most strict type checking)
+- **`exclude: ^tests/`** - Don't check test files (regex pattern: `^tests/` means "files starting with tests/")
+
+**Why it's useful:**
+- ✅ Catches type errors before runtime (e.g., passing a string where an int is expected)
+- ✅ Makes your code more maintainable
+- ✅ Acts as inline documentation
+- ✅ Prevents common bugs
+
+**Example:** If you try to pass a string to a function expecting a number:
+```python
+# This would be caught by mypy:
+result = Calculator.add("5", 3)  # TypeError: string, int instead of int, int
+```
+
+**Why exclude tests?**
+- Tests often use mock objects and dynamic behavior that strict type checking doesn't like
+- Tests don't need to be as strictly typed as production code
+
+---
+
+#### **Section 3: General Checks (pre-commit-hooks)**
+
+```yaml
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-added-large-files
+      args: ["--maxkb=1000"]
+    - id: debug-statements
+```
+
+**Hook 1: `trailing-whitespace`**
+- **What it does:** Removes extra whitespace at the end of lines
+- **Why it matters:** Keeps files clean and prevents unnecessary diffs
+- **Example:**
+  ```python
+  x = 5    # <- removes these extra spaces
+  ```
+
+**Hook 2: `end-of-file-fixer`**
+- **What it does:** Ensures files end with exactly one newline
+- **Why it matters:** Git expects files to end with a newline (standard Unix convention)
+- **Example:**
+  ```python
+  print("hello")
+  # <- adds a newline here
+  ```
+
+**Hook 3: `check-yaml`**
+- **What it does:** Validates YAML syntax in `.yaml` and `.yml` files
+- **Why it matters:** Catches YAML formatting errors early (indentation, colons, etc.)
+- **Files it checks:** `.pre-commit-config.yaml`, `pyproject.toml` (partial), etc.
+
+**Hook 4: `check-added-large-files`**
+- **What it does:** Prevents committing files larger than 1000 KB
+- **Args:** `["--maxkb=1000"]` - Maximum file size is 1000 KB
+- **Why it matters:** Large files bloat your git history and slow down cloning
+- **Common issues:** Binary files, model weights, large data files
+
+**Hook 5: `debug-statements`**
+- **What it does:** Detects leftover debugging code
+- **Why it matters:** Prevents accidental debug prints/breakpoints in production code
+- **Catches:**
+  ```python
+  import pdb; pdb.set_trace()  # <- catches this
+  breakpoint()                  # <- catches this
+  ```
+
+---
+
+### How Pre-commit Hooks Work
+
+```
+You run: git commit -m "message"
+         ↓
+Pre-commit framework:
+  1. Detects staged files
+  2. Runs all configured hooks
+  3. Hooks check/modify files
+         ↓
+If all hooks pass:
+  ✅ Commit succeeds
+
+If any hook fails:
+  ❌ Commit is blocked
+  💡 Fix the issues
+  Re-stage fixed files: git add .
+  Try commit again: git commit -m "message"
 ```
 
 ### Step 5.2: Install Pre-commit Hooks
