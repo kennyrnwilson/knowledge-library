@@ -713,9 +713,9 @@ def main() -> None:
         calc Divide 20 5
     """
     if len(sys.argv) != 4:
-        print("Usage: calc Operation num1 num2")
-        print("Example: calc Add 2 6")
-        print("Operations: Add, Subtract, Multiply, Divide")
+        print("Usage: calc Operation num1 num2", file=sys.stderr)
+        print("Example: calc Add 2 6", file=sys.stderr)
+        print("Operations: Add, Subtract, Multiply, Divide", file=sys.stderr)
         sys.exit(1)
 
     operation = sys.argv[1]
@@ -726,7 +726,7 @@ def main() -> None:
         num1 = float(num1_str)
         num2 = float(num2_str)
     except ValueError:
-        print(f"Error: Numbers must be valid numbers, got '{num1_str}' and '{num2_str}'")
+        print(f"Error: Numbers must be valid numbers, got '{num1_str}' and '{num2_str}'", file=sys.stderr)
         sys.exit(1)
 
     operation_lower = operation.lower()
@@ -741,13 +741,13 @@ def main() -> None:
         elif operation_lower == "divide":
             result = Calculator.divide(num1, num2)
         else:
-            print(f"Error: Unknown operation: {operation}")
-            print("Operations: Add, Subtract, Multiply, Divide")
+            print(f"Error: Unknown operation: {operation}", file=sys.stderr)
+            print("Operations: Add, Subtract, Multiply, Divide", file=sys.stderr)
             sys.exit(1)
 
         print(f"{num1} {operation.lower()} {num2} = {result}")
     except ValueError as e:
-        print(f"Error: {e}")
+        print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
 
 
@@ -1029,6 +1029,101 @@ def test_invalid_number_error() -> None:
 ### Step 4.3: Create Empty Test __init__.py
 
 Create `tests/__init__.py` (empty file for package recognition)
+
+---
+
+## 🧪 Checkpoint: Run All Tests
+
+Before moving to code quality tools, let's verify all tests pass!
+
+### Run the Full Test Suite
+
+```bash
+# Run all tests with coverage report
+pytest
+
+# You should see:
+# - All tests pass (green checkmarks)
+# - Test count (should be 13 tests from test_core.py and test_cli.py)
+# - No errors or failures
+```
+
+### Expected Output
+
+```
+========================= test session starts =========================
+collected 13 items
+
+tests/test_core.py::TestCalculatorBasicOperations::test_add PASSED
+tests/test_core.py::TestCalculatorBasicOperations::test_subtract PASSED
+tests/test_core.py::TestCalculatorBasicOperations::test_multiply PASSED
+tests/test_core.py::TestCalculatorBasicOperations::test_divide PASSED
+tests/test_core.py::TestCalculatorBasicOperations::test_divide_by_zero PASSED
+tests/test_cli.py::test_add_command PASSED
+tests/test_cli.py::test_subtract_command PASSED
+tests/test_cli.py::test_multiply_command PASSED
+tests/test_cli.py::test_divide_by_zero_error PASSED
+tests/test_cli.py::test_invalid_operation_error PASSED
+tests/test_cli.py::test_missing_arguments_error PASSED
+tests/test_cli.py::test_invalid_number_error PASSED
+
+======================== 13 passed in 0.27s =========================
+```
+
+### Test Coverage
+
+Look for the coverage report:
+
+```
+Name                                Stmts   Miss  Cover
+---------------------------------------------------------
+src/simple_calculator/__init__.py       3      0   100%
+src/simple_calculator/_version.py       1      0   100%
+src/simple_calculator/cli.py           34     34     0%
+src/simple_calculator/core.py          16      0   100%
+---------------------------------------------------------
+TOTAL                                  54     34     37%
+```
+
+**Note:** The cli.py shows 0% coverage because it's tested via subprocess calls (which is correct for testing a CLI), while core.py has 100% coverage from direct unit tests.
+
+**Goal:** Aim for >80% coverage on testable code (core.py shows 100%!)
+
+### If Tests Fail ❌
+
+**Common issues:**
+
+1. **ModuleNotFoundError**
+   ```bash
+   # Make sure pythonpath is set in pyproject.toml
+   # Should have: pythonpath = ["src"]
+   cat pyproject.toml | grep pythonpath
+   ```
+
+2. **Test file not found**
+   ```bash
+   # Verify test files exist
+   ls -la tests/
+   # Should show: test_core.py, test_cli.py, __init__.py
+   ```
+
+3. **Import errors**
+   ```bash
+   # Test manual import
+   python -c "from simple_calculator import Calculator; print('OK')"
+   ```
+
+### If Tests Pass ✅
+
+Excellent! You've successfully:
+- ✅ Written 13 comprehensive tests
+- ✅ Achieved 100% code coverage on core logic
+- ✅ Tested all operations (add, subtract, multiply, divide)
+- ✅ Tested error cases (division by zero, invalid args, etc.)
+- ✅ Tested CLI input/output validation
+- ✅ Tests pass consistently
+
+**You're ready for Part 5: Code Quality Tools Setup!**
 
 ---
 
