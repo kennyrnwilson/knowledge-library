@@ -1747,6 +1747,71 @@ git add .
 git commit -m "Initial project setup"
 ```
 
+#### Troubleshooting Pre-commit Issues
+
+**Error: `unknown variant py313`**
+
+```
+ruff failed
+  Cause: TOML parse error at line 59
+   |
+59 | target-version = "py313"
+   |                  ^^^^^^^
+unknown variant `py313`, expected one of `py37`, `py38`, `py39`, `py310`, `py311`, `py312`
+```
+
+**Cause:** You're using Python 3.13, but the ruff version in `.pre-commit-config.yaml` doesn't support `py313` yet.
+
+**Solution:** Change your `pyproject.toml` to use `py312` instead (ruff will still work with Python 3.13):
+
+```toml
+# In pyproject.toml, find this line:
+[tool.ruff]
+target-version = "py313"
+
+# Change it to:
+[tool.ruff]
+target-version = "py312"
+```
+
+**Why this works:**
+- `target-version` tells ruff which Python version features to check for
+- Setting it to `py312` means "check for Python 3.12 compatibility"
+- Your code will still work fine with Python 3.13
+- This is just a compatibility measure until ruff's version supports `py313`
+
+**Alternative:** Update ruff in `.pre-commit-config.yaml` to a newer version that supports `py313`:
+```yaml
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.6.0  # Update to a newer version that supports py313
+```
+
+**Note on Trailing Whitespace Fixes:**
+
+When you run `pre-commit run --all-files`, you might see:
+```
+trim trailing whitespace.................................................Failed
+- hook id: trailing-whitespace
+- exit code: 1
+- files were modified by this hook
+
+Fixing src/simple_calculator/core.py
+Fixing pyproject.toml
+```
+
+**This is normal and expected!** The hooks are:
+1. ✅ Detecting issues (trailing whitespace, missing newlines)
+2. ✅ Fixing them automatically
+3. ✅ Reporting what they changed
+
+You just need to stage the fixed files and commit again:
+```bash
+git add .
+git commit -m "Fix whitespace issues found by pre-commit hooks"
+```
+
+---
+
 ### Step 5.3: Run Quality Checks Manually
 
 ```bash
