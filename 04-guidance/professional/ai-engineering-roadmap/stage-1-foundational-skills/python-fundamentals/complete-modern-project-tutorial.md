@@ -1322,9 +1322,136 @@ Excellent! You've successfully:
 
 ## Part 5: Code Quality Tools Setup
 
+### Understanding Git Hooks vs Pre-commit Framework
+
+Before we configure code quality tools, let's clarify an important distinction:
+
+#### **Git Hooks (Built-in Git Technology)**
+
+Git itself provides a **hooks** system - these are scripts that Git runs at specific points:
+
+- **Location:** `.git/hooks/` directory (created by Git automatically)
+- **Who defines it:** Git (the version control system)
+- **How it works:** Git checks for scripts with specific names and runs them
+- **Pre-commit hook:** `.git/hooks/pre-commit` - runs BEFORE you commit code
+- **Other hooks:** `pre-push` (before push), `post-commit` (after commit), etc.
+- **Writing them:** Bash, Python, or any executable script
+
+**Example raw git hook (bash):**
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit - Git will run this before commits
+python -m pytest  # Run tests
+if [ $? -ne 0 ]; then
+  echo "Tests failed, commit blocked"
+  exit 1
+fi
+```
+
+**Problems with raw git hooks:**
+- ❌ Need to write all logic yourself
+- ❌ Hard to manage multiple tools
+- ❌ Everyone on team needs same hooks configured
+- ❌ No versioning or sharing between projects
+
+---
+
+#### **Pre-commit Framework (Python Tool)**
+
+The "pre-commit" framework is a **Python tool that makes git hooks easier to manage**:
+
+- **Creator:** Open source project (not part of Git)
+- **Written in:** Python
+- **What it does:** Automatically manages `.git/hooks/pre-commit` for you
+- **Configuration file:** `.pre-commit-config.yaml` (YAML, not Git)
+- **How it works:**
+  1. You define which tools/checks you want in `.pre-commit-config.yaml`
+  2. Pre-commit framework generates the actual git hooks
+  3. Git runs them automatically before commits
+
+**Key advantage:** Abstracts away git hook complexity, lets you focus on WHAT checks to run, not HOW to run them.
+
+---
+
+#### **Visual Comparison**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Git (Version Control)                    │
+│  Provides hook system: .git/hooks/pre-commit               │
+│  (built-in technology)                                      │
+└─────────────────────────────────────────────────────────────┘
+                            ↑
+                    (wraps and manages)
+                            ↑
+┌─────────────────────────────────────────────────────────────┐
+│         Pre-commit Framework (Python Tool)                  │
+│  Reads: .pre-commit-config.yaml (YOUR configuration)       │
+│  Generates: .git/hooks/pre-commit (Git will run this)       │
+│  Manages: Ruff, MyPy, other tools (YOUR checks)             │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+                   (controls and monitors)
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│              Your Code Quality Tools                        │
+│  • Ruff (linting & formatting)                              │
+│  • MyPy (type checking)                                     │
+│  • Pytest (testing)                                         │
+│  • Other custom checks                                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+#### **Flow: What Actually Happens When You Commit**
+
+```
+You run: git commit -m "message"
+         ↓
+Git checks: .git/hooks/pre-commit exists?
+         ↓
+Git runs: .git/hooks/pre-commit (created by pre-commit framework)
+         ↓
+Pre-commit framework reads: .pre-commit-config.yaml
+         ↓
+Runs all configured hooks:
+  • Ruff (via pre-commit's wrapper)
+  • MyPy (via pre-commit's wrapper)
+  • Trailing whitespace (via pre-commit-hooks repo)
+  • All other checks
+         ↓
+Each hook either:
+  ✅ PASSES → move to next hook
+  ❌ FAILS → stop, display error, block commit
+         ↓
+If all pass:
+  ✅ Commit succeeds
+If any fail:
+  ❌ Commit blocked
+  Fix issues → git add . → git commit again
+```
+
+---
+
+#### **Why Use Pre-commit Framework Instead of Raw Git Hooks?**
+
+| Aspect | Raw Git Hooks | Pre-commit Framework |
+|--------|---------------|----------------------|
+| **Setup** | Write bash scripts | Write YAML config |
+| **Managing tools** | Manual installation & versioning | Automatic |
+| **Team consistency** | Manual sync | Automatic from `.pre-commit-config.yaml` |
+| **Tool updates** | Manual | Automatic (run `pre-commit autoupdate`) |
+| **Language support** | Limited (mostly bash) | Any language |
+| **Reusability** | Project-specific | Share via public repos |
+
+**Answer:** Pre-commit framework is much easier and is the Python community standard.
+
+---
+
 ### Step 5.1: Create Pre-commit Configuration
 
-Pre-commit hooks are scripts that run automatically before you commit code. They catch issues early before they reach your repository. Create `.pre-commit-config.yaml`:
+Now let's create `.pre-commit-config.yaml` which tells the pre-commit framework which checks to run:
 
 ```yaml
 repos:
