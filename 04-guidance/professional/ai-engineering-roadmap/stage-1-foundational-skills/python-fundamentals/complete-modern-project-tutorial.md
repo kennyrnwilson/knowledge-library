@@ -13,6 +13,7 @@ A comprehensive, hands-on tutorial that walks through building a professional Py
 - **Building a professional package** with proper code organization
 - **Writing comprehensive tests** with pytest
 - **Code quality tools** (ruff, mypy, pytest)
+- **Debugging techniques** (print, pdb, logging, pytest)
 - **Pre-commit hooks** for automated checks
 - **CI/CD setup** with GitHub Actions
 - **Publishing to PyPI** using twine
@@ -884,6 +885,325 @@ ruff check . && mypy . && pytest --cov
 
 ---
 
+## Part 5.5: Debugging Your Application
+
+Debugging is essential for understanding what your code is doing and finding problems. There are several approaches from simple to advanced.
+
+### Using Print Debugging
+
+The simplest approach is using `print()` statements:
+
+```python
+# src/simple_calculator/core.py
+@staticmethod
+def divide(a: Union[int, float], b: Union[int, float]) -> float:
+    """Divide two numbers."""
+    print(f"DEBUG: divide called with a={a}, b={b}")  # Add debug info
+
+    if b == 0:
+        print(f"DEBUG: b is zero, raising ValueError")
+        raise ValueError("Cannot divide by zero")
+
+    result = a / b
+    print(f"DEBUG: returning result={result}")
+    return result
+```
+
+Run with print debugging:
+
+```bash
+# Activate venv
+source venv/bin/activate
+
+# Run with calculator in interactive mode
+python -m simple_calculator.cli
+
+# Or test specific function
+python -c "from simple_calculator.core import Calculator; print(Calculator.divide(10, 2))"
+```
+
+**Pros:** Simple, no setup needed
+**Cons:** Requires manual addition/removal, clutters code
+
+### Using Python Debugger (pdb)
+
+Python includes a built-in debugger `pdb` (Python Debugger) for interactive debugging.
+
+**Set a breakpoint in your code:**
+
+```python
+# src/simple_calculator/core.py
+import pdb
+
+@staticmethod
+def divide(a: Union[int, float], b: Union[int, float]) -> float:
+    """Divide two numbers."""
+    pdb.set_trace()  # Debugger will pause here
+
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+```
+
+**Or use the built-in breakpoint():**
+
+```python
+# Modern Python 3.7+ approach
+@staticmethod
+def divide(a: Union[int, float], b: Union[int, float]) -> float:
+    """Divide two numbers."""
+    breakpoint()  # Debugger will pause here
+
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+```
+
+**Debug in interactive mode:**
+
+```bash
+# Start calculator in interactive mode
+python -m simple_calculator.cli
+
+# When you hit a breakpoint, you'll see:
+# > /home/user/simple-calculator/src/simple_calculator/core.py(14)divide()
+# -> if b == 0:
+
+# Common pdb commands:
+(Pdb) n          # Next line
+(Pdb) s          # Step into function
+(Pdb) c          # Continue execution
+(Pdb) l          # List source code
+(Pdb) p a        # Print variable a
+(Pdb) p locals() # Print all local variables
+(Pdb) w          # Show where you are in stack
+(Pdb) u          # Move up in stack
+(Pdb) d          # Move down in stack
+(Pdb) h          # Help
+(Pdb) q          # Quit debugger
+```
+
+**Example debugging session:**
+
+```bash
+$ python -c "from simple_calculator.core import Calculator; Calculator.divide(10, 0)"
+
+> /home/user/simple-calculator/src/simple_calculator/core.py(14)divide()
+-> if b == 0:
+(Pdb) p a
+10
+(Pdb) p b
+0
+(Pdb) p b == 0
+True
+(Pdb) c
+ValueError: Cannot divide by zero
+```
+
+### Debugging Tests with pytest
+
+Debug failing tests interactively:
+
+```bash
+# Run pytest with pdb on failures
+pytest --pdb tests/test_core.py
+
+# When a test fails, drop into debugger automatically
+
+# Run pytest with pdb on first failure, then stop
+pytest --pdb --lf tests/
+
+# Show local variables on failure
+pytest -l tests/test_core.py
+```
+
+**Example: Debug a failing test**
+
+```bash
+$ pytest --pdb tests/test_core.py::TestCalculatorBasicOperations::test_divide
+
+# Test runs and hits a failure
+# You drop into pdb automatically at the failure point
+(Pdb) p result
+5.0
+(Pdb) p expected
+5
+(Pdb) result == expected
+False
+(Pdb) c  # Continue to next failure or exit
+```
+
+### Using Logging Instead of Print
+
+For production code, use `logging` module instead of print:
+
+```python
+# src/simple_calculator/core.py
+import logging
+
+logger = logging.getLogger(__name__)
+
+class Calculator:
+    @staticmethod
+    def divide(a: Union[int, float], b: Union[int, float]) -> float:
+        """Divide two numbers."""
+        logger.debug(f"Dividing {a} by {b}")
+
+        if b == 0:
+            logger.error("Attempted division by zero")
+            raise ValueError("Cannot divide by zero")
+
+        result = a / b
+        logger.debug(f"Division result: {result}")
+        return result
+```
+
+**Configure logging in CLI:**
+
+```python
+# src/simple_calculator/cli.py
+import logging
+import sys
+
+# Configure logging
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler('calculator.log')
+    ]
+)
+
+def main() -> None:
+    """Run the calculator CLI."""
+    logger = logging.getLogger(__name__)
+    logger.info("Starting calculator")
+    # ... rest of code
+```
+
+**Run with logging:**
+
+```bash
+# See debug output
+python -m simple_calculator.cli
+
+# Output:
+# 2025-11-11 14:32:10,123 - simple_calculator.cli - INFO - Starting calculator
+# 2025-11-11 14:32:15,456 - simple_calculator.core - DEBUG - Dividing 10 by 2
+```
+
+**Change logging level:**
+
+```python
+# Control verbosity
+logging.basicConfig(level=logging.WARNING)  # Only warnings and errors
+logging.basicConfig(level=logging.DEBUG)    # Everything
+logging.basicConfig(level=logging.INFO)     # Info level and higher
+```
+
+### Debugging from Command Line
+
+Test individual functions directly:
+
+```bash
+# Test function with print debugging
+python -c "
+from simple_calculator.core import Calculator
+result = Calculator.add(5, 3)
+print(f'5 + 3 = {result}')
+"
+
+# Debug expression parsing
+python << 'EOF'
+from simple_calculator.core import Calculator
+try:
+    first, op, second = Calculator.parse_expression('5 + 3')
+    print(f'Parsed: {first} {op} {second}')
+except Exception as e:
+    print(f'Error: {e}')
+EOF
+
+# Interactive Python shell
+python
+>>> from simple_calculator.core import Calculator
+>>> calc = Calculator()
+>>> calc.add(10, 5)
+15
+>>> calc.divide(10, 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "src/simple_calculator/core.py", line 25, in divide
+    raise ValueError("Cannot divide by zero")
+ValueError: Cannot divide by zero
+```
+
+### Debugging Tips and Common Issues
+
+**Issue: "ModuleNotFoundError" when debugging**
+
+```bash
+# Make sure you're in venv and package is installed
+source venv/bin/activate
+pip install -e .  # Editable install for debugging
+
+# Then debug
+python -m simple_calculator.cli
+```
+
+**Issue: Breakpoints not stopping**
+
+```python
+# Make sure to use correct syntax
+breakpoint()  # Python 3.7+
+
+# Or
+import pdb; pdb.set_trace()
+
+# Not:
+pdb.breakpoint()  # Wrong - doesn't exist
+```
+
+**Issue: Debug prints showing in test output**
+
+```bash
+# Use -s flag to show output
+pytest -s tests/
+
+# Or redirect to file
+pytest -s tests/ > debug.log 2>&1
+```
+
+**Debugging async code:**
+
+For async functions, use debugger with asyncio:
+
+```python
+import asyncio
+import pdb
+
+async def divide_async(a, b):
+    breakpoint()  # Still works with async
+    return a / b
+
+asyncio.run(divide_async(10, 2))
+```
+
+### Debugging Checklist
+
+- [ ] Use `print()` for quick debugging
+- [ ] Use `breakpoint()` for interactive debugging
+- [ ] Learn key pdb commands (n, s, c, p, l)
+- [ ] Run pytest with `--pdb` for test debugging
+- [ ] Use logging for production-level debugging
+- [ ] Log to both console and file
+- [ ] Set appropriate logging levels
+- [ ] Never commit debug code with print/breakpoint
+- [ ] Use `.gitignore` to ignore `.log` files
+- [ ] Test clean code path after debugging
+
+---
+
 ## Part 6: GitHub CI/CD Setup
 
 ### Step 6.1: Create GitHub Actions Workflow
@@ -1180,12 +1500,17 @@ python -c "from simple_calculator import Calculator; print(Calculator.add(1, 2))
 - [ ] Create comprehensive tests
 - [ ] Achieve >80% code coverage
 
-### Quality Assurance
+### Quality Assurance & Debugging
 - [ ] Install development tools (pytest, ruff, mypy)
 - [ ] Set up pre-commit hooks
 - [ ] Run linting and fix issues
 - [ ] Run type checking
 - [ ] Run tests and verify coverage
+- [ ] Understand print debugging
+- [ ] Use breakpoint() for interactive debugging
+- [ ] Debug tests with pytest --pdb
+- [ ] Use logging for production debugging
+- [ ] Test command-line debugging approaches
 
 ### CI/CD
 - [ ] Create .github/workflows/tests.yml
@@ -1227,6 +1552,8 @@ python -c "from simple_calculator import Calculator; print(Calculator.add(1, 2))
 - [pytest Documentation](https://docs.pytest.org/)
 - [Ruff Documentation](https://docs.astral.sh/ruff/)
 - [mypy Documentation](https://mypy.readthedocs.io/)
+- [Python pdb Debugger](https://docs.python.org/3/library/pdb.html) - Interactive debugger
+- [Python logging Module](https://docs.python.org/3/library/logging.html) - Logging framework
 
 ### Tools and Services
 
