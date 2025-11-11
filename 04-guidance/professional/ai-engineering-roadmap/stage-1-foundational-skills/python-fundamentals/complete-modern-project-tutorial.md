@@ -665,34 +665,6 @@ class Calculator:
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a / b
-
-    @staticmethod
-    def parse_expression(expression: str) -> tuple[float, str, float]:
-        """Parse a mathematical expression.
-
-        Args:
-            expression: String in format "number operator number"
-
-        Returns:
-            Tuple of (first_number, operator, second_number)
-
-        Raises:
-            ValueError: If expression format is invalid
-        """
-        parts = expression.strip().split()
-        if len(parts) != 3:
-            raise ValueError(
-                "Invalid format. Use: 'number operator number' (e.g., '5 + 3')"
-            )
-
-        try:
-            first = float(parts[0])
-            operator = parts[1]
-            second = float(parts[2])
-        except ValueError:
-            raise ValueError("Numbers must be integers or decimals")
-
-        return first, operator, second
 ```
 
 ### Step 3.2: Create CLI Interface
@@ -863,49 +835,6 @@ class TestCalculatorBasicOperations:
         """Test division by zero raises ValueError."""
         with pytest.raises(ValueError, match="Cannot divide by zero"):
             Calculator.divide(5, 0)
-
-
-class TestExpressionParsing:
-    """Test expression parsing functionality."""
-
-    def test_parse_valid_expressions(self) -> None:
-        """Test parsing valid expressions."""
-        first, operator, second = Calculator.parse_expression("5 + 3")
-        assert first == 5.0
-        assert operator == "+"
-        assert second == 3.0
-
-        first, operator, second = Calculator.parse_expression("10 / 2")
-        assert first == 10.0
-        assert operator == "/"
-        assert second == 2.0
-
-    def test_parse_decimal_numbers(self) -> None:
-        """Test parsing expressions with decimals."""
-        first, operator, second = Calculator.parse_expression("5.5 + 2.3")
-        assert first == 5.5
-        assert operator == "+"
-        assert second == 2.3
-
-    def test_parse_negative_numbers(self) -> None:
-        """Test parsing expressions with negative numbers."""
-        first, operator, second = Calculator.parse_expression("-5 + 3")
-        assert first == -5.0
-        assert operator == "+"
-        assert second == 3.0
-
-    def test_parse_invalid_format(self) -> None:
-        """Test parsing invalid format raises ValueError."""
-        with pytest.raises(ValueError, match="Invalid format"):
-            Calculator.parse_expression("5 + 3 + 2")
-
-        with pytest.raises(ValueError, match="Invalid format"):
-            Calculator.parse_expression("5+3")
-
-    def test_parse_invalid_numbers(self) -> None:
-        """Test parsing non-numeric values raises ValueError."""
-        with pytest.raises(ValueError, match="Numbers must be"):
-            Calculator.parse_expression("abc + 3")
 ```
 
 ### Step 4.2: Test CLI Functionality
@@ -1292,16 +1221,6 @@ from simple_calculator.core import Calculator
 result = Calculator.add(5, 3)
 print(f'5 + 3 = {result}')
 "
-
-# Debug expression parsing
-python << 'EOF'
-from simple_calculator.core import Calculator
-try:
-    first, op, second = Calculator.parse_expression('5 + 3')
-    print(f'Parsed: {first} {op} {second}')
-except Exception as e:
-    print(f'Error: {e}')
-EOF
 
 # Interactive Python shell
 python
@@ -1710,10 +1629,6 @@ print(result)  # Output: 12
 
 result = Calculator.divide(20, 4)
 print(result)  # Output: 5.0
-
-# Parse expressions
-first, operator, second = Calculator.parse_expression("10 + 5")
-print(f"{first} {operator} {second}")  # Output: 10.0 + 5.0
 
 # Error handling
 try:
