@@ -241,6 +241,112 @@ exclude_lines = [
 ]
 ```
 
+### Understanding pyproject.toml Line by Line
+
+**`[build-system]` Section** - Tells Python how to build your package
+
+- `requires = ["hatchling>=1.25"]` - Specifies that Hatchling (version 1.25+) is needed to build this package. This is installed automatically when building
+- `build-backend = "hatchling.build"` - Tells pip which tool to use for building. Hatchling is modern, fast, and requires minimal configuration
+
+**`[project]` Section** - Core metadata about your package (PEP 621 standard)
+
+- `name = "simple-calculator"` - The package name on PyPI (lowercase, dashes instead of underscores for display)
+- `version = {attr = "simple_calculator._version.__version__"}` - **Dynamic versioning**: reads version from `_version.py` instead of hardcoding it here. This is the recommended approach because you only update the version in one place
+- `description = "..."` - Short one-line description shown on PyPI
+- `readme = "README.md"` - Points to your README file. pip will display this as the long description on PyPI
+- `requires-python = ">=3.11"` - Specifies minimum Python version. pip will prevent installation on older Python versions
+- `license = {text = "MIT"}` - License type. Using `{text = "MIT"}` embeds the license type without requiring a separate file reference
+- `authors = [...]` - Author information. Can be multiple people. Email is optional but recommended
+- `keywords = [...]` - Search keywords for PyPI. Helps people find your package
+- `classifiers = [...]` - Metadata categories for PyPI organization:
+  - `Development Status :: 4 - Beta` - Shows maturity level (Alpha → Beta → Stable, etc.)
+  - `Intended Audience :: Developers` - Who should use this
+  - License classifier - Must match your actual license
+  - Python version classifiers - List all versions you officially support (matches `requires-python`)
+  - Topic classifier - What category the package belongs to
+
+**`[project.optional-dependencies]` Section** - Extra dependencies only for development
+
+- `dev = [...]` - Installs with `pip install .[dev]` (all packages listed)
+  - `pytest>=7.0` - Testing framework
+  - `pytest-cov>=4.0` - Code coverage reporting
+  - `ruff>=0.1.0` - Fast linter and formatter
+  - `mypy>=1.0` - Static type checker
+  - `pre-commit>=3.0` - Git hooks framework
+  - `twine>=4.0` - Tool for uploading to PyPI
+
+**`[project.scripts]` Section** - Creates command-line commands
+
+- `calc = "simple_calculator.cli:main"` - Creates a `calc` command that runs the `main()` function from `simple_calculator.cli` module. After installation, users can just type `calc` instead of `python -m simple_calculator.cli`
+
+**`[project.urls]` Section** - Links shown on PyPI package page
+
+- Each URL provides important information:
+  - `Homepage` - Your project's main website
+  - `Documentation` - Where users can learn how to use it
+  - `Repository` - The Git repository URL
+  - `Issues` - Where users can report bugs
+
+**`[tool.hatchling.packages]` Section** - Tells Hatchling where your code is
+
+- `include = ["simple_calculator"]` - Which packages to include (the folder name in src/)
+- `from = ["src"]` - Look in the `src/` directory (src-layout). Hatchling will find `src/simple_calculator/` and include it
+
+**`[tool.ruff]` Section** - Configuration for Ruff linter/formatter
+
+- `line-length = 100` - Maximum line length before wrapping (100 characters is common)
+- `target-version = "py311"` - Minimum Python version to target (affects which Python features Ruff checks for)
+
+**`[tool.ruff.lint]` Section** - Which rules Ruff enforces
+
+- `select = ["E", "F", "W", "I", "N"]` - Error rules to enforce:
+  - `E` - PEP 8 errors (spacing, indentation, etc.)
+  - `F` - Pyflakes errors (undefined names, unused imports, etc.)
+  - `W` - PEP 8 warnings
+  - `I` - isort import sorting
+  - `N` - Naming conventions (PEP 8 names)
+- `ignore = ["E501"]` - Don't enforce line length in linter (handled separately by formatter)
+
+**`[tool.ruff.lint.isort]` Section** - How to sort imports
+
+- `known-first-party = ["simple_calculator"]` - Tells Ruff that `simple_calculator` is your package (not a third-party library), so imports are grouped correctly
+
+**`[tool.mypy]` Section** - Configuration for MyPy type checker
+
+- `python_version = "3.11"` - Assume code runs on Python 3.11+ (affects type checking rules)
+- `warn_return_any = true` - Warn if a function returns `Any` type (could indicate missing type hints)
+- `warn_unused_configs = true` - Warn about unused configuration options
+- `disallow_untyped_defs = false` - Don't require type hints on all functions (too strict for beginners)
+- `disallow_incomplete_defs = false` - Allow partial type hints (some params typed, some not)
+- `check_untyped_defs = true` - Still check functions without type hints for obvious errors
+
+**`[tool.pytest.ini_options]` Section** - Configuration for Pytest testing framework
+
+- `minversion = "7.0"` - Require at least Pytest 7.0
+- `addopts = "-ra -q --strict-markers --cov=src/simple_calculator --cov-report=term-missing --cov-report=html"` - Default options when running `pytest`:
+  - `-ra` - Show all test results summary
+  - `-q` - Quiet output (less verbose)
+  - `--strict-markers` - Require declared markers (catch typos in `@pytest.mark.xxx`)
+  - `--cov=src/simple_calculator` - Measure code coverage for your package
+  - `--cov-report=term-missing` - Show coverage in terminal with missing lines
+  - `--cov-report=html` - Also generate HTML coverage report
+- `testpaths = ["tests"]` - Where to find test files
+- `pythonpath = ["src"]` - Add `src/` to Python path so tests can import your package
+
+**`[tool.coverage.run]` Section** - Code coverage measurement
+
+- `source = ["src/simple_calculator"]` - Only measure coverage for your package (not test files)
+- `omit = ["*/tests/*"]` - Don't include test files in coverage calculations
+
+**`[tool.coverage.report]` Section** - What to exclude from coverage reports
+
+- `exclude_lines` - Lines that shouldn't count against coverage:
+  - `pragma: no cover` - Lines marked with this comment
+  - `def __repr__` - Special methods often not covered
+  - `raise AssertionError` - Defensive assertions
+  - `raise NotImplementedError` - Placeholder methods
+  - `if __name__ == .__main__.` - Module-level main execution
+
 ### Step 2.2: Create Version File
 
 Create `src/simple_calculator/_version.py`:
