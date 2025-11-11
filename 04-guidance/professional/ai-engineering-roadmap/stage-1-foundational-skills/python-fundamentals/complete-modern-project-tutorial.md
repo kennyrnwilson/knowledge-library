@@ -535,6 +535,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+```
 
 # Testing
 .pytest_cache/
@@ -711,11 +712,14 @@ def main() -> None:
     """Run the calculator CLI.
 
     Supports both interactive and command-line modes.
+    Usage:
+        calc Add 2 6        # Command-line mode
+        calc Multiply 3 4
+        calc               # Interactive mode
     """
     if len(sys.argv) > 1:
-        # Command-line mode: process arguments
-        expression = " ".join(sys.argv[1:])
-        _evaluate_expression(expression)
+        # Command-line mode: process arguments (Operation num1 num2)
+        _process_command(sys.argv[1:])
     else:
         # Interactive mode
         _interactive_mode()
@@ -723,22 +727,22 @@ def main() -> None:
 
 def _interactive_mode() -> NoReturn:
     """Run in interactive mode."""
-    calculator = Calculator()
-
     print("Simple Calculator")
     print("=" * 50)
-    print("Operations: +, -, *, /")
-    print("Type 'quit' to exit\n")
+    print("Operations: Add, Subtract, Multiply, Divide")
+    print("Usage: Add 5 3, Subtract 10 2, Multiply 4 5, Divide 20 4")
+    print("Type 'quit' or 'exit' to exit\n")
 
     while True:
         try:
-            user_input = input("Enter expression (e.g., 5 + 3): ").strip()
+            user_input = input("calc > ").strip()
 
             if user_input.lower() in ("quit", "exit", "q"):
                 print("Goodbye!")
                 sys.exit(0)
 
-            _evaluate_expression(user_input, calculator)
+            if user_input:
+                _process_command(user_input.split())
         except KeyboardInterrupt:
             print("\n\nGoodbye!")
             sys.exit(0)
@@ -746,34 +750,47 @@ def _interactive_mode() -> NoReturn:
             print(f"Error: {e}")
 
 
-def _evaluate_expression(
-    expression: str, calculator: Calculator | None = None
-) -> None:
-    """Evaluate a single expression.
+def _process_command(args: list[str]) -> None:
+    """Process a calculator command.
 
     Args:
-        expression: Mathematical expression to evaluate
-        calculator: Calculator instance (creates new if None)
+        args: Command arguments (Operation, num1, num2)
+              Example: ["Add", "5", "3"]
+
+    Raises:
+        ValueError: If arguments are invalid
     """
-    if calculator is None:
-        calculator = Calculator()
+    if len(args) != 3:
+        raise ValueError(
+            "Usage: Operation num1 num2 (e.g., Add 2 6, Divide 10 4)"
+        )
+
+    operation, num1_str, num2_str = args
 
     try:
-        first, operator, second = Calculator.parse_expression(expression)
+        num1 = float(num1_str)
+        num2 = float(num2_str)
+    except ValueError:
+        raise ValueError(f"Numbers must be valid numbers, got '{num1_str}' and '{num2_str}'")
 
-        if operator == "+":
-            result = calculator.add(first, second)
-        elif operator == "-":
-            result = calculator.subtract(first, second)
-        elif operator == "*":
-            result = calculator.multiply(first, second)
-        elif operator == "/":
-            result = calculator.divide(first, second)
+    operation_lower = operation.lower()
+
+    try:
+        if operation_lower == "add":
+            result = Calculator.add(num1, num2)
+        elif operation_lower == "subtract":
+            result = Calculator.subtract(num1, num2)
+        elif operation_lower == "multiply":
+            result = Calculator.multiply(num1, num2)
+        elif operation_lower == "divide":
+            result = Calculator.divide(num1, num2)
         else:
-            raise ValueError(f"Unknown operator: {operator}")
+            raise ValueError(
+                f"Unknown operation: {operation}. Use: Add, Subtract, Multiply, Divide"
+            )
 
-        print(f"{first} {operator} {second} = {result}")
-    except (ValueError, ZeroDivisionError) as e:
+        print(f"{num1} {operation.lower()} {num2} = {result}")
+    except ValueError as e:
         print(f"Error: {e}")
         raise
 
@@ -898,43 +915,61 @@ Create `tests/test_cli.py`:
 ```python
 """Tests for CLI functionality."""
 
-from simple_calculator.cli import _evaluate_expression
+import pytest
+
+from simple_calculator.cli import _process_command
 
 
-def test_evaluate_addition(capsys: object) -> None:
-    """Test evaluating addition expression."""
-    _evaluate_expression("5 + 3")
+def test_add_command(capsys: object) -> None:
+    """Test Add command."""
+    _process_command(["Add", "5", "3"])
     captured = capsys.readouterr()  # type: ignore
-    assert "5.0 + 3.0 = 8.0" in captured.out
+    assert "5.0 add 3.0 = 8.0" in captured.out
 
 
-def test_evaluate_subtraction(capsys: object) -> None:
-    """Test evaluating subtraction expression."""
-    _evaluate_expression("10 - 3")
+def test_subtract_command(capsys: object) -> None:
+    """Test Subtract command."""
+    _process_command(["Subtract", "10", "3"])
     captured = capsys.readouterr()  # type: ignore
-    assert "10.0 - 3.0 = 7.0" in captured.out
+    assert "10.0 subtract 3.0 = 7.0" in captured.out
 
 
-def test_evaluate_multiplication(capsys: object) -> None:
-    """Test evaluating multiplication expression."""
-    _evaluate_expression("5 * 4")
+def test_multiply_command(capsys: object) -> None:
+    """Test Multiply command."""
+    _process_command(["Multiply", "5", "4"])
     captured = capsys.readouterr()  # type: ignore
-    assert "5.0 * 4.0 = 20.0" in captured.out
+    assert "5.0 multiply 4.0 = 20.0" in captured.out
 
 
-def test_evaluate_division(capsys: object) -> None:
-    """Test evaluating division expression."""
-    _evaluate_expression("10 / 2")
+def test_divide_command(capsys: object) -> None:
+    """Test Divide command."""
+    _process_command(["Divide", "10", "2"])
     captured = capsys.readouterr()  # type: ignore
-    assert "10.0 / 2.0 = 5.0" in captured.out
+    assert "10.0 divide 2.0 = 5.0" in captured.out
 
 
-def test_evaluate_invalid_operator(capsys: object) -> None:
-    """Test invalid operator raises error."""
-    try:
-        _evaluate_expression("5 % 3")
-    except ValueError as e:
-        assert "Unknown operator" in str(e)
+def test_divide_by_zero_command() -> None:
+    """Test Divide by zero raises error."""
+    with pytest.raises(ValueError, match="Cannot divide by zero"):
+        _process_command(["Divide", "10", "0"])
+
+
+def test_invalid_operation() -> None:
+    """Test invalid operation raises error."""
+    with pytest.raises(ValueError, match="Unknown operation"):
+        _process_command(["Power", "2", "3"])
+
+
+def test_invalid_arguments() -> None:
+    """Test invalid number of arguments raises error."""
+    with pytest.raises(ValueError, match="Usage"):
+        _process_command(["Add", "5"])
+
+
+def test_invalid_numbers() -> None:
+    """Test invalid numbers raise error."""
+    with pytest.raises(ValueError, match="Numbers must be valid"):
+        _process_command(["Add", "abc", "5"])
 ```
 
 ### Step 4.3: Create Empty Test __init__.py
@@ -1628,29 +1663,32 @@ Now that you've built, tested, and deployed your calculator package, here's how 
 
 ### Command Line Usage
 
-After installing the package (either locally or from PyPI), use the `calc` command:
+After installing the package (either locally or from PyPI), use the `calc` command with the format: `calc Operation num1 num2`
 
 ```bash
-# Basic arithmetic
-calc "10 + 5"
-calc "20 * 3"
-calc "100 / 4"
-calc "15 - 7"
+# Basic arithmetic operations
+calc Add 2 6
+calc Subtract 20 8
+calc Multiply 5 4
+calc Divide 20 4
 
 # Decimal numbers
-calc "3.5 + 2.5"
-calc "10.5 / 2"
+calc Add 3.5 2.5
+calc Divide 10.5 2
 
 # Negative numbers
-calc "-10 + 5"
-calc "-20 * -3"
+calc Add -10 5
+calc Multiply -3 -4
 
 # Interactive mode (no arguments)
 calc
-# Then enter expressions at the prompt:
-# > 5 + 3
-# 8.0
-# > quit
+# Then enter commands at the prompt:
+# calc > Add 5 3
+# 5.0 add 3.0 = 8.0
+# calc > Divide 10 2
+# 10.0 divide 2.0 = 5.0
+# calc > quit
+# Goodbye!
 ```
 
 ### Python Code Usage
@@ -1693,7 +1731,8 @@ If you're using your locally developed version:
 pip install -e ".[dev]"
 
 # Then use the calc command
-calc "5 + 3"
+calc Add 5 3
+calc Multiply 10 2
 ```
 
 If you published to PyPI and want to install from there:
@@ -1703,7 +1742,8 @@ If you published to PyPI and want to install from there:
 pip install simple-calculator
 
 # Use the calc command
-calc "5 + 3"
+calc Add 5 3
+calc Divide 20 4
 
 # Check version
 python -c "import simple_calculator; print(simple_calculator.__version__)"
