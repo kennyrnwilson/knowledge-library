@@ -590,6 +590,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, OR IN THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
+### Step 2.6: Install Development Dependencies
+
+Before writing code, install all development tools you'll need:
+
+```bash
+# Install the package in editable mode with dev dependencies
+pip install -e ".[dev]"
+
+# Verify all tools are installed
+pytest --version
+ruff --version
+mypy --version
+pre-commit --version
+twine --version
+```
+
+You should see version numbers for all tools. If any are missing, the installation failed.
+
 ---
 
 ## Part 3: Write the Package Code
@@ -905,21 +923,7 @@ Create `tests/__init__.py` (empty file for package recognition)
 
 ## Part 5: Code Quality Tools Setup
 
-### Step 5.1: Install Development Dependencies
-
-```bash
-# Install all dev tools
-pip install -e ".[dev]"
-
-# Verify installations
-pytest --version
-ruff --version
-mypy --version
-pre-commit --version
-twine --version
-```
-
-### Step 5.2: Create Pre-commit Configuration
+### Step 5.1: Create Pre-commit Configuration
 
 Create `.pre-commit-config.yaml`:
 
@@ -954,7 +958,7 @@ repos:
       - id: debug-statements
 ```
 
-### Step 5.3: Install Pre-commit Hooks
+### Step 5.2: Install Pre-commit Hooks
 
 ```bash
 # Install git hooks
@@ -968,7 +972,7 @@ git add .
 git commit -m "Initial project setup"
 ```
 
-### Step 5.4: Run Quality Checks Manually
+### Step 5.3: Run Quality Checks Manually
 
 ```bash
 # Check code style and fix issues
