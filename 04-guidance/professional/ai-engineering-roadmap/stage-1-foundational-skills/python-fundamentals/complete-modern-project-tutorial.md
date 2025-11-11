@@ -535,7 +535,6 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-```
 
 # Testing
 .pytest_cache/
@@ -561,6 +560,7 @@ Thumbs.db
 .mypy_cache/
 .dmypy.json
 dmypy.json
+```
 
 
 ### Step 2.5: Create License
@@ -760,6 +760,84 @@ from simple_calculator.core import Calculator
 
 __all__ = ["Calculator", "__version__"]
 ```
+
+---
+
+## 🎯 Milestone Check: Can You Run the Calculator?
+
+Before writing tests, let's verify everything works! You should be able to run the calculator from the command line.
+
+### Test the Calculator Works
+
+```bash
+# Verify you're in the right directory
+pwd
+# Should end with: /path/to/simple-calculator
+
+# Verify venv is activated
+which python
+# Should show: /path/to/simple-calculator/venv/bin/python
+
+# Test the calculator
+calc Add 2 6
+# Expected output: 2.0 add 6.0 = 8.0
+
+calc Multiply 3 4
+# Expected output: 3.0 multiply 3.0 = 12.0
+
+calc Divide 20 4
+# Expected output: 20.0 divide 4.0 = 5.0
+
+calc Subtract 10 3
+# Expected output: 10.0 subtract 10.0 = 7.0
+```
+
+### Test Error Handling
+
+```bash
+# Missing arguments
+calc Add 5
+# Expected: Shows usage error
+
+# Invalid operation
+calc Power 2 3
+# Expected: Unknown operation error
+
+# Invalid numbers
+calc Add abc 5
+# Expected: Numbers must be valid error
+
+# Division by zero
+calc Divide 10 0
+# Expected: Cannot divide by zero error
+```
+
+### If Everything Works ✅
+
+Great! You've successfully:
+- Created a Python package with proper structure
+- Configured it with pyproject.toml
+- Written working code (core.py, cli.py, __init__.py)
+- Installed dev dependencies
+- Built the package
+- **Can run it from the command line!**
+
+### If Something Doesn't Work ❌
+
+**Issue: "Command 'calc' not found"**
+- Verify venv is activated: `source venv/bin/activate`
+- Verify installation: `pip install -e ".[dev]"`
+- Check package was found: `python -m simple_calculator.cli Add 2 6`
+
+**Issue: ModuleNotFoundError**
+- Make sure you're in the project root directory
+- Make sure venv is activated
+- Reinstall: `pip install -e ".[dev]"`
+
+**Issue: Import errors in cli.py or __init__.py**
+- Check spelling of all imports
+- Verify Calculator is defined in core.py
+- Try: `python -c "from simple_calculator import Calculator; print(Calculator.add(5, 3))"`
 
 ---
 
