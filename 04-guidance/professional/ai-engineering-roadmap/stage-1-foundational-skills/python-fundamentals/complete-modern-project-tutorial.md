@@ -2310,20 +2310,29 @@ Create `~/.pypirc`:
 [distutils]
 index-servers =
     pypi
+    testpypi
 
 [pypi]
 repository = https://upload.pypi.org/legacy/
 username = __token__
 password = pypi-AgEIcHlwaS5vcmc...  # Your API token from PyPI
+
+[testpypi]
+repository = https://test.pypi.org/legacy/
+username = __token__
+password = pypi-AgEIcHlwaS5vcmc...  # Your API token from TestPyPI (can be different)
 ```
 
 #### Understanding .pypirc
 
 **`[distutils]` Section**
-- Tells Python which package indexes to use
-- `index-servers = pypi` means use the pypi index
+- Tells twine which package repositories are configured
+- `index-servers = pypi testpypi` lists all available repositories
+- When you use `twine upload`, it defaults to `pypi`
+- When you use `twine upload --repository testpypi`, it uses the `testpypi` configuration
+- You must list all repositories you want to use here
 
-**`[pypi]` Section - PyPI Configuration**
+**`[pypi]` Section - PyPI Configuration (Production)**
 
 **`repository = https://upload.pypi.org/legacy/`**
 - The URL where PyPI packages are uploaded
@@ -2341,25 +2350,59 @@ password = pypi-AgEIcHlwaS5vcmc...  # Your API token from PyPI
 - Unique to you - keep it secret!
 - Example: `pypi-AgEIcHlwaS5vcmc2FudHJvcGljLnNvY2kv`
 
-#### Creating Your API Token
+**`[testpypi]` Section - TestPyPI Configuration**
 
+TestPyPI is a separate, safe test environment for practicing package uploads before publishing to production PyPI.
+
+**`repository = https://test.pypi.org/legacy/`**
+- The test repository URL (different from production PyPI)
+- Use this when developing and testing your package
+
+**`username = __token__` and `password = ...`**
+- Same format as PyPI section
+- You need separate API tokens for TestPyPI and PyPI
+- Get TestPyPI token from https://test.pypi.org/manage/account/tokens/
+
+**Why Test First?**
+- TestPyPI is isolated - no one installs from it by accident
+- You can test the upload process without affecting production
+- Good for checking package metadata, README rendering, etc.
+- You can upload the same version multiple times to TestPyPI (unlike production PyPI)
+
+#### Creating Your API Tokens
+
+**For PyPI (Production):**
 1. Go to https://pypi.org/manage/account/tokens/
 2. Click "Create token"
-3. Give it a name: `simple-calculator`
+3. Give it a name: `simple-calculator-prod`
 4. Scope: Choose "Entire account" or "Project specific"
 5. Copy the token (it's only shown once!)
-6. Paste into `.pypirc` as the password
+6. Add to `.pypirc` under `[pypi]` section
+
+**For TestPyPI (Testing):**
+1. Go to https://test.pypi.org/manage/account/tokens/
+2. Click "Create token"
+3. Give it a name: `simple-calculator-test`
+4. Scope: Choose "Entire account" or "Project specific"
+5. Copy the token (it's only shown once!)
+6. Add to `.pypirc` under `[testpypi]` section
 
 **Your .pypirc should look like:**
 ```ini
 [distutils]
 index-servers =
     pypi
+    testpypi
+
+[testpypi]
+repository = https://test.pypi.org/legacy/
+username = __token__
+password = pypi-AgEIcHlwaS5vcmc2FudHRvcG9waXMub3Jn  # TestPyPI API token
 
 [pypi]
 repository = https://upload.pypi.org/legacy/
 username = __token__
-password = pypi-AgEIcHlwaS5vcmc2FudHRvcG9waXMub3Jn  # Example token
+password = pypi-AgEIcHlwaS5vcmc2FudHRvcG9waXMub3Jn  # Production PyPI API token
 ```
 
 **Security Note:**
@@ -2367,20 +2410,47 @@ password = pypi-AgEIcHlwaS5vcmc2FudHRvcG9waXMub3Jn  # Example token
 - ⚠️ Add `~/.pypirc` to your global `.gitignore`
 - ⚠️ If you accidentally leaked a token, regenerate it immediately at https://pypi.org/manage/account/tokens/
 
-### Step 8.3: Upload to PyPI (Test First)
+### Step 8.3: Upload to TestPyPI (Test First!)
+
+Always test on TestPyPI before uploading to production PyPI. This is crucial!
 
 ```bash
-# Test PyPI upload first
+# Upload to TestPyPI
 twine upload --repository testpypi dist/*
+```
 
-# If successful, upload to production PyPI
+**Expected output:**
+```
+Uploading distributions to https://test.pypi.org/legacy/
+Uploading simple_calculator-0.1.0-py3-none-any.whl
+[100%] ████████████████████████████████████
+Uploading simple_calculator-0.1.0.tar.gz
+[100%] ████████████████████████████████████
+
+View at:
+https://test.pypi.org/project/simple-calculator/
+```
+
+**Troubleshooting TestPyPI Upload:**
+- Missing `[testpypi]` section in `.pypirc` → Add it per instructions above
+- Invalid token → Create new token at https://test.pypi.org/manage/account/tokens/
+- Package already exists → TestPyPI keeps all versions, but you can re-upload same version for testing
+
+### Step 8.4: Upload to Production PyPI
+
+Once TestPyPI upload is successful and you've verified the package looks correct:
+
+```bash
+# Upload to production PyPI
 twine upload dist/*
 
 # Verify on PyPI
 # https://pypi.org/project/simple-calculator/
 ```
 
-### Step 8.4: Verify Installation from PyPI
+**Important:** You can only upload each version number **once** to production PyPI. You cannot delete or re-upload the same version. Make sure everything is correct before uploading!
+
+### Step 8.5: Verify Installation from PyPI
 
 ```bash
 # Create new test environment
