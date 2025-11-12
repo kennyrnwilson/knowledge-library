@@ -2302,6 +2302,8 @@ python -m zipfile -l dist/simple_calculator-0.1.0-py3-none-any.whl
 
 ### Step 8.2: Create .pypirc Configuration
 
+The `.pypirc` file stores your PyPI authentication credentials. It goes in your home directory (`~/.pypirc`).
+
 Create `~/.pypirc`:
 
 ```ini
@@ -2312,10 +2314,58 @@ index-servers =
 [pypi]
 repository = https://upload.pypi.org/legacy/
 username = __token__
-password = pypi-AgEIcHlwaS5vcmc...  # Your API token
+password = pypi-AgEIcHlwaS5vcmc...  # Your API token from PyPI
 ```
 
-**Security Note:** Store token securely, never commit to git!
+#### Understanding .pypirc
+
+**`[distutils]` Section**
+- Tells Python which package indexes to use
+- `index-servers = pypi` means use the pypi index
+
+**`[pypi]` Section - PyPI Configuration**
+
+**`repository = https://upload.pypi.org/legacy/`**
+- The URL where PyPI packages are uploaded
+- `/legacy/` is the legacy API (works with twine)
+
+**`username = __token__`**
+- **This is NOT your actual PyPI username!**
+- `__token__` is a special keyword that tells PyPI "I'm using an API token"
+- It's the same for all PyPI users using token authentication
+- You don't change this to your actual username
+
+**`password = pypi-AgEIcHlwaS5vcmc...`**
+- This is your actual API token (generated on PyPI)
+- Starts with `pypi-` prefix
+- Unique to you - keep it secret!
+- Example: `pypi-AgEIcHlwaS5vcmc2FudHJvcGljLnNvY2kv`
+
+#### Creating Your API Token
+
+1. Go to https://pypi.org/manage/account/tokens/
+2. Click "Create token"
+3. Give it a name: `simple-calculator`
+4. Scope: Choose "Entire account" or "Project specific"
+5. Copy the token (it's only shown once!)
+6. Paste into `.pypirc` as the password
+
+**Your .pypirc should look like:**
+```ini
+[distutils]
+index-servers =
+    pypi
+
+[pypi]
+repository = https://upload.pypi.org/legacy/
+username = __token__
+password = pypi-AgEIcHlwaS5vcmc2FudHRvcG9waXMub3Jn  # Example token
+```
+
+**Security Note:**
+- ⚠️ NEVER commit `.pypirc` to git (it contains your secret token!)
+- ⚠️ Add `~/.pypirc` to your global `.gitignore`
+- ⚠️ If you accidentally leaked a token, regenerate it immediately at https://pypi.org/manage/account/tokens/
 
 ### Step 8.3: Upload to PyPI (Test First)
 
