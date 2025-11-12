@@ -2217,13 +2217,77 @@ python -m build
 
 ### Step 7.3: Inspect Package
 
+Wheels are ZIP files containing your package code and metadata. You can inspect them to verify everything was packaged correctly.
+
 ```bash
-# Inspect wheel contents (it's a ZIP file)
+# Option 1: Using Python's zipfile module (Recommended - always available)
+python -m zipfile -l dist/simple_calculator-0.1.0-py3-none-any.whl
+
+# Option 2: Using unzip command (if installed)
 unzip -l dist/simple_calculator-0.1.0-py3-none-any.whl
 
-# Verify metadata
+# Option 3: Extract and inspect with Python
+python -c "
+import zipfile
+with zipfile.ZipFile('dist/simple_calculator-0.1.0-py3-none-any.whl') as z:
+    for name in z.namelist():
+        print(name)
+"
+```
+
+**Expected output (with Option 1):**
+```
+Archive:  dist/simple_calculator-0.1.0-py3-none-any.whl
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+       45  2025-11-12 10:30   simple_calculator/__init__.py
+       20  2025-11-12 10:30   simple_calculator/_version.py
+     1234  2025-11-12 10:30   simple_calculator/core.py
+      890  2025-11-12 10:30   simple_calculator/cli.py
+      542  2025-11-12 10:30   simple_calculator-0.1.0.dist-info/WHEEL
+      124  2025-11-12 10:30   simple_calculator-0.1.0.dist-info/METADATA
+      145  2025-11-12 10:30   simple_calculator-0.1.0.dist-info/entry_points.txt
+      256  2025-11-12 10:30   simple_calculator-0.1.0.dist-info/RECORD
+```
+
+#### Troubleshooting: `unzip` Command Not Found
+
+**Error:** `Command 'unzip' not found`
+
+**Why:** `unzip` is a system utility that's not always installed by default.
+
+**Solutions:**
+
+**Option A: Install unzip (Recommended if you use it frequently)**
+```bash
+# On Ubuntu/Debian
+sudo apt install unzip
+
+# On macOS
+brew install unzip
+
+# On Windows (via WSL2)
+sudo apt install unzip
+```
+
+**Option B: Use Python instead (No installation needed)**
+```bash
+# Always works - Python is required for the project anyway
 python -m zipfile -l dist/simple_calculator-0.1.0-py3-none-any.whl
 ```
+
+**Why we recommend Option B for this tutorial:**
+- ✅ Python is always available (you need it for the project)
+- ✅ Cross-platform (works on Windows, macOS, Linux)
+- ✅ No additional system dependencies
+- ✅ Included in Python's standard library
+
+**What to look for in the wheel:**
+- ✓ Your source code files (`core.py`, `cli.py`, etc.)
+- ✓ Package metadata directory (`.dist-info/`)
+- ✓ METADATA file (with your project description)
+- ✓ entry_points.txt (with your `calc` command)
+- ✗ Should NOT have: `venv/`, `tests/`, `.git/`, `__pycache__/`
 
 ---
 
