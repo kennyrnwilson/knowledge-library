@@ -2154,6 +2154,67 @@ ls -lah dist/
 # simple_calculator-0.1.0.tar.gz
 ```
 
+#### Troubleshooting Build Errors
+
+**Error: `AbsoluteLinkError: 'simple_calculator-0.1.0/venv/bin/python' is a link to an absolute path`**
+
+```
+ERROR 'simple_calculator-0.1.0/venv/bin/python' is a link to an absolute path
+```
+
+**Cause:** Your virtual environment directory (`venv/`) is being included in the package. This happens when .gitignore is not committed or `venv/` is tracked by git.
+
+**Solution 1: Remove venv from git tracking (Recommended)**
+
+```bash
+# Check if venv is tracked by git
+git ls-files | grep venv
+
+# If it shows venv files, remove them:
+git rm -r --cached venv/
+
+# Verify .gitignore has venv/ listed
+cat .gitignore | grep venv
+
+# Commit the change
+git add .gitignore
+git commit -m "Remove venv from git tracking"
+
+# Now try building again
+python -m build
+```
+
+**Solution 2: Delete and recreate venv**
+
+```bash
+# Deactivate if currently activated
+deactivate
+
+# Remove venv
+rm -rf venv/
+
+# Recreate venv
+python -m venv venv
+source venv/bin/activate
+
+# Reinstall dependencies
+pip install -e ".[dev]"
+
+# Try building again
+python -m build
+```
+
+**Why this happens:**
+- Virtual environments contain symlinks to your system Python interpreter
+- These symlinks have absolute paths that differ on each machine
+- You should NEVER commit `venv/` to git (only on one computer per project)
+- `.gitignore` prevents this, but only if venv/ wasn't already tracked
+
+**How to prevent in future projects:**
+1. Create `.gitignore` BEFORE creating `venv/`
+2. Commit `.gitignore` early
+3. Never commit `venv/`, `env/`, `.venv/`, or other virtual environments
+
 ### Step 7.3: Inspect Package
 
 ```bash
