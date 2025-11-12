@@ -2432,9 +2432,36 @@ https://test.pypi.org/project/simple-calculator/
 ```
 
 **Troubleshooting TestPyPI Upload:**
-- Missing `[testpypi]` section in `.pypirc` → Add it per instructions above
-- Invalid token → Create new token at https://test.pypi.org/manage/account/tokens/
-- Package already exists → TestPyPI keeps all versions, but you can re-upload same version for testing
+
+**Missing `[testpypi]` section in `.pypirc`**
+- Error: `InvalidConfiguration: Missing 'testpypi' section from ~/.pypirc`
+- Solution: Add the `[testpypi]` section per instructions above
+
+**Invalid token**
+- Error: `HTTPError: 403 Forbidden`
+- Solution: Create new token at https://test.pypi.org/manage/account/tokens/
+- Remember: TestPyPI and PyPI tokens are separate!
+
+**Project name already exists or too similar**
+- Error: `400 Bad Request - The name 'simple-calculator' is too similar to an existing project`
+- Cause: Someone else already registered that package name (common with tutorial examples)
+- Solution: Use a unique name like `simple-calculator-{your-username}`
+  ```toml
+  [project]
+  name = "simple-calculator-kenne"  # Use your username instead of kenne
+  ```
+- Then rebuild and re-upload:
+  ```bash
+  python -m build
+  twine upload --repository testpypi dist/*
+  ```
+
+**Package already uploaded with same version**
+- Error: `400 Bad Request - File already exists`
+- Solution: TestPyPI allows re-uploads of the same version, but if you get this error:
+  - Increment the version: `version = "0.1.1"`
+  - Rebuild: `python -m build`
+  - Upload: `twine upload --repository testpypi dist/*`
 
 ### Step 8.4: Upload to Production PyPI
 
