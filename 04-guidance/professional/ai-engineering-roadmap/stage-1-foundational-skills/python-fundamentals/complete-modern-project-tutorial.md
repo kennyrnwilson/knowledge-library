@@ -125,9 +125,30 @@ simple-calculator/
 
 ## 🚀 Getting Started
 
-Each guide builds on the previous one. **Start with Part 1-3:**
+Choose your preferred learning approach:
 
-### Quick Start Path
+### 💻 VS Code-Focused Path (Recommended for most learners)
+
+**[VS Code Project Workflow: Build a Calculator](./vs-code-project-workflow.md)** - **~3.5 hours**
+
+This guide teaches the exact same calculator project but **entirely within VS Code** with emphasis on:
+- Virtual environment integration at every step
+- Debugging throughout development
+- VS Code extensions (Pylance, Ruff, pytest)
+- Integrated testing with Test Explorer
+- Git integration via Source Control panel
+
+**Best for:**
+- VS Code users (most developers)
+- Those wanting to master IDE-based development
+- Learning debugging hands-on
+- Understanding venv integration in IDE context
+
+---
+
+### 📚 Command-Line First Path
+
+Each guide builds on the previous one. **Start with Part 1-3:**
 
 1. **[Part 1-3: Project Setup](./01-project-setup-and-basics.md)** - 1-2 hours
    - Create project structure
@@ -150,6 +171,12 @@ Each guide builds on the previous one. **Start with Part 1-3:**
    - Manage versions
 
 **Total: ~4-6 hours** of hands-on learning
+
+**Best for:**
+- Understanding the full CI/CD pipeline
+- Professional package publishing
+- Multi-version testing with GitHub Actions
+- Comprehensive packaging knowledge
 
 ---
 
@@ -284,10 +311,17 @@ By completing this tutorial, you will:
 
 ## 🔗 All Guides
 
+### 💻 IDE-Focused (Recommended)
+- **[VS Code Project Workflow](./vs-code-project-workflow.md)** - Build calculator entirely in VS Code with debugging
+
+### 📚 Modular Command-Line Guides
 - **[Part 1-3: Project Setup and Basics](./01-project-setup-and-basics.md)** - Start here!
 - **[Part 4-5: Testing and Code Quality](./02-testing-and-code-quality.md)** - After setup
 - **[Part 4.5-6: Version Control, CI/CD, and Building](./03-version-control-and-ci.md)** - After testing
 - **[Part 9-10: Maintenance and Best Practices](./04-publishing-and-maintenance.md)** - After publishing
+
+### 🎓 Supporting Guides
+- **[VS Code Python Development Guide](./vs-code-python-development.md)** - Deep dive on VS Code features and debugging
 
 ---
 
