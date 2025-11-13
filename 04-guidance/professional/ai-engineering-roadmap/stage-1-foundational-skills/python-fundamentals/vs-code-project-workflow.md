@@ -217,7 +217,11 @@ If you don't see the Python interpreter in the status bar, create a Python file 
 3. Type: `pip list`
 4. Should show empty (only base packages)
 
-### 1.5: Create pyproject.toml (Must be before pip install)
+### 1.5: Create pyproject.toml (CRITICAL: Must be before pip install)
+
+⚠️ **IMPORTANT: Do Steps 1.5-1.8 IN ORDER before running pip install**
+
+The `pyproject.toml` file references `_version.py`, so you must create both before pip install works.
 
 1. **Create file** in root: `pyproject.toml`
 2. **Paste** (modern Python project config):
@@ -344,6 +348,14 @@ mypy src/
 
 ### 1.9: Install Development Dependencies (Now Will Work!)
 
+⚠️ **PREREQUISITE CHECK: Before running this, verify Steps 1.5-1.8 are complete:**
+- [ ] `pyproject.toml` exists in root
+- [ ] `src/simple_calculator/_version.py` exists
+- [ ] `src/simple_calculator/__init__.py` exists
+- [ ] `README.md` exists in root
+
+If any file is missing, pip install will fail with "file does not exist" error.
+
 In terminal (with venv activated):
 ```bash
 pip install -e ".[dev]"
@@ -359,7 +371,7 @@ This command:
 - Detect ruff for formatting
 - Find all installed packages
 
-**Verify in VS Code:**
+**Verify success:**
 1. Check terminal shows `(venv)` in prompt (it should)
 2. Type: `pip list` - should show pytest, ruff, mypy
 3. Expected output shows packages installed in venv:
@@ -370,9 +382,11 @@ This command:
    pytest-cov       4.x.x
    ```
 
-**If pip install fails:**
-- Check: Is `pyproject.toml` in the root directory?
-- Check: Does it have the exact content shown in Step 1.5?
+**If pip install fails with "file does not exist":**
+- Check: All files from Steps 1.5-1.8 created?
+- Check: `src/simple_calculator/_version.py` exists? (This is the most common missing file)
+- Check: `pyproject.toml` in root directory?
+- Check: `README.md` exists in root?
 - Check: Is venv activated (do you see `(venv)` in prompt)?
 
 ---
