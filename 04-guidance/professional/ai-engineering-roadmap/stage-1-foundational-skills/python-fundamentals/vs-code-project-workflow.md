@@ -217,17 +217,7 @@ If you don't see the Python interpreter in the status bar, create a Python file 
 3. Type: `pip list`
 4. Should show empty (only base packages)
 
-### 1.5: Install Development Dependencies
-
-In terminal (venv is active):
-
-```bash
-pip install -e ".[dev]"
-```
-
-Wait... this will fail because `pyproject.toml` doesn't exist yet! Let's create it.
-
-### 1.6: Create pyproject.toml
+### 1.5: Create pyproject.toml (Must be before pip install)
 
 1. **Create file** in root: `pyproject.toml`
 2. **Paste** (modern Python project config):
@@ -280,7 +270,7 @@ check_untyped_defs = true
 
 3. **Save**
 
-### 1.7: Create Version File
+### 1.6: Create Version File
 
 1. **Create file** `src/simple_calculator/_version.py`
 2. **Paste**:
@@ -293,7 +283,7 @@ __version__ = "0.1.0"
 
 3. **Save**
 
-### 1.8: Create Package __init__.py
+### 1.7: Create Package __init__.py
 
 1. **Create file** `src/simple_calculator/__init__.py`
 2. **Paste**:
@@ -308,7 +298,7 @@ __all__ = ["__version__"]
 
 3. **Save**
 
-### 1.9: Create README.md
+### 1.8: Create README.md
 
 1. **Create file** in root: `README.md`
 2. **Paste**:
@@ -352,23 +342,38 @@ mypy src/
 
 3. **Save**
 
-### 1.10: Install Development Dependencies (Now Will Work!)
+### 1.9: Install Development Dependencies (Now Will Work!)
 
-In terminal:
+In terminal (with venv activated):
 ```bash
 pip install -e ".[dev]"
 ```
+
+This command:
+- `-e` = install in editable mode (so changes to code are reflected immediately)
+- `.[dev]` = install this package + all dev dependencies from pyproject.toml
 
 **VS Code should now:**
 - Recognize `pytest` in venv
 - Show type checking from Pylance
 - Detect ruff for formatting
+- Find all installed packages
 
 **Verify in VS Code:**
-1. Open command palette: `Ctrl+Shift+P`
-2. Type "Python: Create Terminal"
-3. New terminal should show `(venv)` in prompt
-4. Type: `pip list` - should show pytest, ruff, mypy
+1. Check terminal shows `(venv)` in prompt (it should)
+2. Type: `pip list` - should show pytest, ruff, mypy
+3. Expected output shows packages installed in venv:
+   ```
+   pytest           7.x.x
+   ruff             0.x.x
+   mypy             1.x.x
+   pytest-cov       4.x.x
+   ```
+
+**If pip install fails:**
+- Check: Is `pyproject.toml` in the root directory?
+- Check: Does it have the exact content shown in Step 1.5?
+- Check: Is venv activated (do you see `(venv)` in prompt)?
 
 ---
 
