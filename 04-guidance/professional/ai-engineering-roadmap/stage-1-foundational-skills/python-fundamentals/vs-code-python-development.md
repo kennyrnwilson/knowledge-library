@@ -79,11 +79,24 @@ code --install-extension mhutchie.git-graph
 
 ### Step 1.3: Configure Python Interpreter
 
-1. Open command palette: `Ctrl+Shift+P`
-2. Type: "Python: Select Interpreter"
-3. Choose your virtual environment (`./venv/bin/python`)
+**Finding and selecting your virtual environment:**
 
-Your status bar should show the selected Python version.
+1. **Method 1 (Via Command Palette - Recommended):**
+   - Press `Ctrl+Shift+P` to open Command Palette
+   - Type: `Python: Select Interpreter`
+   - Press Enter
+   - Look for entry with `venv` in the path (e.g., `./venv/bin/python`)
+   - Click it to select
+
+2. **Method 2 (Via Status Bar):**
+   - Look at the very bottom-right of VS Code window
+   - Click on the Python interpreter text if visible
+   - Select the one with `venv` in the path
+
+**Verification:**
+- Your status bar (bottom-right) should show: `[Python 3.11.5 64-bit ('./venv': venv)]`
+- The `('./venv': venv)` part confirms it's from your virtual environment
+- If it shows just system Python, repeat the selection steps
 
 ### Step 1.3a: Understanding Virtual Environment Integration (Critical)
 

@@ -98,15 +98,40 @@ simple-calculator/
 
 ### 1.3: Select Venv as Interpreter (Critical!)
 
-1. **Click status bar** (bottom-right corner): `[Python 3.11 64-bit]`
-2. **Choose**: `./venv/bin/python`
-3. **Status bar updates** to show: `[Python 3.11.5 64-bit ('./venv': venv)]`
+**Finding the status bar:**
+1. Look at the **very bottom** of the VS Code window (below the editor)
+2. You'll see a gray bar with text like `LF` and line/column numbers
+3. On the **right side** of this bar, look for text starting with `Python`
+
+**If you don't see "Python" text:**
+- It means no Python interpreter is selected yet
+- Use keyboard shortcut instead: `Ctrl+Shift+P`
+
+**Selecting the interpreter:**
+
+**Method 1: Via Status Bar (if visible)**
+1. Click the text on the right side of the bottom bar that mentions `Python`
+2. A dropdown menu appears with Python interpreters
+3. Look for one with `venv` in the path (e.g., `./venv/bin/python`)
+4. Click it to select it
+
+**Method 2: Via Command Palette (recommended if status bar hidden)**
+1. Press `Ctrl+Shift+P` (opens Command Palette)
+2. Type: `Python: Select Interpreter`
+3. Press Enter
+4. Choose the one with `venv` in the path
+5. Press Enter to select
+
+**After selection:**
+- Status bar at bottom-right should show: `[Python 3.11.5 64-bit ('./venv': venv)]`
+- If it shows system Python path, repeat the steps
 
 **Why this matters:**
 - VS Code debugging uses this interpreter
 - IntelliSense searches venv's site-packages
 - Test Explorer runs tests with this Python
 - All extensions use this interpreter
+- Without this step, VS Code won't find installed packages
 
 ### 1.4: Create VS Code Workspace Settings
 
