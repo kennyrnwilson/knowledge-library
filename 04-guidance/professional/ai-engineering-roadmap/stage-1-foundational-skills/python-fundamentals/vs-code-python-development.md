@@ -85,17 +85,166 @@ code --install-extension mhutchie.git-graph
 
 Your status bar should show the selected Python version.
 
-### Step 1.4: Create Workspace Settings
+### Step 1.3a: Understanding Virtual Environment Integration (Critical)
 
-Create `.vscode/settings.json` in your project root:
+VS Code uses the selected Python interpreter to:
+- **Run and debug code** - Uses the interpreter to execute Python scripts
+- **Discover packages** - Reads installed packages from the venv's site-packages
+- **Run linters** - Ruff, Pylint, Flake8 execute within venv context
+- **Run type checkers** - Mypy, Pylance analyze code using venv packages
+- **Run tests** - pytest executes within venv with its installed packages
+- **Terminal shell** - New terminal opens with venv activated
+
+**What happens behind the scenes:**
+
+When you select a venv interpreter, VS Code:
+1. Records the interpreter path (e.g., `C:\projects\calc\venv\Scripts\python.exe`)
+2. Uses this path for all Python execution
+3. Prepends the venv's `bin` (or `Scripts` on Windows) to PATH in terminals
+4. All Python extensions read from this interpreter's site-packages
+
+**Visual indicator:**
+
+```
+Status bar (bottom-right):
+[Python 3.11.5 64-bit ('./venv': venv)]
+                        ↑ Shows selected interpreter
+                        ↑ Shows it's from a venv
+```
+
+**Common Issues with Virtual Environments:**
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| "Module not found" in editor but works in terminal | Venv not selected as interpreter | Select correct venv in Python: Select Interpreter |
+| Type checking shows errors for installed packages | Pylance using wrong interpreter | Verify interpreter selection, restart VS Code |
+| Tests discover but won't run | pytest installed in global Python, not venv | Install pytest in venv: `pip install pytest` |
+| Linting shows "import X unresolved" | Linter using wrong interpreter | Verify ruff/flake8 installed in venv |
+| Terminal doesn't have packages available | Terminal venv not activated | New terminal should auto-activate venv (check settings) |
+| Debugging breaks into wrong Python | Debugger using system Python | Configure `python.defaultInterpreterPath` in settings.json |
+
+**Verifying Your Venv Setup:**
+
+Open an integrated terminal (Ctrl+`) and verify the venv is active:
+
+**On Windows:**
+```powershell
+# You should see (venv) in the prompt
+(venv) C:\projects\calc>
+which python
+C:\projects\calc\venv\Scripts\python.exe
+
+# Verify packages are in venv
+pip list | grep pytest
+```
+
+**On macOS/Linux:**
+```bash
+# You should see (venv) in the prompt
+(venv) $
+which python
+/home/user/projects/calc/venv/bin/python
+
+# Verify packages are in venv
+pip list | grep pytest
+```
+
+**If venv is NOT activated in new terminals:**
+
+Edit `.vscode/settings.json` to auto-activate:
 
 ```json
 {
-  // Python path
+  // Auto-activate venv in integrated terminal
+  "python.terminal.executeInFileDir": true,
+  "python.terminal.executeInFileDir": true,
+
+  // For terminal.integrated.defaultProfile (platform-specific):
+  // macOS/Linux
+  "terminal.integrated.defaultProfile.osx": "bash",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"]
+    }
+  }
+}
+```
+
+**Understanding venv Structure:**
+
+```
+project/
+├── venv/                          # Virtual environment directory
+│   ├── bin/                       # Executables (macOS/Linux)
+│   │   ├── python                # Python interpreter
+│   │   ├── pip                   # Package manager
+│   │   ├── pytest                # Test runner
+│   │   ├── ruff                  # Linter/formatter
+│   │   └── ...
+│   ├── Scripts/                  # Executables (Windows)
+│   │   ├── python.exe
+│   │   ├── pip.exe
+│   │   ├── pytest.exe
+│   │   └── ...
+│   ├── lib/                       # Python libraries
+│   │   └── python3.11/
+│   │       └── site-packages/    # Installed packages
+│   │           ├── pytest/
+│   │           ├── simple_calculator/
+│   │           └── ...
+│   └── pyvenv.cfg               # Venv configuration
+└── .vscode/
+    └── settings.json            # References venv path
+```
+
+**How VS Code Uses Each Part:**
+
+1. **`python.defaultInterpreterPath`** points to `venv/bin/python`
+2. **`ruff.path`** points to `venv/bin/ruff`
+3. **pytest discovery** reads `venv/lib/python3.11/site-packages/pytest/`
+4. **Type checking** uses packages in `venv/lib/python3.11/site-packages/`
+5. **Terminal environment** activates venv (adding `venv/bin` to PATH)
+
+### Step 1.4: Create Workspace Settings with Virtual Environment Configuration
+
+Create `.vscode/settings.json` in your project root. **These settings tell VS Code where to find the venv and its executables:**
+
+```json
+{
+  // ============================================================================
+  // VIRTUAL ENVIRONMENT CONFIGURATION (Most Important)
+  // ============================================================================
+
+  // Point to the venv Python interpreter
+  // This is THE most critical setting - all Python execution flows through here
   "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
 
-  // Pylance type checking
+  // Also specify for consistency (some extensions use this)
+  "python.pythonPath": "${workspaceFolder}/venv/bin/python",
+
+  // Terminal shell integration - ensures venv is activated in new terminals
+  "python.terminal.executeInFileDir": true,
+  "python.terminal.activateEnvironment": true,
+
+  // ============================================================================
+  // TOOL CONFIGURATION (Points to venv tools)
+  // ============================================================================
+
+  // Ruff linter/formatter from venv
+  // When you save, VS Code runs: ${workspaceFolder}/venv/bin/ruff
+  "ruff.path": ["${workspaceFolder}/venv/bin/ruff"],
+  "ruff.lint.args": ["--line-length=100"],
+
+  // Pylance type checking (uses venv packages)
   "python.analysis.typeCheckingMode": "basic",
+  // Tells Pylance which venv to use for understanding types
+  "python.analysis.pythonPath": "${workspaceFolder}/venv/bin/python",
+
+  // ============================================================================
+  // CODE FORMATTING & QUALITY
+  // ============================================================================
+
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
@@ -104,31 +253,86 @@ Create `.vscode/settings.json` in your project root:
     }
   },
 
-  // Ruff configuration
-  "ruff.path": ["${workspaceFolder}/venv/bin/ruff"],
-  "ruff.lint.args": ["--line-length=100"],
+  // ============================================================================
+  // TESTING CONFIGURATION (Runs pytest from venv)
+  // ============================================================================
 
-  // Pytest configuration
+  // Enables Test Explorer and uses pytest from venv
   "python.testing.pytestEnabled": true,
+  "python.testing.pytestPath": "${workspaceFolder}/venv/bin/pytest",
   "python.testing.pytestArgs": [
     "tests",
     "--cov=src/simple_calculator",
     "--cov-report=term-missing"
   ],
 
-  // Debugging
+  // ============================================================================
+  // DEBUGGING CONFIGURATION
+  // ============================================================================
+
+  // Uses the venv interpreter for debugging
   "python.debugging.logDir": "${workspaceFolder}/.vscode/debug_logs",
 
-  // Editor settings
+  // ============================================================================
+  // EDITOR SETTINGS
+  // ============================================================================
+
   "editor.rulers": [100],
   "editor.wordWrap": "on",
   "files.exclude": {
     "**/__pycache__": true,
     "**/*.pyc": true,
-    "**/.pytest_cache": true
+    "**/.pytest_cache": true,
+    "**/venv": false  // Keep venv visible for reference
   }
 }
 ```
+
+**Key Points About This Configuration:**
+
+1. **`python.defaultInterpreterPath`** - THE critical setting
+   - Points to venv's Python executable
+   - Used by: Debugging, Code execution, IntelliSense
+   - VS Code uses this to find `site-packages` for package discovery
+
+2. **`ruff.path`** - Points to venv's ruff executable
+   - When you save, VS Code runs THIS ruff (not system ruff)
+   - Ensures linting/formatting uses venv packages
+
+3. **`python.testing.pytestPath`** - Points to venv's pytest
+   - Test Explorer uses this to run tests
+   - Ensures pytest runs with venv's installed packages
+
+4. **`python.terminal.activateEnvironment`** - Auto-activates venv
+   - New terminals automatically run venv activation script
+   - You'll see `(venv)` in the terminal prompt
+
+**Workaround for Windows PowerShell Venv Activation:**
+
+If venv doesn't auto-activate in PowerShell, add this to settings.json:
+
+```json
+{
+  "python.terminal.executeInFileDir": true,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": ["-NoExit", "-Command", "& {Set-Location $PSScriptRoot}"]
+    }
+  }
+}
+```
+
+**Troubleshooting Settings:**
+
+If tools aren't finding packages, check:
+
+1. **Is the path correct?** - Run in terminal: `echo ${workspaceFolder}/venv/bin/python`
+2. **Does the path exist?** - Run in terminal: `ls -la venv/bin/python` (or `dir venv\Scripts\python.exe` on Windows)
+3. **Is venv activated in terminal?** - Check if you see `(venv)` in prompt
+4. **Have you reloaded VS Code?** - Settings sometimes require VS Code restart
 
 ---
 
@@ -307,21 +511,51 @@ Print to console without stopping (useful for high-frequency code):
 
 Now every time code passes this line, it logs to console.
 
-### 4.3: Start Debugging
+### 4.3: Start Debugging (Within Virtual Environment)
+
+**CRITICAL: Debugging uses the selected venv interpreter**
+
+When you start debugging, VS Code uses the Python interpreter from settings:
+```
+F5 (Start Debugging)
+  ↓
+Uses: python.defaultInterpreterPath = ${workspaceFolder}/venv/bin/python
+  ↓
+Runs your code with venv's Python interpreter
+  ↓
+Can access all packages installed in venv's site-packages
+```
 
 **Method 1: Run with Debugging**
 - Press `F5` to start debugging
 - Or use Debug menu → "Start Debugging"
+- **This uses the venv interpreter you selected earlier**
 
 **Method 2: Debug Specific File**
 - Open file you want to debug
 - Press `F5`
 - VS Code runs and pauses at breakpoints
+- **Uses the venv interpreter for execution**
 
 **Method 3: Debug Tests**
 - Open test file
 - Right-click test name
 - Select "Debug Test"
+- **pytest runs from venv, with access to all test dependencies**
+
+**Verifying You're Debugging in the Venv:**
+
+1. Set breakpoint in any code
+2. Start debugging (F5)
+3. Open Debug Console (Ctrl+Shift+Y)
+4. Type: `import sys; print(sys.executable)`
+5. You should see the venv path:
+   ```
+   C:\projects\calc\venv\Scripts\python.exe  # Windows
+   /home/user/projects/calc/venv/bin/python  # macOS/Linux
+   ```
+
+If you see system Python path instead, your venv isn't selected.
 
 ### 4.4: Debug Panel
 
@@ -527,7 +761,95 @@ Debug code running on another machine:
    ```
 3. Connect from VS Code Debug Console
 
-### 4.10: Create Debug Configurations
+### 4.10: Virtual Environment Debugging Issues (Common Problems)
+
+**Problem: "ModuleNotFoundError" when debugging but code works in terminal**
+
+This happens when:
+1. Package is installed in venv
+2. Terminal has venv activated
+3. But VS Code is debugging with system Python
+
+**Solution:**
+1. Click status bar: `[Python 3.11.5 64-bit ('./venv': venv)]`
+2. Verify it shows `('./venv': venv)` - if not, select correct interpreter
+3. Restart debugging (F5)
+
+**Problem: Debugging pytest but tests can't find modules**
+
+This happens when:
+1. Tests import from `src/` package
+2. But pytest isn't installed in venv OR
+3. Package isn't installed in editable mode
+
+**Solution:**
+```bash
+# In terminal (with venv activated):
+pip install -e ".[dev]"  # Installs package + dev dependencies
+pytest tests/            # Verify pytest works
+```
+
+Then debug test:
+1. Open test file
+2. Right-click test name → "Debug Test"
+3. Debugger uses pytest from venv
+
+**Problem: Debugging works but can't access variables**
+
+This happens when:
+1. Debugging uses correct interpreter
+2. But some packages aren't installed in venv
+3. Variables use types from missing packages
+
+**Solution:**
+1. Check what's installed: `pip list` in terminal
+2. Install missing package: `pip install missing-package`
+3. Restart debugging
+
+**Verifying Complete Venv Setup for Debugging:**
+
+Run this checklist:
+
+```bash
+# 1. Venv is created
+ls venv/bin/python    # macOS/Linux
+dir venv\Scripts\python.exe  # Windows
+
+# 2. Venv is activated in terminal (see (venv) in prompt)
+which python  # Should show venv path
+python --version
+
+# 3. All packages are installed
+pip list | grep pytest
+pip list | grep simple-calculator
+
+# 4. Editable install exists
+pip show simple-calculator  # Should show Location: venv/lib/.../site-packages/simple_calculator
+
+# 5. VS Code sees correct interpreter
+# Open Debug Console (Ctrl+Shift+Y), set breakpoint, press F5, then type:
+import sys
+print(sys.executable)
+# Should print venv path
+```
+
+**Advanced: Debugging with Different Venv Configurations**
+
+If you have multiple venvs (e.g., Python 3.11 and 3.12):
+
+1. Create `.vscode/settings.json` (project-specific, committed to git)
+2. Create `.vscode/settings.local.json` (user-specific, in .gitignore)
+
+`.vscode/settings.local.json`:
+```json
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/venv-3.12/bin/python"
+}
+```
+
+VS Code loads both files (local overrides project).
+
+### 4.11: Create Debug Configurations
 
 Create `.vscode/launch.json` for custom debug setups:
 
@@ -572,6 +894,155 @@ Create `.vscode/launch.json` for custom debug setups:
 ```
 
 Select configuration from Debug menu dropdown.
+
+---
+
+## Part 4.12: Best Practices for Virtual Environment Management in VS Code
+
+### Organizing Your Workspace
+
+**Single Project (Recommended for Learning):**
+```
+project/
+├── venv/                 # Single venv for entire project
+├── src/
+├── tests/
+└── .vscode/
+    └── settings.json     # Points to ./venv/bin/python
+```
+
+**Multiple Projects (Recommended for Professional Work):**
+```
+~/projects/
+├── calc-app/
+│   ├── venv/
+│   └── .vscode/settings.json
+├── data-analysis/
+│   ├── venv/
+│   └── .vscode/settings.json
+└── web-service/
+    ├── venv/
+    └── .vscode/settings.json
+```
+
+Each project has its own venv → no conflicts, easy to manage.
+
+### Sharing Your VS Code Configuration with Team
+
+**What to commit to git (shared):**
+```
+.vscode/
+├── settings.json         # ✅ Commit (venv paths, tools config)
+├── launch.json          # ✅ Commit (debug configurations)
+└── extensions.json      # ✅ Commit (recommended extensions)
+```
+
+**What NOT to commit (local only, in .gitignore):**
+```
+.vscode/
+├── settings.local.json  # ❌ Don't commit (user's personal settings)
+venv/                    # ❌ Don't commit (binary executables)
+```
+
+Example `.vscode/settings.json` for team sharing:
+
+```json
+{
+  // These work for all team members (cross-platform)
+  "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+
+  // Note: Path uses forward slashes - works on Windows too!
+  "ruff.path": ["${workspaceFolder}/venv/bin/ruff"],
+  "python.testing.pytestPath": "${workspaceFolder}/venv/bin/pytest"
+}
+```
+
+### Platform-Specific Venv Paths
+
+VS Code handles this automatically, but understanding helps debugging:
+
+| Platform | Venv Python | Settings |
+|----------|-------------|----------|
+| **Windows** | `venv\Scripts\python.exe` | Use `${workspaceFolder}/venv/bin/python` (VS Code translates automatically) |
+| **macOS** | `venv/bin/python` | Use `${workspaceFolder}/venv/bin/python` |
+| **Linux** | `venv/bin/python` | Use `${workspaceFolder}/venv/bin/python` |
+
+The forward slash syntax works on all platforms - VS Code handles conversion.
+
+### Version Control and Virtual Environments
+
+**Never commit venv to git!** Add to `.gitignore`:
+
+```
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Venv-related
+pyvenv.cfg
+*.egg-info/
+```
+
+**Why not commit venv?**
+1. **Size** - venv can be 100+ MB
+2. **Platform incompatibility** - venv has absolute symlinks
+3. **OS-specific** - Python from macOS won't work on Windows
+4. **Reproducibility** - Rebuilt from `pyproject.toml` is cleaner
+
+**Instead, recreate on each machine:**
+
+```bash
+# Developer checks out code
+git clone repo
+cd repo
+
+# Create fresh venv
+python -m venv venv
+
+# Install from pyproject.toml
+pip install -e ".[dev]"
+
+# VS Code automatically detects venv
+# (or select via Python: Select Interpreter)
+```
+
+### Switching Between Projects
+
+When you open a new project folder in VS Code:
+
+1. VS Code searches for venvs
+2. Shows list of found interpreters
+3. You select the one for this project
+4. All settings automatically use the selected venv
+
+**To switch quickly:**
+1. `Ctrl+Shift+P` → "Python: Select Interpreter"
+2. Choose venv for current project
+3. All debugging, testing, linting use this venv
+
+### IDE-Level Settings vs Project-Level Settings
+
+**User Settings** (`~/.config/Code/settings.json`)
+- Applies to ALL projects
+- Not recommended for Python paths (too specific)
+- Use for editor preferences (font, colors, etc.)
+
+**Workspace Settings** (`.vscode/settings.json`)
+- Applies to THIS project only
+- **Best place for Python config**
+- Committed to git (shared with team)
+
+**Folder Settings** (`.vscode/settings.json` in subfolder)
+- Only for multi-folder workspaces
+- Advanced use case
+
+**Best Practice:**
+- Put all Python config in `.vscode/settings.json`
+- Keep `.vscode/settings.json` in git
+- Developers get correct venv paths automatically
 
 ---
 
