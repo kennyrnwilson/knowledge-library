@@ -98,24 +98,37 @@ simple-calculator/
 
 ### 1.3: Select Venv as Interpreter (Critical!)
 
+**Important: Prerequisites for seeing the Python interpreter in status bar**
+
+The Python interpreter selector only appears in the status bar when BOTH conditions are true:
+1. ✅ **Python VS Code extension is installed and enabled** (should be done from Part 1.2)
+2. ✅ **You have a Python file open** in the editor
+
+If you don't see the Python interpreter in the status bar, create a Python file first:
+1. Create any Python file: `src/simple_calculator/test.py` (or similar)
+2. The status bar will now show `Python` text on the right side
+
 **Finding the status bar:**
 1. Look at the **very bottom** of the VS Code window (below the editor)
 2. You'll see a gray bar with text like `LF` and line/column numbers
 3. On the **right side** of this bar, look for text starting with `Python`
+   - This only appears IF you have a .py file open
 
 **If you don't see "Python" text:**
-- It means no Python interpreter is selected yet
-- Use keyboard shortcut instead: `Ctrl+Shift+P`
+- Check: Do you have the Python extension installed? (Extensions panel, search "Python")
+- Check: Do you have a .py file open in the editor?
+- If both are yes, use keyboard shortcut instead: `Ctrl+Shift+P`
 
 **Selecting the interpreter:**
 
 **Method 1: Via Status Bar (if visible)**
-1. Click the text on the right side of the bottom bar that mentions `Python`
-2. A dropdown menu appears with Python interpreters
-3. Look for one with `venv` in the path (e.g., `./venv/bin/python`)
-4. Click it to select it
+1. Make sure a `.py` file is open
+2. Click the text on the right side of the bottom bar that mentions `Python`
+3. A dropdown menu appears with Python interpreters
+4. Look for one with `venv` in the path (e.g., `./venv/bin/python`)
+5. Click it to select it
 
-**Method 2: Via Command Palette (recommended if status bar hidden)**
+**Method 2: Via Command Palette (recommended, works anytime)**
 1. Press `Ctrl+Shift+P` (opens Command Palette)
 2. Type: `Python: Select Interpreter`
 3. Press Enter
@@ -124,7 +137,8 @@ simple-calculator/
 
 **After selection:**
 - Status bar at bottom-right should show: `[Python 3.11.5 64-bit ('./venv': venv)]`
-- If it shows system Python path, repeat the steps
+- This appears anytime you have a .py file open
+- If it shows system Python path instead of venv, repeat the selection steps
 
 **Why this matters:**
 - VS Code debugging uses this interpreter

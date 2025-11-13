@@ -79,24 +79,36 @@ code --install-extension mhutchie.git-graph
 
 ### Step 1.3: Configure Python Interpreter
 
+**IMPORTANT: Prerequisites for seeing the Python interpreter selector**
+
+The Python interpreter option in the status bar only appears when BOTH are true:
+1. ✅ **Python VS Code extension is installed** (from Step 1.2)
+2. ✅ **You have a Python file open** in the editor
+
+If you don't see the Python option, open any `.py` file first. The status bar will then show it.
+
 **Finding and selecting your virtual environment:**
 
-1. **Method 1 (Via Command Palette - Recommended):**
+1. **Method 1 (Via Command Palette - RECOMMENDED, works anytime):**
    - Press `Ctrl+Shift+P` to open Command Palette
    - Type: `Python: Select Interpreter`
    - Press Enter
    - Look for entry with `venv` in the path (e.g., `./venv/bin/python`)
    - Click it to select
+   - You can use this method even without a .py file open
 
-2. **Method 2 (Via Status Bar):**
+2. **Method 2 (Via Status Bar - requires .py file to be open):**
+   - Make sure you have a `.py` file open in the editor
    - Look at the very bottom-right of VS Code window
-   - Click on the Python interpreter text if visible
+   - You should see text starting with `Python`
+   - Click on it
    - Select the one with `venv` in the path
 
 **Verification:**
 - Your status bar (bottom-right) should show: `[Python 3.11.5 64-bit ('./venv': venv)]`
 - The `('./venv': venv)` part confirms it's from your virtual environment
-- If it shows just system Python, repeat the selection steps
+- This indicator appears anytime you have a .py file open
+- If it shows just system Python, repeat the selection steps using Method 1
 
 ### Step 1.3a: Understanding Virtual Environment Integration (Critical)
 
