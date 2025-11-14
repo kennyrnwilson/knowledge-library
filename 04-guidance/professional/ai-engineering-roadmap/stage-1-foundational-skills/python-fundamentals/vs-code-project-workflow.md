@@ -86,6 +86,76 @@ simple-calculator/
 2. `File` → `Open Folder` → Select `simple-calculator`
 3. VS Code opens with folder explorer on left
 
+### 1.1b: Install Required VS Code Extensions
+
+⚠️ **CRITICAL: These extensions are required for the tutorial to work!**
+
+Ruff auto-formatting, type checking, and testing all require specific VS Code extensions. Without them, features shown in this tutorial won't work.
+
+**Required Extensions:**
+
+| Extension | ID | Why You Need It |
+|-----------|----|----|
+| **Python** | `ms-python.python` | Core Python support (required for everything) |
+| **Pylance** | `ms-python.vscode-pylance` | Type checking and IntelliSense (shows errors in editor) |
+| **Ruff** | `charliermarsh.ruff` | Auto-formatting on save (format code instantly when you save) |
+| **Pytest** | `ms-python.pytest` | Test discovery (Part 4: shows tests in sidebar) |
+| **autoDocstring** | `njpwerner.autodocstring` | Docstring generation (optional: type `"""` and it completes) |
+
+**How to Install:**
+
+**Method 1: Via VS Code UI (Recommended - easier)**
+
+1. Click **Extensions** icon on left sidebar (looks like 4 squares)
+2. Search for: `Python` (by Microsoft)
+   - Click **Install**
+   - This installs the main Python extension + Debugger automatically
+3. Repeat search for each:
+   - `Pylance` (by Microsoft)
+   - `Ruff` (by Astral)
+   - `Pytest` (by Microsoft)
+   - Each time: Search → Install
+4. **Reload VS Code** when prompted
+
+**Method 2: Via Command Line (If you prefer CLI)**
+
+Open your system terminal (not VS Code terminal) and run:
+
+```bash
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension charliermarsh.ruff
+code --install-extension ms-python.pytest
+code --install-extension njpwerner.autodocstring
+```
+
+**Verify Extensions are Installed:**
+
+1. Click Extensions icon on left (4 squares)
+2. You should see these in "Installed" section:
+   - Python (green checkmark)
+   - Pylance (green checkmark)
+   - Ruff (green checkmark)
+   - Pytest (green checkmark)
+
+If any are missing, the tutorial features won't work as expected.
+
+**Why This Matters:**
+
+- **Without Python extension**: You can't select interpreter, no IntelliSense
+- **Without Pylance**: No type checking errors shown in editor
+- **Without Ruff**: No auto-formatting on save (Part 2's example won't work!)
+- **Without Pytest**: Test Explorer won't show your tests (Part 4)
+
+**Troubleshooting Extensions:**
+
+| Issue | Fix |
+|-------|-----|
+| Extension shows "Install" button (not installed) | Click Install button, wait for completion |
+| Extension installed but not working | Reload VS Code (Ctrl+Shift+P → "Developer: Reload Window") |
+| Pylance says "need to sign in" | Click "Allow" when prompted; Microsoft account not required |
+| Ruff shows "ruff not found" | Wait until Part 1.5 when you install ruff via pip |
+
 ### 1.2: Create Virtual Environment in VS Code Terminal
 
 1. **Open integrated terminal**: `Ctrl+`
@@ -101,7 +171,7 @@ simple-calculator/
 **Important: Prerequisites for seeing the Python interpreter in status bar**
 
 The Python interpreter selector only appears in the status bar when BOTH conditions are true:
-1. ✅ **Python VS Code extension is installed and enabled** (should be done from Part 1.2)
+1. ✅ **Python VS Code extension is installed and enabled** (should be done from Part 1.1b)
 2. ✅ **You have a Python file open** in the editor
 
 If you don't see the Python interpreter in the status bar, create a Python file first:
@@ -372,9 +442,9 @@ This command:
 - Find all installed packages
 
 **Verify success:**
-1. Check terminal shows `(venv)` in prompt (it should)
-2. Type: `pip list` - should show pytest, ruff, mypy
-3. Expected output shows packages installed in venv:
+- [ ] Terminal shows `(venv)` in prompt
+- [ ] Type: `pip list` - shows pytest, ruff, mypy
+- [ ] Expected output shows packages installed in venv:
    ```
    pytest           7.x.x
    ruff             0.x.x
@@ -383,11 +453,11 @@ This command:
    ```
 
 **If pip install fails with "file does not exist":**
-- Check: All files from Steps 1.5-1.8 created?
-- Check: `src/simple_calculator/_version.py` exists? (This is the most common missing file)
-- Check: `pyproject.toml` in root directory?
-- Check: `README.md` exists in root?
-- Check: Is venv activated (do you see `(venv)` in prompt)?
+- [ ] All files from Steps 1.5-1.8 created?
+- [ ] `src/simple_calculator/_version.py` exists? (This is the most common missing file)
+- [ ] `pyproject.toml` in root directory?
+- [ ] `README.md` exists in root?
+- [ ] Is venv activated (do you see `(venv)` in prompt)?
 
 ---
 
@@ -449,6 +519,123 @@ class Calculator:
 - ✅ Docstring generation (type `"""`, VS Code completes)
 - ✅ IntelliSense for class/function names
 - ✅ Auto-formatting with Ruff
+
+#### How Auto-Formatting with Ruff Works
+
+When you save a Python file, VS Code automatically runs Ruff to format your code. Here's what happens:
+
+**What Ruff Does:**
+- Fixes spacing and indentation automatically
+- Removes trailing whitespace
+- Ensures consistent quote style (single vs double quotes)
+- Fixes line length (wraps long lines at 100 characters)
+- Removes unused imports
+- Fixes import ordering
+- All happens **instantly when you press Ctrl+S**
+
+**Example: Before and After Ruff Formatting**
+
+Before saving (messy code):
+```python
+def add(a,b):  # Missing spaces, no type hints
+    """Add numbers"""
+    x=a+b  # Missing spaces
+    return x
+```
+
+After you save (Ctrl+S), Ruff automatically fixes it to:
+```python
+def add(a: float, b: float) -> float:
+    """Add numbers."""
+    x = a + b
+    return x
+```
+
+**How to Test Auto-Formatting:**
+
+1. **Create a messy Python file to test:**
+   - Open `src/simple_calculator/core.py` (the one you just created)
+   - Intentionally mess up the formatting:
+     ```python
+     # Add this line at the end of the file (with bad spacing):
+     x=1+2;y=3*4  # Bad: missing spaces, unnecessary semicolon
+     ```
+
+2. **Save the file:**
+   - Press `Ctrl+S`
+   - Watch the line automatically reformat!
+   - It becomes: `x = 1 + 2\ny = 3 * 4`
+
+3. **Verify it worked:**
+   - The line now has proper spacing
+   - Each statement is on its own line
+   - The code follows PEP 8 style guide
+
+**Why This Matters:**
+
+Without auto-formatting, developers spend time:
+- Manually fixing spacing
+- Adjusting indentation
+- Reformatting imports
+- Debating code style in code reviews
+
+With Ruff auto-formatting:
+- **Instant fixes** - Just save and done
+- **Consistent style** - All code looks the same
+- **No debates** - Everyone's code formatted the same way
+- **Fewer bugs** - Properly spaced code is easier to read
+
+**Advanced: Understanding Ruff Configuration**
+
+Your `pyproject.toml` has this Ruff configuration:
+```toml
+[tool.ruff]
+line-length = 100  # Wrap lines at 100 characters
+target-version = "py311"  # Optimize for Python 3.11
+```
+
+This means Ruff will:
+- Break lines longer than 100 characters
+- Use Python 3.11 compatible syntax
+- Follow the rules you specified in pyproject.toml
+
+**Troubleshooting Auto-Formatting:**
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| File doesn't format on save | Ruff not installed in venv | Run: `pip install ruff` |
+| Formatting applies but then reverts | Conflict with another formatter | Disable others: Python extension → Settings → Formatting provider |
+| Can't see changes | Editor not refreshing | File actually was changed; check git diff |
+| Ruff errors shown but won't auto-fix | Some issues require manual fixes | Read the error message (e.g., unused import) |
+| Save is slow | Ruff taking time to run | Normal for large files; usually <1 second |
+
+**Testing Auto-Formatting Step-by-Step:**
+
+1. **Make code intentionally ugly:**
+   - Open `src/simple_calculator/core.py`
+   - At the very end, add: `a=1` (no spaces)
+
+2. **Look at the squiggly lines:**
+   - You'll see a yellow/orange squiggly line under `a=1`
+   - This is Ruff saying "I can fix this!"
+
+3. **Save and watch the magic:**
+   - Press `Ctrl+S`
+   - The line becomes: `a = 1` (spaces added automatically)
+   - No squiggly line anymore
+
+4. **Undo to verify:**
+   - Press `Ctrl+Z` to undo the format
+   - Line goes back to `a=1` with squiggly line
+   - Press `Ctrl+S` again
+   - Ruff fixes it back to `a = 1`
+
+**Pro Tips:**
+
+1. **Format on save is enabled** - You don't need to do anything; it just happens
+2. **It's using Ruff from your venv** - The `.vscode/settings.json` you created points to it
+3. **You can manually format** - Press `Shift+Alt+F` to format without saving
+4. **See what changed** - Open VS Code's Source Control panel to see the formatting changes
 
 ### 2.2: Create CLI Interface (cli.py)
 
@@ -516,19 +703,163 @@ if __name__ == "__main__":
     main()
 ```
 
+#### Understanding `if __name__ == "__main__"`
+
+This pattern is one of the most important idioms in Python. Here's what it means:
+
+**What is `__name__`?**
+- `__name__` is a special built-in variable in Python
+- When you run a Python file directly, `__name__` is automatically set to `"__main__"`
+- When a file is imported as a module, `__name__` is set to the module's name (e.g., `"simple_calculator.cli"`)
+
+**Why does this matter?**
+
+Without this guard, your `main()` function runs automatically whenever the file is imported, which can cause problems:
+
+```python
+# BAD - without the guard:
+def main():
+    print("Running calculator!")
+
+main()  # Runs even if someone imports this module!
+```
+
+```python
+# GOOD - with the guard:
+def main():
+    print("Running calculator!")
+
+if __name__ == "__main__":
+    main()  # Only runs when executed directly
+```
+
+**Real-world example:**
+
+```python
+# Someone imports your calculator for their own code:
+from simple_calculator.cli import main  # This works because main() didn't auto-run
+
+# They run a script directly:
+python src/simple_calculator/cli.py  # This runs main() as expected
+```
+
+**In your project:**
+- Running `python src/simple_calculator/cli.py` → `__name__` is `"__main__"` → `main()` executes
+- Running `python -m simple_calculator.cli` → same result
+- Importing `from simple_calculator.cli import main` → `__name__` is not `"__main__"` → `main()` doesn't auto-run
+
+**Pro tip:** Always use this guard in files that have a `main()` function!
+
 3. **Save**
+
+### 2.2a: Understanding Pylance Quick Fixes
+
+As you write code, you'll notice a lightbulb icon (💡) appearing in the editor. This is VS Code's **Quick Fix** feature, powered by **Pylance** (the type checker you installed). Here's what it means and how to use it:
+
+**What is the Lightbulb Icon?**
+
+The lightbulb appears when VS Code detects an issue in your code that it can automatically fix for you:
+
+```
+def divide(a: float, b: float) -> float:
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+    # 💡 Lightbulb appears here if code doesn't return on all paths
+```
+
+**Where Does the Quick Fix Come From?**
+
+The Quick Fix feature comes from:
+1. **Pylance** - The type checker extension you installed (analyzes code for errors)
+2. **VS Code's Code Actions** - The infrastructure that displays the fixes
+3. **Optional: GitHub Copilot** - If installed, can enhance suggestions with AI
+
+You don't need to do anything special—these suggestions appear automatically when Pylance finds issues.
+
+**How to Use Quick Fixes:**
+
+1. **Spot the lightbulb** - When you see the 💡 icon, click it
+2. **Choose an action** - VS Code shows you options like:
+   - "Rewrite" - Replace/fix the code
+   - "Modify" - Adjust the code
+   - "Review" - Show what would change
+3. **Apply or ignore** - Click to apply the fix, or press `Escape` to dismiss
+
+**Example from Your Calculator:**
+
+When you create the `divide()` method without a return statement, Pylance shows:
+
+```
+def divide(a: float, b: float) -> float:
+    if b == 0:  # 💡 Quick Fix here
+        raise ValueError("Cannot divide by zero")
+    # Function says it returns float but has path with no return!
+```
+
+The Quick Fix might suggest:
+- Adding a return statement
+- Rewriting the function logic
+- Adding `-> None` to the type hint if that's your intent
+
+**Common Quick Fixes You'll See:**
+
+| Issue | Quick Fix Suggestion |
+|-------|---------------------|
+| Unused import | Remove the import |
+| Variable never used | Remove the variable |
+| Type mismatch | Cast to the correct type |
+| Missing return statement | Add return statement |
+| Undefined name | Import the module |
+| Typo in function name | Suggest correct name |
+
+**Pro Tips:**
+
+1. **Don't blindly apply fixes** - Always understand what the fix does before clicking
+2. **Read the error first** - Hover over the squiggly line to see the full explanation
+3. **It's not magic** - Quick Fixes are based on rules, not AI (unless Copilot is installed)
+4. **You can ignore fixes** - If you disagree with Pylance, just press `Escape`
 
 ### 2.3: Verify Type Checking Works
 
-Open `cli.py` and notice:
-- Green squiggles under errors
-- Pylance suggests fixes
-- Type hints prevent mistakes
+Now that you understand Quick Fixes (from section 2.2a), let's verify type checking is working:
 
-**Test the import:**
-1. Open terminal: `Ctrl+`
+**Step 1: Open the files and look for type checking indicators**
+1. Open `src/simple_calculator/core.py`
+2. Open `src/simple_calculator/cli.py`
+3. Look for:
+   - Red/orange squiggly lines under errors (type mismatches)
+   - Lightbulb icons (💡) with Quick Fix suggestions
+   - Hover over the squiggles to see what the errors are
+
+**Step 2: Test a Quick Fix**
+1. In `cli.py`, hover over any yellow/orange squiggly line
+2. Click the lightbulb icon that appears
+3. You'll see suggested fixes like "Rewrite", "Modify", or "Review"
+4. Try clicking one to see how it works (you can always undo with `Ctrl+Z`)
+
+**Step 3: Test the import**
+1. Open terminal: `Ctrl+``
 2. Type: `python -c "from simple_calculator.core import Calculator; print(Calculator.add(5, 3))"`
 3. Should print: `8.0`
+
+If you see any red errors, Pylance is catching type issues before you run the code. This is powerful!
+
+**What Type Checking Prevents:**
+
+```python
+# Without type hints - no warning:
+def add(a, b):
+    return a + b
+
+add("hello", 5)  # Oops! String + int. Only caught at runtime!
+
+# With type hints - caught immediately:
+def add(a: float, b: float) -> float:
+    return a + b
+
+add("hello", 5)  # 🔴 Pylance shows error immediately, before running!
+```
 
 ---
 
@@ -536,8 +867,12 @@ Open `cli.py` and notice:
 
 ### 3.1: Create Debug Configuration
 
+⚠️ **IMPORTANT: VS Code now uses `debugpy` instead of `python` for debugging**
+
+The old `"type": "python"` format is deprecated. Use `"type": "debugpy"` instead (shown below).
+
 1. **Create file** `.vscode/launch.json`
-2. **Paste**:
+2. **Paste** (using the modern `debugpy` type):
 
 ```json
 {
@@ -545,14 +880,14 @@ Open `cli.py` and notice:
     "configurations": [
         {
             "name": "Python: Debug Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
         },
         {
             "name": "Calculator: Add 5 3",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "simple_calculator.cli",
             "args": ["Add", "5", "3"],
@@ -560,7 +895,7 @@ Open `cli.py` and notice:
         },
         {
             "name": "Calculator: Divide by Zero",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "simple_calculator.cli",
             "args": ["Divide", "10", "0"],
@@ -568,7 +903,7 @@ Open `cli.py` and notice:
         },
         {
             "name": "Python: pytest All",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "pytest",
             "args": ["tests", "-v"],
@@ -580,13 +915,24 @@ Open `cli.py` and notice:
 
 3. **Save**
 
+**Why this changed:**
+- The old `"type": "python"` is deprecated and shows a warning
+- VS Code now uses `"type": "debugpy"` (the Python Debugger extension)
+- The new format is more efficient and better maintained
+- Both work the same way for your debugging workflows
+
 ### 3.2: Debug the Divide Function
 
 1. **Open** `src/simple_calculator/core.py`
 2. **Click line 40** (the `if b == 0:` line) in the margin to set breakpoint
    - Red dot appears
-3. **Click dropdown** next to `Run and Debug` (or press `Ctrl+Shift+D`)
-4. **Select** "Calculator: Divide by Zero"
+3. **Open the Debug view:**
+   - Press `Ctrl+Shift+D` (or click the Debug icon on the left sidebar)
+   - The Debug panel opens showing debug configurations
+4. **Select the debug configuration dropdown:**
+   - At the top of the Debug panel, you'll see a dropdown that says something like "Python: Debug Current File"
+   - Click this dropdown to see all available configurations
+   - Select **"Calculator: Divide by Zero"**
 5. **Press** `F5` to start debugging
 
 **What happens:**
