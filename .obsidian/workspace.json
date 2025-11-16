@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "README"
             }
+          },
+          {
+            "id": "661f35728123b6e2",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.3"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.3"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -169,7 +182,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "cd100c1509cbcfd5",
+  "active": "661f35728123b6e2",
   "lastOpenFiles": [
     "04-guidance/frameworks/README.md",
     "01-fleeting-notes/ai-engineering-resources-2025.md",

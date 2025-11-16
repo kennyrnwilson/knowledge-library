@@ -5,6 +5,9 @@
 ## Contents
 
 - [🚀 AI Engineering: Your Realistic Roadmap](./ai-engineering-roadmap/README.md) - Complete learning path from beginner to senior AI Engineer (3 stages, job-ready after Stage 2)
+- [🐍 Programming Language Guides](./programming-language/) - Language-specific tools and automation
+  - [Python Guides](./programming-language/python/) - Python-specific resources and automation tools
+  - [Claude Code Setup for Python](./programming-language/python/claude-code-setup/) - Automate professional Python project creation
 - [Python Resources](./python.md) - Python programming guidance
 - [AI/ML Learning Resources](../../02-literature-notes/professional/ai-ml-learning-roadmap.md) - Curated courses and books for ML learning
 

@@ -47,6 +47,15 @@
   - Essential extensions
   - IntelliSense configuration
 
+### Claude Code Automation
+See: **[Claude Code Python Project Setup Guide](../../../professional/programming-language/python/claude-code-setup/)** (in Programming Languages section)
+
+This comprehensive guide enables automatic Python project setup with Claude Code:
+- Quick 3-minute installation
+- Platform-specific instructions for Windows, WSL, macOS, Linux
+- Complete project setup automation
+- Troubleshooting and FAQ
+
 ### Hands-On Tutorials
 - **[Complete Modern Python Project Tutorial](./complete-modern-project-tutorial.md)** - End-to-end walkthrough
   - Project setup with modern structure

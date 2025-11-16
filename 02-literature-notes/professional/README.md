@@ -5,6 +5,7 @@
 ## Contents
 
 - [AI/ML Learning Roadmap: Courses & Books](./ai-ml-learning-roadmap.md) - Comprehensive guide to learning ML, DL, and AI from foundations to production
+- [Software Development](./software-development/README.MD) - Reference materials for Node.js, npm, and development environments
 
 ## How This Fits In
 
