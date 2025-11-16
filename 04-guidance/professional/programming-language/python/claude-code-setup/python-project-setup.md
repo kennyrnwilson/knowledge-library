@@ -44,8 +44,8 @@ All new projects must include this `pyproject.toml`:
 
 ```toml
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
 
 [project]
 name = "PROJECT_NAME"
