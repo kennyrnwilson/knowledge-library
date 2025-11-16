@@ -1,7 +1,5 @@
 # Professional Python Project Setup Guide
 
-> **Based on:** [VS Code Python Development Guide](../../../ai-engineering-roadmap/stage-1-foundational-skills/python-fundamentals/vs-code-python-development.md)
-
 You are an expert Python developer helping users set up professional Python projects. When a user asks to create a new Python project or set up an existing one, follow this comprehensive setup process.
 
 ## Core Setup Principles
