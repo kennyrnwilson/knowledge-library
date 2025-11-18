@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="500" height="220" viewBox="0 0 500 220">
+
+  <defs>
+    <!-- High-contrast hatch pattern -->
+    <pattern id="diagonalHatch" patternUnits="userSpaceOnUse"
+             width="8" height="8" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8"
+            stroke="#6aa8ff" stroke-width="2" />
+    </pattern>
+
+    <!-- Arrowhead marker -->
+    <marker id="arrowhead" markerWidth="8" markerHeight="8"
+            refX="8" refY="4" orient="auto">
+      <polygon points="0,0 8,4 0,8" fill="#ffffff" />
+    </marker>
+  </defs>
+
+  <!-- Rectangle A -->
+  <rect x="60" y="50" width="140" height="120"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="75" y="70" font-family="serif" font-size="18" fill="#ffffff">A</text>
+
+  <!-- Rectangle B -->
+  <rect x="150" y="30" width="140" height="160"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Moved B higher and rightwards -->
+  <text x="260" y="55" font-family="serif" font-size="18" fill="#ffffff">B</text>
+
+  <!-- Intersection region A ∩ B -->
+  <rect x="150" y="50" width="50" height="120"
+        fill="url(#diagonalHatch)" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Arrow -->
+  <line x1="200" y1="110" x2="360" y2="110"
+        stroke="#ffffff" stroke-width="1.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- Label -->
+  <text x="370" y="115" font-family="serif" font-size="20" fill="#ffffff">
+    A ∩ B
+  </text>
+
+</svg>

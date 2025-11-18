@@ -22,23 +22,27 @@ This reads as "the set of all x such that x is greater than or equal to 1 and le
 
 A set (A) is a **subset** of (B) if every element of (A) is also in (B):
 
-\[ A `\subseteq `{=tex}B \]
+$ A \subseteq B $
 
-![A is a subset of B](./images/a-subset-b.png)
+
+```mermaid
+flowchart TD
+
+    subgraph B["B"]
+        direction TB
+        A["A"]
+    end
+
+    %% Colours (text forced to black)
+    style B fill:#d0e6ff,stroke:#004a99,stroke-width:2px,color:#000000
+    style A fill:#ffffff,stroke:#004a99,stroke-width:2px,color:#000000
+```
 
 ### **Intersection**
 
 \[ A `\cap `{=tex}B \]
 
-    +-------------+-------------+
-    |             |             |
-    |     A       |      B      |
-    |      +------+------ +     |
-    |      |   A ∩ B     |      |
-    |      +-------------+      |
-    +---------------------------+
-
-TODO: Replace diagram with proper image
+![A intersection B](./images/a-intersection-b.svg)
 
 ### **Disjoint Sets**
 
