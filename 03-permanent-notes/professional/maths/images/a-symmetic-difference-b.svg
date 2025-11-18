@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="560" height="260" viewBox="0 0 560 260">
+
+  <defs>
+    <!-- High-contrast hatch pattern -->
+    <pattern id="hatchPattern" patternUnits="userSpaceOnUse"
+             width="8" height="8" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8"
+            stroke="#6aa8ff" stroke-width="2" />
+    </pattern>
+  </defs>
+
+  <!-- Rectangle A -->
+  <rect x="80" y="60" width="180" height="140"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Rectangle B -->
+  <rect x="200" y="40" width="180" height="180"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- A-only hatched region: A \ B -->
+  <rect x="80" y="60" width="120" height="140"
+        fill="url(#hatchPattern)" stroke="none"/>
+
+  <!-- B-only hatched regions -->
+  <!-- Right-hand side (full height) -->
+  <rect x="260" y="40" width="120" height="180"
+        fill="url(#hatchPattern)" stroke="none"/>
+
+  <!-- Upper-left B-only strip (above A) -->
+  <rect x="200" y="40" width="60" height="20"
+        fill="url(#hatchPattern)" stroke="none"/>
+
+  <!-- Lower-left B-only strip (below A) -->
+  <rect x="200" y="200" width="60" height="20"
+        fill="url(#hatchPattern)" stroke="none"/>
+
+  <!-- Label A -->
+  <text x="80" y="50"
+        font-family="serif" font-size="20"
+        text-anchor="start" fill="#ffffff">A</text>
+
+  <!-- Label B -->
+  <text x="380" y="35"
+        font-family="serif" font-size="20"
+        text-anchor="end" fill="#ffffff">B</text>
+
+  <!-- Center label inside the clean middle strip -->
+  <text x="230" y="145"
+        font-family="serif" font-size="24"
+        text-anchor="middle" fill="#ffffff">
+    A △ B
+  </text>
+
+</svg>

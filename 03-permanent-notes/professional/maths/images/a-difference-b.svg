@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="520" height="240" viewBox="0 0 520 240">
+
+  <defs>
+    <!-- High-contrast hatch pattern for A \ B -->
+    <pattern id="hatchAminusB" patternUnits="userSpaceOnUse"
+             width="8" height="8" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8"
+            stroke="#6aa8ff" stroke-width="2" />
+    </pattern>
+  </defs>
+
+  <!-- Rectangle A -->
+  <rect x="90" y="50" width="160" height="140"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Rectangle B -->
+  <rect x="180" y="30" width="170" height="180"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Hatch only the part of A that is NOT in B -->
+  <rect x="90" y="50" width="90" height="140"
+        fill="url(#hatchAminusB)" stroke="none"/>
+
+  <!-- A label ABOVE the A rectangle, left aligned -->
+  <text x="90" y="40"
+        font-family="serif" font-size="20"
+        text-anchor="start" fill="#ffffff">A</text>
+
+  <!-- B label in normal place -->
+  <text x="310" y="65"
+        font-family="serif" font-size="20"
+        text-anchor="middle" fill="#ffffff">B</text>
+
+  <!-- A \ B INSIDE the hatched region -->
+  <text x="135" y="125"
+        font-family="serif" font-size="22"
+        text-anchor="middle" fill="#ffffff">A \ B</text>
+
+</svg>

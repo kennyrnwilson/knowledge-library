@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="400" height="220" viewBox="0 0 400 220">
+
+  <!-- Outer rectangle: B -->
+  <rect x="80" y="30" width="220" height="160"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Inner rectangle: A (subset of B) -->
+  <rect x="120" y="60" width="140" height="100"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Label A inside inner rectangle -->
+  <text x="190" y="115"
+        font-family="serif" font-size="20"
+        text-anchor="middle" fill="#ffffff">A</text>
+
+  <!-- Label B near top-right of outer rectangle, not overlapping A -->
+  <text x="285" y="55"
+        font-family="serif" font-size="20"
+        text-anchor="middle" fill="#ffffff">B</text>
+
+  <!-- Optional: A ⊂ B label below (comment out if you don't want it) -->
+  <!--
+  <text x="200" y="205"
+        font-family="serif" font-size="20"
+        text-anchor="middle" fill="#ffffff">A ⊂ B</text>
+  -->
+</svg>

@@ -24,123 +24,138 @@ A set (A) is a **subset** of (B) if every element of (A) is also in (B):
 
 $ A \subseteq B $
 
-
-```mermaid
-flowchart TD
-
-    subgraph B["B"]
-        direction TB
-        A["A"]
-    end
-
-    %% Colours (text forced to black)
-    style B fill:#d0e6ff,stroke:#004a99,stroke-width:2px,color:#000000
-    style A fill:#ffffff,stroke:#004a99,stroke-width:2px,color:#000000
-```
+![A subset B](./images/a-subset-b.svg)
 
 ### **Intersection**
 
-\[ A `\cap `{=tex}B \] - [View diagram](./images/a-intersection-b.svg)
+$ A \cap B $
 
 ![A intersection B](./images/a-intersection-b.svg)
 
+
+
 ### **Disjoint Sets**
 
-\[ A `\cap `{=tex}B = `\varnothing`{=tex} \]
+$ \ A \cap B = \varnothing $
 
-    +-------+   +-------+
-    |   A   |   |   B   |
-    +-------+   +-------+
+![A disjoint B](./images/a-disjoint-b.svg)
 
-TODO: Replace diagram with proper image
 
 ### **Difference**
 
-\[ A `\setminus `{=tex}B \]
+$A \setminus B = A \cap \overline{B}$
 
-    +-------------+
-    |      B      |
-    |   +------+  |
-    | A | A\B |   |
-    |   +------+  |
-    +-------------+
+![A difference B](./images/a-difference-b.svg)
 
-TODO: Replace diagram with proper image
+
 
 ### **Symmetric Difference**
 
-\[ A `\triangle `{=tex}B = (A `\setminus `{=tex}B) `\cup `{=tex}(B
-`\setminus `{=tex}A) \]
+$A \triangle B = (A \cap B^c) \cup (B \cap A^c)$
 
-    A-only     B-only
-    +------+ +------+
-    | A\B  | | B\A  |
-    |      | |      |
-    +------+ +------+
+$A \triangle B = (A \setminus B) \cup (B \setminus A)$
 
-TODO: Replace diagram with proper image
+![ A △ B](./images/a-symmetic-difference-b.svg)
 
 ### **Union**
 
-\[ A `\cup `{=tex}B \]
+![A union B](./images/a-union-b.svg)
 
-    +-----------------------+
-    |       A ∪ B           |
-    |  +--------+--------+  |
-    |  |   A    |    B   |  |
-    |  +--------+--------+  |
-    +-----------------------+
-
-TODO: Replace diagram with proper image
+$$A \cup B = (A \cap B^c) \cup (A^c \cap B) \cup (A \cap B)$$
+$$= A \setminus B \cup B \setminus A \cup (A \cap B)$$
 
 ### **Product of Two Sets**
+If $A$ and $B$ are sets we can form the product $C$ as:
 
-\[ A `\times `{=tex}B = {(a,b)`\mid `{=tex}a`\in `{=tex}A,
-b`\in `{=tex}B} \]
+$$C = \{(a, b) : a \in A, b \in B\}$$
+
+And we write:
+
+$$C = A \times B$$
+
+#### What This Means
+
+The Cartesian product $A \times B$ is the set of all ordered pairs $(a, b)$ where:
+- $a$ is an element from set $A$
+- $b$ is an element from set $B$
+
+#### Example
+
+If $A = \{1, 2\}$ and $B = \{x, y, z\}$, then:
+
+$$A \times B = \{(1,x), (1,y), (1,z), (2,x), (2,y), (2,z)\}$$
+
+#### Grid Visualization
+
+|     | x | y | z |
+|-----|---|---|---|
+| 1   | (1,x) | (1,y) | (1,z) |
+| 2   | (2,x) | (2,y) | (2,z) |
+
+#### Key Properties
+
+- **Cardinality:** If $|A| = m$ and $|B| = n$, then $|A \times B| = m \times n$
+- **Order matters:** $(a,b) \neq (b,a)$ unless $a = b$
+- **Not commutative:** $A \times B \neq B \times A$ in general (unless $A = B$)
+- **Associativity:** $(A \times B) \times C \neq A \times (B \times C)$
+This starts with your definition and adds clear explanation, an example, visualization, and key properties. Would you like me to adjust the level of detail or add anything else?
+
 
 ## Basic Rules of Probability
+### Probability that either of two events occurs P(AB)
+![ab](./images/ab.svg)
 
-### **Probability that either of two events occurs**
+$P(A \cup B) = P(A \cap B^c) + P(A^c \cap B) + P(A \cap B)$
 
-\[ P(A `\cup `{=tex}B) = P(A) + P(B) - P(A `\cap `{=tex}B) \]
+Because the three sets on the right hand side are disjoint. We can get a similar result by adding
 
-TODO: Replace diagram with proper image
+$P(A \cup B) = P(A) + P(B) - P(A \cap B)$
 
-### **Probability that both events occur**
+### Probability that both events occurs P(AB)
+![prob both](./images/bothevents.svg)
 
-\[ P(A `\cap `{=tex}B) = `\frac{|A \cap B|}{|\Omega|}`{=tex} \]
+If we consider discrete probability then where every outcome is equally likely then the probability of A∩B is simply the number of outcomes is A∩B divided by the number of outcomes in the sample space Ω
 
-TODO: Replace diagram with proper image
+$$P(A \cap B) = \frac{|A \cap B|}{|\Omega|}$$
+The formula uses:
+|A ∩ B| - cardinality (count) of elements in the intersection
+|Ω| - cardinality of the sample space
 
-## Conditional Probability
+### Conditional Probability P(A|B)
+The conditional probability $P(A|B)$ is the probability that the event $A$ occurs given that the event $B$ has occurred. Of course for $A$ to occur given that $B$ has occurred, the two events $A$ and $B$ must share outcomes. We know that
 
-### **Definition**
+$$P(A \cap B) = \frac{|A \cap B|}{|\Omega|}$$
 
-\[ P(A `\mid `{=tex}B) = `\frac{P(A \cap B)}{P(B)}`{=tex} \]
+But if we know that $B$ has occurred there is a higher probability than $P(A \cap B)$ that $A$ occurs because the extra information that $B$ has occurred allows us to reduce the sample space.
 
-TODO: Replace diagram with proper image
+![condprob](./images/condprob.svg)
 
-## Multiplication Rule
+$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
 
-\[ P(A `\cap `{=tex}B) = P(A `\mid `{=tex}B)P(B) \]
+Because
 
-\[ P(A `\cap `{=tex}B `\cap `{=tex}C) =
-P(A)P(B`\mid `{=tex}A)P(C`\mid `{=tex}A`\cap `{=tex}B) \]
+$$P(A|B) = \frac{|A \cap B|}{|B|} = \frac{|A \cap B|}{|B|} \div \frac{|\Omega|}{|\Omega|} = \frac{|A \cap B|}{|\Omega|} \div \frac{|B|}{|\Omega|} = \frac{P(A \cap B)}{P(B)}$$
 
-\[ P(A_1`\cap `{=tex}`\cdots `{=tex}`\cap `{=tex}A_n) =
-`\prod`{=tex}*{k=1}\^n P(A_k
-`\mid `{=tex}A_1`\cap `{=tex}`\cdots`{=tex}`\cap `{=tex}A*{k-1}) \]
+### Multiplication Rule
+Similarly if we are given $P(A_2 | A_1)$ we can covert it back to $P(A_1 \cap A_2)$ by multiplying it through by $P(A_1)$
 
-## Partition Rule
+$$P(A_1 \cap A_2) = P(A_2 | A_1)P(A_1)$$
 
-\[ A = (A `\cap `{=tex}B) `\cup `{=tex}(A `\cap `{=tex}B\^c) \]
+We can extend this to three events
 
-TODO: Replace diagram with proper image
+$$P(A_1 \cap A_2 \cap A_3) = P(A_3 | A_2 \cap A_1)P(A_2 \cap A_1)$$
+$$= P(A_3 | A_2 \cap A_1)P(A_2 | A_1)P(A_1)$$
 
-## Conditional Partition Rule
+And then n events
 
-\[ P(A `\mid `{=tex}C) = P(B `\mid `{=tex}C)P(A `\mid `{=tex}B
-`\cap `{=tex}C) + P(B\^c `\mid `{=tex}C)P(A `\mid `{=tex}B\^c
-`\cap `{=tex}C) \]
+$$P(A_1 \cap A_2 \cap \ldots \cap A_n) = P(A_1) \prod_{i=2}^{n} P(A_i | A_1 \cap A_2 \cap \ldots \cap A_{i-1})$$
 
-TODO: Replace diagram with proper image
+Or equivalently:
+
+$$P(A_1 \cap A_2 \cap \ldots \cap A_n) = P(A_n | A_{n-1} \cap \ldots \cap A_1)P(A_{n-1} | \ldots \cap A_1) \cdots P(A_2 | A_1)P(A_1)$$
+
+### Partition Rule 
+
+
+
+### Conditional Partition Rule

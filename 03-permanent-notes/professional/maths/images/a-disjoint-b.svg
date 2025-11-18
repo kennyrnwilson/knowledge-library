@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="500" height="200" viewBox="0 0 500 200">
+
+  <!-- Rectangle A -->
+  <rect x="70" y="40" width="140" height="120"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="140" y="105"
+        font-family="serif" font-size="20"
+        text-anchor="middle" fill="#ffffff">A</text>
+
+  <!-- Rectangle B (disjoint, no overlap) -->
+  <rect x="290" y="40" width="140" height="120"
+        fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="360" y="105"
+        font-family="serif" font-size="20"
+        text-anchor="middle" fill="#ffffff">B</text>
+
+</svg>
