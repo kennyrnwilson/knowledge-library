@@ -14,9 +14,9 @@ If a set consists of the faces of a die, we could write:
 
 Another example using set-builder notation:
 
-\[ S = \{x : 1 \leq x \leq 9, x \in \mathbb{Z}\} \]
+$`S = {x : 1 \leq x \leq 6, x \in \mathbb{Z}}`$
 
-This reads as "the set of all x such that x is greater than or equal to 1 and less than or equal to 9, where x is an integer."
+This reads as "the set of all x such that x is greater than or equal to 1 and less than or equal to 96 where x is an integer."
 
 ### **Subsets**
 
@@ -24,14 +24,7 @@ A set (A) is a **subset** of (B) if every element of (A) is also in (B):
 
 \[ A `\subseteq `{=tex}B \]
 
-    +-------------+
-    |      B      |
-    |  +------+   |
-    |  |  A   |   |
-    |  +------+   |
-    +-------------+
-
-TODO: Replace diagram with proper image
+![A is a subset of B](./images/a-subset-b.png)
 
 ### **Intersection**
 
