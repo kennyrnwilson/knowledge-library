@@ -40,7 +40,7 @@ flowchart TD
 
 ### **Intersection**
 
-\[ A `\cap `{=tex}B \]
+\[ A `\cap `{=tex}B \] - [View diagram](./images/a-intersection-b.svg)
 
 ![A intersection B](./images/a-intersection-b.svg)
 
