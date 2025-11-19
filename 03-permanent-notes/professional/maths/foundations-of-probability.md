@@ -156,6 +156,48 @@ $$P(A_1 \cap A_2 \cap \ldots \cap A_n) = P(A_n | A_{n-1} \cap \ldots \cap A_1)P(
 
 ### Partition Rule 
 
+Any event $A$ can be partitioned into those outcomes it shares with a second event $B$ and those outcomes it doesn't share with $B$.
 
+$$P(A) = P(A \cap B) + P(A \cap B^c)$$
+
+![partition-rule](./images/partition-rule.svg)
+
+We can express this using conditional probabilities as
+
+$$P(A) = P(A | B)P(B) + P(A | B^c)P(B^c)$$
+This is the **Law of Total Probability** for two events. It expresses the total probability of event $A$ as a weighted sum of conditional probabilities, where the weights are the probabilities of the conditioning events.
 
 ### Conditional Partition Rule
+$$P(A|C) = P(A|B \cap C)P(B|C) + P(A|B^c \cap C)P(B^c|C)$$
+
+This is the Law of Total Probability extended to three events. It expresses the conditional probability of $A$ given $C$ as a weighted sum of conditional probabilities, where the partition is based on event $B$ and all probabilities are conditioned on $C$.
+
+For a proof of this consider the following
+
+![con-part-rule](./images/conditional-partition-rule.svg)
+
+ $$ P(A|C) = \frac{P(A \cap C)}{P(C)} \tag{1}$$
+
+But the set $A \cap C$ can be broken up into the part that intersects with a third set $B$ and the part that doesn't intersect with the third set $B$
+
+$$A \cap C = (A \cap [C \cap B]) \cup (A \cap [C \cap B^c]) \tag{2}$$
+
+<br><br>
+
+![cond-part-rule2](./images/conditional-partition-rule2.svg)
+
+So we can insert 2 into 1
+
+$$P(A|C) = \frac{P(A \cap [(C \cap B) \cup (C \cap B^c)])}{P(C)} \tag{3}$$
+
+Now we need to remember that $P(A \cap C \cap B) = P(A | C \cap B)P(C \cap B)$ we update the numerator on the RHS of 3
+
+$$P(A|C) = \frac{P(A|C \cap B)P(C \cap B) + P(A|C \cap B)P(C \cap B^c)}{P(C)} \tag{4}$$
+
+Finally we note that $P(C \cap B) = P(B|C)P(C)$ and use this to update the numerator on the RHS
+
+$$P(A|C) = \frac{P(A|C \cap B)P(B|C)P(C) + P(A|C \cap B)P(B^c|C)P(C)}{P(C)} \tag{5}$$
+
+Finally we cancel the $P(C)$'s
+
+$$P(A|C) = P(A|C \cap B)P(B|C) + P(A|C \cap B)P(B^c|C) \tag{6}$$
