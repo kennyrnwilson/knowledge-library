@@ -14,5 +14,14 @@
     "05-projects": "../../../../icons/projects",
     "07-archive": "../../../../icons/trash",
     "06-tracking": "../../../../icons/tracking"
-  }
+  },
+
+  // Auto-save configuration
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // Git configuration - enables auto-staging and pushing
+  "git.enableSmartCommit": true,
+  "git.postCommitCommand": "push",
+  "git.autofetch": true
 }
