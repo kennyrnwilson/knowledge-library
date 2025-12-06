@@ -1,0 +1,232 @@
+{
+  "main": {
+    "id": "72ea7b4ac8ae03f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "c62a984b48c3f6c9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bf92da42448aa7ec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03-permanent-notes/leisure/entertainment-media/film-list.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "film-list"
+            }
+          },
+          {
+            "id": "ef57f4c19d095d91",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03-permanent-notes/leisure/entertainment-media/film-list.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "film-list"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "835c6d2b1f5c00e8",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "92c2de4f6e7e526e",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "6fba533d5ac2736a",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "9a216741e74eaab5",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "34818ce8945d400f",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "All properties"
+        }
+      },
+      {
+        "id": "782d92818d2c6862",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "0895189374cbfabe",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "cafce8d8cece0683",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "01-fleeting-notes/escaping-information-overload.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "a23e3cab1a70208d",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "e622fa8c9fef4ddb",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "bf92da42448aa7ec",
+  "lastOpenFiles": [
+    "01-fleeting-notes/escaping-information-overload.md",
+    "03-permanent-notes/leisure/entertainment-media/film-list.md",
+    "03-permanent-notes/leisure/entertainment-media/films",
+    "03-permanent-notes/leisure/entertainment-media/README.md",
+    "03-permanent-notes/leisure/entertainment/README.md",
+    "01-fleeting-notes/ag-agent-skills.md",
+    "life-areas.mmd",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/python-fundamentals/core-concepts/control-flow.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/python-fundamentals/core-concepts/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/python-fundamentals/core-concepts/basic-syntax.md",
+    "04-guidance/professional/programming-language/python/claude-code-setup/03-detailed-setup-guide.md",
+    "04-guidance/professional/programming-language/python/claude-code-setup/02-instructions.md",
+    "04-guidance/professional/programming-language/python/claude-code-setup/CLAUDE.md",
+    "04-guidance/professional/programming-language/python/claude-code-setup/README.md",
+    "04-guidance/professional/programming-language/python/claude-code-setup/00-READ-ME-FIRST.md",
+    "04-guidance/professional/programming-language/python/claude-code-setup/01-quick-start.md",
+    "04-guidance/professional/programming-language/python/claude-code-setup/python-project-setup.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/pre-trained-models/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/evaluation-metrics/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/ai-apis/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/rag/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/projects/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/prompt-engineering/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/software-engineering/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/data-databases/README.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/python-fundamentals/vs-code-project-workflow.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/python-fundamentals/complete-modern-project-tutorial.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/python-fundamentals/03-version-control-and-ci.md",
+    "04-guidance/professional/ai-engineering-roadmap/stage-1-foundational-skills/python-fundamentals/core-concepts",
+    "04-guidance/professional/programming-language/python/claude-code-setup",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/pre-trained-models",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/evaluation-metrics",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/ai-apis",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/rag",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/projects",
+    "04-guidance/professional/ai-engineering-roadmap/stage-2-working-with-ai-tools/prompt-engineering",
+    "03-permanent-notes/professional/maths/images/conditional-partition-rule.svg",
+    "03-permanent-notes/professional/maths/images/partition-rule.svg",
+    "03-permanent-notes/professional/maths/images/conditional-partition-rule2.svg",
+    "03-permanent-notes/professional/maths/images/a-union-b.svg",
+    "03-permanent-notes/professional/maths/images/condprob.svg",
+    "03-permanent-notes/professional/maths/images/a-difference-b.svg",
+    "03-permanent-notes/professional/maths/images/bothevents.svg",
+    "03-permanent-notes/professional/maths/images/a-intersection-b.svg",
+    "03-permanent-notes/professional/maths/images/a-symmetic-difference-b.svg",
+    "03-permanent-notes/professional/maths/images/ab.svg"
+  ]
+}
