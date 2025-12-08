@@ -23,8 +23,11 @@ This system is designed to help **Capture, Organise, Connect, and Apply** knowle
 ```mermaid
 graph TD
     Sources[Sources: Books 📚, Articles 📰, Ideas 💡]
+    Librarian[Resource Librarian 🤖]
     Resources[Resource Library 📚🎥<br/>Books, YouTube Transcripts,<br/>AI Summaries]
 
+    Sources -- Process 🔄 --> Librarian
+    Librarian -- Store --> Resources
     Sources -- Capture 📥 --> A1[Fleeting Notes 📥]
     Sources -- Capture 📥 --> A2[Scratch Pad ✍️]
     Sources -- Capture 📥 --> A3[Literature Notes 📖]
@@ -41,6 +44,7 @@ graph TD
     P -- Completed --> Archive
 
     click Resources "https://github.com/kennyrnwilson/resource-library" "View Resource Library"
+    click Librarian "https://github.com/kennyrnwilson/resource-librarian" "View Resource Librarian"
 
     style Resources fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
     style Sources fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
