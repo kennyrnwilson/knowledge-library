@@ -26,13 +26,13 @@ graph TD
     Sources -- Capture 📥 --> A1[Fleeting Notes 📥]
     Sources -- Capture 📥 --> A2[Scratch Pad ✍️]
     Sources -- Capture 📥 --> A3[Literature Notes 📖]
-    Human[Me 🧑] -- Creates --> A4[Guidance 📜]
-    Human -- Initiates --> P[Projects 📊]
+    Human[Me 🧑] -- Initiates --> P[Projects 📊]
 
     A1 -- Process --> B1[Permanent Notes 📂]
     A2 -- Process --> B1
 
-    A4[Guidance 📜] -- Apply/Track --> B3[Progress 📈]
+    B1 -- Inform --> A4[Guidance 📜]
+    P -- Track --> B3[Progress 📈]
     B1 -- Complete/Inactive --> Archive[Archive 🗄️]
     A4 -- Outdated --> Archive
     P -- Completed --> Archive
