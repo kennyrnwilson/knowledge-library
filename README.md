@@ -23,9 +23,12 @@ This system is designed to help **Capture, Organise, Connect, and Apply** knowle
 ```mermaid
 graph TD
     Sources[Sources: Books 📚, Articles 📰, Ideas 💡]
+    Resources[Resource Library 📚🎥<br/>Books, YouTube Transcripts,<br/>AI Summaries]
+
     Sources -- Capture 📥 --> A1[Fleeting Notes 📥]
     Sources -- Capture 📥 --> A2[Scratch Pad ✍️]
     Sources -- Capture 📥 --> A3[Literature Notes 📖]
+    Resources -- Reference 🔍 --> A1
     Human[Me 🧑] -- Initiates --> P[Projects 📊]
 
     A1 -- Process --> B1[Permanent Notes 📂]
@@ -36,6 +39,8 @@ graph TD
     B1 -- Complete/Inactive --> Archive[Archive 🗄️]
     A4 -- Outdated --> Archive
     P -- Completed --> Archive
+
+    style Resources fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
 ```
 
 ### 📥 Capture
