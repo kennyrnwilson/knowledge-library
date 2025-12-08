@@ -40,7 +40,10 @@ graph TD
     A4 -- Outdated --> Archive
     P -- Completed --> Archive
 
+    click Resources "https://github.com/kennyrnwilson/resource-library" "View Resource Library"
+
     style Resources fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
+    style Sources fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
 ```
 
 ### 📥 Capture
