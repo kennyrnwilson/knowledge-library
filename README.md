@@ -23,7 +23,7 @@ This system is designed to help **Capture, Organise, Connect, and Apply** knowle
 ```mermaid
 graph TD
     Sources[Sources: Books 📚, Articles 📰, Ideas 💡]
-    Librarian[Resource Librarian 🤖]
+    Librarian[Resource Librarian 🐍🤖]
     Resources[Resource Library 📚🎥<br/>Books, YouTube Transcripts,<br/>AI Summaries]
 
     Sources -- Process 🔄 --> Librarian
