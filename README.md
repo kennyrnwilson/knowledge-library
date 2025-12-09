@@ -1,24 +1,60 @@
 # 📚 Knowledge Library
 
-I built this knowledge management system by blending **PARA** and **Zettelkasten** frameworks with my own methods. It goes beyond simply managing and storing knowledge — it's about transforming what we learn into **practical systems, operating procedures, and guides** that can be **applied to improve how we live and work**. Each part of the system is designed to help capture ideas and turn them into meaningful actions that create progress and clarity across all areas of life.
+My personal knowledge management system that transforms what I learn into **practical systems, operating procedures, and guides** that can be **applied to improve how I live and work**.
 
-## 🧾 Format
+**The Workflow:** Every piece of knowledge follows a simple four-stage journey:
 
-I experimented with many note-taking applications such as **Notion** and **Bear**, but ultimately chose **Markdown files** as the foundation of this system. Every note is formatted as clean, interconnected markdown that's both human-readable and AI-friendly. This transforms a PKM from a closed platform into an open, machine-processable knowledge base optimized for the AI era.
+```mermaid
+graph LR
+    A[📥 Capture] --> B[📋 Organise]
+    B --> C[🛠️ Apply]
+    C --> D[💃 Archive]
 
-### Why Markdown
+    style A fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
+    style B fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
+    style C fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
+    style D fill:#2d5f7e,stroke:#4a9eff,stroke-width:2px,color:#fff
+```
 
-* **AI Integration** – Structured markdown designed to work seamlessly with LLMs and AI tools for enhanced reasoning and knowledge retrieval.
-* **Machine Readability** – Plain text format that can be processed by scripts, APIs, and automated systems.
-* **Portability** – No vendor lock-in; your knowledge exists as simple files you own completely.
-* **Git Version Control** – Full history, branching, and collaboration through GitHub.
-* **Durability** – Your notes remain accessible and processable regardless of service availability.
+**Six Areas of Focus:** The system organizes knowledge across the key areas of life that matter most:
 
-## 🎯 System Purpose
+```mermaid
+mindmap
+  root((🧑 Life Areas))
+    🏢 Professional
+    🌟 Personal Development
+    🏥 Wellbeing
+    📚 Productivity
+    👶 Parenting
+    🎭 Leisure
+```
 
-This system is designed to help **Capture, Organise, Connect, and Apply** knowledge efficiently using principles from **Zettelkasten** and the **PARA Method**. Its primary goal is to transform fleeting thoughts and consumed information into structured insights and actionable guidance.
+**Explore each area:**
+[🏢 Professional](./03-permanent-notes/professional/README.md) • [🌟 Personal Development](./03-permanent-notes/personal-development/README.md) • [🏥 Wellbeing](./03-permanent-notes/wellbeing/README.md) • [📚 Productivity](./03-permanent-notes/productivity/README.md) • [👶 Parenting](./03-permanent-notes/parenting/README.md) • [🎭 Leisure](./03-permanent-notes/leisure/README.md)
 
-## 🔄 Knowledge Flow
+---
+
+
+
+
+
+## 📋 How It Works
+
+### 🧾 Format
+
+Every note is a **Markdown file** — clean, interconnected, and optimized for both humans and AI.
+
+**Why Markdown:**
+* **AI Integration** – Seamless with LLMs and AI tools
+* **Portability** – No vendor lock-in; you own your knowledge
+* **Git Version Control** – Full history and collaboration
+* **Machine Readability** – Processable by scripts and APIs
+
+### 🎯 Philosophy
+
+Built by blending **Zettelkasten** and **PARA** frameworks. The goal: transform fleeting thoughts into structured insights and actionable guidance.
+
+### 🔄 Detailed Flow
 
 ```mermaid
 graph TD
@@ -126,6 +162,8 @@ Deprecated content and outdated notes kept for historical reference.
 ---
 
 ## ✅ Why This Structure Works
+
+I built this knowledge management system by blending **PARA** and **Zettelkasten** frameworks with my own methods. Each part of the system is designed to help capture ideas and turn them into meaningful actions that create progress and clarity across all areas of life.
 
 * **Zettelkasten principles** ensure knowledge grows **organically** and **connects**
 * **PARA structure** keeps actions and resources separate but aligned
