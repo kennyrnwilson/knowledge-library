@@ -4,6 +4,8 @@ My personal knowledge management system that transforms what I learn into **prac
 
 ![Knowledge Library System Overview](./knowledge-library.png)
 
+> **Part of a detailed PKM system.** For more repositories and projects, visit [kennyrnwilson on GitHub](https://github.com/kennyrnwilson).
+
 **The Workflow:** Every piece of knowledge follows a simple four-stage journey:
 
 ```mermaid
@@ -253,6 +255,8 @@ Pick your use case and dive in:
 * [.templates/](./.templates/) - All markdown templates
 
 ---
+
+**Author:** [kennyrnwilson](https://github.com/kennyrnwilson)
 
 *Created: 2025-11-03*
 *Framework: Zettelkasten × PARA Hybrid*
