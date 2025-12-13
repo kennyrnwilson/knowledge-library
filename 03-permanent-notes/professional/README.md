@@ -1,5 +1,7 @@
 # Profession
 
+← [Back to Permanent Notes](../README.md)
+
 **Purpose:** Career development, technical skills, management, workplace dynamics, and professional growth.
 
 ## Contents
