@@ -1,10 +1,10 @@
 # 📚 Knowledge Library
 
+**Author:** [kennyrnwilson](https://github.com/kennyrnwilson)
+
 My personal knowledge management system that transforms what I learn into **practical systems, operating procedures, and guides** that can be **applied to improve how I live and work**.
 
 ![Knowledge Library System Overview](./knowledge-library.png)
-
-> **Part of a detailed PKM system.** For more repositories and projects, visit [kennyrnwilson on GitHub](https://github.com/kennyrnwilson).
 
 **The Workflow:** Every piece of knowledge follows a simple four-stage journey:
 
@@ -251,7 +251,6 @@ Pick your use case and dive in:
 
 ## 🖖️ See Also
 
-* [CONTRIBUTING.md](./CONTRIBUTING.md) - Style guide and guidelines
 * [.templates/](./.templates/) - All markdown templates
 
 ---
