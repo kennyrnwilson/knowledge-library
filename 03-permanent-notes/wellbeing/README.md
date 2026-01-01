@@ -8,6 +8,7 @@
 
 - [Sleep & Recovery](./sleep/README.md) - Sleep science and optimization
 - [Fitness & Exercise](./fitness/README.md) - Training, mobility, and movement
+- [Nutrition](./nutrition/README.md) - Evidence-based nutrition and dietary strategies
 - [Mindfulness & Meditation](./mindfulness/README.md) - Mental training and awareness
 - [Mental Health](./mental-health/README.md) - Stress management and emotional regulation
 
@@ -17,6 +18,7 @@
 |-------|--------|--------------|
 | Sleep | Active | 2025-11-03 |
 | Fitness | Active | 2025-11-03 |
+| Nutrition | Active | 2025-01-01 |
 | Mindfulness | Active | 2025-11-03 |
 | Mental Health | Active | 2025-11-03 |
 
